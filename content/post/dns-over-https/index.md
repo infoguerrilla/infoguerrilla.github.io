@@ -2,7 +2,7 @@
 title: DNS sobre HTTPS
 description: Tradução
 date: 2023-08-25 00:00:00+0000
-image: image.jpg
+image: image.png
 tags:
 - privacidade
 - segurança
@@ -16,7 +16,8 @@ categories:
 > **Nota:** Este artigo é uma tradução do artigo original "DNS over HTTPS and DNS over TLS" do site da Mullvad. Link do artigo original: [DNS over HTTPS and DNS over TLS](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/)
 
 >
->Tradução: **Geraldo Homero do Couto Neto** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [X](https://twitter.com/geraldohomero)
+>Tradução: **[Geraldo Homero do Couto Neto](https://geraldohomero.github.io)** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [ResearchGate](https://www.researchgate.net/profile/Geraldo-Couto-Neto) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [BlueSky](https://bsky.app/profile/geraldohomero.bsky.social) | [X](https://twitter.com/geraldohomero)
+
 
 > Use o `índice` ao lado para navegar entre as seções e encontrar o que você procura mais facilmente.
 

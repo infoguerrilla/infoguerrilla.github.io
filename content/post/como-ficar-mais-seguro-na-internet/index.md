@@ -2,7 +2,7 @@
 title: Como ficar mais seguro e privado na internet
 description: Privacidade e Segurança na Internet
 date: 2025-01-24 00:00:00+0000
-image: cover.jpg
+image: image.png
 math: false
 tags:
 - privacidade
@@ -16,7 +16,8 @@ categories:
 - dados pessoais
 ---
 
-> **Geraldo Homero do Couto Neto** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [X](https://twitter.com/geraldohomero)
+> **[Geraldo Homero do Couto Neto](https://geraldohomero.github.io)** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [ResearchGate](https://www.researchgate.net/profile/Geraldo-Couto-Neto) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [BlueSky](https://bsky.app/profile/geraldohomero.bsky.social) | [X](https://twitter.com/geraldohomero)
+
 
 ## Introdução
 

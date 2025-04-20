@@ -5,7 +5,7 @@ description: Militantes de esquerda deveriam se preocupar com isso?
 slug: Software-Livre-Open-source-Privacidade-Segurança  
 date: 2025-04-19 00:00:00+0000  
 lastmod: 2025-04-19 10:30:31+0000  
-image: 2.jpg 
+image: image.png
 categories:  
 - Política  
 - Tecnologia  
@@ -20,7 +20,7 @@ weight: 1 # You can add weight to some posts to override the default sorting (da
 
 ---
 
-> **Geraldo Homero do Couto Neto** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [X](https://twitter.com/geraldohomero)
+> **[Geraldo Homero do Couto Neto](https://geraldohomero.github.io)** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [ResearchGate](https://www.researchgate.net/profile/Geraldo-Couto-Neto) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [BlueSky](https://bsky.app/profile/geraldohomero.bsky.social) | [X](https://twitter.com/geraldohomero)
 
 ## Introdução
 

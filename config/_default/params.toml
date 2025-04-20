@@ -13,8 +13,9 @@ published = "Jan 02, 2006"
 lastUpdated = "Jan 02, 2006 15:04 MST"
 
 [sidebar]
-emoji = "🍥"
-subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+emoji = ""
+#subtitle = "\"Para que o trabalho do alfaiate não desapareça na roupa\""
+
 
 [sidebar.avatar]
 enabled = true
@@ -34,11 +35,6 @@ default = "Licensed under CC BY-NC-SA 4.0"
 [[widgets.homepage]]
 type = "search"
 
-[[widgets.homepage]]
-type = "archives"
-
-[widgets.homepage.params]
-limit = 5
 
 [[widgets.homepage]]
 type = "categories"
@@ -50,7 +46,13 @@ limit = 10
 type = "tag-cloud"
 
 [widgets.homepage.params]
-limit = 10
+limit = 25
+
+[[widgets.homepage]]
+type = "archives"
+
+[widgets.homepage.params]
+limit = 5
 
 [[widgets.page]]
 type = "toc"
@@ -76,7 +78,7 @@ enabled = true
 
 ## Comments
 [comments]
-enabled = true
+enabled = false
 provider = "disqus"
 
 [comments.disqusjs]
