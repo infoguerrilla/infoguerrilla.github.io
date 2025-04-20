@@ -1,7 +1,7 @@
 ---
 title: DNS sobre HTTPS
 description: Tradução
-date: 2023-08-25 00:00:00+0000
+date: 2022-08-25 00:00:00+0000
 image: image.png
 tags:
 - privacidade
@@ -11,6 +11,7 @@ categories:
 - privacidade
 - segurança
 - tradução
+- tutoriais
 ---
 
 > **Nota:** Este artigo é uma tradução do artigo original "DNS over HTTPS and DNS over TLS" do site da Mullvad. Link do artigo original: [DNS over HTTPS and DNS over TLS](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/)

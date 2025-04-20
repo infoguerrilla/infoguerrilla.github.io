@@ -8,8 +8,7 @@ lastmod: 2025-04-19 10:30:31+0000
 image: image.png
 categories:  
 - Política  
-- Tecnologia  
-- Marxismo  
+- Tecnologia    
 - Ativismo  
 - privacidade  
 tags:  
