@@ -39,3 +39,12 @@ url = "#"
 [social.params]
 icon = "brand-instagram"
 
+[[social]]
+identifier = "rss"
+name = "x-RSS Feed"
+url = "https://infoguerrilla.github.io/index.xml"
+
+[social.params]
+icon = "rss"
+
+
