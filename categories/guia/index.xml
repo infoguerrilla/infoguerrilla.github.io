@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guia on Info_Guerrilla</title><link>https://infoguerrilla.github.io/categories/guia/</link><description>Recent content in Guia on Info_Guerrilla</description><generator>Hugo -- gohugo.io</generator><language>pt-br</language><lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://infoguerrilla.github.io/categories/guia/index.xml" rel="self" type="application/rss+xml"/><item><title>Guia: Como ficar mais seguro e privado na internet</title><link>https://infoguerrilla.github.io/p/como-ficar-mais-seguro-e-privado-na-internet/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>https://infoguerrilla.github.io/p/como-ficar-mais-seguro-e-privado-na-internet/</guid><description>&lt;img src="https://infoguerrilla.github.io/p/como-ficar-mais-seguro-e-privado-na-internet/image.png" alt="Featured image of post Guia: Como ficar mais seguro e privado na internet" />&lt;h2 id="introdução">Introdução
+&lt;/h2>&lt;p>A privacidade e a segurança na internet são temas cada vez mais relevantes no mundo digital atual. Com o aumento do uso de dispositivos conectados e a coleta massiva de dados pessoais, é fundamental adotar práticas que garantam a proteção das informações e a segurança online.&lt;/p>
+&lt;p>O que tentamos fazer aqui é mitigar o máximo possível os riscos associados à coleta de dados pessoais e à exposição online. Embora não seja possível garantir 100% de segurança, é possível adotar medidas que reduzam significativamente os riscos.&lt;/p>
+&lt;h2 id="o-que-são-dados-pessoais">O que são dados pessoais?
+&lt;/h2>&lt;h2 id="como-acontece-a-coleta-de-dados">Como acontece a coleta de dados?
+&lt;/h2>&lt;p>A coleta de dados pessoais na internet ocorre de diversas formas, incluindo:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Cookies&lt;/strong>: pequenos arquivos armazenados no navegador que registram informações sobre a navegação do usuário.&lt;/li>
+&lt;li>&lt;strong>Rastreamento de IP&lt;/strong>: os endereços IP podem ser usados para identificar a localização geográfica do usuário.&lt;/li>
+&lt;li>&lt;strong>Redes sociais&lt;/strong>: plataformas como Facebook e Instagram coletam dados dos usuários para personalizar anúncios e conteúdos.&lt;/li>
+&lt;li>&lt;strong>Aplicativos&lt;/strong>: muitos aplicativos solicitam permissões para acessar dados pessoais, como contatos, fotos e localização.&lt;/li>
+&lt;li>&lt;strong>Serviços de busca&lt;/strong>: mecanismos de busca como Google e Bing registram as consultas dos usuários para melhorar os resultados e direcionar anúncios.&lt;/li>
+&lt;li>&lt;strong>E-mails&lt;/strong>: provedores de e-mail podem analisar o conteúdo das mensagens para oferecer serviços personalizados.&lt;/li>
+&lt;li>&lt;strong>Dispositivos conectados&lt;/strong>: dispositivos como smart TVs, assistentes virtuais e câmeras de segurança podem coletar dados sobre o comportamento do usuário.&lt;/li>
+&lt;li>&lt;strong>Serviços de localização&lt;/strong>: aplicativos e serviços que utilizam GPS podem rastrear a localização do usuário em tempo real.&lt;/li>
+&lt;/ul>
+&lt;h2 id="práticas-recomendadas-para-aumentar-a-privacidade-e-segurança">Práticas recomendadas para aumentar a privacidade e segurança
+&lt;/h2>&lt;h3 id="use-senhas-fortes-e-únicas">Use senhas fortes e únicas
+&lt;/h3>&lt;p>A primeira linha de defesa contra invasões e vazamentos de dados é uma senha forte. Evite usar informações pessoais, como datas de nascimento ou nomes de familiares.&lt;/p>
+&lt;p>Utilize senhas longas, complexas e &lt;strong>diferentes&lt;/strong> para cada conta. Considere o uso de um &lt;a class="link" href="#3-use-um-gerenciador-de-senhas" >gerenciador de senhas&lt;/a> para armazená-las de forma segura.&lt;/p>
+&lt;p>Exemplo de senha forte: &lt;code>kJd9#8@!3LqWp9Jkn2!&lt;/code>&lt;/p>
+&lt;h3 id="ative-a-autenticação-em-dois-fatores-2fa">Ative a autenticação em dois fatores (2FA)
+&lt;/h3>&lt;p>Adicione uma camada extra de segurança às suas contas, exigindo um código adicional enviado para o seu celular ou e-mail.&lt;/p>
+&lt;p>Indicação de aplicativos de autenticação:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://getaegis.app/" target="_blank" rel="noopener"
+>Aegis&lt;/a> (Android)&lt;/li>
+&lt;li>&lt;a class="link" href="https://authy.com/" target="_blank" rel="noopener"
+>Authy&lt;/a> (iOS, Android)&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/ente-io/ente/blob/main/auth/README.md" target="_blank" rel="noopener"
+>Ente Auth&lt;/a> (iOS, Android, Web)&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-um-gerenciador-de-senhas">Use um gerenciador de senhas
+&lt;/h3>&lt;p>Um gerenciador de senhas armazena suas senhas de forma segura e pode gerar senhas fortes para você. Algumas opções populares incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://bitwarden.com/" target="_blank" rel="noopener"
+>Bitwarden&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://keepass.info/" target="_blank" rel="noopener"
+>KeePass&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-um-navegador-seguro">Use um navegador seguro
+&lt;/h3>&lt;p>Escolha um navegador que priorize a privacidade e a segurança. Os navegadores são a porta de entrada para a maioria das ameaças online. Navegadores como Chrome, Edge, Opera e Safari não são recomendados, pois seus dados são coletados e vendidos para empresas de publicidade. Considere usar navegadores como:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://brave.com" target="_blank" rel="noopener"
+>Brave&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mozilla.org" target="_blank" rel="noopener"
+>Firefox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mullvad.net/en/download/browser" target="_blank" rel="noopener"
+>Mullvad Browser&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-uma-vpn">Use uma VPN
+&lt;/h3>&lt;p>Uma VPN (Rede Privada Virtual) criptografa sua conexão à internet e oculta seu endereço IP, tornando mais difícil para terceiros rastrearem suas atividades online. Lembre-se de escolher uma VPN confiável que não registre seus dados. As VPNs gratuitas, em raras exceções, não são recomendadas, pois podem coletar e vender seus dados. Uma frase bem famosa sobre isso é: &amp;ldquo;se é gratuito, quem paga pelo serviço são seus dados&amp;rdquo;. Algumas opções de VPNs confiáveis incluem:&lt;/p>
+&lt;h4 id="pagas">Pagas
+&lt;/h4>&lt;ul>
+&lt;li>&lt;a class="link" href="https://mullvad.net/en/" target="_blank" rel="noopener"
+>Mullvad&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://protonvpn.com/" target="_blank" rel="noopener"
+>Proton VPN&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://windscribe.com/" target="_blank" rel="noopener"
+>Windscribe&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="gratuitas">Gratuitas
+&lt;/h4>&lt;ul>
+&lt;li>&lt;a class="link" href="https://protonvpn.com/" target="_blank" rel="noopener"
+>Proton VPN&lt;/a> - Gratuita com limitações, mas uma boa opção&lt;/li>
+&lt;li>&lt;a class="link" href="https://riseup.net/en/vpn" target="_blank" rel="noopener"
+>Riseup VPN&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://windscribe.com/" target="_blank" rel="noopener"
+>Windscribe&lt;/a> - Vem com 10GB de dados mensais gratuitos, o que é bom para quem não usa muito a internet&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-um-bloqueador-de-anúncios">Use um bloqueador de anúncios
+&lt;/h3>&lt;p>Os anúncios podem ser invasivos e muitas vezes rastreiam suas atividades online. Use um bloqueador de anúncios para melhorar sua experiência de navegação e proteger sua privacidade. Com a nova medida do Google de bloquear os bloqueadores de anúncios, é importante usar um navegador que não seja o Chrome. O Brave, por exemplo, apesar de ser baseado no Chrome, não tem essa limitação. Além disso, o Brave já vem com um bloqueador de anúncios embutido.&lt;/p>
+&lt;p>Algumas opções de bloqueadores de anúncios incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/gorhill/uBlock" target="_blank" rel="noopener"
+>uBlock Origin&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.eff.org/privacybadger" target="_blank" rel="noopener"
+>Privacy Badger&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-um-sistema-operacional-seguro">Use um sistema operacional seguro
+&lt;/h3>&lt;p>Importante levar em consideração que empresas como Microsoft coletam massivamente os dados de seus usuários. O Windows Recall, por exemplo, vem sendo criticado arduamente por tirar uma screenshot a cada determinado período de tempo. Diversas condutas invasivas como, obrigar o usuário a criar uma conta Microsoft, coletar dados de navegação e de uso do sistema operacional, entre outros. Portanto, considere usar sistemas operacionais que priorizam a privacidade e a segurança, baseados no Linux, como:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.debian.org/" target="_blank" rel="noopener"
+>Debian&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://getfedora.org/" target="_blank" rel="noopener"
+>Fedora&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://linuxmint.com/" target="_blank" rel="noopener"
+>Linux Mint&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://pop.system76.com/" target="_blank" rel="noopener"
+>Pop!_OS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zoringroup.com/zorin-os/" target="_blank" rel="noopener"
+>Zorin OS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Caso você não tenha como, ou não queira, usar um sistema operacional baseado em Linux, considere usar o ferramentas que ajudam a tornar o Windows mais privado e seguro, como:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/christitustech/WinUtil" target="_blank" rel="noopener"
+>WinUtil&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="mitigar-o-rastreamento-em-aplicativos-de-redes-sociais">Mitigar o rastreamento em aplicativos de redes sociais
+&lt;/h3>&lt;p>A principal receita das redes sociais vem da venda de dados pessoais e do rastreamento do comportamento dos usuários para a venda de anúncios extremamente personalizados. Como sabemos que muitas vezes não é possível evitar completamente o uso das redes sociais, é importante mitigar o rastreamento. Algumas dicas incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Desativar anúncios personalizados&lt;/strong>: A maioria das redes sociais oferece opções para desativar anúncios personalizados. Verifique as configurações de privacidade e segurança da sua conta.&lt;/li>
+&lt;li>&lt;strong>Limitar o compartilhamento de informações&lt;/strong>: Revise as configurações de privacidade e limite o compartilhamento de informações pessoais. Evite compartilhar dados sensíveis, como localização, telefone e endereço.&lt;/li>
+&lt;li>&lt;strong>Use as redes sociais diretamente no navegador, inclusive no celular&lt;/strong>: Use navegadores que priorizam a privacidade e instale extensões que bloqueiam rastreadores e anúncios. Dessa maneira você irá evitar a coleta de dados por meio de aplicativos, além retirar os anúncios.&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-serviços-de-e-mail-seguros">Use serviços de e-mail seguros
+&lt;/h3>&lt;p>Os provedores de e-mail convencionais, como Gmail, Yahoo, Outlook, coletam dados dos usuários para direcionar anúncios e treinar algoritmos de inteligência artificial. Além disso, eles podem compartilhar informações com terceiros. Considere usar provedores de e-mail com criptografia de ponta a ponta e políticas de privacidade mais rigorosas. Algumas opções incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://proton.me/mail" target="_blank" rel="noopener"
+>ProtonMail&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tutanota.com/" target="_blank" rel="noopener"
+>Tutanota&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="alias-de-e-mail">Alias de e-mail
+&lt;/h4>&lt;p>Uma prática recomendada é usar um alias de e-mail para se inscrever em serviços online sem comprometer seu e-mail principal. Isso ajuda a proteger sua privacidade e a evitar o recebimento de spam. Pode ser simplesmente adicionar um ponto ou um &amp;ldquo;+&amp;rdquo;, por exemplo &lt;code>joao.silva+site.com@email.com&lt;/code> ou utilizar serviços de alias de e-mail que, como:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://simplelogin.io/" target="_blank" rel="noopener"
+>SimpleLogin&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://relay.firefox.com/" target="_blank" rel="noopener"
+>Firefox Relay&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.guerrillamail.com/" target="_blank" rel="noopener"
+>Guerrilla Mail&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Isso irá criar um e-mail alternativo ou temporário que redireciona para seu e-mail principal, permitindo que você mantenha seu e-mail real privado. Quando você não quiser mais receber e-mails de um serviço específico, ou caso ele vaze, você pode simplesmente excluir o alias sem afetar seu e-mail principal, evitando que vocẽ receba spam ou que seus dados sejam expostos.&lt;/p>
+&lt;h3 id="use-um-mecanismo-de-busca-seguro">Use um mecanismo de busca seguro
+&lt;/h3>&lt;p>Os mecanismos de busca convencionais, como Google e Bing, coletam dados dos usuários para direcionar anúncios e melhorar seus algoritmos. Considere usar mecanismos de busca que priorizam a privacidade e não rastreiam suas atividades online. Algumas opções incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://duckduckgo.com/" target="_blank" rel="noopener"
+>DuckDuckGo&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://search.brave.com/" target="_blank" rel="noopener"
+>Brave Search&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-serviços-de-armazenamento-em-nuvem-seguros">Use serviços de armazenamento em nuvem seguros
+&lt;/h3>&lt;p>Novamente, toda vez que você armazena dados em serviços de armazenamento em nuvem, como Google Drive, Dropbox e OneDrive, você está colocando suas informações em risco. Esses serviços podem coletar dados e compartilhar informações com terceiros. Considere usar serviços de armazenamento em nuvem com criptografia de ponta a ponta e políticas de privacidade mais rigorosas. Algumas opções incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://tresorit.com/" target="_blank" rel="noopener"
+>Tresorit&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.pcloud.com/" target="_blank" rel="noopener"
+>pCloud&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mega.io" target="_blank" rel="noopener"
+>Mega&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Caso seja impossível evitar o uso de serviços de armazenamento em nuvem convencionais, considere usar ferramentas de criptografia para proteger seus dados antes de enviá-los para a nuvem, isso irá garantir que mesmo que os dados sejam acessados por terceiros, eles estarão criptografados e ilegíveis. Algumas opções de ferramentas de criptografia incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://cryptomator.org/" target="_blank" rel="noopener"
+>Cryptomator&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.veracrypt.fr/en/Home.html" target="_blank" rel="noopener"
+>VeraCrypt&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-serviços-de-mensagens-seguras">Use serviços de mensagens seguras
+&lt;/h3>&lt;p>Apesar de na aparência o WhatsApp e o Telegram serem seguros, eles não são. O WhatsApp é de propriedade da Meta, que coleta dados dos usuários para direcionar anúncios. O Telegram, por sua vez, tem um histórico de vazamentos de dados e não oferece criptografia de ponta a ponta por padrão. Considere usar serviços de mensagens com criptografia de ponta a ponta. Algumas opções incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://signal.org/" target="_blank" rel="noopener"
+>Signal&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wire.com/" target="_blank" rel="noopener"
+>Wire&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Para deixar o Telegram mais seguro, considere usar chats secretos, que oferecem criptografia de ponta a ponta.&lt;/p>
+&lt;h3 id="use-um-firewall">Use um firewall
+&lt;/h3>&lt;p>Um firewall ajuda a monitorar e controlar o tráfego de rede, bloqueando conexões indesejadas e protegendo seu dispositivo contra ameaças externas. Muitos sistemas operacionais já vêm com firewalls embutidos, mas você também pode considerar o uso de firewalls de terceiros para maior proteção.&lt;/p>
+&lt;h3 id="mantenha-seu-software-atualizado">Mantenha seu software atualizado
+&lt;/h3>&lt;p>Mantenha seu sistema operacional, aplicativos e dispositivos atualizados com as últimas correções de segurança. As atualizações frequentemente incluem patches para vulnerabilidades conhecidas que podem ser exploradas por hackers.&lt;/p>
+&lt;h3 id="desative-o-bluetooth-e-wi-fi-quando-não-estiver-em-uso">Desative o Bluetooth e Wi-Fi quando não estiver em uso
+&lt;/h3>&lt;p>Desative o Bluetooth e o Wi-Fi quando não estiver usando, especialmente em locais públicos. Isso ajuda a evitar conexões indesejadas e possíveis ataques de hackers.&lt;/p>
+&lt;h3 id="redirecione-o-tráfego-dns">Redirecione o tráfego DNS
+&lt;/h3>&lt;p>Use serviços de DNS que priorizam a privacidade e a segurança, como o &lt;a class="link" href="https://cloudflare.com/" target="_blank" rel="noopener"
+>Cloudflare&lt;/a> e &lt;a class="link" href="https://mullvad.net/en/" target="_blank" rel="noopener"
+>Mullvad&lt;/a> DNS. Esses serviços ajudam a proteger sua privacidade e segurança, evitando que seu provedor de internet rastreie suas atividades online.&lt;/p>
+&lt;blockquote>
+&lt;p>Instruções para redirecionar o tráfego DNS podem ser encontradas no site da &lt;a class="link" href="https://mullvad.net/pt/help/dns-over-https-and-dns-over-tls" target="_blank" rel="noopener"
+>Mullvad&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Estamos trabalhando em uma &lt;a class="link" href="https://infoguerrilla.github.io/p/dns-sobre-https" >tradução para o português&lt;/a> dessa página, mas por enquanto, você pode usar o tradutor do Google para traduzir a página.&lt;/p>&lt;/blockquote>
+&lt;h3 id="outras-medidas-importantes">Outras medidas importantes
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Desative o rastreamento de localização&lt;/strong>: Desative o rastreamento de localização em dispositivos móveis e aplicativos, a menos que seja absolutamente necessário.&lt;/li>
+&lt;li>Algumas VPNs oferecem a opção de substituir sua localização de GPS pela localização da VPN, o que pode ajudar a proteger sua privacidade.&lt;/li>
+&lt;li>&lt;strong>Cuidado com o que compartilha&lt;/strong>: Pense duas vezes antes de compartilhar informações pessoais em redes sociais e aplicativos. Lembre-se de que uma vez que algo é compartilhado, pode ser difícil removê-lo completamente.&lt;/li>
+&lt;/ul>
+&lt;h2 id="conclusão">Conclusão
+&lt;/h2>&lt;p>Quanto mais privado você estiver, mais inconveniente será para você. Portanto, é importante encontrar um equilíbrio entre privacidade e conveniência. Simplesmente você saber do que foi dito acima já é um grande passo na conscientização sobre o assunto. É importante sabermos que nossos dados estão sendo coletados e vendidos para empresas de publicidade, ao mesmo tempo que é importante sabermos que existem formas de mitigar isso.&lt;/p>
+&lt;p>Para saber mais sobre tudo isso e se aprofundar nessa toca do coelho, recomendo os seguintes sites:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.privacytools.io/" target="_blank" rel="noopener"
+>PrivacyTools&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://alternativeto.net/" target="_blank" rel="noopener"
+>Alternatives&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://techlore.tech/" target="_blank" rel="noopener"
+>Techlore&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://restoreprivacy.com/" target="_blank" rel="noopener"
+>restoreprivacy.com&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

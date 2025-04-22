@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Info_Guerrilla</title><link>https://infoguerrilla.github.io/post/</link><description>Recent content in Posts on Info_Guerrilla</description><generator>Hugo -- gohugo.io</generator><language>pt-br</language><lastBuildDate>Mon, 21 Apr 2025 22:11:31 +0000</lastBuildDate><atom:link href="https://infoguerrilla.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Software Livre, Open source, Privacidade, Segurança</title><link>https://infoguerrilla.github.io/p/software-livre-open-source-privacidade-seguran%C3%A7a/</link><pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate><guid>https://infoguerrilla.github.io/p/software-livre-open-source-privacidade-seguran%C3%A7a/</guid><description>&lt;img src="https://infoguerrilla.github.io/p/software-livre-open-source-privacidade-seguran%C3%A7a/image.png" alt="Featured image of post Software Livre, Open source, Privacidade, Segurança" />&lt;h2 id="introdução">Introdução
+&lt;/h2>&lt;p>Nos últimos anos, a privacidade online tornou-se um tema cada vez mais relevante, especialmente para ativistas e militantes políticos. A crescente vigilância estatal e corporativa tem levantado preocupações sobre a segurança e a privacidade dos dados pessoais. Neste contexto, o uso de software livre e de código aberto surge como uma alternativa viável para proteger a privacidade e garantir a segurança dos usuários.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>O que é software livre e open source?&lt;/strong>&lt;br>
+O &lt;a class="link" href="https://pt.wikipedia.org/wiki/Software_livre" target="_blank" rel="noopener"
+>software livre&lt;/a> e de &lt;a class="link" href="https://pt.wikipedia.org/wiki/Software_de_c%C3%B3digo_aberto" target="_blank" rel="noopener"
+>código aberto&lt;/a> é um tipo de software que permite aos usuários acessar, modificar e distribuir o código-fonte. Isso significa que os usuários têm controle total sobre o software que utilizam, podendo adaptá-lo às suas necessidades e corrigir falhas de segurança. Além disso, o FOSS (&lt;em>Free and Open Source Software&lt;/em>) é frequentemente desenvolvido de forma colaborativa, o que resulta em uma comunidade ativa e engajada.&lt;/p>&lt;/blockquote>
+&lt;h2 id="o-que-fazer">O que fazer?
+&lt;/h2>&lt;p>Sabemos que a internet é uma ferramenta poderosa para a organização política e social. No entanto, também sabemos que ela pode ser usada para fins de vigilância e controle social. O uso de software livre e de código aberto pode ajudar a proteger a privacidade e a segurança dos usuários, permitindo que eles tenham mais controle sobre seus dados pessoais.&lt;/p>
+&lt;p>Este artigo defende, a partir de uma perspectiva da esquerda radical, a urgência de a militância progressista se mobilizar pela proteção da privacidade online. Explicaremos como a vigilância estatal e corporativa mina a autonomia política, enfraquece a organização popular e reproduz dinâmicas de poder que a esquerda combate. Em seguida, apresentaremos as principais ferramentas de software livre e open source — desde mensageiros criptografados até sistemas operacionais seguros — como instrumentos práticos de resistência, controle coletivo dos meios de comunicação e fortalecimento das lutas emancipatórias.&lt;/p>
+&lt;h2 id="por-que-a-esquerda-deve-se-preocupar-com-a-privacidade-online">Por que a esquerda deve se preocupar com a privacidade online
+&lt;/h2>&lt;h2 id="contexto-histórico-e-político">Contexto histórico e político
+&lt;/h2>&lt;p>A privacidade é elemento fundamental da dignidade humana e da autodeterminação, garantido pela Declaração Universal dos Direitos Humanos (Art. 12), pois separa o espaço político do espaço pessoal, fortalecendo a liberdade de expressão e de associação (NED, 2024).&lt;/p>
+&lt;p>Todavia, historicamente a tradição marxista-leninista e mesmo boa parte da esquerda clássica consideravam o conceito de privacidade como expressão de individualismo burguês, ignorando seu papel para a organização e a dissidência política (Russel, 2015).&lt;/p>
+&lt;h2 id="ameaças-atuais-vigilância-estatal-e-corporativa">Ameaças atuais: vigilância estatal e corporativa
+&lt;/h2>&lt;p>Ativistas progressistas estão cada vez mais em risco de perseguição, seja por ferramentas governamentais de vigilância de massa reveladas por Snowden (Greenwald, 2014), seja pela coleta de dados por grandes empresas de tecnologia (Sullivan, 2015).&lt;/p>
+&lt;p>Pesquisa recente com ativistas indica que 84% deles reconhecem a importância das redes sociais, mas 64% têm preocupações sobre privacidade e vigilância, enquanto 40% duvidam da credibilidade da informação online — reflexo de um ambiente hostil à resistência política (Rosenbloom, 2022).&lt;/p>
+&lt;p>Além disso, um estudo de janeiro de 2025 destaca como a coleta granular de localização está ligada diretamente à segurança física dos ativistas, reforçando a necessidade de ferramentas que minimizem rastreamento e presença de metadados (Eichenmüller et.al, 2025).&lt;/p>
+&lt;h2 id="conclusão-privacidade-como-ferramenta-de-luta">Conclusão: privacidade como ferramenta de luta
+&lt;/h2>&lt;p>Para a esquerda radical, a adoção de software livre e open source é inevitável: só assim podemos garantir que nossos meios de comunicação e organização estejam livres das garras do capital e do Estado repressivo. A privacidade online fortalece a autonomia coletiva, protege lideranças e militantes, e constrói redes solidárias sem intermediários exploradores. Fortalecer e difundir essas ferramentas é parte indissociável da construção de uma sociedade emancipada, onde o poder esteja verdadeiramente nas mãos do povo.&lt;/p>
+&lt;p>Para saber mais sobre como proteger sua privacidade online, consulte nosso guia completo sobre &lt;a class="link" href="https://infoguerrilla.github.io/p/como-ficar-mais-seguro-e-privado-na-internet/" >privacidade e segurança online&lt;/a>.&lt;/p>
+&lt;h2 id="melhores-aplicativos">Melhores aplicativos
+&lt;/h2>&lt;p>Algumas recomendações de aplicativos de software livre e de código aberto para segurança e privacidade. Considere ela como um ponto de partida.&lt;/p>
+&lt;p>&lt;a class="link" href="https://infoguerrilla.github.io/p/melhores-aplicativos-de-software-livre-e-de-c%c3%b3digo-aberto" >Lista Completa&lt;/a>&lt;/p>
+&lt;h2 id="referências">Referências
+&lt;/h2>&lt;p>GREENWALD, Glenn. No Place to Hide: Edward Snowden, the NSA, and the U.S. Surveillance State. New York: Metropolitan Books, 2014.&lt;/p>
+&lt;p>NED (NATIONAL ENDOWMENT FOR DEMOCRACY). Big Question: How Does Digital Privacy Matter for Democracy and its Advocates? International Forum for Democratic Studies. Disponível em: &lt;a class="link" href="https://www.ned.org/big-question-how-does-digital-privacy-matter-for-democracy-and-its-advocates/" target="_blank" rel="noopener"
+>https://www.ned.org/big-question-how-does-digital-privacy-matter-for-democracy-and-its-advocates/&lt;/a>. Acesso em: 19 abr. 2025.&lt;/p>
+&lt;p>RUSSELL, Corvin. Privacy and Democracy: What Geeks Understand that the Left Doesn’t. Canadian Dimension, 15 maio 2015. Disponível em: &lt;a class="link" href="https://canadiandimension.com/articles/view/privacy-and-democracy-what-geeks-understand-that-the-left-doesnt" target="_blank" rel="noopener"
+>https://canadiandimension.com/articles/view/privacy-and-democracy-what-geeks-understand-that-the-left-doesnt&lt;/a>. Acesso em: 19 abr. 2025.&lt;/p>
+&lt;p>PRIVACY INTERNATIONAL. Examples of Abuse. [s.l.]: Privacy International, s.d. Disponível em: &lt;a class="link" href="https://privacyinternational.org/examples" target="_blank" rel="noopener"
+>https://privacyinternational.org/examples&lt;/a>. Acesso em: 19 abr. 2025.&lt;/p>
+&lt;p>SULLIVAN, John. Free software, privacy, and activism. Free Software Foundation, 08 jul. 2015. Disponível em: &lt;a class="link" href="https://www.fsf.org/bulletin/2015/spring/free-software-privacy-activism" target="_blank" rel="noopener"
+>https://www.fsf.org/bulletin/2015/spring/free-software-privacy-activism&lt;/a>. Acesso em: 19 abr. 2025.&lt;/p>
+&lt;p>ROSENBLOOM, Leah Namisa. Activists Want Better, Safer Technology. arXiv:2209.01273 [cs.HC], 2 set. 2022. Disponível em: &lt;a class="link" href="https://arxiv.org/abs/2209.01273" target="_blank" rel="noopener"
+>https://arxiv.org/abs/2209.01273&lt;/a>. Acesso em: 19 abr. 2025.&lt;/p>
+&lt;p>EICHENMÜLLER, Christian; KUHN, Lisa; BENENSON, Zinaida. “My Whereabouts, My Location, It&amp;rsquo;s Directly Linked to My Physical Security”: An Exploratory Qualitative Study of Location-Dependent Security and Privacy Perceptions among Activist Tech Users. arXiv:2501.16885 [cs.HC], 28 jan. 2025. Disponível em: &lt;a class="link" href="https://arxiv.org/abs/2501.16885" target="_blank" rel="noopener"
+>https://arxiv.org/abs/2501.16885&lt;/a>. Acesso em: 19 abr. 2025.&lt;/p></description></item><item><title>Guia: Como ficar mais seguro e privado na internet</title><link>https://infoguerrilla.github.io/p/como-ficar-mais-seguro-e-privado-na-internet/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>https://infoguerrilla.github.io/p/como-ficar-mais-seguro-e-privado-na-internet/</guid><description>&lt;img src="https://infoguerrilla.github.io/p/como-ficar-mais-seguro-e-privado-na-internet/image.png" alt="Featured image of post Guia: Como ficar mais seguro e privado na internet" />&lt;h2 id="introdução">Introdução
+&lt;/h2>&lt;p>A privacidade e a segurança na internet são temas cada vez mais relevantes no mundo digital atual. Com o aumento do uso de dispositivos conectados e a coleta massiva de dados pessoais, é fundamental adotar práticas que garantam a proteção das informações e a segurança online.&lt;/p>
+&lt;p>O que tentamos fazer aqui é mitigar o máximo possível os riscos associados à coleta de dados pessoais e à exposição online. Embora não seja possível garantir 100% de segurança, é possível adotar medidas que reduzam significativamente os riscos.&lt;/p>
+&lt;h2 id="o-que-são-dados-pessoais">O que são dados pessoais?
+&lt;/h2>&lt;h2 id="como-acontece-a-coleta-de-dados">Como acontece a coleta de dados?
+&lt;/h2>&lt;p>A coleta de dados pessoais na internet ocorre de diversas formas, incluindo:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Cookies&lt;/strong>: pequenos arquivos armazenados no navegador que registram informações sobre a navegação do usuário.&lt;/li>
+&lt;li>&lt;strong>Rastreamento de IP&lt;/strong>: os endereços IP podem ser usados para identificar a localização geográfica do usuário.&lt;/li>
+&lt;li>&lt;strong>Redes sociais&lt;/strong>: plataformas como Facebook e Instagram coletam dados dos usuários para personalizar anúncios e conteúdos.&lt;/li>
+&lt;li>&lt;strong>Aplicativos&lt;/strong>: muitos aplicativos solicitam permissões para acessar dados pessoais, como contatos, fotos e localização.&lt;/li>
+&lt;li>&lt;strong>Serviços de busca&lt;/strong>: mecanismos de busca como Google e Bing registram as consultas dos usuários para melhorar os resultados e direcionar anúncios.&lt;/li>
+&lt;li>&lt;strong>E-mails&lt;/strong>: provedores de e-mail podem analisar o conteúdo das mensagens para oferecer serviços personalizados.&lt;/li>
+&lt;li>&lt;strong>Dispositivos conectados&lt;/strong>: dispositivos como smart TVs, assistentes virtuais e câmeras de segurança podem coletar dados sobre o comportamento do usuário.&lt;/li>
+&lt;li>&lt;strong>Serviços de localização&lt;/strong>: aplicativos e serviços que utilizam GPS podem rastrear a localização do usuário em tempo real.&lt;/li>
+&lt;/ul>
+&lt;h2 id="práticas-recomendadas-para-aumentar-a-privacidade-e-segurança">Práticas recomendadas para aumentar a privacidade e segurança
+&lt;/h2>&lt;h3 id="use-senhas-fortes-e-únicas">Use senhas fortes e únicas
+&lt;/h3>&lt;p>A primeira linha de defesa contra invasões e vazamentos de dados é uma senha forte. Evite usar informações pessoais, como datas de nascimento ou nomes de familiares.&lt;/p>
+&lt;p>Utilize senhas longas, complexas e &lt;strong>diferentes&lt;/strong> para cada conta. Considere o uso de um &lt;a class="link" href="#3-use-um-gerenciador-de-senhas" >gerenciador de senhas&lt;/a> para armazená-las de forma segura.&lt;/p>
+&lt;p>Exemplo de senha forte: &lt;code>kJd9#8@!3LqWp9Jkn2!&lt;/code>&lt;/p>
+&lt;h3 id="ative-a-autenticação-em-dois-fatores-2fa">Ative a autenticação em dois fatores (2FA)
+&lt;/h3>&lt;p>Adicione uma camada extra de segurança às suas contas, exigindo um código adicional enviado para o seu celular ou e-mail.&lt;/p>
+&lt;p>Indicação de aplicativos de autenticação:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://getaegis.app/" target="_blank" rel="noopener"
+>Aegis&lt;/a> (Android)&lt;/li>
+&lt;li>&lt;a class="link" href="https://authy.com/" target="_blank" rel="noopener"
+>Authy&lt;/a> (iOS, Android)&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/ente-io/ente/blob/main/auth/README.md" target="_blank" rel="noopener"
+>Ente Auth&lt;/a> (iOS, Android, Web)&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-um-gerenciador-de-senhas">Use um gerenciador de senhas
+&lt;/h3>&lt;p>Um gerenciador de senhas armazena suas senhas de forma segura e pode gerar senhas fortes para você. Algumas opções populares incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://bitwarden.com/" target="_blank" rel="noopener"
+>Bitwarden&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://keepass.info/" target="_blank" rel="noopener"
+>KeePass&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-um-navegador-seguro">Use um navegador seguro
+&lt;/h3>&lt;p>Escolha um navegador que priorize a privacidade e a segurança. Os navegadores são a porta de entrada para a maioria das ameaças online. Navegadores como Chrome, Edge, Opera e Safari não são recomendados, pois seus dados são coletados e vendidos para empresas de publicidade. Considere usar navegadores como:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://brave.com" target="_blank" rel="noopener"
+>Brave&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mozilla.org" target="_blank" rel="noopener"
+>Firefox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mullvad.net/en/download/browser" target="_blank" rel="noopener"
+>Mullvad Browser&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-uma-vpn">Use uma VPN
+&lt;/h3>&lt;p>Uma VPN (Rede Privada Virtual) criptografa sua conexão à internet e oculta seu endereço IP, tornando mais difícil para terceiros rastrearem suas atividades online. Lembre-se de escolher uma VPN confiável que não registre seus dados. As VPNs gratuitas, em raras exceções, não são recomendadas, pois podem coletar e vender seus dados. Uma frase bem famosa sobre isso é: &amp;ldquo;se é gratuito, quem paga pelo serviço são seus dados&amp;rdquo;. Algumas opções de VPNs confiáveis incluem:&lt;/p>
+&lt;h4 id="pagas">Pagas
+&lt;/h4>&lt;ul>
+&lt;li>&lt;a class="link" href="https://mullvad.net/en/" target="_blank" rel="noopener"
+>Mullvad&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://protonvpn.com/" target="_blank" rel="noopener"
+>Proton VPN&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://windscribe.com/" target="_blank" rel="noopener"
+>Windscribe&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="gratuitas">Gratuitas
+&lt;/h4>&lt;ul>
+&lt;li>&lt;a class="link" href="https://protonvpn.com/" target="_blank" rel="noopener"
+>Proton VPN&lt;/a> - Gratuita com limitações, mas uma boa opção&lt;/li>
+&lt;li>&lt;a class="link" href="https://riseup.net/en/vpn" target="_blank" rel="noopener"
+>Riseup VPN&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://windscribe.com/" target="_blank" rel="noopener"
+>Windscribe&lt;/a> - Vem com 10GB de dados mensais gratuitos, o que é bom para quem não usa muito a internet&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-um-bloqueador-de-anúncios">Use um bloqueador de anúncios
+&lt;/h3>&lt;p>Os anúncios podem ser invasivos e muitas vezes rastreiam suas atividades online. Use um bloqueador de anúncios para melhorar sua experiência de navegação e proteger sua privacidade. Com a nova medida do Google de bloquear os bloqueadores de anúncios, é importante usar um navegador que não seja o Chrome. O Brave, por exemplo, apesar de ser baseado no Chrome, não tem essa limitação. Além disso, o Brave já vem com um bloqueador de anúncios embutido.&lt;/p>
+&lt;p>Algumas opções de bloqueadores de anúncios incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/gorhill/uBlock" target="_blank" rel="noopener"
+>uBlock Origin&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.eff.org/privacybadger" target="_blank" rel="noopener"
+>Privacy Badger&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-um-sistema-operacional-seguro">Use um sistema operacional seguro
+&lt;/h3>&lt;p>Importante levar em consideração que empresas como Microsoft coletam massivamente os dados de seus usuários. O Windows Recall, por exemplo, vem sendo criticado arduamente por tirar uma screenshot a cada determinado período de tempo. Diversas condutas invasivas como, obrigar o usuário a criar uma conta Microsoft, coletar dados de navegação e de uso do sistema operacional, entre outros. Portanto, considere usar sistemas operacionais que priorizam a privacidade e a segurança, baseados no Linux, como:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.debian.org/" target="_blank" rel="noopener"
+>Debian&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://getfedora.org/" target="_blank" rel="noopener"
+>Fedora&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://linuxmint.com/" target="_blank" rel="noopener"
+>Linux Mint&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://pop.system76.com/" target="_blank" rel="noopener"
+>Pop!_OS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zoringroup.com/zorin-os/" target="_blank" rel="noopener"
+>Zorin OS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Caso você não tenha como, ou não queira, usar um sistema operacional baseado em Linux, considere usar o ferramentas que ajudam a tornar o Windows mais privado e seguro, como:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/christitustech/WinUtil" target="_blank" rel="noopener"
+>WinUtil&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="mitigar-o-rastreamento-em-aplicativos-de-redes-sociais">Mitigar o rastreamento em aplicativos de redes sociais
+&lt;/h3>&lt;p>A principal receita das redes sociais vem da venda de dados pessoais e do rastreamento do comportamento dos usuários para a venda de anúncios extremamente personalizados. Como sabemos que muitas vezes não é possível evitar completamente o uso das redes sociais, é importante mitigar o rastreamento. Algumas dicas incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Desativar anúncios personalizados&lt;/strong>: A maioria das redes sociais oferece opções para desativar anúncios personalizados. Verifique as configurações de privacidade e segurança da sua conta.&lt;/li>
+&lt;li>&lt;strong>Limitar o compartilhamento de informações&lt;/strong>: Revise as configurações de privacidade e limite o compartilhamento de informações pessoais. Evite compartilhar dados sensíveis, como localização, telefone e endereço.&lt;/li>
+&lt;li>&lt;strong>Use as redes sociais diretamente no navegador, inclusive no celular&lt;/strong>: Use navegadores que priorizam a privacidade e instale extensões que bloqueiam rastreadores e anúncios. Dessa maneira você irá evitar a coleta de dados por meio de aplicativos, além retirar os anúncios.&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-serviços-de-e-mail-seguros">Use serviços de e-mail seguros
+&lt;/h3>&lt;p>Os provedores de e-mail convencionais, como Gmail, Yahoo, Outlook, coletam dados dos usuários para direcionar anúncios e treinar algoritmos de inteligência artificial. Além disso, eles podem compartilhar informações com terceiros. Considere usar provedores de e-mail com criptografia de ponta a ponta e políticas de privacidade mais rigorosas. Algumas opções incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://proton.me/mail" target="_blank" rel="noopener"
+>ProtonMail&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tutanota.com/" target="_blank" rel="noopener"
+>Tutanota&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="alias-de-e-mail">Alias de e-mail
+&lt;/h4>&lt;p>Uma prática recomendada é usar um alias de e-mail para se inscrever em serviços online sem comprometer seu e-mail principal. Isso ajuda a proteger sua privacidade e a evitar o recebimento de spam. Pode ser simplesmente adicionar um ponto ou um &amp;ldquo;+&amp;rdquo;, por exemplo &lt;code>joao.silva+site.com@email.com&lt;/code> ou utilizar serviços de alias de e-mail que, como:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://simplelogin.io/" target="_blank" rel="noopener"
+>SimpleLogin&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://relay.firefox.com/" target="_blank" rel="noopener"
+>Firefox Relay&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.guerrillamail.com/" target="_blank" rel="noopener"
+>Guerrilla Mail&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Isso irá criar um e-mail alternativo ou temporário que redireciona para seu e-mail principal, permitindo que você mantenha seu e-mail real privado. Quando você não quiser mais receber e-mails de um serviço específico, ou caso ele vaze, você pode simplesmente excluir o alias sem afetar seu e-mail principal, evitando que vocẽ receba spam ou que seus dados sejam expostos.&lt;/p>
+&lt;h3 id="use-um-mecanismo-de-busca-seguro">Use um mecanismo de busca seguro
+&lt;/h3>&lt;p>Os mecanismos de busca convencionais, como Google e Bing, coletam dados dos usuários para direcionar anúncios e melhorar seus algoritmos. Considere usar mecanismos de busca que priorizam a privacidade e não rastreiam suas atividades online. Algumas opções incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://duckduckgo.com/" target="_blank" rel="noopener"
+>DuckDuckGo&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://search.brave.com/" target="_blank" rel="noopener"
+>Brave Search&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-serviços-de-armazenamento-em-nuvem-seguros">Use serviços de armazenamento em nuvem seguros
+&lt;/h3>&lt;p>Novamente, toda vez que você armazena dados em serviços de armazenamento em nuvem, como Google Drive, Dropbox e OneDrive, você está colocando suas informações em risco. Esses serviços podem coletar dados e compartilhar informações com terceiros. Considere usar serviços de armazenamento em nuvem com criptografia de ponta a ponta e políticas de privacidade mais rigorosas. Algumas opções incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://tresorit.com/" target="_blank" rel="noopener"
+>Tresorit&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.pcloud.com/" target="_blank" rel="noopener"
+>pCloud&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mega.io" target="_blank" rel="noopener"
+>Mega&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Caso seja impossível evitar o uso de serviços de armazenamento em nuvem convencionais, considere usar ferramentas de criptografia para proteger seus dados antes de enviá-los para a nuvem, isso irá garantir que mesmo que os dados sejam acessados por terceiros, eles estarão criptografados e ilegíveis. Algumas opções de ferramentas de criptografia incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://cryptomator.org/" target="_blank" rel="noopener"
+>Cryptomator&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.veracrypt.fr/en/Home.html" target="_blank" rel="noopener"
+>VeraCrypt&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-serviços-de-mensagens-seguras">Use serviços de mensagens seguras
+&lt;/h3>&lt;p>Apesar de na aparência o WhatsApp e o Telegram serem seguros, eles não são. O WhatsApp é de propriedade da Meta, que coleta dados dos usuários para direcionar anúncios. O Telegram, por sua vez, tem um histórico de vazamentos de dados e não oferece criptografia de ponta a ponta por padrão. Considere usar serviços de mensagens com criptografia de ponta a ponta. Algumas opções incluem:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://signal.org/" target="_blank" rel="noopener"
+>Signal&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wire.com/" target="_blank" rel="noopener"
+>Wire&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Para deixar o Telegram mais seguro, considere usar chats secretos, que oferecem criptografia de ponta a ponta.&lt;/p>
+&lt;h3 id="use-um-firewall">Use um firewall
+&lt;/h3>&lt;p>Um firewall ajuda a monitorar e controlar o tráfego de rede, bloqueando conexões indesejadas e protegendo seu dispositivo contra ameaças externas. Muitos sistemas operacionais já vêm com firewalls embutidos, mas você também pode considerar o uso de firewalls de terceiros para maior proteção.&lt;/p>
+&lt;h3 id="mantenha-seu-software-atualizado">Mantenha seu software atualizado
+&lt;/h3>&lt;p>Mantenha seu sistema operacional, aplicativos e dispositivos atualizados com as últimas correções de segurança. As atualizações frequentemente incluem patches para vulnerabilidades conhecidas que podem ser exploradas por hackers.&lt;/p>
+&lt;h3 id="desative-o-bluetooth-e-wi-fi-quando-não-estiver-em-uso">Desative o Bluetooth e Wi-Fi quando não estiver em uso
+&lt;/h3>&lt;p>Desative o Bluetooth e o Wi-Fi quando não estiver usando, especialmente em locais públicos. Isso ajuda a evitar conexões indesejadas e possíveis ataques de hackers.&lt;/p>
+&lt;h3 id="redirecione-o-tráfego-dns">Redirecione o tráfego DNS
+&lt;/h3>&lt;p>Use serviços de DNS que priorizam a privacidade e a segurança, como o &lt;a class="link" href="https://cloudflare.com/" target="_blank" rel="noopener"
+>Cloudflare&lt;/a> e &lt;a class="link" href="https://mullvad.net/en/" target="_blank" rel="noopener"
+>Mullvad&lt;/a> DNS. Esses serviços ajudam a proteger sua privacidade e segurança, evitando que seu provedor de internet rastreie suas atividades online.&lt;/p>
+&lt;blockquote>
+&lt;p>Instruções para redirecionar o tráfego DNS podem ser encontradas no site da &lt;a class="link" href="https://mullvad.net/pt/help/dns-over-https-and-dns-over-tls" target="_blank" rel="noopener"
+>Mullvad&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Estamos trabalhando em uma &lt;a class="link" href="https://infoguerrilla.github.io/p/dns-sobre-https" >tradução para o português&lt;/a> dessa página, mas por enquanto, você pode usar o tradutor do Google para traduzir a página.&lt;/p>&lt;/blockquote>
+&lt;h3 id="outras-medidas-importantes">Outras medidas importantes
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Desative o rastreamento de localização&lt;/strong>: Desative o rastreamento de localização em dispositivos móveis e aplicativos, a menos que seja absolutamente necessário.&lt;/li>
+&lt;li>Algumas VPNs oferecem a opção de substituir sua localização de GPS pela localização da VPN, o que pode ajudar a proteger sua privacidade.&lt;/li>
+&lt;li>&lt;strong>Cuidado com o que compartilha&lt;/strong>: Pense duas vezes antes de compartilhar informações pessoais em redes sociais e aplicativos. Lembre-se de que uma vez que algo é compartilhado, pode ser difícil removê-lo completamente.&lt;/li>
+&lt;/ul>
+&lt;h2 id="conclusão">Conclusão
+&lt;/h2>&lt;p>Quanto mais privado você estiver, mais inconveniente será para você. Portanto, é importante encontrar um equilíbrio entre privacidade e conveniência. Simplesmente você saber do que foi dito acima já é um grande passo na conscientização sobre o assunto. É importante sabermos que nossos dados estão sendo coletados e vendidos para empresas de publicidade, ao mesmo tempo que é importante sabermos que existem formas de mitigar isso.&lt;/p>
+&lt;p>Para saber mais sobre tudo isso e se aprofundar nessa toca do coelho, recomendo os seguintes sites:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.privacytools.io/" target="_blank" rel="noopener"
+>PrivacyTools&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://alternativeto.net/" target="_blank" rel="noopener"
+>Alternatives&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://techlore.tech/" target="_blank" rel="noopener"
+>Techlore&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://restoreprivacy.com/" target="_blank" rel="noopener"
+>restoreprivacy.com&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Melhores aplicativos de Software Livre e de Código Aberto</title><link>https://infoguerrilla.github.io/p/melhores-aplicativos-de-software-livre-e-de-c%C3%B3digo-aberto/</link><pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate><guid>https://infoguerrilla.github.io/p/melhores-aplicativos-de-software-livre-e-de-c%C3%B3digo-aberto/</guid><description>&lt;img src="https://infoguerrilla.github.io/p/melhores-aplicativos-de-software-livre-e-de-c%C3%B3digo-aberto/image.png" alt="Featured image of post Melhores aplicativos de Software Livre e de Código Aberto" />&lt;p>Esta é uma lista das melhores alternativas de software livre e de código aberto para segurança e privacidade. A lista está dividida em categorias e subcategorias. Os softwares estão listados em ordem alfabética dentro de cada categoria. A lista inclui softwares para todos os principais sistemas operacionais (Windows, macOS, Linux, Android, iOS) e é atualizada regularmente.&lt;/p>
+&lt;p>Às vezes, também há softwares que não são de código aberto (NOS), mas eles são indicados como tal. Ser NOS não significa que o software seja ruim, mas ele é recomendado por razões de segurança e/ou privacidade.&lt;/p>
+&lt;p>Sinta-se à vontade para contribuir com a lista e discuti-la!&lt;/p>
+&lt;h2 id="ia">IA
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.nomic.ai/gpt4all" target="_blank" rel="noopener"
+>GPT4All&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://huggingface.co/chat/" target="_blank" rel="noopener"
+>HuggingChat&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ollama.com/" target="_blank" rel="noopener"
+>Llama AI&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/zylon-ai/private-gpt" target="_blank" rel="noopener"
+>Private GPT&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/oobabooga/text-generation-webui/" target="_blank" rel="noopener"
+>Text Generation WebUI&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="autenticação">Autenticação
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://2fas.com/" target="_blank" rel="noopener"
+>2FAS Auth&lt;/a> - iOS / Android ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://getaegis.app/" target="_blank" rel="noopener"
+>Aegis&lt;/a> - Android&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/andOTP/andOTP" target="_blank" rel="noopener"
+>AndOPT&lt;/a> - Android&lt;/li>
+&lt;li>&lt;a class="link" href="https://authy.com/" target="_blank" rel="noopener"
+>Authy&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://bitwarden.com/" target="_blank" rel="noopener"
+>Bitwarden&lt;/a> - Versão paga&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/ente-io/ente/blob/main/auth/README.md" target="_blank" rel="noopener"
+>Ente Auth&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/freeotp" target="_blank" rel="noopener"
+>FreeOPT&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://proton.me/pass" target="_blank" rel="noopener"
+>Proton Pass&lt;/a> - Versão paga&lt;/li>
+&lt;/ul>
+&lt;h2 id="navegadores">Navegadores
+&lt;/h2>&lt;h3 id="base-chromium">Base Chromium
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://brave.com" target="_blank" rel="noopener"
+>Brave&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://duckduckgo.com/" target="_blank" rel="noopener"
+>DuckDuckGo&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="firefox-e-base-firefox">Firefox e base Firefox
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://mozilla.org" target="_blank" rel="noopener"
+>Firefox&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://floorp.app/" target="_blank" rel="noopener"
+>Floorp&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://librewolf.net/" target="_blank" rel="noopener"
+>LibreWolf&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mullvad.net/en/download/browser" target="_blank" rel="noopener"
+>Mullvad Browser&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.torproject.org" target="_blank" rel="noopener"
+>Tor&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zen-browser.app/" target="_blank" rel="noopener"
+>Zen&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="calendário">Calendário
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/Etar-Group/Etar-Calendar" target="_blank" rel="noopener"
+>Etar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wiki.gnome.org/Apps/Calendar" target="_blank" rel="noopener"
+>Gnome Calendar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://apps.kde.org/kalendar/" target="_blank" rel="noopener"
+>Kalendar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.thunderbird.net/en-US/calendar/" target="_blank" rel="noopener"
+>Lightning Calendar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mailbox.org/en/" target="_blank" rel="noopener"
+>Mailbox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://nextcloud.com" target="_blank" rel="noopener"
+>Nextcloud Calendar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://posteo.de/en" target="_blank" rel="noopener"
+>Posteo&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://proton.me/calendar" target="_blank" rel="noopener"
+>Proton Calendar&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://tuta.com" target="_blank" rel="noopener"
+>Tuta&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="cloud-e-sincronização">Cloud e Sincronização
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://cryptomator.org/" target="_blank" rel="noopener"
+>Cryptomator&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://filen.io/" target="_blank" rel="noopener"
+>Filen&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://mega.io" target="_blank" rel="noopener"
+>Mega&lt;/a> - &lt;a class="link" href="https://mega.io/?aff=PcyK0CWBbwY" target="_blank" rel="noopener"
+>Ref&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://nextcloud.com" target="_blank" rel="noopener"
+>Nextcloud&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://owncloud.com/" target="_blank" rel="noopener"
+>Owncloud&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.pcloud.com/" target="_blank" rel="noopener"
+>pCloud&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://syncthing.net/" target="_blank" rel="noopener"
+>Syncthing&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="editores-de-código">Editores de Código
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://atom.io/" target="_blank" rel="noopener"
+>Atom&lt;/a> - Descontinuado&lt;/li>
+&lt;li>&lt;a class="link" href="https://codesandbox.io/" target="_blank" rel="noopener"
+>CodeSandbox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/pop-os/cosmic-edit" target="_blank" rel="noopener"
+>Cosmic&lt;/a> - TBA&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.eclipse.org/ide/" target="_blank" rel="noopener"
+>Eclipse IDE&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://expo.dev" target="_blank" rel="noopener"
+>Expo.dev&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://kate-editor.org/" target="_blank" rel="noopener"
+>Kate&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://neovim.io/" target="_blank" rel="noopener"
+>Neovim&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://pulsar-edit.dev/" target="_blank" rel="noopener"
+>Pulsar&lt;/a> - Fork do Atom&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener"
+>PyCharm&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.spyder-ide.org/" target="_blank" rel="noopener"
+>Spyder&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.vim.org/" target="_blank" rel="noopener"
+>Vim&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://vscodium.com/" target="_blank" rel="noopener"
+>VSCodium&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="dados-e-análise-de-dados">Dados e Análise de Dados
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="http://www.gnu.org/software/pspp/" target="_blank" rel="noopener"
+>GNU PSPP&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://jamovi.org/" target="_blank" rel="noopener"
+>jamovi&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://jasp-stats.org/" target="_blank" rel="noopener"
+>JASP&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://labplot.kde.org/" target="_blank" rel="noopener"
+>LabPlot&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://posit.co/products/open-source/rstudio/" target="_blank" rel="noopener"
+>RStudio&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.spyder-ide.org/" target="_blank" rel="noopener"
+>Spyder&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="estações-de-trabalho-de-áudio-digital">Estações de Trabalho de Áudio Digital
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://ardour.org/" target="_blank" rel="noopener"
+>Ardour&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.audacityteam.org/" target="_blank" rel="noopener"
+>Audacity&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://lmms.io/" target="_blank" rel="noopener"
+>LMMS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tenacityaudio.org/" target="_blank" rel="noopener"
+>Tenacity&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="e-mails">E-mails
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://mailbox.org/en/" target="_blank" rel="noopener"
+>Mailbox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://posteo.de/en" target="_blank" rel="noopener"
+>Posteo&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://proton.me" target="_blank" rel="noopener"
+>ProtonMail&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://riseup.net" target="_blank" rel="noopener"
+>RiseUp&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tutanota.com" target="_blank" rel="noopener"
+>Tuta&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="jogos">Jogos
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://usebottles.com/" target="_blank" rel="noopener"
+>Bottles&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://heroicgameslauncher.com/" target="_blank" rel="noopener"
+>Heroic Games Launcher&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/hydralauncher/hydra" target="_blank" rel="noopener"
+>HydraLauncher&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://lutris.net/" target="_blank" rel="noopener"
+>Lutris&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="editores-de-imagem">Editores de Imagem
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.darktable.org/" target="_blank" rel="noopener"
+>Darktable&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.gimp.org/" target="_blank" rel="noopener"
+>GIMP&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://inkscape.org/" target="_blank" rel="noopener"
+>Inkscape&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://krita.org/" target="_blank" rel="noopener"
+>Krita&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/Diolinux/PhotoGIMP" target="_blank" rel="noopener"
+>PhotoGIMP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="mapas">Mapas
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://osmand.net/" target="_blank" rel="noopener"
+>OsmAnd&lt;/a> - iOS / Android&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.openstreetmap.org" target="_blank" rel="noopener"
+>OpenStreetMap&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="servidores-de-mídia">Servidores de Mídia
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://jellyfin.org/" target="_blank" rel="noopener"
+>Jellyfin&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://kodi.tv/" target="_blank" rel="noopener"
+>Kodi&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.plex.tv/" target="_blank" rel="noopener"
+>Plex&lt;/a> - NOS ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.stremio.com/" target="_blank" rel="noopener"
+>Stremio&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.universalmediaserver.com/" target="_blank" rel="noopener"
+>Universal Media Server&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="mensagens">Mensagens
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://element.io/" target="_blank" rel="noopener"
+>Element&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://getsession.org/" target="_blank" rel="noopener"
+>Session&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://signal.org/" target="_blank" rel="noopener"
+>Signal&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://tox.chat/" target="_blank" rel="noopener"
+>Tox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wire.com" target="_blank" rel="noopener"
+>Wire&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="mapas-mentais">Mapas Mentais
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.diagrams.net/" target="_blank" rel="noopener"
+>diagrams.net&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://sourceforge.net/projects/freemind/" target="_blank" rel="noopener"
+>FreeMind&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.freeplane.org/" target="_blank" rel="noopener"
+>Freeplane&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.mindmaps.app/" target="_blank" rel="noopener"
+>MindApps&lt;/a> - Online&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/phase1geo/minder/" target="_blank" rel="noopener"
+>Minder&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/felixhayashi/TW5-TiddlyMap" target="_blank" rel="noopener"
+>TiddlyMap&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.insilmaril.de/vym/" target="_blank" rel="noopener"
+>vym&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="escritório">Escritório
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.openoffice.org/" target="_blank" rel="noopener"
+>Apache OpenOffice&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://calligra.org/" target="_blank" rel="noopener"
+>Caligra&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://cryptpad.fr/" target="_blank" rel="noopener"
+>Cryptpad&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://libreoffice.org" target="_blank" rel="noopener"
+>LibreOffice&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://onlyoffice.com/" target="_blank" rel="noopener"
+>OnlyOffice&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="sistemas-operacionais">Sistemas Operacionais
+&lt;/h2>&lt;h3 id="distribuições-linux-mais-amigáveis">Distribuições Linux mais amigáveis
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://getfedora.org/" target="_blank" rel="noopener"
+>Fedora&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://linuxmint.com/" target="_blank" rel="noopener"
+>Linux Mint&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://pop.system76.com/" target="_blank" rel="noopener"
+>Pop!_OS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zorinos.com/" target="_blank" rel="noopener"
+>Zorin OS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="segurança-e-privacidade">Segurança e Privacidade
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.qubes-os.org/" target="_blank" rel="noopener"
+>Qubes OS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tails.boum.org/" target="_blank" rel="noopener"
+>Tails&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.whonix.org/" target="_blank" rel="noopener"
+>Whonix&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="ajustes-para-windows">Ajustes para Windows
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/ChrisTitusTech/winutil" target="_blank" rel="noopener"
+>WinUtil&lt;/a> - Windows 10 e 11 Debloat&lt;/li>
+&lt;/ul>
+&lt;h2 id="pdf">PDF
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://wiki.gnome.org/Apps/Evince" target="_blank" rel="noopener"
+>Evince&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.libreoffice.org/discover/draw/" target="_blank" rel="noopener"
+>LibreOffice Draw&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://okular.kde.org" target="_blank" rel="noopener"
+>Okular&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.sumatrapdfreader.org/free-pdf-reader" target="_blank" rel="noopener"
+>Sumatra&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="gerenciadores-de-senhas">Gerenciadores de Senhas
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://bitwarden.com/" target="_blank" rel="noopener"
+>Bitwarden&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://keepassxc.org/" target="_blank" rel="noopener"
+>KeepassXC&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://proton.me/pass" target="_blank" rel="noopener"
+>Proton Pass&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="softwares-relacionados-a-pesquisa">Softwares relacionados a pesquisa
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://citation-file-format.github.io/cff-initializer-javascript" target="_blank" rel="noopener"
+>CffInit&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.jabref.org/" target="_blank" rel="noopener"
+>JabRef&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/jimmejardine/qiqqa-open-source" target="_blank" rel="noopener"
+>Qiqqa&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zotero.org" target="_blank" rel="noopener"
+>Zotero&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="buscadores">Buscadores
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://search.brave.com/" target="_blank" rel="noopener"
+>Brave&lt;/a> - NOS ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://duckduckgo.com" target="_blank" rel="noopener"
+>DuckDuckGo&lt;/a> - NOS ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://metager.org/" target="_blank" rel="noopener"
+>MetaGer&lt;/a> - Pago&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.qwant.com/" target="_blank" rel="noopener"
+>Qwant&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://searx.github.io/searx/" target="_blank" rel="noopener"
+>Searx&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.searxng.org/" target="_blank" rel="noopener"
+>SearXNG&lt;/a> - &lt;a class="link" href="https://searx.space/" target="_blank" rel="noopener"
+>Instâncias&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.startpage.com/" target="_blank" rel="noopener"
+>Startpage&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://yacy.net/" target="_blank" rel="noopener"
+>YaCy&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="tarefas-e-anotações">Tarefas e Anotações
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.appflowy.io/" target="_blank" rel="noopener"
+>AppFlowy&lt;/a> - Alternativa ao Notion ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.giuspen.com/cherrytree/" target="_blank" rel="noopener"
+>CherryTree&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://joplinapp.org/" target="_blank" rel="noopener"
+>Joplin&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://logseq.com/" target="_blank" rel="noopener"
+>Logseq&lt;/a> - Alternativa ao Obsidian&lt;/li>
+&lt;li>&lt;a class="link" href="https://obsidian.md/" target="_blank" rel="noopener"
+>Obsidian&lt;/a> - NOS ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.openproject.org/" target="_blank" rel="noopener"
+>OpenProject&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.qownnotes.org/" target="_blank" rel="noopener"
+>QOwnNotes&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://simplenote.com/" target="_blank" rel="noopener"
+>Simplenote&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://standardnotes.com/" target="_blank" rel="noopener"
+>Standard Notes&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.zettlr.com/" target="_blank" rel="noopener"
+>Zettlr&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="torrent">Torrent
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.qbittorrent.org/" target="_blank" rel="noopener"
+>qBittorrent&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://transmissionbt.com/" target="_blank" rel="noopener"
+>Transmission&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="uml">UML
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.diagrams.net/" target="_blank" rel="noopener"
+>diagrams.net&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://gaphor.org/" target="_blank" rel="noopener"
+>Gaphor&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/ModelioOpenSource/Modelio" target="_blank" rel="noopener"
+>Modelio&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.eclipse.org/papyrus/" target="_blank" rel="noopener"
+>Papyrus UML&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://plantuml.com/" target="_blank" rel="noopener"
+>PlantUML&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://apps.kde.org/umbrello/" target="_blank" rel="noopener"
+>Umbrello&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="vpn">VPN
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.mozilla.org/en-US/products/vpn/" target="_blank" rel="noopener"
+>Mozilla VPN&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mullvad.net" target="_blank" rel="noopener"
+>Mullvad&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://protonvpn.com/" target="_blank" rel="noopener"
+>Proton VPN&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://riseup.net/vpn" target="_blank" rel="noopener"
+>RiseUp VPN&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://windscribe.com/" target="_blank" rel="noopener"
+>Windscribe&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.wireguard.com/" target="_blank" rel="noopener"
+>WireGuard&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Acho importante olhar o &lt;a class="link" href="https://techlore.tech/vpn/" target="_blank" rel="noopener"
+>Techlore&amp;rsquo;s VPN Toolkit&lt;/a> para mais informações sobre VPNs.&lt;/p>&lt;/blockquote>
+&lt;h2 id="editores-de-vídeo">Editores de Vídeo
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="http://fixounet.free.fr/avidemux/" target="_blank" rel="noopener"
+>Avidemux&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://kdenlive.org/" target="_blank" rel="noopener"
+>Kdenlive&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.olivevideoeditor.org/" target="_blank" rel="noopener"
+>Olive&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.openshot.org/" target="_blank" rel="noopener"
+>OpenShot&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.shotcut.org/" target="_blank" rel="noopener"
+>Shotcut&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="leitores-rss">Leitores RSS
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://play.google.com/store/apps/details?id=com.nononsenseapps.feeder.play" target="_blank" rel="noopener"
+>Feeder&lt;/a> - Android&lt;/li>
+&lt;li>&lt;a class="link" href="https://ravenreader.app/" target="_blank" rel="noopener"
+>Raven&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="referências-importantes">Referências importantes
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://techlore.tech/" target="_blank" rel="noopener"
+>techlore.tech&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://restoreprivacy.com/" target="_blank" rel="noopener"
+>restoreprivacy.com&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://alternativeto.net/" target="_blank" rel="noopener"
+>alternativeto.net&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.privacytools.io/" target="_blank" rel="noopener"
+>privacytools.io&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Lista em constante atualização&lt;/p></description></item><item><title>DNS sobre HTTPS</title><link>https://infoguerrilla.github.io/p/dns-sobre-https/</link><pubDate>Thu, 25 Aug 2022 00:00:00 +0000</pubDate><guid>https://infoguerrilla.github.io/p/dns-sobre-https/</guid><description>&lt;img src="https://infoguerrilla.github.io/p/dns-sobre-https/image.png" alt="Featured image of post DNS sobre HTTPS" />&lt;blockquote>
+&lt;p>&lt;strong>Nota:&lt;/strong> Este artigo é uma tradução do artigo original &amp;ldquo;DNS over HTTPS and DNS over TLS&amp;rdquo; do site da Mullvad. Link do artigo original: &lt;a class="link" href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/" target="_blank" rel="noopener"
+>DNS over HTTPS and DNS over TLS&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Use o &lt;code>índice&lt;/code> ao lado para navegar entre as seções e encontrar o que você procura mais facilmente.&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="serviço-de-dns-público-criptografado">Serviço de DNS Público Criptografado
+&lt;/h1>&lt;p>Nosso serviço de DNS público criptografado utiliza DNS over HTTPS (DoH) e DNS over TLS (DoT). Isso protege suas consultas DNS contra espionagem por terceiros quando você não está conectado ao nosso serviço VPN, pois suas consultas DNS são criptografadas entre seu dispositivo e nosso servidor DNS.&lt;/p>
+&lt;p>&lt;strong>Este serviço é destinado principalmente para ser usado quando você está desconectado do nosso serviço VPN&lt;/strong>, ou em dispositivos onde não é possível ou desejável conectar-se à VPN. Quando você já está conectado ao nosso serviço VPN, os benefícios de segurança do uso de DNS criptografado são negligenciáveis e sempre será mais lento do que usar o resolvedor DNS no servidor VPN ao qual você está conectado.&lt;/p>
+&lt;p>Você pode usar este serviço de privacidade mesmo que não seja cliente Mullvad.&lt;/p>
+&lt;h2 id="recursos-do-serviço-de-dns-criptografado-mullvad">Recursos do serviço de DNS criptografado Mullvad
+&lt;/h2>&lt;p>Este serviço fornece consultas DNS criptografadas com os seguintes recursos:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bloqueio de conteúdo&lt;/strong>: Fornecemos opções básicas de bloqueio de conteúdo para bloquear anúncios, rastreadores, malware, conteúdo adulto, jogos de azar e mídias sociais.&lt;/li>
+&lt;li>&lt;strong>Minimização de QNAME&lt;/strong>: Isso permite que nossos servidores DNS resolvam suas consultas enquanto fornecem o mínimo possível de informações sobre as consultas a outros servidores DNS envolvidos no processo de resolução.&lt;/li>
+&lt;li>&lt;strong>Serviço Anycast&lt;/strong>: Vários servidores Mullvad em diferentes localizações são configurados para fornecer o mesmo serviço DNS. Suas consultas DNS são roteadas para o servidor geograficamente mais próximo, embora peering e roteamento entre provedores de Internet possam afetar isso. Se o servidor mais próximo estiver totalmente offline, suas consultas serão roteadas para o segundo mais próximo e assim por diante.&lt;/li>
+&lt;/ul>
+&lt;p>Um resolvedor DNS limitado está ouvindo na porta UDP/TCP 53, apenas para ajudar a resolver nomes de host relacionados a este serviço (dns.mullvad.net, adblock.mullvad.net e assim por diante), para que os clientes possam primeiro resolver o IP do resolvedor antes de consultá-lo por DNS criptografado.&lt;/p>
+&lt;p>Para saber mais sobre as tecnologias do serviço, consulte os links abaixo.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Anycast" target="_blank" rel="noopener"
+>Wikipedia: Anycast&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/DNS_over_TLS" target="_blank" rel="noopener"
+>Wikipedia: DNS over TLS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/DNS_over_HTTPS" target="_blank" rel="noopener"
+>Wikipedia: DNS over HTTPS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.isc.org/blogs/qname-minimization-and-privacy" target="_blank" rel="noopener"
+>Minimização de QNAME&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="especificações">Especificações
+&lt;/h2>&lt;h3 id="nomes-de-host-e-bloqueadores-de-conteúdo">Nomes de host e bloqueadores de conteúdo
+&lt;/h3>&lt;p>A tabela abaixo mostra as diferentes opções de nome de host e seus bloqueadores de conteúdo. Consulte isso ao configurar o DNS com as instruções abaixo.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Nome de host&lt;/th>
+&lt;th>Anúncios&lt;/th>
+&lt;th>Rastreadores&lt;/th>
+&lt;th>Malware&lt;/th>
+&lt;th>Adulto&lt;/th>
+&lt;th>Jogos de azar&lt;/th>
+&lt;th>Mídias sociais&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>dns.mullvad.net&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>adblock.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>base.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>extended.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>family.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>all.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="endereços-ip-e-portas">Endereços IP e portas
+&lt;/h3>&lt;p>A tabela abaixo mostra os endereços IP que você precisa configurar em alguns resolvedores DNS.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Nome de host&lt;/th>
+&lt;th>Endereço IPv4&lt;/th>
+&lt;th>Endereço IPv6&lt;/th>
+&lt;th>Porta DoH&lt;/th>
+&lt;th>Porta DoT&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.2&lt;/td>
+&lt;td>2a07:e340::2&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>adblock.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.3&lt;/td>
+&lt;td>2a07:e340::3&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>base.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.4&lt;/td>
+&lt;td>2a07:e340::4&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>extended.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.5&lt;/td>
+&lt;td>2a07:e340::5&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>family.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.6&lt;/td>
+&lt;td>2a07:e340::6&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>all.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.9&lt;/td>
+&lt;td>2a07:e340::9&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Esses IPs só podem ser usados com resolvedores DNS que suportam DoH ou DoT, não com DNS sobre UDP/53 ou TCP/53.&lt;/p>
+&lt;h2 id="como-usar-este-serviço">Como usar este serviço
+&lt;/h2>&lt;h3 id="navegadores-da-web">Navegadores da web
+&lt;/h3>&lt;p>Abaixo você pode encontrar instruções de configuração para diferentes navegadores e sistemas operacionais.&lt;/p>
+&lt;h4 id="navegador-mullvad">Navegador Mullvad
+&lt;/h4>&lt;p>O &lt;a class="link" href="https://mullvad.net/download/browser" target="_blank" rel="noopener"
+>Navegador Mullvad&lt;/a> usa o serviço DNS Mullvad (sem bloqueadores de conteúdo) por padrão. Recomendamos que você use nosso serviço DNS criptografado apenas quando não estiver conectado à VPN Mullvad. Quando você está conectado à VPN Mullvad, as consultas DNS serão enviadas através do túnel VPN criptografado para o servidor DNS no servidor VPN Mullvad ao qual você está conectado, e isso é mais rápido.&lt;/p>
+&lt;p>&lt;strong>Desativando o DNS over HTTPS (ao usar a VPN Mullvad)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Clique no botão de menu no canto superior direito e selecione &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Privacidade e Segurança&lt;/strong> na coluna esquerda.&lt;/li>
+&lt;li>Role até o final.&lt;/li>
+&lt;li>Em &lt;strong>Ativar DNS seguro usando&lt;/strong>, selecione &lt;strong>Desativado&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Ativando o DNS over HTTPS (quando não estiver usando a VPN Mullvad)&lt;/strong>&lt;/p>
+&lt;p>As duas primeiras opções de DNS acima estão incluídas nas configurações do navegador. Para mudar para uma das outras opções, siga estas instruções:&lt;/p>
+&lt;ol>
+&lt;li>Clique no botão de menu no canto superior direito e selecione &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Privacidade e Segurança&lt;/strong> na coluna esquerda.&lt;/li>
+&lt;li>Role até o final.&lt;/li>
+&lt;li>Em &lt;strong>Ativar DNS seguro usando&lt;/strong>, selecione &lt;strong>Proteção Máxima&lt;/strong>.&lt;/li>
+&lt;li>Em &lt;strong>Escolher provedor&lt;/strong>, clique na lista suspensa e selecione &lt;strong>Personalizado&lt;/strong>.&lt;/li>
+&lt;li>No campo de texto que aparece, cole uma das seguintes opções e pressione &lt;strong>Enter&lt;/strong> no teclado para defini-la.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="firefox-versão-desktop">Firefox (versão desktop)
+&lt;/h4>&lt;ol>
+&lt;li>Clique no botão de menu no canto superior direito e selecione &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Privacidade e Segurança&lt;/strong> na coluna esquerda.&lt;/li>
+&lt;li>Role até o final.&lt;/li>
+&lt;li>Em &lt;strong>Ativar DNS seguro usando&lt;/strong>, selecione &lt;strong>Proteção Máxima&lt;/strong>.&lt;/li>
+&lt;li>Em &lt;strong>Escolher provedor&lt;/strong>, clique na lista suspensa e selecione &lt;strong>Personalizado&lt;/strong>.&lt;/li>
+&lt;li>No campo de texto que aparece, cole uma das seguintes opções e pressione &lt;strong>Enter&lt;/strong> no teclado para defini-la.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="chrome--brave--edge">Chrome / Brave / Edge
+&lt;/h4>&lt;ol>
+&lt;li>Abra as &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Privacidade e segurança&lt;/strong> (no Chrome, Brave) ou &lt;strong>Privacidade, pesquisa e serviços&lt;/strong> (no Edge).&lt;/li>
+&lt;li>Clique em &lt;strong>Segurança&lt;/strong> (no Chrome, Brave).&lt;/li>
+&lt;li>Ative &lt;strong>Usar DNS seguro&lt;/strong>.&lt;/li>
+&lt;li>Selecione Com: &lt;strong>Personalizado&lt;/strong> (no Chrome, Brave) ou &lt;strong>Escolher um provedor de serviços&lt;/strong> (no Edge).&lt;/li>
+&lt;li>Digite uma das seguintes opções e pressione Tab no teclado:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;ol start="7">
+&lt;li>Se disser &amp;ldquo;Verifique se este é um provedor válido ou tente novamente mais tarde&amp;rdquo;, aguarde um momento.&lt;/li>
+&lt;/ol>
+&lt;h3 id="sistemas-operacionais-de-dispositivos-móveis">Sistemas operacionais de dispositivos móveis
+&lt;/h3>&lt;h4 id="android-9-e-posteriores">Android 9 e posteriores
+&lt;/h4>&lt;p>Siga estas etapas para usar o DNS over TLS:&lt;/p>
+&lt;ol>
+&lt;li>Abra o aplicativo &lt;strong>Configurações&lt;/strong> do Android.&lt;/li>
+&lt;li>Toque em &lt;strong>Rede e internet&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>DNS privado&lt;/strong>.&lt;/li>
+&lt;li>Selecione &lt;strong>Nome do host do provedor de DNS privado&lt;/strong>.&lt;/li>
+&lt;li>Na linha de entrada, digite um destes:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>dns.mullvad.net&lt;/li>
+&lt;li>adblock.dns.mullvad.net&lt;/li>
+&lt;li>base.dns.mullvad.net&lt;/li>
+&lt;li>extended.dns.mullvad.net&lt;/li>
+&lt;li>family.dns.mullvad.net&lt;/li>
+&lt;li>all.dns.mullvad.net&lt;/li>
+&lt;/ul>
+&lt;ol start="6">
+&lt;li>Toque em &lt;strong>Salvar&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>Se o Android não conseguir se conectar ao DNS, provavelmente o servidor DNS para o qual você está sendo roteado está muito longe e a latência é proibitiva. Neste caso, não funcionará.&lt;/p>
+&lt;h4 id="ios--ipados">iOS / iPadOS
+&lt;/h4>&lt;p>Fornecemos perfis de configuração DNS para dispositivos Apple.&lt;/p>
+&lt;p>Nota: Se você ativou o iCloud Private Relay, as consultas DNS podem ir para servidores DNS fornecidos pela Apple, mesmo se você usar nosso perfil DNS.&lt;/p>
+&lt;ol>
+&lt;li>Abra o Safari e acesse nosso &lt;a class="link" href="https://github.com/mullvad/encrypted-dns-profiles" target="_blank" rel="noopener"
+>repositório GitHub.&lt;/a>&lt;/li>
+&lt;li>Toque em, por exemplo, &lt;strong>base&lt;/strong>.&lt;/li>
+&lt;li>Os perfis estão disponíveis em duas versões (DoH e DoT). Toque em qualquer uma delas.&lt;/li>
+&lt;li>Toque em &lt;strong>View raw&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>Permitir&lt;/strong> para baixar o perfil.&lt;/li>
+&lt;li>Toque em &lt;strong>Fechar&lt;/strong>.&lt;/li>
+&lt;li>Se estiver usando iOS/iPadOS 18: Abra o aplicativo &lt;strong>Arquivos&lt;/strong> e toque no perfil baixado.&lt;/li>
+&lt;li>Abra o aplicativo &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Role até o topo e toque em &lt;strong>Perfil Baixado&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>Instalar&lt;/strong>.&lt;/li>
+&lt;li>Digite a senha do seu iPhone/iPad.&lt;/li>
+&lt;li>Toque em &lt;strong>Instalar&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>Instalar&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>Concluído&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>Você pode visualizar, alterar e remover perfis de configuração instalados no aplicativo &lt;strong>Configurações&lt;/strong> em &lt;strong>Geral&lt;/strong> &amp;gt; &lt;strong>VPN e Gerenciamento de Dispositivos&lt;/strong> &amp;gt; &lt;strong>DNS&lt;/strong>.&lt;/p>
+&lt;h3 id="sistemas-operacionais-desktop">Sistemas operacionais desktop
+&lt;/h3>&lt;h4 id="windows-11">Windows 11
+&lt;/h4>&lt;p>Nota: Isso não está disponível no Windows 10 e algumas VMs podem não conseguir usá-lo.&lt;/p>
+&lt;ol>
+&lt;li>Abra o aplicativo &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Rede e internet&lt;/strong> no lado esquerdo.&lt;/li>
+&lt;li>Clique em &lt;strong>Wi-Fi&lt;/strong> ou &lt;strong>Ethernet&lt;/strong>, dependendo de qual você usa. Você pode identificar pelo ícone no topo que diz &amp;ldquo;🌐 Conectado&amp;rdquo;.&lt;/li>
+&lt;li>Se você clicou em Wi-Fi, clique em &lt;strong>Propriedades de hardware&lt;/strong> e continue para o próximo passo. Se você clicou em Ethernet, apenas continue para o próximo passo.&lt;/li>
+&lt;li>Clique no botão &lt;strong>Editar&lt;/strong> ao lado de &lt;strong>Atribuição de servidor DNS&lt;/strong>.&lt;/li>
+&lt;li>Selecione &lt;strong>Manual&lt;/strong> na lista suspensa.&lt;/li>
+&lt;li>Ative &lt;strong>IPv4&lt;/strong>.&lt;/li>
+&lt;li>No campo &lt;strong>DNS preferencial&lt;/strong>, insira o &lt;strong>endereço IP&lt;/strong> para a opção DNS que você deseja usar, por exemplo, &lt;strong>194.242.2.4&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>194.242.2.2 - &lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.3 - &lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.4 - &lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.5 - &lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.6 - &lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.9 - &lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;ol start="9">
+&lt;li>Em &lt;strong>DNS over HTTPS&lt;/strong>, selecione &lt;strong>Ativado (modelo manual)&lt;/strong> na lista suspensa.&lt;/li>
+&lt;li>Em &lt;strong>Modelo DNS over HTTPS&lt;/strong>, insira o endereço ao lado do IP que você selecionou antes, por exemplo, &lt;strong>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Salvar&lt;/strong>.&lt;/li>
+&lt;li>Verifique nos detalhes da rede na mesma janela se você recebe um &lt;strong>endereço IPv6&lt;/strong> do seu provedor de Internet. Nesse caso, clique no botão &lt;strong>Editar&lt;/strong> ao lado de &lt;strong>Atribuição de servidor DNS&lt;/strong> novamente.&lt;/li>
+&lt;li>Role até o final e ative &lt;strong>IPv6&lt;/strong>.&lt;/li>
+&lt;li>Role para baixo novamente e no campo &lt;strong>DNS preferencial&lt;/strong>, insira o &lt;strong>endereço IPv6&lt;/strong> para a opção DNS que você deseja usar, por exemplo, &lt;strong>2a07:e340::4&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>2a07:e340::2 - &lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::3 - &lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::4 - &lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::5 - &lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::6 - &lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::9 - &lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;ol start="15">
+&lt;li>Em &lt;strong>DNS over HTTPS&lt;/strong>, selecione &lt;strong>Ativado (modelo manual)&lt;/strong> na lista suspensa.&lt;/li>
+&lt;li>Em &lt;strong>Modelo DNS over HTTPS&lt;/strong>, insira o endereço ao lado do IP que você selecionou, por exemplo, &lt;strong>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Salvar&lt;/strong>.&lt;/li>
+&lt;li>Se você às vezes usa Wi-Fi e às vezes usa Ethernet, volte ao passo 1 e adicione as mesmas configurações para a outra rede. Caso contrário, certifique-se de que a outra rede esteja completamente desconectada para evitar que o Windows use o DNS dela.&lt;/li>
+&lt;/ol>
+&lt;h4 id="macos">macOS
+&lt;/h4>&lt;p>Isso se aplica ao macOS 13 Ventura e mais recentes. Para versões mais antigas, consulte o &lt;a class="link" href="https://support.apple.com/guide/mac-help/configuration-profiles-standardize-settings-mh35561/mac" target="_blank" rel="noopener"
+>Guia do Usuário&lt;/a> do macOS.&lt;/p>
+&lt;ol>
+&lt;li>Abra o Safari e acesse nosso &lt;a class="link" href="https://github.com/mullvad/encrypted-dns-profiles" target="_blank" rel="noopener"
+>repositório GitHub.&lt;/a>&lt;/li>
+&lt;li>Clique em, por exemplo, &lt;strong>base&lt;/strong>.&lt;/li>
+&lt;li>Os perfis estão disponíveis em duas versões (DoH e DoT). Clique em qualquer uma delas.&lt;/li>
+&lt;li>Clique em &lt;strong>View raw&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Permitir&lt;/strong> para baixar o perfil.&lt;/li>
+&lt;li>Abra o aplicativo &lt;strong>Configurações do Sistema&lt;/strong>.&lt;/li>
+&lt;li>Na coluna esquerda, clique em &lt;strong>Privacidade e Segurança&lt;/strong>.&lt;/li>
+&lt;li>No lado direito, role até o final e clique em &lt;strong>Perfis&lt;/strong>.&lt;/li>
+&lt;li>Clique duas vezes no perfil Mullvad Encrypted DNS que você baixou.&lt;/li>
+&lt;li>No canto inferior esquerdo, clique em &lt;strong>Instalar&amp;hellip;&lt;/strong>&lt;/li>
+&lt;li>Digite sua senha de login do macOS e clique em &lt;strong>OK&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>Você pode visualizar e remover perfis de configuração instalados no aplicativo &lt;strong>Configurações do Sistema&lt;/strong> em &lt;strong>Privacidade e Segurança&lt;/strong> &amp;gt; &lt;strong>Perfis&lt;/strong>.&lt;/p>
+&lt;p>No macOS 14 Sonoma, você pode selecionar perfis DNS nas Configurações do Sistema em &lt;strong>Rede &amp;gt; VPN e Filtros&lt;/strong> na seção &lt;strong>Filtros e Proxies&lt;/strong>. Em versões anteriores do macOS, é recomendável instalar apenas um perfil, pois ter vários perfis não funciona bem.&lt;/p>
+&lt;p>Certifique-se de desativar o DNS seguro em seu navegador.&lt;/p>
+&lt;p>Chrome / Brave / Edge:&lt;/p>
+&lt;p>O perfil DNS funciona imediatamente no Safari e Firefox, no entanto, se você estiver usando navegadores baseados em Chromium, como Chrome, Brave ou Edge, eles não usarão o perfil DNS, a menos que você desative o cliente DNS interno do navegador. Abra o Terminal e execute os seguintes comandos:&lt;/p>
+&lt;p>defaults write com.google.Chrome BuiltInDnsClientEnabled -bool false&lt;/p>
+&lt;p>defaults write com.brave.Browser BuiltInDnsClientEnabled -bool false&lt;/p>
+&lt;p>defaults write com.microsoft.Edge BuiltInDnsClientEnabled -bool false&lt;/p>
+&lt;h4 id="linux-ubuntu-e-fedora">Linux (Ubuntu e Fedora)
+&lt;/h4>&lt;p>Estas instruções usam &lt;a class="link" href="https://wiki.archlinux.org/title/Systemd-resolved" target="_blank" rel="noopener"
+>systemd-resolved&lt;/a>.&lt;/p>
+&lt;ol>
+&lt;li>Abra um Terminal.&lt;/li>
+&lt;li>Certifique-se de que o systemd-resolved esteja habilitado executando este comando:
+&lt;code>sudo systemctl enable systemd-resolved&lt;/code>&lt;/li>
+&lt;li>Abra o aplicativo Configurações e vá para Rede. Clique no ícone de configurações da sua rede conectada. Nas guias &lt;strong>IPv4&lt;/strong> e &lt;strong>IPv6&lt;/strong>, desative Automático usando o botão de opção ao lado de &lt;strong>DNS&lt;/strong> e deixe o campo DNS em branco, depois clique em &lt;strong>Aplicar&lt;/strong>. Desative e ative a rede usando o botão liga/desliga para garantir que tenha efeito.&lt;/li>
+&lt;li>Edite o seguinte arquivo com &lt;strong>nano&lt;/strong> ou seu editor de texto favorito:&lt;/li>
+&lt;/ol>
+&lt;p>Fedora: &lt;code>sudo nano /usr/lib/systemd/resolved.conf&lt;/code>&lt;/p>
+&lt;p>Ubuntu: &lt;code>sudo nano /etc/systemd/resolved.conf&lt;/code>&lt;/p>
+&lt;p>Adicione as seguintes linhas na parte inferior, sob [Resolve]. Remova um &lt;strong>#&lt;/strong> do início de uma linha com a opção DNS que você deseja usar:&lt;/p>
+&lt;p>#DNS=194.242.2.2#dns.mullvad.net
+#DNS=194.242.2.3#adblock.dns.mullvad.net
+#DNS=194.242.2.4#base.dns.mullvad.net
+#DNS=194.242.2.5#extended.dns.mullvad.net
+#DNS=194.242.2.6#family.dns.mullvad.net
+#DNS=194.242.2.9#all.dns.mullvad.net
+DNSSEC=no
+DNSOverTLS=yes
+Domains=~.&lt;/p>
+&lt;ol start="5">
+&lt;li>Salve o arquivo pressionando Ctrl + O e depois Enter, e depois Ctrl + X no teclado.&lt;/li>
+&lt;li>Crie um link simbólico para o arquivo usando o seguinte comando no Terminal:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf&lt;/code>&lt;/p>
+&lt;ol start="7">
+&lt;li>Reinicie o systemd-resolved executando este comando:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>sudo systemctl restart systemd-resolved&lt;/code>&lt;/p>
+&lt;ol start="8">
+&lt;li>Reinicie o NetworkManager com este comando:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>sudo systemctl restart NetworkManager&lt;/code>&lt;/p>
+&lt;ol start="9">
+&lt;li>Verifique as configurações de DNS com:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>resolvectl status&lt;/code>&lt;/p>
+&lt;p>Caso não funcione, mude para esta configuração em /etc/systemd/resolved.conf:&lt;/p>
+&lt;p>DNSOverTLS=opportunistic&lt;/p>
+&lt;p>Observe que você pode ativar o DNSSEC se quiser, no entanto, alguns sites com informações incorretas de DNSSEC não poderão carregar e o navegador da web não informará o motivo.&lt;/p>
+&lt;h2 id="como-saber-se-está-funcionando">Como saber se está funcionando?
+&lt;/h2>&lt;p>Depois de seguir as instruções acima, acesse &lt;a class="link" href="https://mullvad.net/check" target="_blank" rel="noopener"
+>https://mullvad.net/check&lt;/a>. Você não deve ter vazamentos de DNS. Clique em &amp;ldquo;Sem vazamentos de DNS&amp;rdquo; para detalhes; o servidor listado deve ter &amp;ldquo;dns&amp;rdquo; em seu nome, por exemplo &amp;ldquo;se-mma-&lt;strong>dns&lt;/strong>-001.mullvad.net&amp;rdquo;.&lt;/p>
+&lt;h2 id="localizações-dos-servidores-dns">Localizações dos servidores DNS
+&lt;/h2>&lt;p>Usamos roteamento anycast, o que significa que idealmente o servidor DNS mais próximo deve ser usado. Se um servidor estiver inoperante, o próximo mais próximo deve ser usado e assim por diante. Tenha em mente que o mais próximo está em termos de saltos de rede, isso pode diferir entre seu ISP e sua conectividade com nossos provedores de hospedagem. Você pode verificar qual servidor DNS está usando expandindo a caixa DNS em nossa &lt;a class="link" href="https://mullvad.net/check" target="_blank" rel="noopener"
+>Verificação de Conexão&lt;/a>.&lt;/p>
+&lt;h3 id="usando-um-servidor-dns-específico">Usando um servidor DNS específico
+&lt;/h3>&lt;p>Se você não precisa de nenhum bloqueador de conteúdo DNS, apenas um DNS não filtrado, pode usar um dos nomes de servidor abaixo.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Servidor&lt;/th>
+&lt;th>País&lt;/th>
+&lt;th>Cidade&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://de-fra-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://de-fra-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Alemanha&lt;/td>
+&lt;td>Frankfurt&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://gb-lon-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://gb-lon-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Reino Unido&lt;/td>
+&lt;td>Londres&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://gb-lon-dns-301.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://gb-lon-dns-301.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Reino Unido&lt;/td>
+&lt;td>Londres&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://se-got-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://se-got-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Suécia&lt;/td>
+&lt;td>Gotemburgo&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://se-mma-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://se-mma-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Suécia&lt;/td>
+&lt;td>Malmö&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://se-sto-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://se-sto-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Suécia&lt;/td>
+&lt;td>Estocolmo&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://sg-sin-dns-101.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://sg-sin-dns-101.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Singapura&lt;/td>
+&lt;td>Singapura&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://us-dal-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://us-dal-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>EUA&lt;/td>
+&lt;td>Dallas&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;del>&lt;a class="link" href="https://us-lax-dns-401.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://us-lax-dns-401.mullvad.net/dns-query&lt;/a>&lt;/del>&lt;/td>
+&lt;td>&lt;del>EUA&lt;/del>&lt;/td>
+&lt;td>&lt;del>Los Angeles&lt;/del>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://us-nyc-dns-601.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://us-nyc-dns-601.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>EUA&lt;/td>
+&lt;td>Nova York&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="como-funciona-o-bloqueio-de-conteúdo">Como funciona o bloqueio de conteúdo
+&lt;/h2>&lt;p>A Mullvad mantém uma coleção de listas &amp;ldquo;temáticas&amp;rdquo; cujo conteúdo é obtido de listas de bloqueio disponíveis publicamente.&lt;/p>
+&lt;p>Quando o cliente consulta um nome de host que corresponde a um item na lista de bloqueio, nosso resolvedor simplesmente mente para o cliente e diz que o nome de host não existe.&lt;/p>
+&lt;p>Isso significa que qualquer conteúdo que o navegador tentou carregar não é carregado e, portanto, não é mostrado na tela.&lt;/p>
+&lt;p>Para mais informações sobre quais domínios são bloqueados por quais listas e quais listas da comunidade compõem as listas curadas da Mullvad, consulte nosso &lt;a class="link" href="https://github.com/mullvad/dns-blocklists" target="_blank" rel="noopener"
+>GitHub&lt;/a>.&lt;/p>
+&lt;p>O bloqueio de conteúdo DNS não pode bloquear todos os anúncios e rastreadores. Por exemplo, não pode bloquear anúncios do YouTube. Para bloquear mais anúncios e rastreadores em seu navegador da web, recomendamos o uso da extensão &lt;a class="link" href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" target="_blank" rel="noopener"
+>uBlock Origin&lt;/a>. Isso está incluído no &lt;a class="link" href="https://mullvad.net/download/browser/" target="_blank" rel="noopener"
+>Navegador Mullvad&lt;/a>.&lt;/p>
+&lt;h2 id="notas">Notas
+&lt;/h2>&lt;p>Versões anteriores deste guia continham referências a doh.mullvad.net e dot.mullvad.net. Esses nomes de host foram substituídos pelo nome de host comum dns.mullvad.net e estão sujeitos a descontinuação futura. Recomendamos a todos os usuários que usem os novos nomes de host que incluem dns.mullvad.net.&lt;/p>
+&lt;p>Os seguintes IPs não são mais usados: 193.19.108.2 e 193.19.108.3.&lt;/p>
+&lt;h4 id="proxy-socks5">Proxy SOCKS5
+&lt;/h4>&lt;p>Se você ativar o uso do nosso &lt;a class="link" href="https://mullvad.net/help/socks5-proxy/" target="_blank" rel="noopener"
+>proxy SOCKS5&lt;/a> no Firefox e ativar a configuração &lt;strong>Proxy DNS ao usar SOCKS v5&lt;/strong>, as consultas DNS não usarão o serviço DNS criptografado público e os bloqueadores de conteúdo DNS não funcionarão. Nosso proxy SOCKS5 só funciona quando você está conectado à Mullvad, e recomendamos que você não use o serviço DNS público quando estiver conectado à Mullvad, pelos motivos &lt;a class="link" href="#como-usar-este-servi%c3%a7o" >indicados acima&lt;/a>. Em vez disso, você pode ativar os &lt;a class="link" href="https://mullvad.net/help/using-mullvad-vpn-on-android/#dns-blockers" target="_blank" rel="noopener"
+>bloqueadores de conteúdo DNS&lt;/a> nas configurações do aplicativo Mullvad.&lt;/p></description></item></channel></rss>

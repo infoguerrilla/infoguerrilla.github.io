@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutoriais on Info_Guerrilla</title><link>https://infoguerrilla.github.io/categories/tutoriais/</link><description>Recent content in Tutoriais on Info_Guerrilla</description><generator>Hugo -- gohugo.io</generator><language>pt-br</language><lastBuildDate>Thu, 25 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://infoguerrilla.github.io/categories/tutoriais/index.xml" rel="self" type="application/rss+xml"/><item><title>DNS sobre HTTPS</title><link>https://infoguerrilla.github.io/p/dns-sobre-https/</link><pubDate>Thu, 25 Aug 2022 00:00:00 +0000</pubDate><guid>https://infoguerrilla.github.io/p/dns-sobre-https/</guid><description>&lt;img src="https://infoguerrilla.github.io/p/dns-sobre-https/image.png" alt="Featured image of post DNS sobre HTTPS" />&lt;blockquote>
+&lt;p>&lt;strong>Nota:&lt;/strong> Este artigo é uma tradução do artigo original &amp;ldquo;DNS over HTTPS and DNS over TLS&amp;rdquo; do site da Mullvad. Link do artigo original: &lt;a class="link" href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/" target="_blank" rel="noopener"
+>DNS over HTTPS and DNS over TLS&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Use o &lt;code>índice&lt;/code> ao lado para navegar entre as seções e encontrar o que você procura mais facilmente.&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="serviço-de-dns-público-criptografado">Serviço de DNS Público Criptografado
+&lt;/h1>&lt;p>Nosso serviço de DNS público criptografado utiliza DNS over HTTPS (DoH) e DNS over TLS (DoT). Isso protege suas consultas DNS contra espionagem por terceiros quando você não está conectado ao nosso serviço VPN, pois suas consultas DNS são criptografadas entre seu dispositivo e nosso servidor DNS.&lt;/p>
+&lt;p>&lt;strong>Este serviço é destinado principalmente para ser usado quando você está desconectado do nosso serviço VPN&lt;/strong>, ou em dispositivos onde não é possível ou desejável conectar-se à VPN. Quando você já está conectado ao nosso serviço VPN, os benefícios de segurança do uso de DNS criptografado são negligenciáveis e sempre será mais lento do que usar o resolvedor DNS no servidor VPN ao qual você está conectado.&lt;/p>
+&lt;p>Você pode usar este serviço de privacidade mesmo que não seja cliente Mullvad.&lt;/p>
+&lt;h2 id="recursos-do-serviço-de-dns-criptografado-mullvad">Recursos do serviço de DNS criptografado Mullvad
+&lt;/h2>&lt;p>Este serviço fornece consultas DNS criptografadas com os seguintes recursos:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bloqueio de conteúdo&lt;/strong>: Fornecemos opções básicas de bloqueio de conteúdo para bloquear anúncios, rastreadores, malware, conteúdo adulto, jogos de azar e mídias sociais.&lt;/li>
+&lt;li>&lt;strong>Minimização de QNAME&lt;/strong>: Isso permite que nossos servidores DNS resolvam suas consultas enquanto fornecem o mínimo possível de informações sobre as consultas a outros servidores DNS envolvidos no processo de resolução.&lt;/li>
+&lt;li>&lt;strong>Serviço Anycast&lt;/strong>: Vários servidores Mullvad em diferentes localizações são configurados para fornecer o mesmo serviço DNS. Suas consultas DNS são roteadas para o servidor geograficamente mais próximo, embora peering e roteamento entre provedores de Internet possam afetar isso. Se o servidor mais próximo estiver totalmente offline, suas consultas serão roteadas para o segundo mais próximo e assim por diante.&lt;/li>
+&lt;/ul>
+&lt;p>Um resolvedor DNS limitado está ouvindo na porta UDP/TCP 53, apenas para ajudar a resolver nomes de host relacionados a este serviço (dns.mullvad.net, adblock.mullvad.net e assim por diante), para que os clientes possam primeiro resolver o IP do resolvedor antes de consultá-lo por DNS criptografado.&lt;/p>
+&lt;p>Para saber mais sobre as tecnologias do serviço, consulte os links abaixo.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/Anycast" target="_blank" rel="noopener"
+>Wikipedia: Anycast&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/DNS_over_TLS" target="_blank" rel="noopener"
+>Wikipedia: DNS over TLS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://en.wikipedia.org/wiki/DNS_over_HTTPS" target="_blank" rel="noopener"
+>Wikipedia: DNS over HTTPS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.isc.org/blogs/qname-minimization-and-privacy" target="_blank" rel="noopener"
+>Minimização de QNAME&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="especificações">Especificações
+&lt;/h2>&lt;h3 id="nomes-de-host-e-bloqueadores-de-conteúdo">Nomes de host e bloqueadores de conteúdo
+&lt;/h3>&lt;p>A tabela abaixo mostra as diferentes opções de nome de host e seus bloqueadores de conteúdo. Consulte isso ao configurar o DNS com as instruções abaixo.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Nome de host&lt;/th>
+&lt;th>Anúncios&lt;/th>
+&lt;th>Rastreadores&lt;/th>
+&lt;th>Malware&lt;/th>
+&lt;th>Adulto&lt;/th>
+&lt;th>Jogos de azar&lt;/th>
+&lt;th>Mídias sociais&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>dns.mullvad.net&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>adblock.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>base.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>extended.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>family.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>all.dns.mullvad.net&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="endereços-ip-e-portas">Endereços IP e portas
+&lt;/h3>&lt;p>A tabela abaixo mostra os endereços IP que você precisa configurar em alguns resolvedores DNS.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Nome de host&lt;/th>
+&lt;th>Endereço IPv4&lt;/th>
+&lt;th>Endereço IPv6&lt;/th>
+&lt;th>Porta DoH&lt;/th>
+&lt;th>Porta DoT&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.2&lt;/td>
+&lt;td>2a07:e340::2&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>adblock.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.3&lt;/td>
+&lt;td>2a07:e340::3&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>base.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.4&lt;/td>
+&lt;td>2a07:e340::4&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>extended.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.5&lt;/td>
+&lt;td>2a07:e340::5&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>family.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.6&lt;/td>
+&lt;td>2a07:e340::6&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>all.dns.mullvad.net&lt;/td>
+&lt;td>194.242.2.9&lt;/td>
+&lt;td>2a07:e340::9&lt;/td>
+&lt;td>443&lt;/td>
+&lt;td>853&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Esses IPs só podem ser usados com resolvedores DNS que suportam DoH ou DoT, não com DNS sobre UDP/53 ou TCP/53.&lt;/p>
+&lt;h2 id="como-usar-este-serviço">Como usar este serviço
+&lt;/h2>&lt;h3 id="navegadores-da-web">Navegadores da web
+&lt;/h3>&lt;p>Abaixo você pode encontrar instruções de configuração para diferentes navegadores e sistemas operacionais.&lt;/p>
+&lt;h4 id="navegador-mullvad">Navegador Mullvad
+&lt;/h4>&lt;p>O &lt;a class="link" href="https://mullvad.net/download/browser" target="_blank" rel="noopener"
+>Navegador Mullvad&lt;/a> usa o serviço DNS Mullvad (sem bloqueadores de conteúdo) por padrão. Recomendamos que você use nosso serviço DNS criptografado apenas quando não estiver conectado à VPN Mullvad. Quando você está conectado à VPN Mullvad, as consultas DNS serão enviadas através do túnel VPN criptografado para o servidor DNS no servidor VPN Mullvad ao qual você está conectado, e isso é mais rápido.&lt;/p>
+&lt;p>&lt;strong>Desativando o DNS over HTTPS (ao usar a VPN Mullvad)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Clique no botão de menu no canto superior direito e selecione &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Privacidade e Segurança&lt;/strong> na coluna esquerda.&lt;/li>
+&lt;li>Role até o final.&lt;/li>
+&lt;li>Em &lt;strong>Ativar DNS seguro usando&lt;/strong>, selecione &lt;strong>Desativado&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Ativando o DNS over HTTPS (quando não estiver usando a VPN Mullvad)&lt;/strong>&lt;/p>
+&lt;p>As duas primeiras opções de DNS acima estão incluídas nas configurações do navegador. Para mudar para uma das outras opções, siga estas instruções:&lt;/p>
+&lt;ol>
+&lt;li>Clique no botão de menu no canto superior direito e selecione &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Privacidade e Segurança&lt;/strong> na coluna esquerda.&lt;/li>
+&lt;li>Role até o final.&lt;/li>
+&lt;li>Em &lt;strong>Ativar DNS seguro usando&lt;/strong>, selecione &lt;strong>Proteção Máxima&lt;/strong>.&lt;/li>
+&lt;li>Em &lt;strong>Escolher provedor&lt;/strong>, clique na lista suspensa e selecione &lt;strong>Personalizado&lt;/strong>.&lt;/li>
+&lt;li>No campo de texto que aparece, cole uma das seguintes opções e pressione &lt;strong>Enter&lt;/strong> no teclado para defini-la.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="firefox-versão-desktop">Firefox (versão desktop)
+&lt;/h4>&lt;ol>
+&lt;li>Clique no botão de menu no canto superior direito e selecione &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Privacidade e Segurança&lt;/strong> na coluna esquerda.&lt;/li>
+&lt;li>Role até o final.&lt;/li>
+&lt;li>Em &lt;strong>Ativar DNS seguro usando&lt;/strong>, selecione &lt;strong>Proteção Máxima&lt;/strong>.&lt;/li>
+&lt;li>Em &lt;strong>Escolher provedor&lt;/strong>, clique na lista suspensa e selecione &lt;strong>Personalizado&lt;/strong>.&lt;/li>
+&lt;li>No campo de texto que aparece, cole uma das seguintes opções e pressione &lt;strong>Enter&lt;/strong> no teclado para defini-la.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="chrome--brave--edge">Chrome / Brave / Edge
+&lt;/h4>&lt;ol>
+&lt;li>Abra as &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Privacidade e segurança&lt;/strong> (no Chrome, Brave) ou &lt;strong>Privacidade, pesquisa e serviços&lt;/strong> (no Edge).&lt;/li>
+&lt;li>Clique em &lt;strong>Segurança&lt;/strong> (no Chrome, Brave).&lt;/li>
+&lt;li>Ative &lt;strong>Usar DNS seguro&lt;/strong>.&lt;/li>
+&lt;li>Selecione Com: &lt;strong>Personalizado&lt;/strong> (no Chrome, Brave) ou &lt;strong>Escolher um provedor de serviços&lt;/strong> (no Edge).&lt;/li>
+&lt;li>Digite uma das seguintes opções e pressione Tab no teclado:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;ol start="7">
+&lt;li>Se disser &amp;ldquo;Verifique se este é um provedor válido ou tente novamente mais tarde&amp;rdquo;, aguarde um momento.&lt;/li>
+&lt;/ol>
+&lt;h3 id="sistemas-operacionais-de-dispositivos-móveis">Sistemas operacionais de dispositivos móveis
+&lt;/h3>&lt;h4 id="android-9-e-posteriores">Android 9 e posteriores
+&lt;/h4>&lt;p>Siga estas etapas para usar o DNS over TLS:&lt;/p>
+&lt;ol>
+&lt;li>Abra o aplicativo &lt;strong>Configurações&lt;/strong> do Android.&lt;/li>
+&lt;li>Toque em &lt;strong>Rede e internet&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>DNS privado&lt;/strong>.&lt;/li>
+&lt;li>Selecione &lt;strong>Nome do host do provedor de DNS privado&lt;/strong>.&lt;/li>
+&lt;li>Na linha de entrada, digite um destes:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>dns.mullvad.net&lt;/li>
+&lt;li>adblock.dns.mullvad.net&lt;/li>
+&lt;li>base.dns.mullvad.net&lt;/li>
+&lt;li>extended.dns.mullvad.net&lt;/li>
+&lt;li>family.dns.mullvad.net&lt;/li>
+&lt;li>all.dns.mullvad.net&lt;/li>
+&lt;/ul>
+&lt;ol start="6">
+&lt;li>Toque em &lt;strong>Salvar&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>Se o Android não conseguir se conectar ao DNS, provavelmente o servidor DNS para o qual você está sendo roteado está muito longe e a latência é proibitiva. Neste caso, não funcionará.&lt;/p>
+&lt;h4 id="ios--ipados">iOS / iPadOS
+&lt;/h4>&lt;p>Fornecemos perfis de configuração DNS para dispositivos Apple.&lt;/p>
+&lt;p>Nota: Se você ativou o iCloud Private Relay, as consultas DNS podem ir para servidores DNS fornecidos pela Apple, mesmo se você usar nosso perfil DNS.&lt;/p>
+&lt;ol>
+&lt;li>Abra o Safari e acesse nosso &lt;a class="link" href="https://github.com/mullvad/encrypted-dns-profiles" target="_blank" rel="noopener"
+>repositório GitHub.&lt;/a>&lt;/li>
+&lt;li>Toque em, por exemplo, &lt;strong>base&lt;/strong>.&lt;/li>
+&lt;li>Os perfis estão disponíveis em duas versões (DoH e DoT). Toque em qualquer uma delas.&lt;/li>
+&lt;li>Toque em &lt;strong>View raw&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>Permitir&lt;/strong> para baixar o perfil.&lt;/li>
+&lt;li>Toque em &lt;strong>Fechar&lt;/strong>.&lt;/li>
+&lt;li>Se estiver usando iOS/iPadOS 18: Abra o aplicativo &lt;strong>Arquivos&lt;/strong> e toque no perfil baixado.&lt;/li>
+&lt;li>Abra o aplicativo &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Role até o topo e toque em &lt;strong>Perfil Baixado&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>Instalar&lt;/strong>.&lt;/li>
+&lt;li>Digite a senha do seu iPhone/iPad.&lt;/li>
+&lt;li>Toque em &lt;strong>Instalar&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>Instalar&lt;/strong>.&lt;/li>
+&lt;li>Toque em &lt;strong>Concluído&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>Você pode visualizar, alterar e remover perfis de configuração instalados no aplicativo &lt;strong>Configurações&lt;/strong> em &lt;strong>Geral&lt;/strong> &amp;gt; &lt;strong>VPN e Gerenciamento de Dispositivos&lt;/strong> &amp;gt; &lt;strong>DNS&lt;/strong>.&lt;/p>
+&lt;h3 id="sistemas-operacionais-desktop">Sistemas operacionais desktop
+&lt;/h3>&lt;h4 id="windows-11">Windows 11
+&lt;/h4>&lt;p>Nota: Isso não está disponível no Windows 10 e algumas VMs podem não conseguir usá-lo.&lt;/p>
+&lt;ol>
+&lt;li>Abra o aplicativo &lt;strong>Configurações&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Rede e internet&lt;/strong> no lado esquerdo.&lt;/li>
+&lt;li>Clique em &lt;strong>Wi-Fi&lt;/strong> ou &lt;strong>Ethernet&lt;/strong>, dependendo de qual você usa. Você pode identificar pelo ícone no topo que diz &amp;ldquo;🌐 Conectado&amp;rdquo;.&lt;/li>
+&lt;li>Se você clicou em Wi-Fi, clique em &lt;strong>Propriedades de hardware&lt;/strong> e continue para o próximo passo. Se você clicou em Ethernet, apenas continue para o próximo passo.&lt;/li>
+&lt;li>Clique no botão &lt;strong>Editar&lt;/strong> ao lado de &lt;strong>Atribuição de servidor DNS&lt;/strong>.&lt;/li>
+&lt;li>Selecione &lt;strong>Manual&lt;/strong> na lista suspensa.&lt;/li>
+&lt;li>Ative &lt;strong>IPv4&lt;/strong>.&lt;/li>
+&lt;li>No campo &lt;strong>DNS preferencial&lt;/strong>, insira o &lt;strong>endereço IP&lt;/strong> para a opção DNS que você deseja usar, por exemplo, &lt;strong>194.242.2.4&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>194.242.2.2 - &lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.3 - &lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.4 - &lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.5 - &lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.6 - &lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>194.242.2.9 - &lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;ol start="9">
+&lt;li>Em &lt;strong>DNS over HTTPS&lt;/strong>, selecione &lt;strong>Ativado (modelo manual)&lt;/strong> na lista suspensa.&lt;/li>
+&lt;li>Em &lt;strong>Modelo DNS over HTTPS&lt;/strong>, insira o endereço ao lado do IP que você selecionou antes, por exemplo, &lt;strong>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Salvar&lt;/strong>.&lt;/li>
+&lt;li>Verifique nos detalhes da rede na mesma janela se você recebe um &lt;strong>endereço IPv6&lt;/strong> do seu provedor de Internet. Nesse caso, clique no botão &lt;strong>Editar&lt;/strong> ao lado de &lt;strong>Atribuição de servidor DNS&lt;/strong> novamente.&lt;/li>
+&lt;li>Role até o final e ative &lt;strong>IPv6&lt;/strong>.&lt;/li>
+&lt;li>Role para baixo novamente e no campo &lt;strong>DNS preferencial&lt;/strong>, insira o &lt;strong>endereço IPv6&lt;/strong> para a opção DNS que você deseja usar, por exemplo, &lt;strong>2a07:e340::4&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>2a07:e340::2 - &lt;a class="link" href="https://dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::3 - &lt;a class="link" href="https://adblock.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://adblock.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::4 - &lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::5 - &lt;a class="link" href="https://extended.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://extended.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::6 - &lt;a class="link" href="https://family.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://family.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;li>2a07:e340::9 - &lt;a class="link" href="https://all.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://all.dns.mullvad.net/dns-query&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;ol start="15">
+&lt;li>Em &lt;strong>DNS over HTTPS&lt;/strong>, selecione &lt;strong>Ativado (modelo manual)&lt;/strong> na lista suspensa.&lt;/li>
+&lt;li>Em &lt;strong>Modelo DNS over HTTPS&lt;/strong>, insira o endereço ao lado do IP que você selecionou, por exemplo, &lt;strong>&lt;a class="link" href="https://base.dns.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://base.dns.mullvad.net/dns-query&lt;/a>&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Salvar&lt;/strong>.&lt;/li>
+&lt;li>Se você às vezes usa Wi-Fi e às vezes usa Ethernet, volte ao passo 1 e adicione as mesmas configurações para a outra rede. Caso contrário, certifique-se de que a outra rede esteja completamente desconectada para evitar que o Windows use o DNS dela.&lt;/li>
+&lt;/ol>
+&lt;h4 id="macos">macOS
+&lt;/h4>&lt;p>Isso se aplica ao macOS 13 Ventura e mais recentes. Para versões mais antigas, consulte o &lt;a class="link" href="https://support.apple.com/guide/mac-help/configuration-profiles-standardize-settings-mh35561/mac" target="_blank" rel="noopener"
+>Guia do Usuário&lt;/a> do macOS.&lt;/p>
+&lt;ol>
+&lt;li>Abra o Safari e acesse nosso &lt;a class="link" href="https://github.com/mullvad/encrypted-dns-profiles" target="_blank" rel="noopener"
+>repositório GitHub.&lt;/a>&lt;/li>
+&lt;li>Clique em, por exemplo, &lt;strong>base&lt;/strong>.&lt;/li>
+&lt;li>Os perfis estão disponíveis em duas versões (DoH e DoT). Clique em qualquer uma delas.&lt;/li>
+&lt;li>Clique em &lt;strong>View raw&lt;/strong>.&lt;/li>
+&lt;li>Clique em &lt;strong>Permitir&lt;/strong> para baixar o perfil.&lt;/li>
+&lt;li>Abra o aplicativo &lt;strong>Configurações do Sistema&lt;/strong>.&lt;/li>
+&lt;li>Na coluna esquerda, clique em &lt;strong>Privacidade e Segurança&lt;/strong>.&lt;/li>
+&lt;li>No lado direito, role até o final e clique em &lt;strong>Perfis&lt;/strong>.&lt;/li>
+&lt;li>Clique duas vezes no perfil Mullvad Encrypted DNS que você baixou.&lt;/li>
+&lt;li>No canto inferior esquerdo, clique em &lt;strong>Instalar&amp;hellip;&lt;/strong>&lt;/li>
+&lt;li>Digite sua senha de login do macOS e clique em &lt;strong>OK&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>Você pode visualizar e remover perfis de configuração instalados no aplicativo &lt;strong>Configurações do Sistema&lt;/strong> em &lt;strong>Privacidade e Segurança&lt;/strong> &amp;gt; &lt;strong>Perfis&lt;/strong>.&lt;/p>
+&lt;p>No macOS 14 Sonoma, você pode selecionar perfis DNS nas Configurações do Sistema em &lt;strong>Rede &amp;gt; VPN e Filtros&lt;/strong> na seção &lt;strong>Filtros e Proxies&lt;/strong>. Em versões anteriores do macOS, é recomendável instalar apenas um perfil, pois ter vários perfis não funciona bem.&lt;/p>
+&lt;p>Certifique-se de desativar o DNS seguro em seu navegador.&lt;/p>
+&lt;p>Chrome / Brave / Edge:&lt;/p>
+&lt;p>O perfil DNS funciona imediatamente no Safari e Firefox, no entanto, se você estiver usando navegadores baseados em Chromium, como Chrome, Brave ou Edge, eles não usarão o perfil DNS, a menos que você desative o cliente DNS interno do navegador. Abra o Terminal e execute os seguintes comandos:&lt;/p>
+&lt;p>defaults write com.google.Chrome BuiltInDnsClientEnabled -bool false&lt;/p>
+&lt;p>defaults write com.brave.Browser BuiltInDnsClientEnabled -bool false&lt;/p>
+&lt;p>defaults write com.microsoft.Edge BuiltInDnsClientEnabled -bool false&lt;/p>
+&lt;h4 id="linux-ubuntu-e-fedora">Linux (Ubuntu e Fedora)
+&lt;/h4>&lt;p>Estas instruções usam &lt;a class="link" href="https://wiki.archlinux.org/title/Systemd-resolved" target="_blank" rel="noopener"
+>systemd-resolved&lt;/a>.&lt;/p>
+&lt;ol>
+&lt;li>Abra um Terminal.&lt;/li>
+&lt;li>Certifique-se de que o systemd-resolved esteja habilitado executando este comando:
+&lt;code>sudo systemctl enable systemd-resolved&lt;/code>&lt;/li>
+&lt;li>Abra o aplicativo Configurações e vá para Rede. Clique no ícone de configurações da sua rede conectada. Nas guias &lt;strong>IPv4&lt;/strong> e &lt;strong>IPv6&lt;/strong>, desative Automático usando o botão de opção ao lado de &lt;strong>DNS&lt;/strong> e deixe o campo DNS em branco, depois clique em &lt;strong>Aplicar&lt;/strong>. Desative e ative a rede usando o botão liga/desliga para garantir que tenha efeito.&lt;/li>
+&lt;li>Edite o seguinte arquivo com &lt;strong>nano&lt;/strong> ou seu editor de texto favorito:&lt;/li>
+&lt;/ol>
+&lt;p>Fedora: &lt;code>sudo nano /usr/lib/systemd/resolved.conf&lt;/code>&lt;/p>
+&lt;p>Ubuntu: &lt;code>sudo nano /etc/systemd/resolved.conf&lt;/code>&lt;/p>
+&lt;p>Adicione as seguintes linhas na parte inferior, sob [Resolve]. Remova um &lt;strong>#&lt;/strong> do início de uma linha com a opção DNS que você deseja usar:&lt;/p>
+&lt;p>#DNS=194.242.2.2#dns.mullvad.net
+#DNS=194.242.2.3#adblock.dns.mullvad.net
+#DNS=194.242.2.4#base.dns.mullvad.net
+#DNS=194.242.2.5#extended.dns.mullvad.net
+#DNS=194.242.2.6#family.dns.mullvad.net
+#DNS=194.242.2.9#all.dns.mullvad.net
+DNSSEC=no
+DNSOverTLS=yes
+Domains=~.&lt;/p>
+&lt;ol start="5">
+&lt;li>Salve o arquivo pressionando Ctrl + O e depois Enter, e depois Ctrl + X no teclado.&lt;/li>
+&lt;li>Crie um link simbólico para o arquivo usando o seguinte comando no Terminal:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf&lt;/code>&lt;/p>
+&lt;ol start="7">
+&lt;li>Reinicie o systemd-resolved executando este comando:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>sudo systemctl restart systemd-resolved&lt;/code>&lt;/p>
+&lt;ol start="8">
+&lt;li>Reinicie o NetworkManager com este comando:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>sudo systemctl restart NetworkManager&lt;/code>&lt;/p>
+&lt;ol start="9">
+&lt;li>Verifique as configurações de DNS com:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>resolvectl status&lt;/code>&lt;/p>
+&lt;p>Caso não funcione, mude para esta configuração em /etc/systemd/resolved.conf:&lt;/p>
+&lt;p>DNSOverTLS=opportunistic&lt;/p>
+&lt;p>Observe que você pode ativar o DNSSEC se quiser, no entanto, alguns sites com informações incorretas de DNSSEC não poderão carregar e o navegador da web não informará o motivo.&lt;/p>
+&lt;h2 id="como-saber-se-está-funcionando">Como saber se está funcionando?
+&lt;/h2>&lt;p>Depois de seguir as instruções acima, acesse &lt;a class="link" href="https://mullvad.net/check" target="_blank" rel="noopener"
+>https://mullvad.net/check&lt;/a>. Você não deve ter vazamentos de DNS. Clique em &amp;ldquo;Sem vazamentos de DNS&amp;rdquo; para detalhes; o servidor listado deve ter &amp;ldquo;dns&amp;rdquo; em seu nome, por exemplo &amp;ldquo;se-mma-&lt;strong>dns&lt;/strong>-001.mullvad.net&amp;rdquo;.&lt;/p>
+&lt;h2 id="localizações-dos-servidores-dns">Localizações dos servidores DNS
+&lt;/h2>&lt;p>Usamos roteamento anycast, o que significa que idealmente o servidor DNS mais próximo deve ser usado. Se um servidor estiver inoperante, o próximo mais próximo deve ser usado e assim por diante. Tenha em mente que o mais próximo está em termos de saltos de rede, isso pode diferir entre seu ISP e sua conectividade com nossos provedores de hospedagem. Você pode verificar qual servidor DNS está usando expandindo a caixa DNS em nossa &lt;a class="link" href="https://mullvad.net/check" target="_blank" rel="noopener"
+>Verificação de Conexão&lt;/a>.&lt;/p>
+&lt;h3 id="usando-um-servidor-dns-específico">Usando um servidor DNS específico
+&lt;/h3>&lt;p>Se você não precisa de nenhum bloqueador de conteúdo DNS, apenas um DNS não filtrado, pode usar um dos nomes de servidor abaixo.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Servidor&lt;/th>
+&lt;th>País&lt;/th>
+&lt;th>Cidade&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://de-fra-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://de-fra-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Alemanha&lt;/td>
+&lt;td>Frankfurt&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://gb-lon-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://gb-lon-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Reino Unido&lt;/td>
+&lt;td>Londres&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://gb-lon-dns-301.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://gb-lon-dns-301.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Reino Unido&lt;/td>
+&lt;td>Londres&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://se-got-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://se-got-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Suécia&lt;/td>
+&lt;td>Gotemburgo&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://se-mma-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://se-mma-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Suécia&lt;/td>
+&lt;td>Malmö&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://se-sto-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://se-sto-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Suécia&lt;/td>
+&lt;td>Estocolmo&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://sg-sin-dns-101.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://sg-sin-dns-101.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>Singapura&lt;/td>
+&lt;td>Singapura&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://us-dal-dns-001.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://us-dal-dns-001.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>EUA&lt;/td>
+&lt;td>Dallas&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;del>&lt;a class="link" href="https://us-lax-dns-401.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://us-lax-dns-401.mullvad.net/dns-query&lt;/a>&lt;/del>&lt;/td>
+&lt;td>&lt;del>EUA&lt;/del>&lt;/td>
+&lt;td>&lt;del>Los Angeles&lt;/del>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a class="link" href="https://us-nyc-dns-601.mullvad.net/dns-query" target="_blank" rel="noopener"
+>https://us-nyc-dns-601.mullvad.net/dns-query&lt;/a>&lt;/td>
+&lt;td>EUA&lt;/td>
+&lt;td>Nova York&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="como-funciona-o-bloqueio-de-conteúdo">Como funciona o bloqueio de conteúdo
+&lt;/h2>&lt;p>A Mullvad mantém uma coleção de listas &amp;ldquo;temáticas&amp;rdquo; cujo conteúdo é obtido de listas de bloqueio disponíveis publicamente.&lt;/p>
+&lt;p>Quando o cliente consulta um nome de host que corresponde a um item na lista de bloqueio, nosso resolvedor simplesmente mente para o cliente e diz que o nome de host não existe.&lt;/p>
+&lt;p>Isso significa que qualquer conteúdo que o navegador tentou carregar não é carregado e, portanto, não é mostrado na tela.&lt;/p>
+&lt;p>Para mais informações sobre quais domínios são bloqueados por quais listas e quais listas da comunidade compõem as listas curadas da Mullvad, consulte nosso &lt;a class="link" href="https://github.com/mullvad/dns-blocklists" target="_blank" rel="noopener"
+>GitHub&lt;/a>.&lt;/p>
+&lt;p>O bloqueio de conteúdo DNS não pode bloquear todos os anúncios e rastreadores. Por exemplo, não pode bloquear anúncios do YouTube. Para bloquear mais anúncios e rastreadores em seu navegador da web, recomendamos o uso da extensão &lt;a class="link" href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" target="_blank" rel="noopener"
+>uBlock Origin&lt;/a>. Isso está incluído no &lt;a class="link" href="https://mullvad.net/download/browser/" target="_blank" rel="noopener"
+>Navegador Mullvad&lt;/a>.&lt;/p>
+&lt;h2 id="notas">Notas
+&lt;/h2>&lt;p>Versões anteriores deste guia continham referências a doh.mullvad.net e dot.mullvad.net. Esses nomes de host foram substituídos pelo nome de host comum dns.mullvad.net e estão sujeitos a descontinuação futura. Recomendamos a todos os usuários que usem os novos nomes de host que incluem dns.mullvad.net.&lt;/p>
+&lt;p>Os seguintes IPs não são mais usados: 193.19.108.2 e 193.19.108.3.&lt;/p>
+&lt;h4 id="proxy-socks5">Proxy SOCKS5
+&lt;/h4>&lt;p>Se você ativar o uso do nosso &lt;a class="link" href="https://mullvad.net/help/socks5-proxy/" target="_blank" rel="noopener"
+>proxy SOCKS5&lt;/a> no Firefox e ativar a configuração &lt;strong>Proxy DNS ao usar SOCKS v5&lt;/strong>, as consultas DNS não usarão o serviço DNS criptografado público e os bloqueadores de conteúdo DNS não funcionarão. Nosso proxy SOCKS5 só funciona quando você está conectado à Mullvad, e recomendamos que você não use o serviço DNS público quando estiver conectado à Mullvad, pelos motivos &lt;a class="link" href="#como-usar-este-servi%c3%a7o" >indicados acima&lt;/a>. Em vez disso, você pode ativar os &lt;a class="link" href="https://mullvad.net/help/using-mullvad-vpn-on-android/#dns-blockers" target="_blank" rel="noopener"
+>bloqueadores de conteúdo DNS&lt;/a> nas configurações do aplicativo Mullvad.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Alternativas on Info_Guerrilla</title><link>https://infoguerrilla.github.io/tags/alternativas/</link><description>Recent content in Alternativas on Info_Guerrilla</description><generator>Hugo -- gohugo.io</generator><language>pt-br</language><lastBuildDate>Mon, 21 Apr 2025 22:11:31 +0000</lastBuildDate><atom:link href="https://infoguerrilla.github.io/tags/alternativas/index.xml" rel="self" type="application/rss+xml"/><item><title>Melhores aplicativos de Software Livre e de Código Aberto</title><link>https://infoguerrilla.github.io/p/melhores-aplicativos-de-software-livre-e-de-c%C3%B3digo-aberto/</link><pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate><guid>https://infoguerrilla.github.io/p/melhores-aplicativos-de-software-livre-e-de-c%C3%B3digo-aberto/</guid><description>&lt;img src="https://infoguerrilla.github.io/p/melhores-aplicativos-de-software-livre-e-de-c%C3%B3digo-aberto/image.png" alt="Featured image of post Melhores aplicativos de Software Livre e de Código Aberto" />&lt;p>Esta é uma lista das melhores alternativas de software livre e de código aberto para segurança e privacidade. A lista está dividida em categorias e subcategorias. Os softwares estão listados em ordem alfabética dentro de cada categoria. A lista inclui softwares para todos os principais sistemas operacionais (Windows, macOS, Linux, Android, iOS) e é atualizada regularmente.&lt;/p>
+&lt;p>Às vezes, também há softwares que não são de código aberto (NOS), mas eles são indicados como tal. Ser NOS não significa que o software seja ruim, mas ele é recomendado por razões de segurança e/ou privacidade.&lt;/p>
+&lt;p>Sinta-se à vontade para contribuir com a lista e discuti-la!&lt;/p>
+&lt;h2 id="ia">IA
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.nomic.ai/gpt4all" target="_blank" rel="noopener"
+>GPT4All&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://huggingface.co/chat/" target="_blank" rel="noopener"
+>HuggingChat&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ollama.com/" target="_blank" rel="noopener"
+>Llama AI&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/zylon-ai/private-gpt" target="_blank" rel="noopener"
+>Private GPT&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/oobabooga/text-generation-webui/" target="_blank" rel="noopener"
+>Text Generation WebUI&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="autenticação">Autenticação
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://2fas.com/" target="_blank" rel="noopener"
+>2FAS Auth&lt;/a> - iOS / Android ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://getaegis.app/" target="_blank" rel="noopener"
+>Aegis&lt;/a> - Android&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/andOTP/andOTP" target="_blank" rel="noopener"
+>AndOPT&lt;/a> - Android&lt;/li>
+&lt;li>&lt;a class="link" href="https://authy.com/" target="_blank" rel="noopener"
+>Authy&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://bitwarden.com/" target="_blank" rel="noopener"
+>Bitwarden&lt;/a> - Versão paga&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/ente-io/ente/blob/main/auth/README.md" target="_blank" rel="noopener"
+>Ente Auth&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/freeotp" target="_blank" rel="noopener"
+>FreeOPT&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://proton.me/pass" target="_blank" rel="noopener"
+>Proton Pass&lt;/a> - Versão paga&lt;/li>
+&lt;/ul>
+&lt;h2 id="navegadores">Navegadores
+&lt;/h2>&lt;h3 id="base-chromium">Base Chromium
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://brave.com" target="_blank" rel="noopener"
+>Brave&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://duckduckgo.com/" target="_blank" rel="noopener"
+>DuckDuckGo&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="firefox-e-base-firefox">Firefox e base Firefox
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://mozilla.org" target="_blank" rel="noopener"
+>Firefox&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://floorp.app/" target="_blank" rel="noopener"
+>Floorp&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://librewolf.net/" target="_blank" rel="noopener"
+>LibreWolf&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mullvad.net/en/download/browser" target="_blank" rel="noopener"
+>Mullvad Browser&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.torproject.org" target="_blank" rel="noopener"
+>Tor&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zen-browser.app/" target="_blank" rel="noopener"
+>Zen&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="calendário">Calendário
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/Etar-Group/Etar-Calendar" target="_blank" rel="noopener"
+>Etar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wiki.gnome.org/Apps/Calendar" target="_blank" rel="noopener"
+>Gnome Calendar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://apps.kde.org/kalendar/" target="_blank" rel="noopener"
+>Kalendar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.thunderbird.net/en-US/calendar/" target="_blank" rel="noopener"
+>Lightning Calendar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mailbox.org/en/" target="_blank" rel="noopener"
+>Mailbox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://nextcloud.com" target="_blank" rel="noopener"
+>Nextcloud Calendar&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://posteo.de/en" target="_blank" rel="noopener"
+>Posteo&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://proton.me/calendar" target="_blank" rel="noopener"
+>Proton Calendar&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://tuta.com" target="_blank" rel="noopener"
+>Tuta&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="cloud-e-sincronização">Cloud e Sincronização
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://cryptomator.org/" target="_blank" rel="noopener"
+>Cryptomator&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://filen.io/" target="_blank" rel="noopener"
+>Filen&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://mega.io" target="_blank" rel="noopener"
+>Mega&lt;/a> - &lt;a class="link" href="https://mega.io/?aff=PcyK0CWBbwY" target="_blank" rel="noopener"
+>Ref&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://nextcloud.com" target="_blank" rel="noopener"
+>Nextcloud&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://owncloud.com/" target="_blank" rel="noopener"
+>Owncloud&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.pcloud.com/" target="_blank" rel="noopener"
+>pCloud&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://syncthing.net/" target="_blank" rel="noopener"
+>Syncthing&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="editores-de-código">Editores de Código
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://atom.io/" target="_blank" rel="noopener"
+>Atom&lt;/a> - Descontinuado&lt;/li>
+&lt;li>&lt;a class="link" href="https://codesandbox.io/" target="_blank" rel="noopener"
+>CodeSandbox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/pop-os/cosmic-edit" target="_blank" rel="noopener"
+>Cosmic&lt;/a> - TBA&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.eclipse.org/ide/" target="_blank" rel="noopener"
+>Eclipse IDE&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://expo.dev" target="_blank" rel="noopener"
+>Expo.dev&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://kate-editor.org/" target="_blank" rel="noopener"
+>Kate&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://neovim.io/" target="_blank" rel="noopener"
+>Neovim&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://pulsar-edit.dev/" target="_blank" rel="noopener"
+>Pulsar&lt;/a> - Fork do Atom&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener"
+>PyCharm&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.spyder-ide.org/" target="_blank" rel="noopener"
+>Spyder&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.vim.org/" target="_blank" rel="noopener"
+>Vim&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://vscodium.com/" target="_blank" rel="noopener"
+>VSCodium&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="dados-e-análise-de-dados">Dados e Análise de Dados
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="http://www.gnu.org/software/pspp/" target="_blank" rel="noopener"
+>GNU PSPP&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://jamovi.org/" target="_blank" rel="noopener"
+>jamovi&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://jasp-stats.org/" target="_blank" rel="noopener"
+>JASP&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://labplot.kde.org/" target="_blank" rel="noopener"
+>LabPlot&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://posit.co/products/open-source/rstudio/" target="_blank" rel="noopener"
+>RStudio&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.spyder-ide.org/" target="_blank" rel="noopener"
+>Spyder&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="estações-de-trabalho-de-áudio-digital">Estações de Trabalho de Áudio Digital
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://ardour.org/" target="_blank" rel="noopener"
+>Ardour&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.audacityteam.org/" target="_blank" rel="noopener"
+>Audacity&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://lmms.io/" target="_blank" rel="noopener"
+>LMMS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tenacityaudio.org/" target="_blank" rel="noopener"
+>Tenacity&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="e-mails">E-mails
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://mailbox.org/en/" target="_blank" rel="noopener"
+>Mailbox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://posteo.de/en" target="_blank" rel="noopener"
+>Posteo&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://proton.me" target="_blank" rel="noopener"
+>ProtonMail&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://riseup.net" target="_blank" rel="noopener"
+>RiseUp&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tutanota.com" target="_blank" rel="noopener"
+>Tuta&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="jogos">Jogos
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://usebottles.com/" target="_blank" rel="noopener"
+>Bottles&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://heroicgameslauncher.com/" target="_blank" rel="noopener"
+>Heroic Games Launcher&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/hydralauncher/hydra" target="_blank" rel="noopener"
+>HydraLauncher&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://lutris.net/" target="_blank" rel="noopener"
+>Lutris&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="editores-de-imagem">Editores de Imagem
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.darktable.org/" target="_blank" rel="noopener"
+>Darktable&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.gimp.org/" target="_blank" rel="noopener"
+>GIMP&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://inkscape.org/" target="_blank" rel="noopener"
+>Inkscape&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://krita.org/" target="_blank" rel="noopener"
+>Krita&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/Diolinux/PhotoGIMP" target="_blank" rel="noopener"
+>PhotoGIMP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="mapas">Mapas
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://osmand.net/" target="_blank" rel="noopener"
+>OsmAnd&lt;/a> - iOS / Android&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.openstreetmap.org" target="_blank" rel="noopener"
+>OpenStreetMap&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="servidores-de-mídia">Servidores de Mídia
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://jellyfin.org/" target="_blank" rel="noopener"
+>Jellyfin&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://kodi.tv/" target="_blank" rel="noopener"
+>Kodi&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.plex.tv/" target="_blank" rel="noopener"
+>Plex&lt;/a> - NOS ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.stremio.com/" target="_blank" rel="noopener"
+>Stremio&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.universalmediaserver.com/" target="_blank" rel="noopener"
+>Universal Media Server&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="mensagens">Mensagens
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://element.io/" target="_blank" rel="noopener"
+>Element&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://getsession.org/" target="_blank" rel="noopener"
+>Session&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://signal.org/" target="_blank" rel="noopener"
+>Signal&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://tox.chat/" target="_blank" rel="noopener"
+>Tox&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wire.com" target="_blank" rel="noopener"
+>Wire&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="mapas-mentais">Mapas Mentais
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.diagrams.net/" target="_blank" rel="noopener"
+>diagrams.net&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://sourceforge.net/projects/freemind/" target="_blank" rel="noopener"
+>FreeMind&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.freeplane.org/" target="_blank" rel="noopener"
+>Freeplane&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.mindmaps.app/" target="_blank" rel="noopener"
+>MindApps&lt;/a> - Online&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/phase1geo/minder/" target="_blank" rel="noopener"
+>Minder&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/felixhayashi/TW5-TiddlyMap" target="_blank" rel="noopener"
+>TiddlyMap&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.insilmaril.de/vym/" target="_blank" rel="noopener"
+>vym&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="escritório">Escritório
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.openoffice.org/" target="_blank" rel="noopener"
+>Apache OpenOffice&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://calligra.org/" target="_blank" rel="noopener"
+>Caligra&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://cryptpad.fr/" target="_blank" rel="noopener"
+>Cryptpad&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://libreoffice.org" target="_blank" rel="noopener"
+>LibreOffice&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://onlyoffice.com/" target="_blank" rel="noopener"
+>OnlyOffice&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="sistemas-operacionais">Sistemas Operacionais
+&lt;/h2>&lt;h3 id="distribuições-linux-mais-amigáveis">Distribuições Linux mais amigáveis
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://getfedora.org/" target="_blank" rel="noopener"
+>Fedora&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://linuxmint.com/" target="_blank" rel="noopener"
+>Linux Mint&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://pop.system76.com/" target="_blank" rel="noopener"
+>Pop!_OS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zorinos.com/" target="_blank" rel="noopener"
+>Zorin OS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="segurança-e-privacidade">Segurança e Privacidade
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.qubes-os.org/" target="_blank" rel="noopener"
+>Qubes OS&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tails.boum.org/" target="_blank" rel="noopener"
+>Tails&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.whonix.org/" target="_blank" rel="noopener"
+>Whonix&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="ajustes-para-windows">Ajustes para Windows
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/ChrisTitusTech/winutil" target="_blank" rel="noopener"
+>WinUtil&lt;/a> - Windows 10 e 11 Debloat&lt;/li>
+&lt;/ul>
+&lt;h2 id="pdf">PDF
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://wiki.gnome.org/Apps/Evince" target="_blank" rel="noopener"
+>Evince&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.libreoffice.org/discover/draw/" target="_blank" rel="noopener"
+>LibreOffice Draw&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://okular.kde.org" target="_blank" rel="noopener"
+>Okular&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.sumatrapdfreader.org/free-pdf-reader" target="_blank" rel="noopener"
+>Sumatra&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="gerenciadores-de-senhas">Gerenciadores de Senhas
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://bitwarden.com/" target="_blank" rel="noopener"
+>Bitwarden&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://keepassxc.org/" target="_blank" rel="noopener"
+>KeepassXC&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://proton.me/pass" target="_blank" rel="noopener"
+>Proton Pass&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="softwares-relacionados-a-pesquisa">Softwares relacionados a pesquisa
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://citation-file-format.github.io/cff-initializer-javascript" target="_blank" rel="noopener"
+>CffInit&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.jabref.org/" target="_blank" rel="noopener"
+>JabRef&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/jimmejardine/qiqqa-open-source" target="_blank" rel="noopener"
+>Qiqqa&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zotero.org" target="_blank" rel="noopener"
+>Zotero&lt;/a> ⭐&lt;/li>
+&lt;/ul>
+&lt;h2 id="buscadores">Buscadores
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://search.brave.com/" target="_blank" rel="noopener"
+>Brave&lt;/a> - NOS ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://duckduckgo.com" target="_blank" rel="noopener"
+>DuckDuckGo&lt;/a> - NOS ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://metager.org/" target="_blank" rel="noopener"
+>MetaGer&lt;/a> - Pago&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.qwant.com/" target="_blank" rel="noopener"
+>Qwant&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://searx.github.io/searx/" target="_blank" rel="noopener"
+>Searx&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.searxng.org/" target="_blank" rel="noopener"
+>SearXNG&lt;/a> - &lt;a class="link" href="https://searx.space/" target="_blank" rel="noopener"
+>Instâncias&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.startpage.com/" target="_blank" rel="noopener"
+>Startpage&lt;/a> - NOS&lt;/li>
+&lt;li>&lt;a class="link" href="https://yacy.net/" target="_blank" rel="noopener"
+>YaCy&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="tarefas-e-anotações">Tarefas e Anotações
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.appflowy.io/" target="_blank" rel="noopener"
+>AppFlowy&lt;/a> - Alternativa ao Notion ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.giuspen.com/cherrytree/" target="_blank" rel="noopener"
+>CherryTree&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://joplinapp.org/" target="_blank" rel="noopener"
+>Joplin&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://logseq.com/" target="_blank" rel="noopener"
+>Logseq&lt;/a> - Alternativa ao Obsidian&lt;/li>
+&lt;li>&lt;a class="link" href="https://obsidian.md/" target="_blank" rel="noopener"
+>Obsidian&lt;/a> - NOS ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.openproject.org/" target="_blank" rel="noopener"
+>OpenProject&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.qownnotes.org/" target="_blank" rel="noopener"
+>QOwnNotes&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://simplenote.com/" target="_blank" rel="noopener"
+>Simplenote&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://standardnotes.com/" target="_blank" rel="noopener"
+>Standard Notes&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.zettlr.com/" target="_blank" rel="noopener"
+>Zettlr&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="torrent">Torrent
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.qbittorrent.org/" target="_blank" rel="noopener"
+>qBittorrent&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://transmissionbt.com/" target="_blank" rel="noopener"
+>Transmission&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="uml">UML
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.diagrams.net/" target="_blank" rel="noopener"
+>diagrams.net&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://gaphor.org/" target="_blank" rel="noopener"
+>Gaphor&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/ModelioOpenSource/Modelio" target="_blank" rel="noopener"
+>Modelio&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.eclipse.org/papyrus/" target="_blank" rel="noopener"
+>Papyrus UML&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://plantuml.com/" target="_blank" rel="noopener"
+>PlantUML&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://apps.kde.org/umbrello/" target="_blank" rel="noopener"
+>Umbrello&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="vpn">VPN
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.mozilla.org/en-US/products/vpn/" target="_blank" rel="noopener"
+>Mozilla VPN&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://mullvad.net" target="_blank" rel="noopener"
+>Mullvad&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://protonvpn.com/" target="_blank" rel="noopener"
+>Proton VPN&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://riseup.net/vpn" target="_blank" rel="noopener"
+>RiseUp VPN&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://windscribe.com/" target="_blank" rel="noopener"
+>Windscribe&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.wireguard.com/" target="_blank" rel="noopener"
+>WireGuard&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Acho importante olhar o &lt;a class="link" href="https://techlore.tech/vpn/" target="_blank" rel="noopener"
+>Techlore&amp;rsquo;s VPN Toolkit&lt;/a> para mais informações sobre VPNs.&lt;/p>&lt;/blockquote>
+&lt;h2 id="editores-de-vídeo">Editores de Vídeo
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="http://fixounet.free.fr/avidemux/" target="_blank" rel="noopener"
+>Avidemux&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://kdenlive.org/" target="_blank" rel="noopener"
+>Kdenlive&lt;/a> ⭐&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.olivevideoeditor.org/" target="_blank" rel="noopener"
+>Olive&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.openshot.org/" target="_blank" rel="noopener"
+>OpenShot&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.shotcut.org/" target="_blank" rel="noopener"
+>Shotcut&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="leitores-rss">Leitores RSS
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://play.google.com/store/apps/details?id=com.nononsenseapps.feeder.play" target="_blank" rel="noopener"
+>Feeder&lt;/a> - Android&lt;/li>
+&lt;li>&lt;a class="link" href="https://ravenreader.app/" target="_blank" rel="noopener"
+>Raven&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="referências-importantes">Referências importantes
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://techlore.tech/" target="_blank" rel="noopener"
+>techlore.tech&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://restoreprivacy.com/" target="_blank" rel="noopener"
+>restoreprivacy.com&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://alternativeto.net/" target="_blank" rel="noopener"
+>alternativeto.net&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.privacytools.io/" target="_blank" rel="noopener"
+>privacytools.io&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Lista em constante atualização&lt;/p></description></item></channel></rss>
