@@ -3,8 +3,8 @@
 title: Software Livre, Open source, Privacidade, Segurança  
 description: Militantes de esquerda deveriam se preocupar com isso?  
 slug: Software-Livre-Open-source-Privacidade-Segurança  
-date: 2025-04-19 00:00:00+0000  
-lastmod: 2025-04-19 10:30:31+0000  
+date: 2025-04-19
+lastmod: 2025-04-21 22:11:31+0000  
 image: image.png
 categories:  
 - Política  
