@@ -1,0 +1,80 @@
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+{{- $description := partialCached "data/description" . .RelPermalink -}}
+<meta name='description' {{ printf "content=%q" $description | safeHTMLAttr }}>
+{{ with .Params.Keywords }}
+<meta name="keywords" content="{{ delimit . " , " }}">{{ end }}
+
+<!-- Add author meta tag if available in front matter -->
+{{ with .Params.author }}
+<meta name="author" content="{{ . }}">
+{{ end }}
+
+{{- $title := partial "data/title" . -}}
+<title>{{ $title }}</title>
+
+<link rel='canonical' href='{{ .Permalink }}'>
+
+{{- partial "head/style.html" . -}}
+{{- partial "head/script.html" . -}}
+{{- partial "head/opengraph/include.html" . -}}
+
+{{- range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{- end -}}
+
+{{ with .Site.Params.favicon }}
+<link rel="shortcut icon" href="{{ . | relURL }}" />
+{{ end }}
+
+{{- template "_internal/google_analytics.html" . -}}
+
+<!-- Script to ensure author meta tag is present -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Check if meta author tag already exists
+    let metaAuthor = document.querySelector('meta[name="author"]');
+
+    // If meta tag doesn't exist, try to find author from the page content
+    if (!metaAuthor) {
+      // Wait for the DOM to be fully loaded
+      setTimeout(function () {
+        // Try different selectors to find the author element
+        const authorElement =
+          document.querySelector('.author a') ||
+          document.querySelector('span.author a');
+
+        if (authorElement) {
+          let authorName = authorElement.textContent.trim();
+
+          if (authorName) {
+            metaAuthor = document.createElement('meta');
+            metaAuthor.setAttribute('name', 'author');
+            metaAuthor.setAttribute('content', authorName);
+            document.head.appendChild(metaAuthor);
+            console.log('Author meta tag dynamically added:', authorName);
+          }
+        } else {
+          // Fallback: try to find any element with class 'author'
+          const fallbackElement = document.querySelector('.author');
+          if (fallbackElement) {
+            // If it contains an <a> tag, use that text
+            const link = fallbackElement.querySelector('a');
+            let authorName = link ? link.textContent.trim() : fallbackElement.textContent.trim();
+
+            if (authorName) {
+              metaAuthor = document.createElement('meta');
+              metaAuthor.setAttribute('name', 'author');
+              metaAuthor.setAttribute('content', authorName);
+              document.head.appendChild(metaAuthor);
+              console.log('Author meta tag dynamically added (fallback):', authorName);
+            }
+          }
+        }
+      }, 1000); // Increased delay to ensure DOM is fully ready
+    }
+  });
+</script>
+
+{{- partial "head/custom.html" . -}}
