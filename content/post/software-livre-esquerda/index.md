@@ -5,7 +5,7 @@ slug: Software-Livre-Open-source-Privacidade-Segurança
 date: 2025-04-19
 lastmod: 2025-04-21 22:11:31+0000  
 image: image.png
-authors: "Geraldo Homero do Couto Neto"
+author: "Geraldo Homero do Couto Neto"
 categories:  
 - Política  
 - Tecnologia    
