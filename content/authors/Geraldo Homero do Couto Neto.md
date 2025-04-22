@@ -1,6 +1,6 @@
 ---
-title: ""
-layout: "page"
+title: "Geraldo Homero do Couto Neto"
+
 ---
 
 # [Geraldo Homero do Couto Neto](https://geraldohomero.github.io)

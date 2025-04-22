@@ -51,7 +51,7 @@
     {{ with .Params.author }}
     <div>
       {{ partial "helper/icon" "user" }}
-      <span class="article-author">
+      <span class="author">
         {{ $authorPage := site.GetPage (printf "authors/%s" .) }}
         {{ if $authorPage }}
         <a href="{{ $authorPage.Permalink }}">{{ . }}</a>

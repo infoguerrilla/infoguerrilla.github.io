@@ -1,12 +1,11 @@
 ---
-
 title: Software Livre, Open source, Privacidade, Segurança  
 description: Militantes de esquerda deveriam se preocupar com isso?  
 slug: Software-Livre-Open-source-Privacidade-Segurança  
 date: 2025-04-19
 lastmod: 2025-04-21 22:11:31+0000  
 image: image.png
-author: "Geraldo Homero do Couto Neto"
+authors: "Geraldo Homero do Couto Neto"
 categories:  
 - Política  
 - Tecnologia    
