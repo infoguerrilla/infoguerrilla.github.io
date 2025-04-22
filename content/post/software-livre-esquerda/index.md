@@ -6,6 +6,7 @@ slug: Software-Livre-Open-source-Privacidade-Segurança
 date: 2025-04-19
 lastmod: 2025-04-21 22:11:31+0000  
 image: image.png
+author: "Geraldo Homero do Couto Neto"
 categories:  
 - Política  
 - Tecnologia    
@@ -18,8 +19,6 @@ tags:
 weight: 1 # You can add weight to some posts to override the default sorting (date descending)  
 
 ---
-
-> **[Geraldo Homero do Couto Neto](https://geraldohomero.github.io)** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [ResearchGate](https://www.researchgate.net/profile/Geraldo-Couto-Neto) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [BlueSky](https://bsky.app/profile/geraldohomero.bsky.social) | [X](https://twitter.com/geraldohomero)
 
 ## Introdução
 

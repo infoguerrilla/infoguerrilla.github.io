@@ -1,8 +1,10 @@
 ---
 title: Melhores aplicativos de Software Livre e de Código Aberto
 date: 2023-09-07
+lastmod: 2025-04-21 22:11:31+0000  
 description: Uma lista simples e direta para te ajudar a encontrar alternativas de software livre e de código aberto para aplicativos populares.
 image: image.png
+author: "Geraldo Homero do Couto Neto"
 tags:
 - software livre
 - código aberto
@@ -15,8 +17,6 @@ categories:
 - segurança
 - aplicativos
 ---
-
-> **[Geraldo Homero do Couto Neto](https://geraldohomero.github.io)** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [ResearchGate](https://www.researchgate.net/profile/Geraldo-Couto-Neto) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [BlueSky](https://bsky.app/profile/geraldohomero.bsky.social) | [X](https://twitter.com/geraldohomero)
 
 
 Esta é uma lista das melhores alternativas de software livre e de código aberto para segurança e privacidade. A lista está dividida em categorias e subcategorias. Os softwares estão listados em ordem alfabética dentro de cada categoria. A lista inclui softwares para todos os principais sistemas operacionais (Windows, macOS, Linux, Android, iOS) e é atualizada regularmente.

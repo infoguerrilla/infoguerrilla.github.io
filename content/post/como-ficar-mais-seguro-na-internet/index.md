@@ -1,9 +1,10 @@
 ---
 title: "Guia: Como ficar mais seguro e privado na internet"
+slug: como-ficar-mais-seguro-e-privado-na-internet
 description: Privacidade e Segurança na Internet
 date: 2025-01-24 00:00:00+0000
 image: image.png
-math: false
+author: "Geraldo Homero do Couto Neto"
 tags:
 - privacidade
 - segurança
@@ -15,11 +16,8 @@ categories:
 - internet
 - dados pessoais
 - guia
-slug: como-ficar-mais-seguro-e-privado-na-internet
+
 ---
-
-> **[Geraldo Homero do Couto Neto](https://geraldohomero.github.io)** | [ORCID](https://orcid.org/0000-0001-6686-7182) | [Lattes](http://lattes.cnpq.br/9924558848538635) | [ResearchGate](https://www.researchgate.net/profile/Geraldo-Couto-Neto) | [LinkedIn](https://www.linkedin.com/in/geraldohomero/) | [Instagram](https://www.instagram.com/geraldohomero/) | [BlueSky](https://bsky.app/profile/geraldohomero.bsky.social) | [X](https://twitter.com/geraldohomero)
-
 
 ## Introdução
 
