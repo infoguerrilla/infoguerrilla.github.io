@@ -4,19 +4,18 @@ slug: como-ficar-mais-seguro-e-privado-na-internet
 description: Privacidade e Segurança na Internet
 date: 2025-01-24 00:00:00+0000
 image: image.png
-author: "Geraldo Homero do Couto Neto"
+author: Geraldo Homero do Couto Neto
 tags:
-- privacidade
-- segurança
-- internet
-- dados pessoais
+  - privacidade
+  - segurança
+  - dados
+  - pessoais
 categories:
-- privacidade
-- segurança
-- internet
-- dados pessoais
-- guia
-
+  - privacidade
+  - segurança
+  - internet
+  - dados pessoais
+  - guia
 ---
 
 ## Introdução
