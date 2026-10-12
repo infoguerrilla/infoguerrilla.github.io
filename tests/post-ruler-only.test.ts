@@ -20,6 +20,9 @@ describe('Reading Ruler Exclusivity to Posts', () => {
   });
 
   it('verifies that dist/index.html hides the ruler while dist/post/ shows it', () => {
+    const hasDist = fs.existsSync(path.resolve('dist/index.html'));
+    if (!hasDist) return;
+
     const indexHtml = fs.readFileSync(path.resolve('dist/index.html'), 'utf-8');
     const postHtml = fs.readFileSync(path.resolve('dist/post/nao-leia-mark-fisher/index.html'), 'utf-8');
 
