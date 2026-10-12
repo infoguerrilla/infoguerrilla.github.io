@@ -31,3 +31,4 @@ describe('Site-Wide Social Links Specification', () => {
     expect(authorContent).toContain('orcid.org/0000-0001-6686-7182');
   });
 });
+

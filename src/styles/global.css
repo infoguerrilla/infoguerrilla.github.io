@@ -17,15 +17,15 @@
 }
 
 [data-theme="dark"] {
-  --color-canvas: #111215;
-  --color-surface: #191B20;
-  --color-surface-hover: #22252C;
+  --color-canvas: #202227;
+  --color-surface: #2b2e35;
+  --color-surface-hover: #353842;
   --color-ink: #F4EFEA;
-  --color-muted: #9498A3;
-  --color-red: #FF372B;
+  --color-muted: #A1A5B2;
+  --color-red: #FF3B2F;
   --color-red-deep: #D82218;
-  --color-border: #2C303A;
-  --color-grid: rgba(244, 239, 234, 0.03);
+  --color-border: #424652;
+  --color-grid: rgba(244, 239, 234, 0.04);
 }
 
 @layer base {
@@ -194,7 +194,7 @@
 
 .academic-prose pre {
   font-family: 'JetBrains Mono', monospace;
-  background-color: #121215;
+  background-color: #1a1c22;
   color: #F4EFEA;
   padding: 1.25rem;
   border: 2px solid var(--color-border);

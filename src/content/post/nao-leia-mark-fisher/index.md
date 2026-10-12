@@ -10,7 +10,7 @@ tags:
   - mark fisher
   - realismo capitalista
 categories:
-  - resenha
+  - ensaio
   - esquerda
 ---
 
