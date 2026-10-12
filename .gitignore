@@ -3,6 +3,4 @@ dist/
 .astro/
 .superpowers/
 .hugo_build.lock
-public/
 resources/
-docs/
