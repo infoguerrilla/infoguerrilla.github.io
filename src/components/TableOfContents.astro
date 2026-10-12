@@ -1,0 +1,45 @@
+---
+// TableOfContents.astro: Sumário Construtivista de Tópicos
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+const filteredHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+---
+
+{filteredHeadings.length > 0 && (
+  <nav
+    aria-label="Sumário do ensaio"
+    class="my-8 border-2 border-border-brutal bg-surface p-5 shadow-constructivist-sm cut-corner-br"
+  >
+    <div class="flex items-center justify-between mb-3 border-b border-border-brutal/30 pb-2">
+      <span class="font-mono text-xs font-bold uppercase tracking-wider text-manifesto-red flex items-center gap-2">
+        <span class="inline-block w-2 h-2 bg-manifesto-red"></span>
+        // SUMÁRIO_DO_ENSAIO
+      </span>
+      <span class="font-mono text-[11px] text-ink-muted">
+        [{filteredHeadings.length} SEÇÕES]
+      </span>
+    </div>
+
+    <ol class="space-y-1.5 font-mono text-xs list-none pl-0">
+      {filteredHeadings.map((heading, index) => {
+        const num = String(index + 1).padStart(2, '0');
+        return (
+          <li class={heading.depth === 3 ? "pl-4 text-ink-muted" : "text-ink font-medium"}>
+            <a
+              href={`#${heading.slug}`}
+              class="hover:text-manifesto-red hover:underline flex items-baseline gap-2 transition-colors py-0.5"
+            >
+              <span class="text-manifesto-red text-[10px]">[{num}]</span>
+              <span>{heading.text}</span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+)}

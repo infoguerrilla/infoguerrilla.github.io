@@ -1,0 +1,65 @@
+---
+// Header.astro: Cabeçalho Monumental Construtivista
+import ThemeToggle from './ThemeToggle.astro';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\/$/, "");
+
+const navItems = [
+  { href: "/", label: "INÍCIO", code: "01" },
+  { href: "/arquivo", label: "ARQUIVO", code: "02" },
+  { href: "/sobre", label: "SOBRE", code: "03" },
+  { href: "/busca", label: "BUSCA", code: "04" },
+];
+---
+
+<header class="w-full border-b-2 border-border-brutal bg-canvas/90 backdrop-blur-sm sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-border-brutal/20 gap-4">
+      
+      <!-- Marca Principal & Manifesto -->
+      <div class="flex items-start gap-3">
+        <!-- Ícone / Elemento Geométrico Construtivista -->
+        <div class="hidden sm:flex flex-col items-center justify-center w-10 h-10 bg-manifesto-red text-white font-mono font-black text-lg border-2 border-border-brutal shadow-constructivist-sm rotate-3 select-none">
+          IG
+        </div>
+        
+        <div>
+          <a href="/" class="group inline-block">
+            <span class="font-display font-black text-2xl sm:text-3xl tracking-tight text-ink uppercase group-hover:text-manifesto-red transition-colors">
+              INFO<span class="text-manifesto-red">_</span>GUERRILLA
+            </span>
+          </a>
+          <p class="font-serif italic text-xs sm:text-sm text-ink-muted leading-tight mt-0.5">
+            &ldquo;Para que o trabalho do alfaiate não desapareça na roupa&rdquo;
+          </p>
+        </div>
+      </div>
+
+      <!-- Ações do Cabeçalho: Tema & Indicador -->
+      <div class="flex items-center justify-between md:justify-end gap-4">
+        <ThemeToggle />
+      </div>
+    </div>
+
+    <!-- Barra de Navegação Construtivista -->
+    <nav class="flex items-center gap-1 sm:gap-2 py-2 overflow-x-auto text-xs sm:text-sm font-mono tracking-wider">
+      {navItems.map((item) => {
+        const isActive = currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
+        return (
+          <a
+            href={item.href}
+            class={`press-btn px-2.5 sm:px-3 py-1 border transition-all select-none ${
+              isActive
+                ? "border-border-brutal bg-manifesto-red text-white font-bold shadow-constructivist-sm"
+                : "border-transparent text-ink hover:border-border-brutal hover:bg-surface"
+            }`}
+          >
+            <span class="text-[10px] opacity-75 mr-1 font-mono">[{item.code}]</span>
+            {item.label}
+          </a>
+        );
+      })}
+    </nav>
+  </div>
+</header>

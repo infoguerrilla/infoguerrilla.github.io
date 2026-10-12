@@ -1,0 +1,71 @@
+---
+// HeroPoster.astro: Cartaz Construtivista de Destaque (Vanguarda Editorial)
+import type { CollectionEntry } from 'astro:content';
+import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
+
+interface Props {
+  post: CollectionEntry<'post'>;
+}
+
+const { post } = Astro.props;
+const formattedDate = formatPostDate(post.data.date);
+const readingMinutes = calculateReadingTime(post.body || '');
+const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(post.slug);
+---
+
+<section class="relative w-full border-3 border-border-brutal bg-surface p-6 sm:p-8 md:p-12 shadow-constructivist-double mb-12 cut-corner-br overflow-hidden">
+  
+  <!-- Elemento Geométrico Construtivista em Segundo Plano -->
+  <div
+    class="absolute -right-16 -top-16 w-64 h-64 bg-manifesto-red/10 rotate-12 pointer-events-none select-none border-4 border-manifesto-red/20 hidden md:block"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 max-w-4xl">
+    <!-- Cabeçalho do Cartaz: Carimbo e Eixo Temático -->
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="bg-manifesto-red text-white font-mono text-xs font-black px-3 py-1 uppercase tracking-widest shadow-constructivist-sm">
+        ★ ENSAIO_EM_DESTAQUE
+      </span>
+
+      {post.data.categories?.[0] && (
+        <span class="border border-border-brutal bg-canvas px-2.5 py-0.5 font-mono text-xs font-bold uppercase text-ink">
+          // {post.data.categories[0]}
+        </span>
+      )}
+
+      <time datetime={post.data.date.toISOString()} class="font-mono text-xs text-ink-muted ml-auto">
+        {formattedDate} &bull; [{readingMinutes} MIN LEITURA]
+      </time>
+    </div>
+
+    <!-- Título Monumental de Vanguarda -->
+    <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-ink leading-[1.08] mb-6">
+      <a href={`/post/${postSlug}`} class="hover:text-manifesto-red transition-colors">
+        {post.data.title}
+      </a>
+    </h1>
+
+    <!-- Descrição Editorial -->
+    {post.data.description && (
+      <p class="font-serif text-lg sm:text-xl text-ink leading-relaxed mb-8 max-w-3xl italic">
+        {post.data.description}
+      </p>
+    )}
+
+    <!-- Ações e Metadados -->
+    <div class="flex flex-wrap items-center gap-4 pt-4 border-t-2 border-border-brutal/30">
+      <a
+        href={`/post/${postSlug}`}
+        class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-manifesto-red px-5 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-white shadow-constructivist-md"
+      >
+        <span>LER_ENSAIO_COMPLETO</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+
+      <span class="font-mono text-xs text-ink-muted">
+        AUTORIA: <strong class="text-ink">{post.data.author}</strong>
+      </span>
+    </div>
+  </div>
+</section>
