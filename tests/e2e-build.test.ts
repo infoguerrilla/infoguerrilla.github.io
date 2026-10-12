@@ -38,4 +38,12 @@ describe('Build Output Verification', () => {
   it('generates pagefind search index after full build', () => {
     expect(fs.existsSync(path.resolve('dist/pagefind/pagefind.js'))).toBe(true);
   });
+
+  it('renders image caption and embedded reading ruler in generated post HTML', () => {
+    const postHtml = fs.readFileSync(path.resolve('dist/post/nao-leia-mark-fisher/index.html'), 'utf-8');
+    expect(postHtml).toContain('<figcaption');
+    expect(postHtml).toContain('Giovanni Battista Piranesi');
+    expect(postHtml).toContain('id="header-reading-ruler"');
+    expect(postHtml).toContain('id="mobile-theme-toggle"');
+  });
 });

@@ -22,3 +22,4 @@ export async function GET(context: { site: URL }) {
     customData: `<language>pt-br</language>`,
   });
 }
+

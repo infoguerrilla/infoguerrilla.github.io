@@ -2,42 +2,69 @@
 // autor/[slug].astro: Página Dedicada do Autor e seus Ensaios
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
-import { getCollection } from 'astro:content';
-import { authors, getAuthorBySlug, type Author } from '../../data/authors';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { normalizeSlug } from '../../utils/posts';
 
 export async function getStaticPaths() {
+  const allAuthors = await getCollection('authors');
   const allPosts = await getCollection('post');
 
-  // Coleta autores conhecidos + autores encontrados nos posts
-  const knownSlugs = new Set(authors.map((a) => a.slug));
-  
+  const paths = [];
+  const registeredSlugs = new Set<string>();
+
+  for (const author of allAuthors) {
+    const slug = normalizeSlug(author.slug);
+    registeredSlugs.add(slug);
+    paths.push({
+      params: { slug },
+      props: { author },
+    });
+  }
+
+  // Permite fallback elegante se houver post de autor sem arquivo .md
   allPosts.forEach((p) => {
     if (p.data.author) {
-      knownSlugs.add(normalizeSlug(p.data.author));
+      const slug = normalizeSlug(p.data.author);
+      if (!registeredSlugs.has(slug)) {
+        registeredSlugs.add(slug);
+        paths.push({
+          params: { slug },
+          props: {
+            author: {
+              slug,
+              data: {
+                name: p.data.author,
+                role: "Autor(a) Colaborador(a)",
+                avatar: "https://avatars.githubusercontent.com/u/70844369?v=4",
+                bio: "Colaborador(a) do projeto editorial Info_Guerrilla.",
+                degrees: [],
+                researchTopics: ["Teoria Crítica", "Política & Tecnologia"],
+                links: {},
+              },
+            } as any,
+          },
+        });
+      }
     }
   });
 
-  return Array.from(knownSlugs).map((slug) => ({
-    params: { slug },
-  }));
+  return paths;
 }
 
-const { slug } = Astro.params;
-const authorData: Author = getAuthorBySlug(slug) || {
-  name: slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
-  slug,
-  role: "Autor(a) Colaborador(a)",
-  avatar: "https://avatars.githubusercontent.com/u/70844369?v=4",
-  bio: "Colaborador(a) do projeto editorial Info_Guerrilla.",
-  degrees: [],
-  researchTopics: ["Teoria Crítica", "Política & Tecnologia"],
-  links: {},
-};
+interface Props {
+  author: CollectionEntry<'authors'>;
+}
+
+const { author } = Astro.props;
+const authorData = author.data;
+const authorSlug = normalizeSlug(author.slug);
+
+const hasRender = typeof author.render === 'function';
+const { Content } = hasRender ? await author.render() : { Content: null };
 
 const allPosts = await getCollection('post');
 const authorPosts = allPosts
-  .filter((p) => normalizeSlug(p.data.author) === slug || p.data.author.toLowerCase() === authorData.name.toLowerCase())
+  .filter((p) => normalizeSlug(p.data.author) === authorSlug || p.data.author.toLowerCase() === authorData.name.toLowerCase())
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
@@ -90,12 +117,14 @@ const authorPosts = allPosts
             {authorData.role}
           </p>
 
-          <p class="font-serif text-base sm:text-lg text-ink leading-relaxed mb-4">
-            {authorData.bio}
-          </p>
+          {authorData.bio && (
+            <p class="font-serif text-base sm:text-lg text-ink leading-relaxed mb-4">
+              {authorData.bio}
+            </p>
+          )}
 
           <!-- Titulações Acadêmicas -->
-          {authorData.degrees.length > 0 && (
+          {authorData.degrees && authorData.degrees.length > 0 && (
             <div class="mb-4">
               <span class="font-mono text-xs font-bold text-ink-muted uppercase block mb-1.5">
                 FORMAÇÃO ACADÊMICA:
@@ -112,7 +141,7 @@ const authorPosts = allPosts
           )}
 
           <!-- Linhas de Pesquisa -->
-          {authorData.researchTopics.length > 0 && (
+          {authorData.researchTopics && authorData.researchTopics.length > 0 && (
             <div class="flex flex-wrap gap-1.5 mt-3">
               {authorData.researchTopics.map((topic) => (
                 <span class="font-mono text-[11px] bg-canvas border border-border-brutal/30 px-2 py-0.5 text-ink-muted">
@@ -121,11 +150,18 @@ const authorPosts = allPosts
               ))}
             </div>
           )}
+
+          <!-- Biografia / Ensaio Estendido do Autor (do arquivo Markdown) -->
+          {Content && (
+            <div class="academic-prose mt-6 pt-4 border-t border-border-brutal/20 text-ink leading-relaxed">
+              <Content />
+            </div>
+          )}
         </div>
       </div>
 
       <!-- Links e Conexões Acadêmicas -->
-      {Object.keys(authorData.links).length > 0 && (
+      {authorData.links && Object.keys(authorData.links).length > 0 && (
         <div class="mt-8 pt-6 border-t border-border-brutal/20">
           <span class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted block mb-3">
             // REDES & ÍNDICES ACADÊMICOS

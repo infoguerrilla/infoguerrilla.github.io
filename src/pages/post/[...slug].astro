@@ -1,7 +1,6 @@
 ---
 // [...slug].astro: Página de Leitura do Ensaio (Editorial Acadêmico)
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ReadingRuler from '../../components/ReadingRuler.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../../utils/posts';
@@ -61,9 +60,6 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
   description={post.data.description || "Ensaio acadêmico e editorial crítico."}
   image={featuredImg || "/favicon.png"}
 >
-  <!-- Barra Horizontal de Leitura Fixada Logo Abaixo do Header -->
-  <ReadingRuler />
-
   <!-- data-pagefind-body garante que apenas o conteúdo do artigo é indexado pelo Pagefind -->
   <article data-pagefind-body class="max-w-5xl mx-auto pt-4">
     
@@ -100,15 +96,21 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
         </p>
       )}
 
-      <!-- Imagem de Destaque com Estética de Arquivo Histórico de Época -->
+      <!-- Imagem de Destaque com Estética de Arquivo Histórico de Época e Legenda Editorial -->
       {featuredImg && (
-        <div class="my-8">
+        <figure class="my-8">
           <img
             src={featuredImg}
-            alt={`Imagem de destaque para ${post.data.title}`}
+            alt={post.data.imageCaption || post.data.caption || `Imagem de destaque para ${post.data.title}`}
             class="vintage-archive-img w-full max-h-[500px] object-cover"
           />
-        </div>
+          {(post.data.imageCaption || post.data.caption) && (
+            <figcaption class="mt-2.5 font-mono text-xs text-ink-muted text-center tracking-tight border-b border-border-brutal/20 pb-2">
+              <span class="text-manifesto-red font-bold mr-1">// FIG:</span>
+              {post.data.imageCaption || post.data.caption}
+            </figcaption>
+          )}
+        </figure>
       )}
 
       <!-- Metadados de Autoria (com link para a página do autor) e Leitura -->

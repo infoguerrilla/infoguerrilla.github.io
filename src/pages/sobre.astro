@@ -1,7 +1,9 @@
 ---
 // sobre.astro: Manifesto Editorial e Proposta Teórica do Info_Guerrilla
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { authors } from '../data/authors';
+import { getCollection } from 'astro:content';
+
+const authors = await getCollection('authors');
 ---
 
 <BaseLayout
@@ -58,8 +60,8 @@ import { authors } from '../data/authors';
         {authors.map((author) => (
           <article class="border border-border-brutal bg-canvas p-5 flex items-start gap-4 hover:border-manifesto-red transition-all cut-corner-br shadow-constructivist-sm">
             <img
-              src={author.avatar}
-              alt={author.name}
+              src={author.data.avatar}
+              alt={author.data.name}
               width="70"
               height="70"
               class="vintage-archive-img w-16 h-16 object-cover shrink-0"
@@ -67,11 +69,11 @@ import { authors } from '../data/authors';
             <div>
               <h3 class="font-display font-bold text-lg text-ink leading-tight">
                 <a href={`/autor/${author.slug}`} class="hover:text-manifesto-red">
-                  {author.name}
+                  {author.data.name}
                 </a>
               </h3>
               <p class="font-mono text-[11px] text-manifesto-red font-bold uppercase mt-0.5 mb-2">
-                {author.role}
+                {author.data.role}
               </p>
               <a
                 href={`/autor/${author.slug}`}

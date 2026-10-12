@@ -30,3 +30,4 @@ export function getPostFeaturedImage(postId: string, imageFileName?: string): st
 
   return null;
 }
+

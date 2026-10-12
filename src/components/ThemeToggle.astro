@@ -1,22 +1,29 @@
 ---
 // ThemeToggle.astro: Construtivista - Interruptor tático Papel/Noturno
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id = "theme-toggle", class: className = "" } = Astro.props;
 ---
 
 <button
-  id="theme-toggle"
+  id={id}
   type="button"
+  data-theme-toggle
   aria-label="Alternar modo visual (Papel / Noturno)"
-  class="press-btn group relative inline-flex items-center gap-2 border-2 border-border-brutal bg-surface px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-ink shadow-constructivist-sm hover:border-manifesto-red focus:outline-none"
+  class={`press-btn group relative inline-flex items-center gap-2 border-2 border-border-brutal bg-surface px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-ink shadow-constructivist-sm hover:border-manifesto-red focus:outline-none ${className}`}
 >
-  <span class="inline-block h-2.5 w-2.5 bg-manifesto-red transition-transform group-hover:scale-125" id="theme-indicator"></span>
+  <span class="inline-block h-2.5 w-2.5 bg-manifesto-red transition-transform group-hover:scale-125 theme-indicator"></span>
   <span class="text-ink-muted">MODO:</span>
-  <span id="theme-label" class="text-ink">PAPEL</span>
+  <span class="theme-label text-ink">PAPEL</span>
 </button>
 
 <script>
   function setupThemeToggle() {
-    const toggleBtn = document.getElementById('theme-toggle');
-    const label = document.getElementById('theme-label');
+    const toggleBtns = document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]');
+    const labels = document.querySelectorAll<HTMLElement>('.theme-label');
     const root = document.documentElement;
 
     function getActiveTheme(): string {
@@ -26,25 +33,24 @@
     }
 
     function updateUI(theme: string) {
-      if (label) {
+      labels.forEach((label) => {
         label.textContent = theme === 'dark' ? 'NOTURNO' : 'PAPEL';
-      }
+      });
     }
 
     const currentTheme = getActiveTheme();
     root.setAttribute('data-theme', currentTheme);
     updateUI(currentTheme);
 
-    if (toggleBtn) {
-      toggleBtn.onclick = () => {
+    toggleBtns.forEach((btn) => {
+      btn.onclick = () => {
         const active = getActiveTheme();
         const nextTheme = active === 'dark' ? 'paper' : 'dark';
-        
         root.setAttribute('data-theme', nextTheme);
         localStorage.setItem('theme', nextTheme);
         updateUI(nextTheme);
       };
-    }
+    });
   }
 
   // Run on initial load and on Astro View Transitions

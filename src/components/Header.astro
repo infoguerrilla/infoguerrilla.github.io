@@ -14,7 +14,7 @@ const navItems = [
 
 const socialLinks = [
   { href: "/rss.xml", label: "RSS", title: "Feed RSS Oficial" },
-  { href: "https://github.com/geraldohomero", label: "GIT", title: "GitHub" },
+  { href: "https://github.com/infoguerrilla", label: "GIT", title: "GitHub" },
   { href: "https://bsky.app/profile/geraldohomero.bsky.social", label: "BSKY", title: "BlueSky" },
   { href: "https://twitter.com/geraldohomero", label: "X", title: "Twitter / X" },
 ];
@@ -25,31 +25,31 @@ const socialLinks = [
     <div class="flex items-center justify-between py-3 sm:py-4 gap-4">
       
       <!-- Marca Principal: Emblema I_G + Logotipo -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
         <!-- Emblema I_G (I e G brancos, _ preto, máquina de escrever pesada) -->
-        <a href="/" aria-label="Info_Guerrilla Início" class="group block select-none">
-          <div class="flex items-center justify-center bg-manifesto-red border-2 border-border-brutal px-2.5 py-1 shadow-constructivist-sm transform group-hover:-rotate-2 transition-transform">
-            <span class="font-mono font-black text-xl sm:text-2xl tracking-tighter leading-none inline-flex items-center">
+        <a href="/" aria-label="Info_Guerrilla Início" class="group block select-none shrink-0">
+          <div class="flex items-center justify-center bg-manifesto-red border-2 border-border-brutal px-2 sm:px-2.5 py-1 shadow-constructivist-sm transform group-hover:-rotate-2 transition-transform">
+            <span class="font-mono font-black text-lg sm:text-2xl tracking-tighter leading-none inline-flex items-center">
               <span class="text-white">I</span><span class="text-black font-extrabold -mx-0.5">_</span><span class="text-white">G</span>
             </span>
           </div>
         </a>
 
         <!-- Título e Lema Editorial (sem citação de Marx) -->
-        <div>
-          <a href="/" class="group inline-block">
-            <span class="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-ink uppercase group-hover:text-manifesto-red transition-colors block leading-tight">
+        <div class="min-w-0">
+          <a href="/" class="group block">
+            <span class="font-display font-black text-base xs:text-lg sm:text-2xl md:text-3xl tracking-tight text-ink uppercase group-hover:text-manifesto-red transition-colors block leading-tight truncate">
               INFO<span class="text-manifesto-red">_</span>GUERRILLA
             </span>
           </a>
-          <p class="font-serif italic text-xs sm:text-sm text-ink-muted leading-tight hidden xs:block">
+          <p class="font-serif italic text-[11px] sm:text-sm text-ink-muted leading-tight hidden sm:block truncate">
             &ldquo;Para que o trabalho do alfaiate não desapareça na roupa&rdquo;
           </p>
         </div>
       </div>
 
       <!-- Ações do Cabeçalho: Redes, Tema & Botão Hambúrguer Mobile -->
-      <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <!-- Redes Sociais e RSS (Desktop) -->
         <div class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold">
           {socialLinks.map((s) => (
@@ -65,8 +65,10 @@ const socialLinks = [
           ))}
         </div>
 
-        <!-- Alternador de Tema -->
-        <ThemeToggle />
+        <!-- Alternador de Tema (Desktop / Tablet md+) -->
+        <div class="hidden md:flex items-center">
+          <ThemeToggle id="desktop-theme-toggle" />
+        </div>
 
         <!-- Botão Hambúrguer Tátil (Mobile) -->
         <button
@@ -131,6 +133,12 @@ const socialLinks = [
         })}
       </div>
 
+      <!-- Alternador de Modo Papel / Noturno (Mobile dentro do Hambúrguer para dar mais espaço no topo) -->
+      <div class="pt-3 border-t border-border-brutal/20 flex items-center justify-between">
+        <span class="font-mono text-xs font-bold text-ink-muted uppercase">// MODO VISUAL:</span>
+        <ThemeToggle id="mobile-theme-toggle" />
+      </div>
+
       <!-- Links Sociais no Mobile -->
       <div class="pt-3 border-t border-border-brutal/20 flex flex-wrap items-center justify-between gap-1.5 font-mono text-xs">
         <span class="text-ink-muted text-[11px] font-bold">// CANAIS:</span>
@@ -149,9 +157,82 @@ const socialLinks = [
       </div>
     </div>
   </div>
+
+  <!-- Régua de Progresso de Leitura Embutida na Própria Borda Inferior do Header -->
+  <div id="header-reading-ruler" aria-hidden="true" class="w-full h-[3px] bg-border-brutal/20 relative overflow-visible">
+    <div
+      id="header-reading-progress"
+      class="h-full bg-manifesto-red transition-all duration-75 relative"
+      style="width: 0%;"
+    >
+      <!-- Indicador Numérico Monospaçado de Precisão Construtivista -->
+      <span
+        id="header-reading-pct"
+        class="hidden absolute top-1 right-0 translate-x-1/2 font-mono text-[9px] font-bold text-white bg-manifesto-red px-1 py-0.5 border border-border-brutal shadow-constructivist-sm"
+      >
+        [00%]
+      </span>
+    </div>
+  </div>
 </header>
 
 <script>
+  let activeReadingScrollListener: (() => void) | null = null;
+
+  function setupReadingProgress() {
+    if (activeReadingScrollListener) {
+      window.removeEventListener('scroll', activeReadingScrollListener);
+      window.removeEventListener('resize', activeReadingScrollListener);
+      activeReadingScrollListener = null;
+    }
+
+    const progressEl = document.getElementById('header-reading-progress');
+    const pctEl = document.getElementById('header-reading-pct');
+    if (!progressEl) return;
+
+    activeReadingScrollListener = () => {
+      const article = document.querySelector('article[data-pagefind-body]');
+      let progress = 0;
+
+      if (article) {
+        const rect = article.getBoundingClientRect();
+        const articleTop = rect.top + window.scrollY;
+        const articleHeight = rect.height;
+        const windowHeight = window.innerHeight;
+        const scrollPos = window.scrollY;
+
+        const start = articleTop - 80;
+        const end = articleTop + articleHeight - windowHeight;
+        const distance = end - start;
+
+        if (distance <= 0) {
+          progress = scrollPos >= start ? 100 : 0;
+        } else {
+          progress = Math.min(100, Math.max(0, ((scrollPos - start) / distance) * 100));
+        }
+      } else {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0) {
+          progress = Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100));
+        }
+      }
+
+      progressEl.style.width = `${progress}%`;
+      if (pctEl) {
+        if (progress > 0) {
+          pctEl.classList.remove('hidden');
+          pctEl.textContent = `[${Math.round(progress).toString().padStart(2, '0')}%]`;
+        } else {
+          pctEl.classList.add('hidden');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', activeReadingScrollListener, { passive: true });
+    window.addEventListener('resize', activeReadingScrollListener, { passive: true });
+    activeReadingScrollListener();
+  }
+
   function setupMobileMenu() {
     const toggleBtn = document.getElementById('mobile-menu-toggle');
     const panel = document.getElementById('mobile-menu-panel');
@@ -169,5 +250,16 @@ const socialLinks = [
     };
   }
 
-  document.addEventListener('astro:page-load', setupMobileMenu);
+  document.addEventListener('astro:page-load', () => {
+    setupMobileMenu();
+    setupReadingProgress();
+  });
+
+  document.addEventListener('astro:before-swap', () => {
+    if (activeReadingScrollListener) {
+      window.removeEventListener('scroll', activeReadingScrollListener);
+      window.removeEventListener('resize', activeReadingScrollListener);
+      activeReadingScrollListener = null;
+    }
+  });
 </script>

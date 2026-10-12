@@ -4,6 +4,7 @@ slug: nao-leia-mark-fisher
 description: Isso não é uma resenha.
 date: 2026-10-10 00:00:00+0000
 image: image-1.png
+imageCaption: "Giovanni Battista Piranesi, Strada romana fiancheggiata da colossali monumenti funerari [estrada romana ladeada por monumentos funerários colossais], 1756."
 author: Geraldo Homero do Couto Neto
 tags:
   - mark fisher
@@ -12,7 +13,6 @@ categories:
   - resenha
   - esquerda
 ---
-> Giovanni Battista Piranesi, Strada romana fiancheggiata da colossali monumenti funerari [estrada romana ladeada por monumentos funerários colossais], 1756.
 
 É isso mesmo que você leu: não leia Mark Fisher, ou, pelo menos, não agora em 2026, ou quem sabe somente antes de ler este texto. Fisher é um autor importante, e um dos mais aclamados autores de esquerda radical da atualidade. Ele morreu tragicamente em 2017, mas, ao menos no Brasil, seu trabalho chegou um pouco tarde; não com menos impacto, novidade ou importância. Seu trabalho chega aqui completamente atual, mesmo falando de um mundo que nem chegara à década de 2010 ainda, nem viu nascer as redes sociais como as conhecemos hoje, mesmo assim consegue falar de tudo isso, quase como se ainda estivesse aqui sussurrando em nossos ouvidos, como um fantasma que assombra aqueles que desistiram de ver uma luz no fim do túnel; parece que seu livro acabou de sair do forno.
 
