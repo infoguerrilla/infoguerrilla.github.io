@@ -4,6 +4,7 @@ import ThemeToggle from './ThemeToggle.astro';
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replace(/\/$/, "") || "/";
+const isPost = currentPath.startsWith('/post') || currentPath.startsWith('/p');
 
 const navItems = [
   { href: "/", label: "INÍCIO", code: "01" },
@@ -15,8 +16,8 @@ const navItems = [
 const socialLinks = [
   { href: "/rss.xml", label: "RSS", title: "Feed RSS Oficial" },
   { href: "https://github.com/infoguerrilla", label: "GIT", title: "GitHub" },
-  { href: "https://bsky.app/profile/geraldohomero.bsky.social", label: "BSKY", title: "BlueSky" },
-  { href: "https://twitter.com/geraldohomero", label: "X", title: "Twitter / X" },
+  { href: "https://bsky.app/profile/infoguerrilla.bsky.social", label: "BSKY", title: "BlueSky" },
+  { href: "https://twitter.com/infoguerrilla", label: "X", title: "Twitter / X" },
 ];
 ---
 
@@ -158,8 +159,12 @@ const socialLinks = [
     </div>
   </div>
 
-  <!-- Régua de Progresso de Leitura Embutida na Própria Borda Inferior do Header -->
-  <div id="header-reading-ruler" aria-hidden="true" class="w-full h-[3px] bg-border-brutal/20 relative overflow-visible">
+  <!-- Régua de Progresso de Leitura Embutida na Própria Borda Inferior do Header (Exclusiva para Posts) -->
+  <div
+    id="header-reading-ruler"
+    aria-hidden="true"
+    class={`${isPost ? '' : 'hidden '}w-full h-[3px] bg-border-brutal/20 relative overflow-visible`}
+  >
     <div
       id="header-reading-progress"
       class="h-full bg-manifesto-red transition-all duration-75 relative"
@@ -186,35 +191,39 @@ const socialLinks = [
       activeReadingScrollListener = null;
     }
 
+    const rulerContainer = document.getElementById('header-reading-ruler');
     const progressEl = document.getElementById('header-reading-progress');
     const pctEl = document.getElementById('header-reading-pct');
-    if (!progressEl) return;
+    if (!rulerContainer || !progressEl) return;
+
+    // A régua só deve funcionar e ser exibida em posts
+    const article = document.querySelector('article[data-pagefind-body]');
+    if (!article) {
+      rulerContainer.classList.add('hidden');
+      progressEl.style.width = '0%';
+      if (pctEl) pctEl.classList.add('hidden');
+      return;
+    }
+
+    // Exibe o container da régua se estiver em página de artigo
+    rulerContainer.classList.remove('hidden');
 
     activeReadingScrollListener = () => {
-      const article = document.querySelector('article[data-pagefind-body]');
+      const rect = article.getBoundingClientRect();
+      const articleTop = rect.top + window.scrollY;
+      const articleHeight = rect.height;
+      const windowHeight = window.innerHeight;
+      const scrollPos = window.scrollY;
+
+      const start = articleTop - 80;
+      const end = articleTop + articleHeight - windowHeight;
+      const distance = end - start;
+
       let progress = 0;
-
-      if (article) {
-        const rect = article.getBoundingClientRect();
-        const articleTop = rect.top + window.scrollY;
-        const articleHeight = rect.height;
-        const windowHeight = window.innerHeight;
-        const scrollPos = window.scrollY;
-
-        const start = articleTop - 80;
-        const end = articleTop + articleHeight - windowHeight;
-        const distance = end - start;
-
-        if (distance <= 0) {
-          progress = scrollPos >= start ? 100 : 0;
-        } else {
-          progress = Math.min(100, Math.max(0, ((scrollPos - start) / distance) * 100));
-        }
+      if (distance <= 0) {
+        progress = scrollPos >= start ? 100 : 0;
       } else {
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (docHeight > 0) {
-          progress = Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100));
-        }
+        progress = Math.min(100, Math.max(0, ((scrollPos - start) / distance) * 100));
       }
 
       progressEl.style.width = `${progress}%`;

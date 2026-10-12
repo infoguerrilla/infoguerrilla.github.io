@@ -32,3 +32,4 @@ describe('Mobile Header Responsiveness & Theme Toggle Placement', () => {
     expect(headerContent).toContain('shrink-0');
   });
 });
+
