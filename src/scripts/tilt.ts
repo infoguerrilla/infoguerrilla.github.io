@@ -27,15 +27,32 @@ export function calculateTiltAngles(
   return { rotateX, rotateY };
 }
 
+export function shouldDisableTilt(
+  prefersReducedMotion: boolean,
+  isCoarsePointer: boolean,
+  hasHover: boolean
+): boolean {
+  return prefersReducedMotion || isCoarsePointer || !hasHover;
+}
+
 export function initTiltCards(): void {
   if (typeof window === 'undefined') return;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) return;
+  const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  const hasHover = window.matchMedia('(hover: hover)').matches;
+
+  if (shouldDisableTilt(prefersReducedMotion, isCoarsePointer, hasHover)) {
+    return;
+  }
 
   const cards = document.querySelectorAll<HTMLElement>('[data-tilt]');
 
   cards.forEach((card) => {
+    // Avoid double attaching
+    if (card.dataset.tiltInitialized === 'true') return;
+    card.dataset.tiltInitialized = 'true';
+
     let currentX = 0;
     let currentY = 0;
     let targetX = 0;

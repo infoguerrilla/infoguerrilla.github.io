@@ -17,3 +17,4 @@ const post = defineCollection({
 });
 
 export const collections = { post };
+

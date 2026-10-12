@@ -1,0 +1,46 @@
+---
+// p/[...slug].astro: Redirecionamento de compatibilidade para permalinks legados do Hugo (/p/:slug -> /post/:slug)
+import { getCollection } from 'astro:content';
+import { normalizeSlug } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('post');
+
+  const paths: Array<{ params: { slug: string }; props: { targetSlug: string } }> = [];
+
+  posts.forEach((post) => {
+    const folderSlug = post.id.replace(/\/index\.md$/, '');
+    const rawSlug = post.slug;
+    const normalizedSlug = normalizeSlug(post.slug);
+    const normalizedFolder = normalizeSlug(folderSlug);
+
+    const slugSet = new Set([normalizedSlug, rawSlug, folderSlug, normalizedFolder]);
+
+    for (const slug of slugSet) {
+      if (slug) {
+        paths.push({
+          params: { slug },
+          props: { targetSlug: normalizedSlug },
+        });
+      }
+    }
+  });
+
+  return paths;
+}
+
+const { targetSlug } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0;url=/post/${targetSlug}`} />
+    <link rel="canonical" href={`/post/${targetSlug}`} />
+    <title>Redirecionando... // Info_Guerrilla</title>
+  </head>
+  <body style="font-family: monospace; padding: 2rem; background: #F4EFEA; color: #111;">
+    <p>Redirecionando para o acervo permanente: <a href={`/post/${targetSlug}`}>/post/{targetSlug}</a></p>
+  </body>
+</html>

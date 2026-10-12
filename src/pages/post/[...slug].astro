@@ -16,25 +16,17 @@ export async function getStaticPaths() {
     const prevPost = index < sorted.length - 1 ? sorted[index + 1] : undefined;
     const nextPost = index > 0 ? sorted[index - 1] : undefined;
 
-    // Slugs can be based on post.slug or post.data.slug
-    const baseFolderSlug = normalizeSlug(post.slug.replace(/\/index$/, ''));
-    paths.push({
-      params: { slug: baseFolderSlug },
-      props: { post, prevPost, nextPost },
-    });
+    const folderSlug = post.id.replace(/\/index\.md$/, '');
+    const rawSlug = post.slug;
+    const normalizedSlug = normalizeSlug(post.slug);
+    const normalizedFolder = normalizeSlug(folderSlug);
 
-    if (post.data.slug) {
-      const customNormalized = normalizeSlug(post.data.slug);
-      if (customNormalized !== baseFolderSlug) {
+    const slugSet = new Set([normalizedSlug, rawSlug, folderSlug, normalizedFolder]);
+
+    for (const slug of slugSet) {
+      if (slug) {
         paths.push({
-          params: { slug: customNormalized },
-          props: { post, prevPost, nextPost },
-        });
-      }
-      // Also allow exact slug if different
-      if (post.data.slug !== customNormalized && post.data.slug !== baseFolderSlug) {
-        paths.push({
-          params: { slug: post.data.slug },
+          params: { slug },
           props: { post, prevPost, nextPost },
         });
       }
@@ -56,17 +48,19 @@ const { Content, headings } = await post.render();
 const formattedDate = formatPostDate(post.data.date);
 const readingMinutes = calculateReadingTime(post.body || '');
 
-const prevSlug = prevPost ? (prevPost.data.slug ? normalizeSlug(prevPost.data.slug) : normalizeSlug(prevPost.slug)) : null;
-const nextSlug = nextPost ? (nextPost.data.slug ? normalizeSlug(nextPost.data.slug) : normalizeSlug(nextPost.slug)) : null;
+const prevSlug = prevPost ? normalizeSlug(prevPost.slug) : null;
+const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
 ---
 
 <BaseLayout
   title={`${post.data.title} // Info_Guerrilla`}
   description={post.data.description || "Ensaio acadêmico e editorial crítico."}
+  image={post.data.image || "/favicon.png"}
 >
   <ReadingRuler />
 
-  <article class="max-w-4xl mx-auto">
+  <!-- data-pagefind-body garante que apenas o conteúdo do artigo é indexado pelo Pagefind -->
+  <article data-pagefind-body class="max-w-4xl mx-auto">
     
     <!-- Cabeçalho do Ensaio / Cartaz Editorial -->
     <header class="border-b-2 border-border-brutal pb-8 mb-10">
@@ -121,7 +115,7 @@ const nextSlug = nextPost ? (nextPost.data.slug ? normalizeSlug(nextPost.data.sl
     </div>
 
     <!-- Rodapé do Ensaio -->
-    <footer class="mt-16 pt-8 border-t-2 border-border-brutal space-y-8">
+    <footer class="mt-16 pt-8 border-t-2 border-border-brutal space-y-8" data-pagefind-ignore>
       
       <!-- Bloco de Citação e Licença -->
       <div class="border border-border-brutal bg-surface p-6 font-mono text-xs cut-corner-br">

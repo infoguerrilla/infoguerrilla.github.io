@@ -40,9 +40,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://infoguer
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
 
-    <!-- Script Anti-FOUC de Tema -->
+    <!-- Script Anti-FOUC e Preservação de Tema com View Transitions -->
     <script is:inline>
-      (function() {
+      function applyTheme() {
         try {
           const stored = localStorage.getItem('theme');
           const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -51,7 +51,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://infoguer
         } catch (e) {
           document.documentElement.setAttribute('data-theme', 'paper');
         }
-      })();
+      }
+
+      // Executa imediatamente para evitar FOUC
+      applyTheme();
+
+      // Re-aplica no swap do Astro ClientRouter
+      document.addEventListener('astro:after-swap', applyTheme);
     </script>
 
     <ClientRouter />
@@ -72,7 +78,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://infoguer
     <script>
       import { initTiltCards } from '../scripts/tilt';
       
-      initTiltCards();
       document.addEventListener('astro:page-load', () => {
         initTiltCards();
       });

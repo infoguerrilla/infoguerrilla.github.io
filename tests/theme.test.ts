@@ -11,3 +11,4 @@ describe('Theme Resolution', () => {
     expect(resolveInitialTheme(null, false)).toBe('paper');
   });
 });
+

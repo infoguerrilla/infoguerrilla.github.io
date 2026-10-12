@@ -30,14 +30,21 @@
 </div>
 
 <script>
+  let activeScrollListener: (() => void) | null = null;
+
   function setupReadingRuler() {
+    if (activeScrollListener) {
+      window.removeEventListener('scroll', activeScrollListener);
+      activeScrollListener = null;
+    }
+
     const progressEl = document.getElementById('reading-ruler-progress');
     const notchEl = document.getElementById('reading-ruler-notch');
     const pctEl = document.getElementById('reading-ruler-pct');
 
     if (!progressEl || !notchEl || !pctEl) return;
 
-    function onScroll() {
+    activeScrollListener = () => {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (docHeight <= 0) return;
 
@@ -47,12 +54,17 @@
       progressEl.style.height = `${progress}%`;
       notchEl.style.top = `calc(${progress}% - 4px)`;
       pctEl.textContent = `[${Math.round(progress).toString().padStart(2, '0')}%]`;
-    }
+    };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    window.addEventListener('scroll', activeScrollListener, { passive: true });
+    activeScrollListener();
   }
 
-  setupReadingRuler();
   document.addEventListener('astro:page-load', setupReadingRuler);
+  document.addEventListener('astro:before-swap', () => {
+    if (activeScrollListener) {
+      window.removeEventListener('scroll', activeScrollListener);
+      activeScrollListener = null;
+    }
+  });
 </script>

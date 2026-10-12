@@ -1,11 +1,11 @@
 ---
-// busca.astro: Terminal de Pesquisa Instantânea no Acervo
+// busca.astro: Terminal de Pesquisa Construtivista integrado ao Pagefind
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { formatPostDate, normalizeSlug } from '../utils/posts';
 
 const allPosts = await getCollection('post');
-const searchIndex = allPosts.map((p) => ({
+const fallbackIndex = allPosts.map((p) => ({
   title: p.data.title,
   description: p.data.description || '',
   slug: p.data.slug ? normalizeSlug(p.data.slug) : normalizeSlug(p.slug),
@@ -25,13 +25,13 @@ const searchIndex = allPosts.map((p) => ({
     <header class="border-b-2 border-border-brutal pb-6 mb-8">
       <div class="flex items-center gap-2 font-mono text-xs text-manifesto-red font-bold uppercase mb-2">
         <span class="inline-block w-3 h-3 bg-manifesto-red"></span>
-        // TERMINAL_DE_INDEXAÇÃO
+        // TERMINAL_DE_INDEXAÇÃO_PAGEFIND
       </div>
       <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight text-ink mb-4">
         PESQUISAR NO ACERVO
       </h1>
       <p class="font-serif italic text-base text-ink-muted">
-        Localize artigos, palavras-chave e debates teóricos publicados no blog.
+        Indexação completa do corpo dos ensaios, palavras-chave e debates teóricos.
       </p>
     </header>
 
@@ -59,7 +59,7 @@ const searchIndex = allPosts.map((p) => ({
 
       <div class="flex items-center justify-between mt-3 font-mono text-xs text-ink-muted">
         <span id="results-count">DIGITE PARA PESQUISAR NO ACERVO</span>
-        <span>INDEXAÇÃO INSTANTÂNEA</span>
+        <span id="search-engine-badge">MOTOR: PAGEFIND ESTÁTICO</span>
       </div>
     </div>
 
@@ -69,81 +69,126 @@ const searchIndex = allPosts.map((p) => ({
     </div>
   </div>
 
-  <!-- Dados serializados para busca em tempo real -->
-  <script is:inline define:vars={{ searchIndex }}>
-    window.__SEARCH_INDEX__ = searchIndex;
+  <!-- Fallback serializado para ambiente de desenvolvimento -->
+  <script is:inline define:vars={{ fallbackIndex }}>
+    window.__FALLBACK_SEARCH_INDEX__ = fallbackIndex;
   </script>
 
   <script>
-    function setupSearch() {
+    async function setupSearch() {
       const input = document.getElementById('search-input') as HTMLInputElement | null;
       const clearBtn = document.getElementById('clear-search');
       const countEl = document.getElementById('results-count');
       const container = document.getElementById('results-container');
-      const index = (window as any).__SEARCH_INDEX__ || [];
+      const badge = document.getElementById('search-engine-badge');
 
       if (!input || !container || !countEl) return;
 
-      function renderResults(query: string) {
-        const cleanQuery = query.trim().toLowerCase();
-        
+      let pagefindInstance: any = null;
+
+      try {
+        // Tenta carregar dinamicamente o Pagefind estático no browser (gerado pós-build)
+        const loadPagefind = new Function('url', 'return import(url)');
+        pagefindInstance = await loadPagefind('/pagefind/pagefind.js');
+        await pagefindInstance.init();
+        if (badge) badge.textContent = 'MOTOR: PAGEFIND (TEXTO COMPLETO)';
+      } catch (e) {
+        if (badge) badge.textContent = 'MOTOR: METADADOS (MODO DEV)';
+      }
+
+      async function executeSearch(query: string) {
+        const cleanQuery = query.trim();
+
         if (!cleanQuery) {
-          container.innerHTML = '';
-          countEl.textContent = 'DIGITE PARA PESQUISAR NO ACERVO';
+          container!.innerHTML = '';
+          countEl!.textContent = 'DIGITE PARA PESQUISAR NO ACERVO';
           return;
         }
 
-        const matches = index.filter((item: any) => {
-          const inTitle = item.title.toLowerCase().includes(cleanQuery);
-          const inDesc = item.description.toLowerCase().includes(cleanQuery);
-          const inCats = item.categories.some((c: string) => c.toLowerCase().includes(cleanQuery));
-          const inTags = item.tags.some((t: string) => t.toLowerCase().includes(cleanQuery));
-          return inTitle || inDesc || inCats || inTags;
-        });
+        if (pagefindInstance) {
+          const search = await pagefindInstance.search(cleanQuery);
+          const results = await Promise.all(search.results.slice(0, 15).map((r: any) => r.data()));
 
-        countEl.textContent = `[${matches.length}] RESULTADO(S) ENCONTRADO(S)`;
+          countEl!.textContent = `[${results.length}] RESULTADO(S) ENCONTRADO(S)`;
 
-        if (matches.length === 0) {
-          container.innerHTML = `
-            <div class="border-2 border-dashed border-border-brutal p-8 text-center bg-surface font-mono text-sm text-ink-muted">
-              NENHUM ENSAIO ENCONTRADO PARA O TERMO "${query}".
-            </div>
-          `;
-          return;
-        }
-
-        container.innerHTML = matches
-          .map(
-            (item: any) => `
-          <article class="border-2 border-border-brutal bg-surface p-5 hover:border-manifesto-red shadow-constructivist-sm transition-all cut-corner-br">
-            <div class="flex items-center justify-between font-mono text-xs text-ink-muted mb-2">
-              <span class="text-manifesto-red font-bold">${item.date}</span>
-              <div class="flex gap-1">
-                ${item.categories.map((c: string) => `<span class="bg-canvas border border-border-brutal/20 px-1.5 py-0.2">#${c}</span>`).join('')}
+          if (results.length === 0) {
+            container!.innerHTML = `
+              <div class="border-2 border-dashed border-border-brutal p-8 text-center bg-surface font-mono text-sm text-ink-muted">
+                NENHUM ENSAIO ENCONTRADO PARA O TERMO "${query}".
               </div>
-            </div>
-            <h3 class="font-display font-black text-xl text-ink hover:text-manifesto-red mb-2">
-              <a href="/post/${item.slug}">${item.title}</a>
-            </h3>
-            ${item.description ? `<p class="font-serif text-sm text-ink-muted line-clamp-2">${item.description}</p>` : ''}
-          </article>
-        `
-          )
-          .join('');
+            `;
+            return;
+          }
+
+          container!.innerHTML = results
+            .map(
+              (item: any) => `
+            <article class="border-2 border-border-brutal bg-surface p-5 hover:border-manifesto-red shadow-constructivist-sm transition-all cut-corner-br">
+              <div class="font-mono text-xs text-manifesto-red font-bold mb-1">
+                // ${item.meta.title || 'ENSAIO'}
+              </div>
+              <h3 class="font-display font-black text-xl text-ink hover:text-manifesto-red mb-2">
+                <a href="${item.url}">${item.meta.title || item.url}</a>
+              </h3>
+              <p class="font-serif text-sm text-ink-muted line-clamp-3 leading-relaxed [&_mark]:bg-manifesto-red [&_mark]:text-white [&_mark]:px-1">
+                ${item.excerpt}
+              </p>
+            </article>
+          `
+            )
+            .join('');
+        } else {
+          // Fallback para dev server
+          const index = (window as any).__FALLBACK_SEARCH_INDEX__ || [];
+          const lower = cleanQuery.toLowerCase();
+          const matches = index.filter((item: any) => {
+            return (
+              item.title.toLowerCase().includes(lower) ||
+              item.description.toLowerCase().includes(lower) ||
+              item.categories.some((c: string) => c.toLowerCase().includes(lower))
+            );
+          });
+
+          countEl!.textContent = `[${matches.length}] RESULTADO(S) ENCONTRADO(S)`;
+
+          if (matches.length === 0) {
+            container!.innerHTML = `
+              <div class="border-2 border-dashed border-border-brutal p-8 text-center bg-surface font-mono text-sm text-ink-muted">
+                NENHUM ENSAIO ENCONTRADO PARA O TERMO "${query}".
+              </div>
+            `;
+            return;
+          }
+
+          container!.innerHTML = matches
+            .map(
+              (item: any) => `
+            <article class="border-2 border-border-brutal bg-surface p-5 hover:border-manifesto-red shadow-constructivist-sm transition-all cut-corner-br">
+              <div class="font-mono text-xs text-manifesto-red font-bold mb-1">
+                // ${item.date}
+              </div>
+              <h3 class="font-display font-black text-xl text-ink hover:text-manifesto-red mb-2">
+                <a href="/post/${item.slug}">${item.title}</a>
+              </h3>
+              ${item.description ? `<p class="font-serif text-sm text-ink-muted line-clamp-2">${item.description}</p>` : ''}
+            </article>
+          `
+            )
+            .join('');
+        }
       }
 
       input.addEventListener('input', () => {
-        renderResults(input.value);
+        executeSearch(input.value);
       });
 
       clearBtn?.addEventListener('click', () => {
         input.value = '';
-        renderResults('');
+        executeSearch('');
         input.focus();
       });
     }
 
-    setupSearch();
     document.addEventListener('astro:page-load', setupSearch);
   </script>
 </BaseLayout>

@@ -19,32 +19,34 @@
     const label = document.getElementById('theme-label');
     const root = document.documentElement;
 
+    function getActiveTheme(): string {
+      const stored = localStorage.getItem('theme');
+      if (stored === 'dark' || stored === 'paper') return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'paper';
+    }
+
     function updateUI(theme: string) {
       if (label) {
         label.textContent = theme === 'dark' ? 'NOTURNO' : 'PAPEL';
       }
     }
 
-    const currentTheme = root.getAttribute('data-theme') || 'paper';
+    const currentTheme = getActiveTheme();
+    root.setAttribute('data-theme', currentTheme);
     updateUI(currentTheme);
 
     if (toggleBtn) {
-      // Remove any existing click listener on page transition
-      toggleBtn.replaceWith(toggleBtn.cloneNode(true));
-      const freshBtn = document.getElementById('theme-toggle');
-      
-      freshBtn?.addEventListener('click', () => {
-        const activeTheme = root.getAttribute('data-theme') || 'paper';
-        const nextTheme = activeTheme === 'dark' ? 'paper' : 'dark';
+      toggleBtn.onclick = () => {
+        const active = getActiveTheme();
+        const nextTheme = active === 'dark' ? 'paper' : 'dark';
         
         root.setAttribute('data-theme', nextTheme);
         localStorage.setItem('theme', nextTheme);
         updateUI(nextTheme);
-      });
+      };
     }
   }
 
   // Run on initial load and on Astro View Transitions
-  setupThemeToggle();
-  document.addEventListener('astro:after-swap', setupThemeToggle);
+  document.addEventListener('astro:page-load', setupThemeToggle);
 </script>

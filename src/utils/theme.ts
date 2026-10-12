@@ -6,3 +6,4 @@ export function resolveInitialTheme(stored: string | null, prefersDark: boolean)
   }
   return prefersDark ? 'dark' : 'paper';
 }
+

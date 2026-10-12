@@ -19,3 +19,4 @@ export function normalizeSlug(rawSlug: string): string {
     .replace(/[^a-z0-9]+/g, '-') // non-alphanumeric to hyphens
     .replace(/^-+|-+$/g, ''); // trim leading/trailing hyphens
 }
+

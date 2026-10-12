@@ -196,3 +196,4 @@ O arquivo `.github/workflows/deploy.yml` será atualizado para:
    * Layout adapta-se perfeitamente de 320px a 2560px de largura.
    * Em touchscreens, desativa o tilt e preserva a navegação limpa.
 6. **Alternância de Tema**: O interruptor alterna instantaneamente entre Modo Papel e Modo Noturno e mantém o estado após recarregar.
+

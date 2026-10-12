@@ -17,3 +17,4 @@ describe('Post Utilities', () => {
       .toBe('software-livre-open-source-privacidade-seguranca');
   });
 });
+
