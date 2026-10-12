@@ -9,6 +9,7 @@ author: Geraldo Homero do Couto Neto
 tags:
   - mark fisher
   - realismo capitalista
+  - futuro
 categories:
   - ensaio
   - esquerda
