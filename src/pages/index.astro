@@ -1,0 +1,85 @@
+---
+// index.astro: Capa Construtivista do Info_Guerrilla
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPoster from '../components/HeroPoster.astro';
+import PostCard from '../components/PostCard.astro';
+import Marquee from '../components/Marquee.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('post');
+const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const featuredPost = sortedPosts[0];
+const secondaryPosts = sortedPosts.slice(1);
+
+// Coletar categorias únicas e suas contagens
+const categoriesMap = new Map<string, number>();
+allPosts.forEach((p) => {
+  p.data.categories?.forEach((cat) => {
+    categoriesMap.set(cat, (categoriesMap.get(cat) || 0) + 1);
+  });
+});
+const categories = Array.from(categoriesMap.entries()).sort((a, b) => b[1] - a[1]);
+---
+
+<BaseLayout
+  title="Info_Guerrilla // Teoria Crítica, Política & Tecnologia"
+  description="Publicação editorial e acadêmica crítica. Para que o trabalho do alfaiate não desapareça na roupa."
+>
+  <!-- Destaque Monumental / Hero Poster -->
+  {featuredPost && <HeroPoster post={featuredPost} />}
+
+  <!-- Fita Cinética Construtivista -->
+  <div class="my-10">
+    <Marquee />
+  </div>
+
+  <!-- Cabeçalho da Seção de Ensaios -->
+  <section class="mt-12 mb-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-border-brutal pb-3 mb-8 gap-2">
+      <div>
+        <span class="font-mono text-xs font-bold text-manifesto-red uppercase tracking-widest block mb-1">
+          // ACERVO_RECENTE
+        </span>
+        <h2 class="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-ink">
+          ENSAIOS & CRÍTICA
+        </h2>
+      </div>
+
+      <div class="font-mono text-xs text-ink-muted">
+        TOTAL NO ACERVO: <strong class="text-manifesto-red font-bold">{allPosts.length}</strong> PUBLICAÇÕES
+      </div>
+    </div>
+
+    <!-- Grade de Ensaios (3D Tilt Cards) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {secondaryPosts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Painel de Eixos Temáticos / Construtivista -->
+  <section class="mt-16 border-2 border-border-brutal bg-surface p-6 sm:p-8 cut-corner-br shadow-constructivist-md">
+    <div class="border-b border-border-brutal/30 pb-3 mb-6 flex items-center justify-between">
+      <h3 class="font-display font-extrabold text-xl uppercase tracking-tight text-ink">
+        EIXOS TEMÁTICOS & LINHAS DE PESQUISA
+      </h3>
+      <span class="font-mono text-xs text-manifesto-red font-bold">[TAXONOMIA]</span>
+    </div>
+
+    <div class="flex flex-wrap gap-2.5">
+      {categories.map(([cat, count]) => (
+        <a
+          href={`/arquivo?categoria=${encodeURIComponent(cat)}`}
+          class="press-btn inline-flex items-center gap-2 border border-border-brutal bg-canvas px-3 py-1.5 font-mono text-xs text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white transition-all shadow-constructivist-sm"
+        >
+          <span class="font-bold"># {cat}</span>
+          <span class="bg-manifesto-red text-white text-[10px] px-1.5 py-0.2 rounded-none font-bold">
+            {count}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

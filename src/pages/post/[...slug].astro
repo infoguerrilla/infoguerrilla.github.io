@@ -1,0 +1,168 @@
+---
+// [...slug].astro: Página de Leitura do Ensaio (Editorial Acadêmico)
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReadingRuler from '../../components/ReadingRuler.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { formatPostDate, calculateReadingTime, normalizeSlug } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('post');
+  const sorted = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+  const paths: Array<{ params: { slug: string }; props: { post: CollectionEntry<'post'>; prevPost?: CollectionEntry<'post'>; nextPost?: CollectionEntry<'post'> } }> = [];
+
+  sorted.forEach((post, index) => {
+    const prevPost = index < sorted.length - 1 ? sorted[index + 1] : undefined;
+    const nextPost = index > 0 ? sorted[index - 1] : undefined;
+
+    // Slugs can be based on post.slug or post.data.slug
+    const baseFolderSlug = normalizeSlug(post.slug.replace(/\/index$/, ''));
+    paths.push({
+      params: { slug: baseFolderSlug },
+      props: { post, prevPost, nextPost },
+    });
+
+    if (post.data.slug) {
+      const customNormalized = normalizeSlug(post.data.slug);
+      if (customNormalized !== baseFolderSlug) {
+        paths.push({
+          params: { slug: customNormalized },
+          props: { post, prevPost, nextPost },
+        });
+      }
+      // Also allow exact slug if different
+      if (post.data.slug !== customNormalized && post.data.slug !== baseFolderSlug) {
+        paths.push({
+          params: { slug: post.data.slug },
+          props: { post, prevPost, nextPost },
+        });
+      }
+    }
+  });
+
+  return paths;
+}
+
+interface Props {
+  post: CollectionEntry<'post'>;
+  prevPost?: CollectionEntry<'post'>;
+  nextPost?: CollectionEntry<'post'>;
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content, headings } = await post.render();
+
+const formattedDate = formatPostDate(post.data.date);
+const readingMinutes = calculateReadingTime(post.body || '');
+
+const prevSlug = prevPost ? (prevPost.data.slug ? normalizeSlug(prevPost.data.slug) : normalizeSlug(prevPost.slug)) : null;
+const nextSlug = nextPost ? (nextPost.data.slug ? normalizeSlug(nextPost.data.slug) : normalizeSlug(nextPost.slug)) : null;
+---
+
+<BaseLayout
+  title={`${post.data.title} // Info_Guerrilla`}
+  description={post.data.description || "Ensaio acadêmico e editorial crítico."}
+>
+  <ReadingRuler />
+
+  <article class="max-w-4xl mx-auto">
+    
+    <!-- Cabeçalho do Ensaio / Cartaz Editorial -->
+    <header class="border-b-2 border-border-brutal pb-8 mb-10">
+      
+      <!-- Navegação Superior / Breadcrumb -->
+      <nav class="font-mono text-xs text-ink-muted mb-6 flex flex-wrap items-center gap-2" aria-label="Navegação">
+        <a href="/" class="hover:text-manifesto-red hover:underline">[INÍCIO]</a>
+        <span>/</span>
+        <a href="/arquivo" class="hover:text-manifesto-red hover:underline">[ARQUIVO]</a>
+        <span>/</span>
+        <span class="text-manifesto-red font-bold">{formattedDate}</span>
+      </nav>
+
+      <!-- Categorias em Carimbo Construtivista -->
+      <div class="flex flex-wrap gap-2 mb-4">
+        {post.data.categories?.map((cat) => (
+          <span class="bg-manifesto-red text-white font-mono text-xs font-bold px-2.5 py-0.5 uppercase tracking-wider shadow-constructivist-sm">
+            // {cat}
+          </span>
+        ))}
+      </div>
+
+      <!-- Título Monumental -->
+      <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl text-ink uppercase tracking-tight leading-[1.12] mb-6">
+        {post.data.title}
+      </h1>
+
+      <!-- Resumo de Entrada / Epígrafe -->
+      {post.data.description && (
+        <p class="font-serif italic text-lg sm:text-xl text-ink leading-relaxed border-l-4 border-manifesto-red pl-4 my-6 bg-surface p-4">
+          {post.data.description}
+        </p>
+      )}
+
+      <!-- Metadados de Autoria e Leitura -->
+      <div class="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-ink-muted pt-4 border-t border-border-brutal/20">
+        <div>
+          AUTOR: <strong class="text-ink">{post.data.author}</strong>
+        </div>
+        <div>
+          TEMPO DE LEITURA: <strong class="text-manifesto-red">[{readingMinutes} MIN]</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sumário de Seções -->
+    <TableOfContents headings={headings} />
+
+    <!-- Corpo do Artigo: Leitura Acadêmica Newsreader -->
+    <div class="academic-prose mx-auto">
+      <Content />
+    </div>
+
+    <!-- Rodapé do Ensaio -->
+    <footer class="mt-16 pt-8 border-t-2 border-border-brutal space-y-8">
+      
+      <!-- Bloco de Citação e Licença -->
+      <div class="border border-border-brutal bg-surface p-6 font-mono text-xs cut-corner-br">
+        <div class="flex items-center gap-2 text-manifesto-red font-bold mb-2 uppercase">
+          <span class="inline-block w-2.5 h-2.5 bg-manifesto-red"></span>
+          // COMO CITAR ESTE ENSAIO (REFERÊNCIA ACADÊMICA)
+        </div>
+        <p class="text-ink-muted select-all bg-canvas p-3 border border-border-brutal/30">
+          COUTO NETO, Geraldo Homero do. &ldquo;{post.data.title}&rdquo;. <em>Info_Guerrilla</em>, {post.data.date.getFullYear()}. Disponível em: {Astro.url.href}.
+        </p>
+        <p class="mt-3 text-ink-muted text-[11px]">
+          Licenciado sob <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-manifesto-red underline font-bold">CC BY-NC-SA 4.0</a>.
+        </p>
+      </div>
+
+      <!-- Navegação Entre Ensaios (Anterior / Próximo) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+        {prevPost && prevSlug ? (
+          <a
+            href={`/post/${prevSlug}`}
+            class="press-btn border-2 border-border-brutal bg-surface p-4 flex flex-col justify-between hover:border-manifesto-red shadow-constructivist-sm"
+          >
+            <span class="text-ink-muted mb-1">&larr; ENSAIO ANTERIOR</span>
+            <span class="font-display font-bold text-sm text-ink line-clamp-2">
+              {prevPost.data.title}
+            </span>
+          </a>
+        ) : <div />}
+
+        {nextPost && nextSlug ? (
+          <a
+            href={`/post/${nextSlug}`}
+            class="press-btn border-2 border-border-brutal bg-surface p-4 flex flex-col justify-between text-right hover:border-manifesto-red shadow-constructivist-sm"
+          >
+            <span class="text-ink-muted mb-1">PRÓXIMO ENSAIO &rarr;</span>
+            <span class="font-display font-bold text-sm text-ink line-clamp-2">
+              {nextPost.data.title}
+            </span>
+          </a>
+        ) : <div />}
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

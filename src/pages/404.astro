@@ -1,0 +1,47 @@
+---
+// 404.astro: Cartaz Construtivista de Erro 404
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="404 // Documento Não Localizado // Info_Guerrilla"
+  description="O recurso solicitado não existe ou foi arquivado sob novo identificador."
+>
+  <div class="max-w-3xl mx-auto py-12 text-center">
+    <div class="border-3 border-border-brutal bg-surface p-8 sm:p-12 shadow-constructivist-double cut-corner-br relative overflow-hidden">
+      
+      <!-- Número Monumental 404 -->
+      <div class="font-display font-black text-7xl sm:text-9xl text-manifesto-red tracking-tighter leading-none select-none mb-4">
+        404
+      </div>
+
+      <div class="inline-block bg-manifesto-red text-white font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest mb-6">
+        // FALHA_DE_INDEXAÇÃO // ARQUIVO_INEXISTENTE
+      </div>
+
+      <h1 class="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-ink mb-4">
+        DOCUMENTO NÃO LOCALIZADO
+      </h1>
+
+      <p class="font-serif italic text-base sm:text-lg text-ink-muted max-w-xl mx-auto mb-8">
+        A página solicitada pode ter sido movida durante a reorganização estrutural do acervo ou o endereço digitado contém um erro tipográfico.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/"
+          class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-manifesto-red px-6 py-3 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-constructivist-sm"
+        >
+          <span>&larr; RETORNAR À CAPA</span>
+        </a>
+
+        <a
+          href="/arquivo"
+          class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-canvas px-6 py-3 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-ink shadow-constructivist-sm hover:border-manifesto-red"
+        >
+          <span>CONSULTAR ARQUIVO COMPLETO</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

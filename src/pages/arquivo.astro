@@ -1,0 +1,155 @@
+---
+// arquivo.astro: Catálogo Histórico e Inventário Cronológico
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
+
+const allPosts = await getCollection('post');
+const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Categorias únicas
+const allCategories = Array.from(
+  new Set(allPosts.flatMap((p) => p.data.categories || []))
+).sort();
+---
+
+<BaseLayout
+  title="Catálogo & Arquivo Histórico // Info_Guerrilla"
+  description="Inventário completo de publicações, ensaios e textos críticos por ordem cronológica."
+>
+  <div class="max-w-5xl mx-auto">
+    
+    <!-- Cabeçalho de Cartaz do Arquivo -->
+    <header class="border-b-2 border-border-brutal pb-6 mb-8">
+      <div class="flex items-center gap-2 font-mono text-xs text-manifesto-red font-bold uppercase mb-2">
+        <span class="inline-block w-3 h-3 bg-manifesto-red"></span>
+        // INVENTÁRIO_GERAL
+      </div>
+      <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight text-ink mb-4">
+        ARQUIVO CRONOLÓGICO
+      </h1>
+      <p class="font-serif italic text-base text-ink-muted">
+        Registro sistemático de todos os ensaios, intervenções teóricas e análises publicadas no Info_Guerrilla.
+      </p>
+    </header>
+
+    <!-- Filtro de Categorias -->
+    <div class="mb-8 border border-border-brutal bg-surface p-4 cut-corner-br">
+      <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">
+        FILTRAR POR EIXO TEMÁTICO:
+      </div>
+      <div class="flex flex-wrap gap-2" id="filter-buttons">
+        <button
+          type="button"
+          data-category="all"
+          class="cat-filter-btn press-btn border border-border-brutal bg-manifesto-red text-white px-3 py-1 font-mono text-xs font-bold uppercase shadow-constructivist-sm"
+        >
+          [TODOS ({allPosts.length})]
+        </button>
+        {allCategories.map((cat) => (
+          <button
+            type="button"
+            data-category={cat}
+            class="cat-filter-btn press-btn border border-border-brutal bg-canvas text-ink px-3 py-1 font-mono text-xs uppercase hover:border-manifesto-red transition-all shadow-constructivist-sm"
+          >
+            #{cat}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tabela / Lista de Inventário -->
+    <div class="border-2 border-border-brutal bg-surface overflow-hidden shadow-constructivist-md">
+      <div class="hidden sm:grid grid-cols-12 gap-4 p-4 border-b-2 border-border-brutal bg-canvas font-mono text-xs font-bold uppercase text-ink">
+        <div class="col-span-2">DATA</div>
+        <div class="col-span-6">TÍTULO DO ENSAIO</div>
+        <div class="col-span-3">CATEGORIA</div>
+        <div class="col-span-1 text-right">TEMPO</div>
+      </div>
+
+      <div class="divide-y divide-border-brutal/20" id="posts-inventory-list">
+        {sortedPosts.map((post) => {
+          const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(post.slug);
+          const formattedDate = formatPostDate(post.data.date);
+          const readingMinutes = calculateReadingTime(post.body || '');
+          const categoriesJson = JSON.stringify(post.data.categories || []);
+
+          return (
+            <div
+              class="post-item grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 p-4 hover:bg-canvas transition-colors items-center"
+              data-categories={categoriesJson}
+            >
+              <div class="sm:col-span-2 font-mono text-xs text-manifesto-red font-bold">
+                {formattedDate}
+              </div>
+
+              <div class="sm:col-span-6 font-display font-bold text-base sm:text-lg text-ink">
+                <a href={`/post/${postSlug}`} class="hover:text-manifesto-red transition-colors block">
+                  {post.data.title}
+                </a>
+              </div>
+
+              <div class="sm:col-span-3 flex flex-wrap gap-1">
+                {post.data.categories?.map((cat) => (
+                  <span class="inline-block font-mono text-[11px] bg-canvas border border-border-brutal/30 px-1.5 py-0.2 text-ink-muted">
+                    #{cat}
+                  </span>
+                ))}
+              </div>
+
+              <div class="sm:col-span-1 font-mono text-xs text-ink-muted text-left sm:text-right">
+                {readingMinutes}m
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setupArchiveFilter() {
+      const buttons = document.querySelectorAll<HTMLButtonElement>('.cat-filter-btn');
+      const items = document.querySelectorAll<HTMLElement>('.post-item');
+
+      function filterCategory(targetCat: string) {
+        items.forEach((item) => {
+          const cats = JSON.parse(item.getAttribute('data-categories') || '[]');
+          if (targetCat === 'all' || cats.includes(targetCat)) {
+            item.style.display = 'grid';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        buttons.forEach((btn) => {
+          const btnCat = btn.getAttribute('data-category');
+          if (btnCat === targetCat) {
+            btn.classList.add('bg-manifesto-red', 'text-white');
+            btn.classList.remove('bg-canvas', 'text-ink');
+          } else {
+            btn.classList.remove('bg-manifesto-red', 'text-white');
+            btn.classList.add('bg-canvas', 'text-ink');
+          }
+        });
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-category') || 'all';
+          filterCategory(cat);
+        });
+      });
+
+      // Check URL query parameters
+      const params = new URLSearchParams(window.location.search);
+      const urlCat = params.get('categoria');
+      if (urlCat) {
+        filterCategory(urlCat);
+      }
+    }
+
+    setupArchiveFilter();
+    document.addEventListener('astro:page-load', setupArchiveFilter);
+  </script>
+</BaseLayout>
