@@ -1,5 +1,5 @@
 ---
-// Header.astro: Cabeçalho Monumental Construtivista
+// Header.astro: Cabeçalho Construtivista com Emblema I_G e Menu Mobile Retrátil
 import ThemeToggle from './ThemeToggle.astro';
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -11,56 +11,163 @@ const navItems = [
   { href: "/sobre", label: "SOBRE", code: "03" },
   { href: "/busca", label: "BUSCA", code: "04" },
 ];
+
+const socialLinks = [
+  { href: "/rss.xml", label: "RSS", title: "Feed RSS Oficial" },
+  { href: "https://github.com/geraldohomero", label: "GIT", title: "GitHub" },
+  { href: "https://bsky.app/profile/geraldohomero.bsky.social", label: "BSKY", title: "BlueSky" },
+  { href: "https://twitter.com/geraldohomero", label: "X", title: "Twitter / X" },
+];
 ---
 
-<header class="w-full border-b-2 border-border-brutal bg-canvas/90 backdrop-blur-sm sticky top-0 z-40">
+<header class="w-full border-b-2 border-border-brutal bg-canvas/95 backdrop-blur-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-border-brutal/20 gap-4">
+    <div class="flex items-center justify-between py-3 sm:py-4 gap-4">
       
-      <!-- Marca Principal & Manifesto -->
-      <div class="flex items-start gap-3">
-        <!-- Ícone / Elemento Geométrico Construtivista -->
-        <div class="hidden sm:flex flex-col items-center justify-center w-10 h-10 bg-manifesto-red text-white font-mono font-black text-lg border-2 border-border-brutal shadow-constructivist-sm rotate-3 select-none">
-          IG
-        </div>
-        
+      <!-- Marca Principal: Emblema I_G + Logotipo -->
+      <div class="flex items-center gap-3">
+        <!-- Emblema I_G (I e G brancos, _ preto, máquina de escrever pesada) -->
+        <a href="/" aria-label="Info_Guerrilla Início" class="group block select-none">
+          <div class="flex items-center justify-center bg-manifesto-red border-2 border-border-brutal px-2.5 py-1 shadow-constructivist-sm transform group-hover:-rotate-2 transition-transform">
+            <span class="font-mono font-black text-xl sm:text-2xl tracking-tighter leading-none inline-flex items-center">
+              <span class="text-white">I</span><span class="text-black font-extrabold -mx-0.5">_</span><span class="text-white">G</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- Título e Lema Editorial (sem citação de Marx) -->
         <div>
           <a href="/" class="group inline-block">
-            <span class="font-display font-black text-2xl sm:text-3xl tracking-tight text-ink uppercase group-hover:text-manifesto-red transition-colors">
+            <span class="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-ink uppercase group-hover:text-manifesto-red transition-colors block leading-tight">
               INFO<span class="text-manifesto-red">_</span>GUERRILLA
             </span>
           </a>
-          <p class="font-serif italic text-xs sm:text-sm text-ink-muted leading-tight mt-0.5">
+          <p class="font-serif italic text-xs sm:text-sm text-ink-muted leading-tight hidden xs:block">
             &ldquo;Para que o trabalho do alfaiate não desapareça na roupa&rdquo;
           </p>
         </div>
       </div>
 
-      <!-- Ações do Cabeçalho: Tema & Indicador -->
-      <div class="flex items-center justify-between md:justify-end gap-4">
+      <!-- Ações do Cabeçalho: Redes, Tema & Botão Hambúrguer Mobile -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Redes Sociais e RSS (Desktop) -->
+        <div class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold">
+          {socialLinks.map((s) => (
+            <a
+              href={s.href}
+              target={s.href.startsWith("http") ? "_blank" : undefined}
+              rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              title={s.title}
+              class="press-btn border border-border-brutal/40 bg-surface px-2 py-1 text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white transition-colors"
+            >
+              [{s.label}]
+            </a>
+          ))}
+        </div>
+
+        <!-- Alternador de Tema -->
         <ThemeToggle />
+
+        <!-- Botão Hambúrguer Tátil (Mobile) -->
+        <button
+          id="mobile-menu-toggle"
+          type="button"
+          aria-label="Abrir menu de navegação"
+          aria-expanded="false"
+          class="md:hidden press-btn flex items-center gap-1.5 border-2 border-border-brutal bg-surface px-2.5 py-1.5 font-mono text-xs font-bold uppercase text-ink shadow-constructivist-sm hover:border-manifesto-red focus:outline-none"
+        >
+          <span class="text-manifesto-red font-black">☰</span>
+          <span id="mobile-menu-text">MENU</span>
+        </button>
       </div>
     </div>
 
-    <!-- Barra de Navegação Construtivista -->
-    <nav class="flex items-center gap-1 sm:gap-2 py-2 overflow-x-auto text-xs sm:text-sm font-mono tracking-wider">
-      {navItems.map((item) => {
-        const isActive = currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
-        return (
-          <a
-            href={item.href}
-            class={`press-btn px-2.5 sm:px-3 py-1 border transition-all select-none ${
-              isActive
-                ? "border-border-brutal bg-manifesto-red text-white font-bold shadow-constructivist-sm"
-                : "border-transparent text-ink hover:border-border-brutal hover:bg-surface"
-            }`}
-          >
-            <span class="text-[10px] opacity-75 mr-1 font-mono">[{item.code}]</span>
-            {item.label}
-          </a>
-        );
-      })}
+    <!-- Navegação Desktop (Escondida no Mobile) -->
+    <nav class="hidden md:flex items-center justify-between border-t border-border-brutal/20 py-2 text-xs sm:text-sm font-mono tracking-wider">
+      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
+          return (
+            <a
+              href={item.href}
+              class={`press-btn px-2.5 sm:px-3 py-1 border transition-all select-none ${
+                isActive
+                  ? "border-border-brutal bg-manifesto-red text-white font-bold shadow-constructivist-sm"
+                  : "border-transparent text-ink hover:border-border-brutal hover:bg-surface"
+              }`}
+            >
+              <span class="text-[10px] opacity-75 mr-1 font-mono">[{item.code}]</span>
+              {item.label}
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="text-[11px] font-mono text-ink-muted italic hidden xl:block">
+        TEORIA CRÍTICA & VANGUARDA EDITORIAL
+      </div>
     </nav>
+
+    <!-- Painel Colapsável do Menu Mobile -->
+    <div
+      id="mobile-menu-panel"
+      class="hidden md:hidden border-t-2 border-border-brutal py-4 space-y-3 bg-canvas"
+    >
+      <div class="grid grid-cols-2 gap-2">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
+          return (
+            <a
+              href={item.href}
+              class={`press-btn block text-center py-2 px-3 border font-mono text-xs font-bold uppercase ${
+                isActive
+                  ? "border-border-brutal bg-manifesto-red text-white shadow-constructivist-sm"
+                  : "border-border-brutal bg-surface text-ink hover:border-manifesto-red"
+              }`}
+            >
+              [{item.code}] {item.label}
+            </a>
+          );
+        })}
+      </div>
+
+      <!-- Links Sociais no Mobile -->
+      <div class="pt-3 border-t border-border-brutal/20 flex flex-wrap items-center justify-between gap-1.5 font-mono text-xs">
+        <span class="text-ink-muted text-[11px] font-bold">// CANAIS:</span>
+        <div class="flex flex-wrap gap-1">
+          {socialLinks.map((s) => (
+            <a
+              href={s.href}
+              target={s.href.startsWith("http") ? "_blank" : undefined}
+              rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              class="border border-border-brutal bg-surface px-2 py-0.5 text-ink hover:bg-manifesto-red hover:text-white"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
+<script>
+  function setupMobileMenu() {
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const panel = document.getElementById('mobile-menu-panel');
+    const textEl = document.getElementById('mobile-menu-text');
+
+    if (!toggleBtn || !panel) return;
+
+    toggleBtn.onclick = () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+      panel.classList.toggle('hidden');
+      if (textEl) {
+        textEl.textContent = isExpanded ? 'MENU' : 'FECHAR';
+      }
+    };
+  }
+
+  document.addEventListener('astro:page-load', setupMobileMenu);
+</script>

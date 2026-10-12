@@ -13,7 +13,7 @@
   --color-red: #D82218;
   --color-red-deep: #A0150E;
   --color-border: #111111;
-  --color-grid: rgba(17, 17, 17, 0.12);
+  --color-grid: rgba(17, 17, 17, 0.035);
 }
 
 [data-theme="dark"] {
@@ -25,7 +25,7 @@
   --color-red: #FF372B;
   --color-red-deep: #D82218;
   --color-border: #2C303A;
-  --color-grid: rgba(244, 239, 234, 0.08);
+  --color-grid: rgba(244, 239, 234, 0.03);
 }
 
 @layer base {
@@ -93,6 +93,20 @@
   .press-btn:active {
     box-shadow: 0 0 0 transparent;
     transform: translate(4px, 4px);
+  }
+
+  /* Estética de Fotografia de Arquivo / Vanguarda dos Anos 1920 */
+  .vintage-archive-img {
+    filter: grayscale(100%) contrast(125%) brightness(95%);
+    border: 3px solid var(--color-border);
+    box-shadow: 5px 5px 0 var(--color-red);
+    transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .vintage-archive-img:hover {
+    filter: grayscale(15%) contrast(115%) brightness(100%);
+    transform: scale(1.01);
+    box-shadow: 7px 7px 0 var(--color-border);
   }
 }
 

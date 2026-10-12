@@ -1,18 +1,27 @@
 ---
-// Footer.astro: Rodapé Construtivista
+// Footer.astro: Rodapé Construtivista com Crédito Universitas e Redes Sociais
 const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { href: "/rss.xml", label: "FEED RSS", title: "Feed RSS Oficial" },
+  { href: "https://github.com/geraldohomero", label: "GITHUB", title: "GitHub" },
+  { href: "https://bsky.app/profile/geraldohomero.bsky.social", label: "BLUESKY", title: "BlueSky" },
+  { href: "https://twitter.com/geraldohomero", label: "TWITTER / X", title: "X" },
+  { href: "https://orcid.org/0000-0001-6686-7182", label: "ORCID", title: "ORCID" },
+  { href: "http://lattes.cnpq.br/9924558848538635", label: "LATTES", title: "Currículo Lattes" },
+];
 ---
 
-<footer class="w-full border-t-2 border-border-brutal bg-surface mt-16">
+<footer class="w-full border-t-2 border-border-brutal bg-surface mt-16 select-none">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-border-brutal/20">
       
-      <!-- Coluna 1: Filosofia & Missão -->
+      <!-- Coluna 1: Lema Editorial (Sem atribuição a Marx) -->
       <div class="space-y-3">
         <div class="inline-block bg-manifesto-red text-white font-mono text-xs font-bold px-2 py-0.5 uppercase tracking-wider">
           MANIFESTO_EDITORIAL
         </div>
-        <p class="font-serif italic text-sm text-ink-muted leading-relaxed">
+        <p class="font-serif italic text-sm text-ink leading-relaxed border-l-2 border-manifesto-red pl-2.5">
           &ldquo;Para que o trabalho do alfaiate não desapareça na roupa.&rdquo;
         </p>
         <p class="font-mono text-xs text-ink-muted">
@@ -20,20 +29,20 @@ const currentYear = new Date().getFullYear();
         </p>
       </div>
 
-      <!-- Coluna 2: Navegação Rápida -->
+      <!-- Coluna 2: Navegação & Canais -->
       <div class="space-y-3">
         <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink">
-          // ÍNDICE_DO_ARQUIVO
+          // CANAIS & ARQUIVO
         </div>
-        <ul class="font-mono text-xs space-y-2 text-ink">
+        <ul class="font-mono text-xs space-y-1.5 text-ink">
           <li>
-            <a href="/" class="hover:text-manifesto-red hover:underline">01. Capa / Ensaios Recentes</a>
+            <a href="/" class="hover:text-manifesto-red hover:underline">01. Capa / Início</a>
           </li>
           <li>
             <a href="/arquivo" class="hover:text-manifesto-red hover:underline">02. Catálogo Cronológico</a>
           </li>
           <li>
-            <a href="/sobre" class="hover:text-manifesto-red hover:underline">03. Sobre o Autor & Projeto</a>
+            <a href="/sobre" class="hover:text-manifesto-red hover:underline">03. Sobre o Projeto</a>
           </li>
           <li>
             <a href="/busca" class="hover:text-manifesto-red hover:underline">04. Terminal de Busca</a>
@@ -41,32 +50,45 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <!-- Coluna 3: Licença e Autoria -->
+      <!-- Coluna 3: Redes Sociais e RSS -->
       <div class="space-y-3">
         <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink">
-          // LICENÇA & DIREITOS
+          // REDES SOCIAIS & FEED
         </div>
-        <p class="font-mono text-xs text-ink-muted leading-relaxed">
-          Conteúdo publicado sob licença <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-manifesto-red underline font-bold">CC BY-NC-SA 4.0</a>.
-          Livre para compartilhamento e adaptação com atribuição não-comercial.
-        </p>
-        <p class="font-mono text-xs text-ink">
-          Autor: <span class="font-bold">Geraldo Homero do Couto Neto</span>
-        </p>
+        <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+          {socialLinks.map((s) => (
+            <a
+              href={s.href}
+              target={s.href.startsWith("http") ? "_blank" : undefined}
+              rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              class="press-btn border border-border-brutal/40 bg-canvas px-2 py-1 text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white transition-colors"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
 
-    <!-- Barra Inferior -->
-    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between font-mono text-[11px] text-ink-muted gap-2">
+    <!-- Barra Inferior com Crédito Universitas e Licença -->
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between font-mono text-xs text-ink-muted gap-3">
       <div>
-        INFO_GUERRILLA &copy; {currentYear} // VANGUARDA & EMANCIPAÇÃO
+        INFO_GUERRILLA &copy; {currentYear} &bull; Licenciado sob <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-manifesto-red underline font-bold">CC BY-NC-SA 4.0</a>
       </div>
-      <div class="flex items-center gap-4">
-        <span>CONSTRUTIVISMO DIGITAL</span>
-        <span class="inline-block w-2 h-2 bg-manifesto-red"></span>
-        <span>ASTRO 5 SSG</span>
+
+      <!-- Crédito Universitas -->
+      <div class="flex items-center gap-2 text-ink">
+        <span class="text-ink-muted">Feito por</span>
+        <a
+          href="https://universitas-io.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-bold underline text-ink hover:text-manifesto-red transition-colors flex items-center gap-1"
+        >
+          <span>Universitas</span>
+          <span class="text-manifesto-red font-black">&nearr;</span>
+        </a>
       </div>
     </div>
   </div>
 </footer>
-

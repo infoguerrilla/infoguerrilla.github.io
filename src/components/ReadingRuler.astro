@@ -1,32 +1,28 @@
 ---
-// ReadingRuler.astro: Régua de Leitura Construtivista na Margem Lateral
+// ReadingRuler.astro: Régua Horizontal de Leitura Fixada Logo Abaixo do Header
 ---
 
 <div
   id="reading-ruler-container"
   aria-hidden="true"
-  class="fixed left-2 top-24 bottom-12 hidden lg:flex flex-col items-center justify-between w-8 z-30 pointer-events-none select-none"
+  class="sticky top-[57px] sm:top-[68px] md:top-[93px] z-30 w-full bg-canvas/80 backdrop-blur-xs border-b border-border-brutal/20 select-none pointer-events-none"
 >
-  <!-- Top Marker -->
-  <div class="font-mono text-[10px] text-ink-muted uppercase tracking-tighter">[00%]</div>
-
-  <!-- Central Track & Indicator -->
-  <div class="relative w-1.5 h-full bg-border-brutal/20 my-2">
+  <div class="w-full h-1 bg-border-brutal/20 relative">
+    <!-- Barra Vermelha de Progresso -->
     <div
       id="reading-ruler-progress"
-      class="absolute top-0 left-0 w-full bg-manifesto-red transition-all duration-75"
-      style="height: 0%;"
-    ></div>
-    <!-- Mechanical Notch Indicator -->
-    <div
-      id="reading-ruler-notch"
-      class="absolute -left-2 w-5 h-2 bg-manifesto-red border border-border-brutal shadow-constructivist-sm transition-all duration-75"
-      style="top: 0%;"
-    ></div>
+      class="h-full bg-manifesto-red transition-all duration-75 relative"
+      style="width: 0%;"
+    >
+      <!-- Indicador Numérico Monospaçado de Precisão -->
+      <span
+        id="reading-ruler-pct"
+        class="absolute top-1 right-0 translate-x-1/2 font-mono text-[9px] font-bold text-white bg-manifesto-red px-1 py-0.2 border border-border-brutal shadow-xs"
+      >
+        [00%]
+      </span>
+    </div>
   </div>
-
-  <!-- Bottom Marker / Current Percentage -->
-  <div id="reading-ruler-pct" class="font-mono text-[10px] font-bold text-manifesto-red">[00%]</div>
 </div>
 
 <script>
@@ -39,10 +35,9 @@
     }
 
     const progressEl = document.getElementById('reading-ruler-progress');
-    const notchEl = document.getElementById('reading-ruler-notch');
     const pctEl = document.getElementById('reading-ruler-pct');
 
-    if (!progressEl || !notchEl || !pctEl) return;
+    if (!progressEl || !pctEl) return;
 
     activeScrollListener = () => {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -51,8 +46,7 @@
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const progress = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
 
-      progressEl.style.height = `${progress}%`;
-      notchEl.style.top = `calc(${progress}% - 4px)`;
+      progressEl.style.width = `${progress}%`;
       pctEl.textContent = `[${Math.round(progress).toString().padStart(2, '0')}%]`;
     };
 

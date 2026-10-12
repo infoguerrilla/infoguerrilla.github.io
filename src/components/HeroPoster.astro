@@ -1,7 +1,9 @@
 ---
-// HeroPoster.astro: Cartaz Construtivista de Destaque (Vanguarda Editorial)
+// HeroPoster.astro: Cartaz Construtivista de Destaque com Imagem de Época
 import type { CollectionEntry } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
+import { getPostFeaturedImage } from '../utils/images';
+import { getAuthorSlug } from '../data/authors';
 
 interface Props {
   post: CollectionEntry<'post'>;
@@ -11,9 +13,11 @@ const { post } = Astro.props;
 const formattedDate = formatPostDate(post.data.date);
 const readingMinutes = calculateReadingTime(post.body || '');
 const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(post.slug);
+const authorSlug = getAuthorSlug(post.data.author);
+const featuredImg = getPostFeaturedImage(post.id, post.data.image);
 ---
 
-<section class="relative w-full border-3 border-border-brutal bg-surface p-6 sm:p-8 md:p-12 shadow-constructivist-double mb-12 cut-corner-br overflow-hidden">
+<section class="relative w-full border-3 border-border-brutal bg-surface p-6 sm:p-8 md:p-10 shadow-constructivist-double mb-12 cut-corner-br overflow-hidden">
   
   <!-- Elemento Geométrico Construtivista em Segundo Plano -->
   <div
@@ -21,52 +25,71 @@ const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(
     aria-hidden="true"
   ></div>
 
-  <div class="relative z-10 max-w-4xl">
-    <!-- Cabeçalho do Cartaz: Carimbo e Eixo Temático -->
-    <div class="flex flex-wrap items-center gap-3 mb-6">
-      <span class="bg-manifesto-red text-white font-mono text-xs font-black px-3 py-1 uppercase tracking-widest shadow-constructivist-sm">
-        ★ ENSAIO_EM_DESTAQUE
-      </span>
-
-      {post.data.categories?.[0] && (
-        <span class="border border-border-brutal bg-canvas px-2.5 py-0.5 font-mono text-xs font-bold uppercase text-ink">
-          // {post.data.categories[0]}
+  <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    
+    <!-- Coluna de Texto Principal -->
+    <div class={featuredImg ? "lg:col-span-7" : "lg:col-span-12"}>
+      <!-- Cabeçalho do Cartaz: Carimbo e Eixo Temático -->
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="bg-manifesto-red text-white font-mono text-xs font-black px-3 py-1 uppercase tracking-widest shadow-constructivist-sm">
+          ★ ENSAIO_EM_DESTAQUE
         </span>
+
+        {post.data.categories?.[0] && (
+          <span class="border border-border-brutal bg-canvas px-2.5 py-0.5 font-mono text-xs font-bold uppercase text-ink">
+            // {post.data.categories[0]}
+          </span>
+        )}
+
+        <time datetime={post.data.date.toISOString()} class="font-mono text-xs text-ink-muted">
+          {formattedDate} &bull; [{readingMinutes} MIN LEITURA]
+        </time>
+      </div>
+
+      <!-- Título Monumental de Vanguarda -->
+      <h1 class="font-display font-black text-2xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-ink leading-[1.1] mb-5">
+        <a href={`/post/${postSlug}`} class="hover:text-manifesto-red transition-colors">
+          {post.data.title}
+        </a>
+      </h1>
+
+      <!-- Descrição Editorial -->
+      {post.data.description && (
+        <p class="font-serif text-base sm:text-lg text-ink leading-relaxed mb-6 italic border-l-2 border-manifesto-red pl-3">
+          {post.data.description}
+        </p>
       )}
 
-      <time datetime={post.data.date.toISOString()} class="font-mono text-xs text-ink-muted ml-auto">
-        {formattedDate} &bull; [{readingMinutes} MIN LEITURA]
-      </time>
+      <!-- Ações e Metadados com Link do Autor -->
+      <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-border-brutal/30">
+        <a
+          href={`/post/${postSlug}`}
+          class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-manifesto-red px-5 py-2 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-constructivist-md"
+        >
+          <span>LER_ENSAIO_COMPLETO</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+
+        <span class="font-mono text-xs text-ink-muted">
+          AUTORIA: 
+          <a href={`/autor/${authorSlug}`} class="text-ink font-bold hover:text-manifesto-red hover:underline ml-1">
+            {post.data.author}
+          </a>
+        </span>
+      </div>
     </div>
 
-    <!-- Título Monumental de Vanguarda -->
-    <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-ink leading-[1.08] mb-6">
-      <a href={`/post/${postSlug}`} class="hover:text-manifesto-red transition-colors">
-        {post.data.title}
-      </a>
-    </h1>
-
-    <!-- Descrição Editorial -->
-    {post.data.description && (
-      <p class="font-serif text-lg sm:text-xl text-ink leading-relaxed mb-8 max-w-3xl italic">
-        {post.data.description}
-      </p>
+    <!-- Coluna de Imagem Featured Fotomecânica de Época -->
+    {featuredImg && (
+      <div class="lg:col-span-5">
+        <a href={`/post/${postSlug}`} class="block group">
+          <img
+            src={featuredImg}
+            alt={`Capa do ensaio ${post.data.title}`}
+            class="vintage-archive-img w-full max-h-[360px] object-cover"
+          />
+        </a>
+      </div>
     )}
-
-    <!-- Ações e Metadados -->
-    <div class="flex flex-wrap items-center gap-4 pt-4 border-t-2 border-border-brutal/30">
-      <a
-        href={`/post/${postSlug}`}
-        class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-manifesto-red px-5 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-white shadow-constructivist-md"
-      >
-        <span>LER_ENSAIO_COMPLETO</span>
-        <span aria-hidden="true">&rarr;</span>
-      </a>
-
-      <span class="font-mono text-xs text-ink-muted">
-        AUTORIA: <strong class="text-ink">{post.data.author}</strong>
-      </span>
-    </div>
   </div>
 </section>
-

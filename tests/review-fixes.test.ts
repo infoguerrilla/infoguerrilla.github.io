@@ -21,3 +21,4 @@ describe('Review Fixes Verification', () => {
     expect(normalizeNavPath("/arquivo/")).toBe("/arquivo");
   });
 });
+

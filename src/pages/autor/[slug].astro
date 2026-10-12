@@ -1,0 +1,220 @@
+---
+// autor/[slug].astro: Página Dedicada do Autor e seus Ensaios
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { authors, getAuthorBySlug, type Author } from '../../data/authors';
+import { normalizeSlug } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('post');
+
+  // Coleta autores conhecidos + autores encontrados nos posts
+  const knownSlugs = new Set(authors.map((a) => a.slug));
+  
+  allPosts.forEach((p) => {
+    if (p.data.author) {
+      knownSlugs.add(normalizeSlug(p.data.author));
+    }
+  });
+
+  return Array.from(knownSlugs).map((slug) => ({
+    params: { slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const authorData: Author = getAuthorBySlug(slug) || {
+  name: slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+  slug,
+  role: "Autor(a) Colaborador(a)",
+  avatar: "https://avatars.githubusercontent.com/u/70844369?v=4",
+  bio: "Colaborador(a) do projeto editorial Info_Guerrilla.",
+  degrees: [],
+  researchTopics: ["Teoria Crítica", "Política & Tecnologia"],
+  links: {},
+};
+
+const allPosts = await getCollection('post');
+const authorPosts = allPosts
+  .filter((p) => normalizeSlug(p.data.author) === slug || p.data.author.toLowerCase() === authorData.name.toLowerCase())
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title={`${authorData.name} // Perfil do Autor // Info_Guerrilla`}
+  description={`Ensaios e trajetória de ${authorData.name} no Info_Guerrilla.`}
+>
+  <div class="max-w-5xl mx-auto">
+    
+    <!-- Breadcrumb -->
+    <nav class="font-mono text-xs text-ink-muted mb-6 flex items-center gap-2" aria-label="Navegação">
+      <a href="/" class="hover:text-manifesto-red hover:underline">[INÍCIO]</a>
+      <span>/</span>
+      <a href="/arquivo" class="hover:text-manifesto-red hover:underline">[ARQUIVO]</a>
+      <span>/</span>
+      <span class="text-manifesto-red font-bold">AUTORIA // {authorData.name.toUpperCase()}</span>
+    </nav>
+
+    <!-- Cartaz do Autor (Construtivista) -->
+    <header class="border-3 border-border-brutal bg-surface p-6 sm:p-8 md:p-10 shadow-constructivist-md cut-corner-br mb-12">
+      <div class="flex flex-col md:flex-row gap-8 items-start">
+        
+        <!-- Retrato Fotomecânico de Época -->
+        <div class="shrink-0 mx-auto md:mx-0">
+          <div class="relative">
+            <img
+              src={authorData.avatar}
+              alt={`Foto de ${authorData.name}`}
+              width="190"
+              height="190"
+              class="vintage-archive-img object-cover w-40 h-40 sm:w-48 sm:h-48"
+            />
+            <span class="absolute -bottom-3 -right-3 bg-manifesto-red text-white font-mono text-[10px] font-bold px-2 py-0.5 uppercase border border-border-brutal shadow-sm">
+              AUTOR
+            </span>
+          </div>
+        </div>
+
+        <!-- Biografia e Titulações -->
+        <div class="flex-grow">
+          <span class="inline-block bg-manifesto-red text-white font-mono text-xs font-bold px-2.5 py-0.5 uppercase tracking-wider mb-2">
+            // CORPO_EDITORIAL
+          </span>
+          
+          <h1 class="font-display font-black text-3xl sm:text-4xl uppercase tracking-tight text-ink mb-1">
+            {authorData.name}
+          </h1>
+          
+          <p class="font-mono text-xs sm:text-sm text-manifesto-red font-bold uppercase tracking-wider mb-4">
+            {authorData.role}
+          </p>
+
+          <p class="font-serif text-base sm:text-lg text-ink leading-relaxed mb-4">
+            {authorData.bio}
+          </p>
+
+          <!-- Titulações Acadêmicas -->
+          {authorData.degrees.length > 0 && (
+            <div class="mb-4">
+              <span class="font-mono text-xs font-bold text-ink-muted uppercase block mb-1.5">
+                FORMAÇÃO ACADÊMICA:
+              </span>
+              <ul class="font-mono text-xs text-ink space-y-1 list-none pl-0">
+                {authorData.degrees.map((deg) => (
+                  <li class="flex items-center gap-2">
+                    <span class="inline-block w-1.5 h-1.5 bg-manifesto-red"></span>
+                    <span>{deg}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Linhas de Pesquisa -->
+          {authorData.researchTopics.length > 0 && (
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              {authorData.researchTopics.map((topic) => (
+                <span class="font-mono text-[11px] bg-canvas border border-border-brutal/30 px-2 py-0.5 text-ink-muted">
+                  #{topic}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <!-- Links e Conexões Acadêmicas -->
+      {Object.keys(authorData.links).length > 0 && (
+        <div class="mt-8 pt-6 border-t border-border-brutal/20">
+          <span class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted block mb-3">
+            // REDES & ÍNDICES ACADÊMICOS
+          </span>
+
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            {authorData.links.orcid && (
+              <a
+                href={authorData.links.orcid}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
+              >
+                ORCID
+              </a>
+            )}
+            {authorData.links.lattes && (
+              <a
+                href={authorData.links.lattes}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
+              >
+                LATTES
+              </a>
+            )}
+            {authorData.links.researchGate && (
+              <a
+                href={authorData.links.researchGate}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
+              >
+                RESEARCHGATE
+              </a>
+            )}
+            {authorData.links.github && (
+              <a
+                href={authorData.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
+              >
+                GITHUB
+              </a>
+            )}
+            {authorData.links.bluesky && (
+              <a
+                href={authorData.links.bluesky}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
+              >
+                BLUESKY
+              </a>
+            )}
+            {authorData.links.x && (
+              <a
+                href={authorData.links.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
+              >
+                X / TWITTER
+              </a>
+            )}
+          </div>
+        </div>
+      )}
+    </header>
+
+    <!-- Publicações do Autor -->
+    <section>
+      <div class="flex items-center justify-between border-b-2 border-border-brutal pb-3 mb-8">
+        <div>
+          <span class="font-mono text-xs font-bold text-manifesto-red uppercase tracking-widest block mb-1">
+            // PUBLICAÇÕES
+          </span>
+          <h2 class="font-display font-black text-2xl uppercase tracking-tight text-ink">
+            ENSAIOS PUBLICADOS ({authorPosts.length})
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {authorPosts.map((post) => (
+          <PostCard post={post} />
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,136 +1,89 @@
 ---
-// sobre.astro: Manifesto e Perfil do Autor (Geraldo Homero do Couto Neto)
+// sobre.astro: Manifesto Editorial e Proposta Teórica do Info_Guerrilla
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { authors } from '../data/authors';
 ---
 
 <BaseLayout
-  title="Sobre o Projeto & Autor // Info_Guerrilla"
-  description="Manifesto editorial e trajetória acadêmica de Geraldo Homero do Couto Neto."
+  title="Sobre o Projeto // Info_Guerrilla"
+  description="Manifesto editorial e proposta teórica do Info_Guerrilla."
 >
   <div class="max-w-4xl mx-auto">
     
     <!-- Cabeçalho de Manifesto -->
     <header class="border-b-2 border-border-brutal pb-8 mb-10">
       <div class="inline-block bg-manifesto-red text-white font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest shadow-constructivist-sm mb-3">
-        // QUEM_SOMOS & PROPOSTA_TEÓRICA
+        // PROPOSTA_TEÓRICA & POLÍTICA
       </div>
       <h1 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-ink mb-4">
         INFO_GUERRILLA
       </h1>
       <p class="font-serif italic text-xl text-ink leading-relaxed border-l-4 border-manifesto-red pl-4 py-2 bg-surface">
-        &ldquo;Para que o trabalho do alfaiate não desapareça na roupa.&rdquo; &mdash; Karl Marx, <em>O Capital</em>
+        &ldquo;Para que o trabalho do alfaiate não desapareça na roupa.&rdquo;
       </p>
     </header>
 
-    <!-- Manifesto do Projeto -->
+    <!-- Manifesto Editorial -->
     <section class="border-2 border-border-brutal bg-surface p-6 sm:p-8 cut-corner-br shadow-constructivist-md mb-12">
       <h2 class="font-display font-extrabold text-2xl uppercase tracking-tight text-ink mb-4">
         O PROJETO EDITORIAL
       </h2>
       <div class="academic-prose">
         <p>
-          O <strong>Info_Guerrilla</strong> é um espaço editorial voltado para a análise crítica da sociedade em rede e das contradições do capitalismo digital contemporâneo. A proposta é tensionar a relação entre tecnologia, sociedade, luta de classes e cultura, com foco em temas como privacidade, vigilância estatal e corporativa, colonialismo digital, algoritmos, plataformas e seus impactos na esfera pública.
+          O <strong>Info_Guerrilla</strong> é um espaço editorial voltado para a análise crítica da sociedade em rede e das contradições do capitalismo digital contemporâneo. A proposta é tensionar a relação entre tecnologia, sociedade, lutas emancipatórias e cultura, com foco em temas como privacidade, vigilância estatal e corporativa, colonialismo de dados, algoritmos, plataformas e seus impactos na esfera pública.
         </p>
         <p>
-          Recusamos o tecnofetichismo e o determinismo acrítico. A tecnologia não é neutra: ela expressa relações sociais de produção e dominação. Por isso, a defesa do software livre, da soberania tecnológica e do pensamento crítico emancipatória é parte indissociável deste projeto.
+          Recusamos o tecnofetichismo e o determinismo acrítico. A tecnologia não é neutra: ela expressa relações sociais de produção, poder e dominação. Por isso, a defesa do software livre, da soberania tecnológica e do pensamento crítico radical é parte indissociável deste projeto.
+        </p>
+        <p>
+          Os ensaios publicados buscam dialogar com o rigor analítico das ciências humanas e a experiência prática da militância digital e dos movimentos sociais.
         </p>
       </div>
     </section>
 
-    <!-- Perfil do Autor -->
+    <!-- Autoria e Corpo Editorial -->
     <section class="border-2 border-border-brutal bg-surface p-6 sm:p-8 shadow-constructivist-md cut-corner-br mb-12">
-      <div class="flex flex-col md:flex-row gap-8 items-start">
-        
-        <!-- Retrato / Cartaz com Moldura Construtivista -->
-        <div class="shrink-0 mx-auto md:mx-0">
-          <div class="relative">
-            <img
-              src="https://avatars.githubusercontent.com/u/70844369?v=4"
-              alt="Geraldo Homero do Couto Neto"
-              width="180"
-              height="180"
-              class="border-3 border-border-brutal shadow-constructivist-red object-cover w-40 h-40 sm:w-48 sm:h-48"
-            />
-            <span class="absolute -bottom-3 -right-3 bg-manifesto-red text-white font-mono text-[10px] font-bold px-2 py-0.5 uppercase border border-border-brutal">
-              AUTOR
-            </span>
-          </div>
-        </div>
-
-        <!-- Biografia Acadêmica -->
-        <div class="flex-grow">
-          <h2 class="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-ink mb-2">
-            Geraldo Homero do Couto Neto
-          </h2>
-          <p class="font-mono text-xs text-manifesto-red font-bold uppercase tracking-wider mb-4">
-            Pesquisador, Historiador & Cientista Político
-          </p>
-
-          <div class="font-serif text-base text-ink space-y-3 leading-relaxed">
-            <p>
-              Doutorando em Ciência Política pela <strong>Unicamp</strong>, Mestre em História pela <strong>UFJF</strong> e Bacharel/Licenciado em História também pela <strong>UFJF</strong>. Possui também formação em Análise e Desenvolvimento de Software pela <strong>PUC Minas</strong>.
-            </p>
-            <p>
-              Pesquisa principalmente sobre direitas, conservadorismo, movimentos digitais, tecnologia e política, com foco em estudos críticos da internet, humanidades digitais, plataformas digitais, redes sociais e suas implicações na esfera pública democrática.
-            </p>
-          </div>
-        </div>
+      <div class="border-b border-border-brutal/30 pb-3 mb-6 flex items-center justify-between">
+        <h2 class="font-display font-extrabold text-xl uppercase tracking-tight text-ink">
+          CORPO EDITORIAL & AUTORIA
+        </h2>
+        <span class="font-mono text-xs text-manifesto-red font-bold">[COLABORADORES]</span>
       </div>
 
-      <!-- Conexões Acadêmicas e Redes -->
-      <div class="mt-8 pt-6 border-t border-border-brutal/20">
-        <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-4">
-          // ÍNDICES ACADÊMICOS & CONTATO
-        </h3>
+      <p class="font-serif text-base text-ink mb-6 leading-relaxed">
+        O acervo conta com publicações e pesquisas autorais. Conheça os perfis e produções acadêmicas de quem escreve:
+      </p>
 
-        <div class="flex flex-wrap gap-2.5 font-mono text-xs">
-          <a
-            href="https://orcid.org/0000-0001-6686-7182"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
-          >
-            ORCID [0001-6686-7182]
-          </a>
-
-          <a
-            href="http://lattes.cnpq.br/9924558848538635"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
-          >
-            CURRÍCULO LATTES
-          </a>
-
-          <a
-            href="https://www.researchgate.net/profile/Geraldo-Couto-Neto"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
-          >
-            RESEARCHGATE
-          </a>
-
-          <a
-            href="https://github.com/geraldohomero"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
-          >
-            GITHUB
-          </a>
-
-          <a
-            href="https://bsky.app/profile/geraldohomero.bsky.social"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
-          >
-            BLUESKY
-          </a>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {authors.map((author) => (
+          <article class="border border-border-brutal bg-canvas p-5 flex items-start gap-4 hover:border-manifesto-red transition-all cut-corner-br shadow-constructivist-sm">
+            <img
+              src={author.avatar}
+              alt={author.name}
+              width="70"
+              height="70"
+              class="vintage-archive-img w-16 h-16 object-cover shrink-0"
+            />
+            <div>
+              <h3 class="font-display font-bold text-lg text-ink leading-tight">
+                <a href={`/autor/${author.slug}`} class="hover:text-manifesto-red">
+                  {author.name}
+                </a>
+              </h3>
+              <p class="font-mono text-[11px] text-manifesto-red font-bold uppercase mt-0.5 mb-2">
+                {author.role}
+              </p>
+              <a
+                href={`/autor/${author.slug}`}
+                class="font-mono text-xs font-bold text-ink hover:text-manifesto-red flex items-center gap-1"
+              >
+                <span>VER PERFIL E ENSAIOS</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   </div>
 </BaseLayout>
-

@@ -1,7 +1,9 @@
 ---
-// PostCard.astro: Card Construtivista de Ensaio com 3D Tilt
+// PostCard.astro: Card Construtivista de Ensaio com 3D Tilt e Imagem de Época
 import type { CollectionEntry } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
+import { getPostFeaturedImage } from '../utils/images';
+import { getAuthorSlug } from '../data/authors';
 
 interface Props {
   post: CollectionEntry<'post'>;
@@ -11,19 +13,21 @@ const { post } = Astro.props;
 const formattedDate = formatPostDate(post.data.date);
 const readingMinutes = calculateReadingTime(post.body || '');
 const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(post.slug);
+const authorSlug = getAuthorSlug(post.data.author);
 const primaryCategory = post.data.categories?.[0] || 'ENSAIO';
+const featuredImg = getPostFeaturedImage(post.id, post.data.image);
 ---
 
 <article class="perspective-1000 h-full">
   <div
     data-tilt
-    class="preserve-3d group relative flex flex-col justify-between h-full border-2 border-border-brutal bg-surface p-5 sm:p-6 transition-all duration-150 shadow-constructivist-md hover:shadow-constructivist-double hover:border-manifesto-red cut-corner-br"
+    class="preserve-3d group relative flex flex-col justify-between h-full border-2 border-border-brutal bg-surface p-5 transition-all duration-150 shadow-constructivist-md hover:shadow-constructivist-double hover:border-manifesto-red cut-corner-br"
   >
-    <!-- Camada Superior com Categoria e Data -->
+    <!-- Camada Superior com Imagem, Categoria e Data -->
     <div>
-      <div class="flex items-center justify-between gap-2 mb-4">
-        <!-- Badge Construtivista de Categoria (translateZ para relevo 3D) -->
-        <span class="inline-block bg-manifesto-red text-white font-mono text-[11px] font-bold px-2.5 py-0.5 uppercase tracking-wider shadow-sm transform-gpu group-hover:translate-z-4">
+      <div class="flex items-center justify-between gap-2 mb-3">
+        <!-- Badge Construtivista de Categoria -->
+        <span class="inline-block bg-manifesto-red text-white font-mono text-[11px] font-bold px-2 py-0.5 uppercase tracking-wider shadow-xs">
           // {primaryCategory}
         </span>
         
@@ -33,8 +37,20 @@ const primaryCategory = post.data.categories?.[0] || 'ENSAIO';
         </time>
       </div>
 
+      <!-- Imagem de Destaque Estilo Arquivo de Época (se houver) -->
+      {featuredImg && (
+        <a href={`/post/${postSlug}`} class="block mb-4 overflow-hidden">
+          <img
+            src={featuredImg}
+            alt={`Capa de ${post.data.title}`}
+            class="vintage-archive-img w-full h-40 object-cover"
+            loading="lazy"
+          />
+        </a>
+      )}
+
       <!-- Título Monumental -->
-      <h3 class="font-display font-extrabold text-xl sm:text-2xl leading-tight text-ink mb-3 group-hover:text-manifesto-red transition-colors">
+      <h3 class="font-display font-extrabold text-lg sm:text-xl leading-tight text-ink mb-2 group-hover:text-manifesto-red transition-colors">
         <a href={`/post/${postSlug}`} class="block focus:outline-none">
           {post.data.title}
         </a>
@@ -42,26 +58,33 @@ const primaryCategory = post.data.categories?.[0] || 'ENSAIO';
 
       <!-- Resumo Editorial Acadêmico -->
       {post.data.description && (
-        <p class="font-serif text-sm text-ink-muted line-clamp-3 mb-4 leading-relaxed">
+        <p class="font-serif text-xs sm:text-sm text-ink-muted line-clamp-2 mb-4 leading-relaxed">
           {post.data.description}
         </p>
       )}
     </div>
 
-    <!-- Rodapé do Card com Tempo de Leitura e Ação -->
-    <div class="pt-4 border-t border-border-brutal/20 flex items-center justify-between font-mono text-xs">
-      <span class="text-ink-muted">
-        [{readingMinutes} MIN LEITURA]
-      </span>
+    <!-- Rodapé do Card com Autor, Tempo de Leitura e Ação -->
+    <div class="pt-3 border-t border-border-brutal/20 flex items-center justify-between font-mono text-xs">
+      <div>
+        <a
+          href={`/autor/${authorSlug}`}
+          class="text-ink-muted hover:text-manifesto-red hover:underline text-[11px]"
+        >
+          {post.data.author}
+        </a>
+      </div>
 
-      <a
-        href={`/post/${postSlug}`}
-        class="inline-flex items-center gap-1 font-bold text-ink group-hover:text-manifesto-red group-hover:translate-x-1 transition-all"
-      >
-        <span>LER_ENSAIO</span>
-        <span aria-hidden="true">&rarr;</span>
-      </a>
+      <div class="flex items-center gap-3">
+        <span class="text-ink-muted text-[11px]">[{readingMinutes}m]</span>
+        <a
+          href={`/post/${postSlug}`}
+          class="font-bold text-ink group-hover:text-manifesto-red transition-colors"
+          aria-label={`Ler ${post.data.title}`}
+        >
+          &rarr;
+        </a>
+      </div>
     </div>
   </div>
 </article>
-
