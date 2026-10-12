@@ -1,0 +1,50 @@
+---
+// ThemeToggle.astro: Construtivista - Interruptor tático Papel/Noturno
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Alternar modo visual (Papel / Noturno)"
+  class="press-btn group relative inline-flex items-center gap-2 border-2 border-border-brutal bg-surface px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-ink shadow-constructivist-sm hover:border-manifesto-red focus:outline-none"
+>
+  <span class="inline-block h-2.5 w-2.5 bg-manifesto-red transition-transform group-hover:scale-125" id="theme-indicator"></span>
+  <span class="text-ink-muted">MODO:</span>
+  <span id="theme-label" class="text-ink">PAPEL</span>
+</button>
+
+<script>
+  function setupThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const label = document.getElementById('theme-label');
+    const root = document.documentElement;
+
+    function updateUI(theme: string) {
+      if (label) {
+        label.textContent = theme === 'dark' ? 'NOTURNO' : 'PAPEL';
+      }
+    }
+
+    const currentTheme = root.getAttribute('data-theme') || 'paper';
+    updateUI(currentTheme);
+
+    if (toggleBtn) {
+      // Remove any existing click listener on page transition
+      toggleBtn.replaceWith(toggleBtn.cloneNode(true));
+      const freshBtn = document.getElementById('theme-toggle');
+      
+      freshBtn?.addEventListener('click', () => {
+        const activeTheme = root.getAttribute('data-theme') || 'paper';
+        const nextTheme = activeTheme === 'dark' ? 'paper' : 'dark';
+        
+        root.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+        updateUI(nextTheme);
+      });
+    }
+  }
+
+  // Run on initial load and on Astro View Transitions
+  setupThemeToggle();
+  document.addEventListener('astro:after-swap', setupThemeToggle);
+</script>
