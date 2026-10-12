@@ -1,0 +1,58 @@
+---
+// ReadingRuler.astro: Régua de Leitura Construtivista na Margem Lateral
+---
+
+<div
+  id="reading-ruler-container"
+  aria-hidden="true"
+  class="fixed left-2 top-24 bottom-12 hidden lg:flex flex-col items-center justify-between w-8 z-30 pointer-events-none select-none"
+>
+  <!-- Top Marker -->
+  <div class="font-mono text-[10px] text-ink-muted uppercase tracking-tighter">[00%]</div>
+
+  <!-- Central Track & Indicator -->
+  <div class="relative w-1.5 h-full bg-border-brutal/20 my-2">
+    <div
+      id="reading-ruler-progress"
+      class="absolute top-0 left-0 w-full bg-manifesto-red transition-all duration-75"
+      style="height: 0%;"
+    ></div>
+    <!-- Mechanical Notch Indicator -->
+    <div
+      id="reading-ruler-notch"
+      class="absolute -left-2 w-5 h-2 bg-manifesto-red border border-border-brutal shadow-constructivist-sm transition-all duration-75"
+      style="top: 0%;"
+    ></div>
+  </div>
+
+  <!-- Bottom Marker / Current Percentage -->
+  <div id="reading-ruler-pct" class="font-mono text-[10px] font-bold text-manifesto-red">[00%]</div>
+</div>
+
+<script>
+  function setupReadingRuler() {
+    const progressEl = document.getElementById('reading-ruler-progress');
+    const notchEl = document.getElementById('reading-ruler-notch');
+    const pctEl = document.getElementById('reading-ruler-pct');
+
+    if (!progressEl || !notchEl || !pctEl) return;
+
+    function onScroll() {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return;
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const progress = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+
+      progressEl.style.height = `${progress}%`;
+      notchEl.style.top = `calc(${progress}% - 4px)`;
+      pctEl.textContent = `[${Math.round(progress).toString().padStart(2, '0')}%]`;
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  setupReadingRuler();
+  document.addEventListener('astro:page-load', setupReadingRuler);
+</script>

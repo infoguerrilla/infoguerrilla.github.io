@@ -1,0 +1,53 @@
+---
+// Marquee.astro: Fita Cinética Construtivista (Citação de Marx / Manifesto)
+interface Props {
+  text?: string;
+  speed?: string;
+}
+
+const {
+  text = "PARA QUE O TRABALHO DO ALFAIATE NÃO DESAPAREÇA NA ROUPA // INFO_GUERRILLA // TEORIA CRÍTICA, POLÍTICA & SOBERANIA DIGITAL //",
+  speed = "30s"
+} = Astro.props;
+---
+
+<div class="relative w-full overflow-hidden border-y-2 border-border-brutal bg-manifesto-red text-white py-1.5 select-none shadow-constructivist-sm">
+  <div
+    class="marquee-track flex whitespace-nowrap font-mono text-xs md:text-sm font-bold uppercase tracking-widest hover:[animation-play-state:paused]"
+    style={`--marquee-speed: ${speed};`}
+  >
+    <div class="marquee-content flex items-center gap-8 shrink-0 pr-8">
+      <span>{text}</span>
+      <span aria-hidden="true" class="inline-block w-2.5 h-2.5 bg-white rotate-45"></span>
+      <span>{text}</span>
+      <span aria-hidden="true" class="inline-block w-2.5 h-2.5 bg-white rotate-45"></span>
+    </div>
+    <div class="marquee-content flex items-center gap-8 shrink-0 pr-8" aria-hidden="true">
+      <span>{text}</span>
+      <span class="inline-block w-2.5 h-2.5 bg-white rotate-45"></span>
+      <span>{text}</span>
+      <span class="inline-block w-2.5 h-2.5 bg-white rotate-45"></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .marquee-track {
+    animation: marquee-scroll var(--marquee-speed) linear infinite;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>
