@@ -22,3 +22,4 @@ describe('Dark Mode Grayish Palette Specification', () => {
     expect(darkVars).toMatch(/--color-border:\s*#(?:3e424e|424652|3d414c)/i);
   });
 });
+

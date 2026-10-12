@@ -168,6 +168,16 @@ const authorPosts = allPosts
           </span>
 
           <div class="flex flex-wrap gap-2 font-mono text-xs">
+            {(authorData.links.website || authorData.links.site) && (
+              <a
+                href={authorData.links.website || authorData.links.site}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
+              >
+                WEBSITE
+              </a>
+            )}
             {authorData.links.orcid && (
               <a
                 href={authorData.links.orcid}
@@ -196,6 +206,16 @@ const authorPosts = allPosts
                 class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
               >
                 RESEARCHGATE
+              </a>
+            )}
+            {authorData.links.linkedin && (
+              <a
+                href={authorData.links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="press-btn border border-border-brutal bg-canvas px-3 py-1.5 font-bold text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white shadow-constructivist-sm"
+              >
+                LINKEDIN
               </a>
             )}
             {authorData.links.github && (

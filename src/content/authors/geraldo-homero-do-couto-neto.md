@@ -15,6 +15,7 @@ researchTopics:
   - "Estudos Críticos da Internet"
   - "Humanidades Digitais & Plataformas"
 links:
+  website: "https://geraldohomero.github.io/"
   orcid: "https://orcid.org/0000-0001-6686-7182"
   lattes: "http://lattes.cnpq.br/9924558848538635"
   researchGate: "https://www.researchgate.net/profile/Geraldo-Couto-Neto"

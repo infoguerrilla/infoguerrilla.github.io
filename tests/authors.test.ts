@@ -53,4 +53,14 @@ describe('Author Content Collection & Editing Architecture', () => {
     expect(templateContent).toContain('author.render');
     expect(templateContent).toContain('<Content />');
   });
+
+  it('renders linkedin and website links in author profile template', () => {
+    const templatePath = path.resolve(process.cwd(), 'src/pages/autor/[slug].astro');
+    const templateContent = fs.readFileSync(templatePath, 'utf-8');
+
+    expect(templateContent).toContain('authorData.links.linkedin');
+    expect(templateContent).toMatch(/authorData\.links\.(?:website|site)/);
+    expect(templateContent).toContain('LINKEDIN');
+    expect(templateContent).toContain('WEBSITE');
+  });
 });
