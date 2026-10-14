@@ -2,9 +2,9 @@
 title: "Para que o trabalho do alfaiate não desapareça na roupa"
 slug: para-que-o-trabalho-do-alfaiate-não-desapareça-na-roupa
 description: Entendendo o nosso manifesto editorial
-date: 2026-10-13 00:00:00+0000
+date: 2026-09-13 00:00:00+0000
 image: image.png
-author: Geraldo Homero do Couto Neto
+author: Info_Guerrilla
 series: "Das Kapital"
 tags:
   - marx
