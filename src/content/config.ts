@@ -14,7 +14,23 @@ const post = defineCollection({
     author: z.string().default('Geraldo Homero do Couto Neto'),
     categories: z.array(z.string()).default([]),
     tags: z.array(z.string()).default([]),
+    series: z.union([
+      z.string(),
+      z.object({
+        name: z.string(),
+        description: z.string().optional(),
+      }),
+    ]).optional(),
     weight: z.number().optional(),
+  }),
+});
+
+const series = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 
@@ -31,4 +47,4 @@ const authors = defineCollection({
   }),
 });
 
-export const collections = { post, authors };
+export const collections = { post, authors, series };
