@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getAllSeries } from '../../utils/series';
+
+const allPosts = await getCollection('post');
+const allSeriesDocs = await getCollection('series').catch(() => []);
+const seriesList = getAllSeries(allPosts, allSeriesDocs);
+---
+
+<BaseLayout
+  title="Séries Editoriais & Dossiês // Info_Guerrilla"
+  description="Coletâneas especiais e investigações temáticas seriadas do Info_Guerrilla."
+>
+  <div class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+    <!-- Cabeçalho Monumental de Cartaz -->
+    <header class="mb-12 border-b-4 border-border-brutal pb-8">
+      <div class="font-mono text-xs text-ink-muted mb-3 flex items-center gap-2">
+        <a href="/" class="hover:text-manifesto-red hover:underline">[INÍCIO]</a>
+        <span>/</span>
+        <span class="text-manifesto-red font-bold">[SÉRIES & DOSSIÊS]</span>
+      </div>
+
+      <div class="inline-block bg-manifesto-red text-white font-mono text-xs font-black px-3 py-1 uppercase tracking-widest shadow-xs mb-3">
+        ★ COLETÂNEAS_EDITORIAIS
+      </div>
+
+      <h1 class="font-display font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-ink leading-none">
+        Séries Especiais &amp; Dossiês
+      </h1>
+
+      <p class="font-serif italic text-lg sm:text-xl text-ink-muted max-w-3xl mt-4 leading-relaxed">
+        Investigações temáticas aprofundadas, ensaios seriais e trilhas de leitura sequencial do acervo do Info_Guerrilla.
+      </p>
+    </header>
+
+    <!-- Grid de Séries -->
+    {seriesList.length === 0 ? (
+      <div class="border-2 border-dashed border-border-brutal/40 p-12 text-center font-mono text-ink-muted">
+        Nenhuma série editorial publicada no momento.
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {seriesList.map((s) => {
+          const firstYear = s.firstDate.getFullYear();
+          const lastYear = s.lastDate.getFullYear();
+          const yearDisplay = firstYear === lastYear ? `${firstYear}` : `${firstYear} – ${lastYear}`;
+
+          return (
+            <article class="border-3 border-border-brutal bg-surface p-6 sm:p-8 shadow-constructivist-md hover:shadow-constructivist-double hover:border-manifesto-red transition-all flex flex-col justify-between cut-corner-br">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-4">
+                  <span class="bg-manifesto-red text-white font-mono text-xs font-black px-2.5 py-0.5 uppercase tracking-wider shadow-xs">
+                    // DOSSIÊ
+                  </span>
+                  <span class="font-mono text-xs text-ink-muted font-bold">
+                    [{s.totalCount} {s.totalCount === 1 ? 'ENSAIO' : 'ENSAIOS'}]
+                  </span>
+                </div>
+
+                <h2 class="font-display font-black text-2xl sm:text-3xl text-ink uppercase leading-tight mb-3">
+                  <a href={`/series/${s.slug}`} class="hover:text-manifesto-red transition-colors">
+                    {s.name}
+                  </a>
+                </h2>
+
+                {s.description && (
+                  <p class="font-serif text-sm sm:text-base text-ink-muted leading-relaxed mb-6">
+                    {s.description}
+                  </p>
+                )}
+              </div>
+
+              <div class="pt-4 border-t border-border-brutal/20 flex items-center justify-between font-mono text-xs">
+                <span class="text-ink-muted">
+                  PERÍODO: <strong class="text-ink">{yearDisplay}</strong>
+                </span>
+
+                <a
+                  href={`/series/${s.slug}`}
+                  class="font-bold text-manifesto-red hover:underline tracking-tight"
+                >
+                  [LER SÉRIE &rarr;]
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    )}
+  </div>
+</BaseLayout>

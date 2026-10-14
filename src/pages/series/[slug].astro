@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getAllSeries, slugifySeries, type SeriesData } from '../../utils/series';
+import { formatPostDate, calculateReadingTime, normalizeSlug } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('post');
+  const seriesDocs = await getCollection('series').catch(() => []);
+  const allSeries = getAllSeries(posts, seriesDocs);
+
+  return allSeries.map((s) => {
+    const doc = seriesDocs.find(
+      (d) => slugifySeries(d.slug || d.data.title) === s.slug
+    );
+    return {
+      params: { slug: s.slug },
+      props: { series: s, seriesDoc: doc },
+    };
+  });
+}
+
+interface Props {
+  series: SeriesData;
+  seriesDoc?: CollectionEntry<'series'>;
+}
+
+const { series, seriesDoc } = Astro.props;
+const renderedSeriesDoc = seriesDoc ? await seriesDoc.render() : null;
+const Content = renderedSeriesDoc ? renderedSeriesDoc.Content : null;
+---
+
+<BaseLayout
+  title={`${series.name} // Séries & Dossiês // Info_Guerrilla`}
+  description={series.description || `Série especial de ensaios: ${series.name}`}
+>
+  <div class="max-w-5xl mx-auto px-4 py-8 md:py-12">
+    <!-- Navegação Breadcrumb -->
+    <nav class="font-mono text-xs text-ink-muted mb-6 flex items-center gap-2" aria-label="Navegação">
+      <a href="/" class="hover:text-manifesto-red hover:underline">[INÍCIO]</a>
+      <span>/</span>
+      <a href="/series" class="hover:text-manifesto-red hover:underline">[SÉRIES &amp; DOSSIÊS]</a>
+      <span>/</span>
+      <span class="text-manifesto-red font-bold uppercase">[{series.name}]</span>
+    </nav>
+
+    <!-- Cabeçalho Monumental da Série -->
+    <header class="mb-10 border-b-4 border-border-brutal pb-8">
+      <div class="inline-block bg-manifesto-red text-white font-mono text-xs font-black px-3 py-1 uppercase tracking-widest shadow-xs mb-4">
+        ★ DOSSIÊ_ESPECIAL
+      </div>
+
+      <h1 class="font-display font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-ink leading-tight mb-4">
+        {series.name}
+      </h1>
+
+      <div class="flex flex-wrap items-center gap-3 font-mono text-xs text-ink-muted">
+        <span class="bg-surface border border-border-brutal px-2.5 py-1 font-bold text-ink">
+          {series.totalCount} {series.totalCount === 1 ? 'ENSAIO' : 'ENSAIOS'}
+        </span>
+        <span>&bull;</span>
+        <span class="text-manifesto-red font-bold">
+          ORDEM CRONOLÓGICA DE LEITURA
+        </span>
+      </div>
+    </header>
+
+    <!-- Bloco de Explicação e Manifesto Editorial da Série -->
+    <section class="mb-14" aria-label="Apresentação da Série">
+      <div class="flex items-center gap-2 mb-4 font-mono text-xs font-black text-manifesto-red uppercase tracking-wider">
+        <span>// APRESENTAÇÃO &amp; EXPLICAÇÃO DA COLETÂNEA</span>
+      </div>
+
+      {Content ? (
+        <div class="academic-prose border-3 border-border-brutal bg-surface p-6 sm:p-10 shadow-constructivist-md">
+          <Content />
+        </div>
+      ) : series.description ? (
+        <div class="border-l-4 border-manifesto-red bg-surface p-6 font-serif text-lg text-ink leading-relaxed shadow-constructivist-sm">
+          {series.description}
+        </div>
+      ) : (
+        <div class="border border-border-brutal/30 p-6 bg-surface font-serif italic text-ink-muted">
+          Esta série reúne ensaios dedicados a investigar e desenvolver este tema em partes sequenciais.
+        </div>
+      )}
+    </section>
+
+    <!-- Linha do Tempo e Trilha de Leitura Cronológica -->
+    <section aria-label="Ensaios da Série">
+      <div class="flex items-center justify-between gap-4 mb-6 border-b-2 border-border-brutal pb-3">
+        <h2 class="font-display font-black text-xl sm:text-2xl text-ink uppercase tracking-tight">
+          Trilha de Leitura dos Ensaios
+        </h2>
+        <span class="font-mono text-xs text-ink-muted">
+          [PARTE 1 ATÉ {series.totalCount}]
+        </span>
+      </div>
+
+      <div class="space-y-6">
+        {series.posts.map((post, idx) => {
+          const partNumber = idx + 1;
+          const postSlug = normalizeSlug(post.data.slug || post.slug);
+          const formattedDate = formatPostDate(post.data.date);
+          const readingMinutes = calculateReadingTime(post.body || '');
+
+          return (
+            <article class="border-2 border-border-brutal bg-surface p-5 sm:p-7 shadow-constructivist-sm hover:shadow-constructivist-md hover:border-manifesto-red transition-all flex flex-col md:flex-row md:items-center justify-between gap-6 cut-corner-br">
+              <div class="flex-grow">
+                <div class="flex flex-wrap items-center gap-3 mb-2 font-mono text-xs">
+                  <span class="bg-manifesto-red text-white font-black px-2 py-0.5 tracking-wider">
+                    PARTE {partNumber}
+                  </span>
+                  <time datetime={post.data.date.toISOString()} class="text-ink-muted">
+                    {formattedDate}
+                  </time>
+                  <span class="text-ink-muted">[{readingMinutes} MIN LEITURA]</span>
+                </div>
+
+                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-ink uppercase leading-snug mb-2">
+                  <a href={`/post/${postSlug}`} class="hover:text-manifesto-red transition-colors">
+                    {post.data.title}
+                  </a>
+                </h3>
+
+                {post.data.description && (
+                  <p class="font-serif text-sm text-ink-muted leading-relaxed line-clamp-2 max-w-2xl">
+                    {post.data.description}
+                  </p>
+                )}
+
+                {post.data.tags && post.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5 mt-3">
+                    {post.data.tags.map((tag) => (
+                      <span class="font-mono text-[11px] text-ink-muted border border-border-brutal/30 px-2 py-0.5 uppercase">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div class="shrink-0 self-end md:self-center">
+                <a
+                  href={`/post/${postSlug}`}
+                  class="press-btn inline-block border-2 border-border-brutal bg-manifesto-red text-white font-mono text-xs font-bold px-4 py-2 uppercase tracking-wider hover:bg-black transition-colors shadow-xs"
+                >
+                  LER PARTE {partNumber} &rarr;
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
