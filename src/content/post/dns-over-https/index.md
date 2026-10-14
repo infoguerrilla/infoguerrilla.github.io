@@ -3,6 +3,7 @@ title: DNS sobre HTTPS
 description: Tradução
 date: 2022-08-25 00:00:00+0000
 image: image.png
+imageCaption: Arnold Staub in Kuchen, Baden-Wuerttemberg, Germany, illustration from the 19th century
 author: "Geraldo Homero do Couto Neto"
 tags:
 - privacidade

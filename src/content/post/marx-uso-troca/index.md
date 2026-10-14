@@ -4,6 +4,7 @@ slug: valor-de-uso-e-valor-de-troca
 description: "Uma análise crítica da teoria do valor de Karl Marx, explorando a relação entre valor de uso e valor de troca na mercadoria"
 date: 2026-09-14 00:00:00+0000
 image: image.png
+imageCaption: The Shoemaker, Adriaen van Ostade, Dutch, 1671
 author: Info_Guerrilla
 series: "Das Kapital"
 tags:

@@ -4,6 +4,7 @@ date: 2023-09-07
 lastmod: 2025-04-21 22:11:31+0000  
 description: Uma lista simples e direta para te ajudar a encontrar alternativas de software livre e de código aberto para aplicativos populares.
 image: image.png
+imageCaption: Carceri d'invenzione VI / The Smoking Fire, Giovanni Battista Piranesi, 1761
 author: "Geraldo Homero do Couto Neto"
 tags:
 - software livre

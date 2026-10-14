@@ -4,6 +4,7 @@ slug: para-que-o-trabalho-do-alfaiate-não-desapareça-na-roupa
 description: Entendendo o nosso manifesto editorial
 date: 2026-09-13 00:00:00+0000
 image: image.png
+imageCaption: Tailleur d’habits et outils [Tamanho do vestido e ferramentas]. In. Encyclopédie ou Dictionnaire raisonné des sciences, des arts et des métiers. Ilustração de J. R Lucotte ; Gravação de Robert Benard. 1751-1780.
 author: Info_Guerrilla
 series: "Das Kapital"
 tags:

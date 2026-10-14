@@ -4,6 +4,7 @@ slug: como-ficar-mais-seguro-e-privado-na-internet
 description: Privacidade e Segurança na Internet
 date: 2025-01-24 00:00:00+0000
 image: image.png
+imageCaption: O Jornal, 9 de julho de 1922, O portão princial do forte de Copacabana ocupado pelas forças [legaes]
 author: Geraldo Homero do Couto Neto
 tags:
   - privacidade
