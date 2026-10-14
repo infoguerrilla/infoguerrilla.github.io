@@ -4,4 +4,5 @@ dist/
 .superpowers/
 .hugo_build.lock
 resources/
-docs/
+docs/*
+!docs/superpowers/
