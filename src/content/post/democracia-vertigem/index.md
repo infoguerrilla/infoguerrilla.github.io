@@ -7,7 +7,6 @@ author: Geraldo Homero do Couto Neto
 tags:
   - ditadura
   - documentário
-categories:
   - resenha
   - democracia
 ---

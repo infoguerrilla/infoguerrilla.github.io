@@ -8,7 +8,6 @@ author: Geraldo Homero do Couto Neto
 tags:
   - ditadura
   - filme
-categories:
   - resenha
   - literatura
 ---

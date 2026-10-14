@@ -10,7 +10,6 @@ tags:
   - mark fisher
   - realismo capitalista
   - futuro
-categories:
   - ensaio
   - esquerda
 ---

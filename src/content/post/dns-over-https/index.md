@@ -8,9 +8,6 @@ tags:
 - privacidade
 - segurança
 - DNS
-categories:
-- privacidade
-- segurança
 - tradução
 - tutoriais
 ---

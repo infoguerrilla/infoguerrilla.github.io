@@ -6,15 +6,13 @@ date: 2025-04-19
 lastmod: 2025-04-21 22:11:31+0000  
 image: image.png
 author: "Geraldo Homero do Couto Neto"
-categories:  
-- Política  
-- Tecnologia    
-- Ativismo  
-- privacidade  
 tags:  
 - Software Livre  
 - Desenvolvimento  
 - Tecnologia  
+- Política  
+- Ativismo  
+- privacidade  
 #weight: 1 # You can add weight to some posts to override the default sorting (date descending)  
 
 ---

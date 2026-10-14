@@ -8,11 +8,6 @@ author: Geraldo Homero do Couto Neto
 tags:
   - privacidade
   - segurança
-  - dados
-  - pessoais
-categories:
-  - privacidade
-  - segurança
   - internet
   - dados pessoais
   - guia
