@@ -55,7 +55,8 @@ describe.skipIf(!hasDist)('Build Output Verification', () => {
 
     const seriesHtml = fs.readFileSync(path.resolve('dist/series/das-kapital/index.html'), 'utf-8');
     expect(seriesHtml).toContain('Das Kapital');
-    expect(seriesHtml).toContain('Manifesto e Propósito do Dossiê');
+    expect(seriesHtml).toContain('trabalho do alfaiate não desapareça na roupa');
+    expect(seriesHtml).toContain('vintage-archive-img');
     expect(seriesHtml).toContain('Para que o trabalho do alfaiate não desapareça na roupa');
   });
 

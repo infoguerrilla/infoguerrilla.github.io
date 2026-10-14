@@ -74,8 +74,8 @@ const { nav, isFooter = false } = Astro.props;
     )}
   </div>
 
-  <!-- Sumário Sanfona com todos os textos da série -->
-  {nav.allSeriesPosts && nav.allSeriesPosts.length > 1 && (
+  <!-- Sumário Sanfona com todos os textos da série (apenas no cabeçalho) -->
+  {!isFooter && nav.allSeriesPosts && nav.allSeriesPosts.length > 1 && (
     <details class="mt-4 pt-3 border-t border-border-brutal/20 font-mono text-xs group">
       <summary class="cursor-pointer font-bold text-ink hover:text-manifesto-red select-none flex items-center justify-between">
         <span>ÍNDICE COMPLETO DESTA COLETÂNEA ({nav.totalCount} TEXTOS)</span>
@@ -103,3 +103,4 @@ const { nav, isFooter = false } = Astro.props;
     </details>
   )}
 </section>
+

@@ -8,12 +8,11 @@ image: image.png
 author: "Geraldo Homero do Couto Neto"
 tags:  
 - Software Livre  
-- Desenvolvimento  
 - Tecnologia  
 - Política  
 - Ativismo  
-- privacidade  
-#weight: 1 # You can add weight to some posts to override the default sorting (date descending)  
+- Privacidade  
+#weight: 2 # You can add weight to some posts to override the default sorting (date descending)  
 
 ---
 

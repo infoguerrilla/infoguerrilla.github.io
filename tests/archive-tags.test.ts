@@ -45,3 +45,4 @@ describe('Archive & Search Tag-Only Filter', () => {
     expect(content).toMatch(/series/);
   });
 });
+

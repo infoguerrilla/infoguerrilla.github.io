@@ -99,6 +99,31 @@ describe('Series Utilities', () => {
       const seriesList = getAllSeries(mockPosts, mockSeriesDocs);
       expect(seriesList[0].description).toBe('Dossiê editorial explicativo sobre O Capital');
     });
+
+    it('breaks ties deterministically by slug or title when posts share identical dates', () => {
+      const sameDatePosts = [
+        {
+          slug: 'b-segundo-slug',
+          data: {
+            title: 'B Título',
+            date: new Date('2024-01-01T00:00:00Z'),
+            series: 'Mesma Data',
+          },
+        },
+        {
+          slug: 'a-primeiro-slug',
+          data: {
+            title: 'A Título',
+            date: new Date('2024-01-01T00:00:00Z'),
+            series: 'Mesma Data',
+          },
+        },
+      ] as any[];
+
+      const seriesList = getAllSeries(sameDatePosts);
+      expect(seriesList[0].posts[0].slug).toBe('a-primeiro-slug');
+      expect(seriesList[0].posts[1].slug).toBe('b-segundo-slug');
+    });
   });
 
   describe('getSeriesNavigation', () => {
@@ -165,5 +190,26 @@ describe('Series Utilities', () => {
       const nav = getSeriesNavigation(mockPosts[3], mockPosts);
       expect(nav).toBeNull();
     });
+
+    it('handles single-post series navigation with disabled links', () => {
+      const singlePostSeries = [
+        {
+          slug: 'artigo-unico',
+          data: {
+            title: 'Artigo Único',
+            date: new Date('2024-01-01'),
+            series: 'Série Solitária',
+          },
+        },
+      ] as any[];
+
+      const nav = getSeriesNavigation(singlePostSeries[0], singlePostSeries);
+      expect(nav).not.toBeNull();
+      expect(nav?.currentIndex).toBe(1);
+      expect(nav?.totalCount).toBe(1);
+      expect(nav?.prevPost).toBeNull();
+      expect(nav?.nextPost).toBeNull();
+    });
   });
 });
+

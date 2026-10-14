@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { getAllSeries } from '../../utils/series';
+import { getSeriesFeaturedImage } from '../../utils/images';
 
 const allPosts = await getCollection('post');
 const allSeriesDocs = await getCollection('series').catch(() => []);
@@ -58,6 +59,20 @@ const seriesList = getAllSeries(allPosts, allSeriesDocs);
                   </span>
                 </div>
 
+                {(() => {
+                  const sImg = getSeriesFeaturedImage(s.image);
+                  return sImg ? (
+                    <a href={`/series/${s.slug}`} class="block mb-4 overflow-hidden border-2 border-border-brutal cut-corner-br">
+                      <img
+                        src={sImg}
+                        alt={`Capa da série ${s.name}`}
+                        class="vintage-archive-img w-full h-44 object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </a>
+                  ) : null;
+                })()}
+
                 <h2 class="font-display font-black text-2xl sm:text-3xl text-ink uppercase leading-tight mb-3">
                   <a href={`/series/${s.slug}`} class="hover:text-manifesto-red transition-colors">
                     {s.name}
@@ -90,3 +105,4 @@ const seriesList = getAllSeries(allPosts, allSeriesDocs);
     )}
   </div>
 </BaseLayout>
+

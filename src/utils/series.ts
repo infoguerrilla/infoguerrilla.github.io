@@ -121,7 +121,7 @@ export function getAllSeries(
     entry.posts.sort((a, b) => {
       const timeDiff = new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
       if (timeDiff !== 0) return timeDiff;
-      return (a.slug || '').localeCompare(b.slug || '');
+      return (a.slug || a.data.title || '').localeCompare(b.slug || b.data.title || '');
     });
 
     const firstDate = new Date(entry.posts[0].data.date);
@@ -175,3 +175,4 @@ export function getSeriesNavigation(
     allSeriesPosts: foundSeries.posts,
   };
 }
+

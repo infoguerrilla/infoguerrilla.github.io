@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getAllSeries, slugifySeries, type SeriesData } from '../../utils/series';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../../utils/posts';
+import { getSeriesFeaturedImage } from '../../utils/images';
 
 export async function getStaticPaths() {
   const posts = await getCollection('post');
@@ -28,11 +29,13 @@ interface Props {
 const { series, seriesDoc } = Astro.props;
 const renderedSeriesDoc = seriesDoc ? await seriesDoc.render() : null;
 const Content = renderedSeriesDoc ? renderedSeriesDoc.Content : null;
+const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image);
 ---
 
 <BaseLayout
   title={`${series.name} // Séries & Dossiês // Info_Guerrilla`}
   description={series.description || `Série especial de ensaios: ${series.name}`}
+  image={featuredImg || "/favicon.png"}
 >
   <div class="max-w-5xl mx-auto px-4 py-8 md:py-12">
     <!-- Navegação Breadcrumb -->
@@ -65,22 +68,32 @@ const Content = renderedSeriesDoc ? renderedSeriesDoc.Content : null;
       </div>
     </header>
 
+    {featuredImg && (
+      <figure class="mb-10 border-2 border-border-brutal cut-corner-br overflow-hidden shadow-constructivist-sm">
+        <img
+          src={featuredImg}
+          alt={`Capa do dossiê ${series.name}`}
+          class="vintage-archive-img w-full max-h-[460px] object-cover"
+        />
+      </figure>
+    )}
+
     <!-- Bloco de Explicação e Manifesto Editorial da Série -->
     <section class="mb-14" aria-label="Apresentação da Série">
       <div class="flex items-center gap-2 mb-4 font-mono text-xs font-black text-manifesto-red uppercase tracking-wider">
-        <span>// APRESENTAÇÃO &amp; EXPLICAÇÃO DA COLETÂNEA</span>
+        <span>// APRESENTAÇÃO</span>
       </div>
 
       {Content ? (
-        <div class="academic-prose border-3 border-border-brutal bg-surface p-6 sm:p-10 shadow-constructivist-md">
+        <div class="academic-prose max-w-none w-full border-3 border-border-brutal bg-surface p-6 sm:p-10 shadow-constructivist-md cut-corner-br">
           <Content />
         </div>
       ) : series.description ? (
-        <div class="border-l-4 border-manifesto-red bg-surface p-6 font-serif text-lg text-ink leading-relaxed shadow-constructivist-sm">
+        <div class="border-l-4 border-manifesto-red bg-surface p-6 font-serif text-lg text-ink leading-relaxed shadow-constructivist-sm w-full">
           {series.description}
         </div>
       ) : (
-        <div class="border border-border-brutal/30 p-6 bg-surface font-serif italic text-ink-muted">
+        <div class="border border-border-brutal/30 p-6 bg-surface font-serif italic text-ink-muted w-full">
           Esta série reúne ensaios dedicados a investigar e desenvolver este tema em partes sequenciais.
         </div>
       )}

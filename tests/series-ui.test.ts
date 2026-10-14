@@ -39,3 +39,4 @@ describe('Series UI Components & Post Integration', () => {
     expect(heroPosterContent).toContain('// SÉRIE:');
   });
 });
+

@@ -31,3 +31,21 @@ export function getPostFeaturedImage(postId: string, imageFileName?: string): st
   return null;
 }
 
+const allSeriesImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/content/series/**/*.{png,jpg,jpeg,webp}',
+  { eager: true }
+);
+
+export function getSeriesFeaturedImage(imageFileName?: string): string | null {
+  if (!imageFileName) return null;
+  const cleanFileName = imageFileName.replace(/^\.?\//, '');
+
+  for (const [key, mod] of Object.entries(allSeriesImages)) {
+    if (key.endsWith(`/${cleanFileName}`) || key.endsWith(cleanFileName)) {
+      return mod.default.src;
+    }
+  }
+
+  return null;
+}
+

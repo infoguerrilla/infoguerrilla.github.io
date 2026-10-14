@@ -123,6 +123,10 @@ const allTags = Array.from(tagsMap.entries()).sort(
           );
         })}
       </div>
+
+      <div id="archive-empty" class="hidden p-12 text-center font-mono text-sm text-ink-muted border-t border-border-brutal/20">
+        NENHUM ENSAIO ENCONTRADO PARA ESTA TAG.
+      </div>
     </div>
   </div>
 
@@ -130,18 +134,29 @@ const allTags = Array.from(tagsMap.entries()).sort(
     function setupArchiveFilter() {
       const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-filter-btn');
       const items = document.querySelectorAll<HTMLElement>('.post-item');
+      const emptyEl = document.getElementById('archive-empty');
 
       function filterTag(targetTag: string) {
         const cleanTarget = targetTag.toLowerCase().trim();
+        let visibleCount = 0;
 
         items.forEach((item) => {
           const tags: string[] = JSON.parse(item.getAttribute('data-tags') || '[]');
           if (cleanTarget === 'all' || tags.includes(cleanTarget)) {
             item.style.display = 'grid';
+            visibleCount++;
           } else {
             item.style.display = 'none';
           }
         });
+
+        if (emptyEl) {
+          if (visibleCount === 0) {
+            emptyEl.classList.remove('hidden');
+          } else {
+            emptyEl.classList.add('hidden');
+          }
+        }
 
         buttons.forEach((btn) => {
           const btnTag = (btn.getAttribute('data-tag') || '').toLowerCase().trim();

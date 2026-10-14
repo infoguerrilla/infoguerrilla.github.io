@@ -25,3 +25,4 @@ describe('Series Routes & Editorial Pages', () => {
     expect(content).toContain('posts');
   });
 });
+

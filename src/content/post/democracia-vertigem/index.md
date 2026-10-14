@@ -5,7 +5,6 @@ date: 2019-07-01 00:00:00+0000
 image: image.png
 author: Geraldo Homero do Couto Neto
 tags:
-  - ditadura
   - documentário
   - resenha
   - democracia
