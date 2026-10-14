@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
 import { getPostFeaturedImage } from '../utils/images';
 import { getAuthorSlug } from '../data/authors';
+import { getSeriesName } from '../utils/series';
 
 interface Props {
   post: CollectionEntry<'post'>;
@@ -14,7 +15,8 @@ const formattedDate = formatPostDate(post.data.date);
 const readingMinutes = calculateReadingTime(post.body || '');
 const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(post.slug);
 const authorSlug = getAuthorSlug(post.data.author);
-const primaryCategory = post.data.categories?.[0] || 'ENSAIO';
+const seriesName = getSeriesName(post.data.series);
+const primaryTag = post.data.tags?.[0] || 'ENSAIO';
 const featuredImg = getPostFeaturedImage(post.id, post.data.image);
 ---
 
@@ -23,13 +25,19 @@ const featuredImg = getPostFeaturedImage(post.id, post.data.image);
     data-tilt
     class="preserve-3d group relative flex flex-col justify-between h-full border-2 border-border-brutal bg-surface p-5 transition-all duration-150 shadow-constructivist-md hover:shadow-constructivist-double hover:border-manifesto-red cut-corner-br"
   >
-    <!-- Camada Superior com Imagem, Categoria e Data -->
+    <!-- Camada Superior com Imagem, Série/Tag e Data -->
     <div>
       <div class="flex items-center justify-between gap-2 mb-3">
-        <!-- Badge Construtivista de Categoria -->
-        <span class="inline-block bg-manifesto-red text-white font-mono text-[11px] font-bold px-2 py-0.5 uppercase tracking-wider shadow-xs">
-          // {primaryCategory}
-        </span>
+        <!-- Badge Construtivista de Série ou Tag -->
+        {seriesName ? (
+          <span class="inline-block bg-manifesto-red text-white font-mono text-[11px] font-black px-2 py-0.5 uppercase tracking-wider shadow-xs">
+            // SÉRIE: {seriesName}
+          </span>
+        ) : (
+          <span class="inline-block bg-border-brutal text-canvas dark:bg-canvas dark:text-ink font-mono text-[11px] font-bold px-2 py-0.5 uppercase tracking-wider shadow-xs">
+            // #{primaryTag}
+          </span>
+        )}
         
         <!-- Data Datilografada -->
         <time datetime={post.data.date.toISOString()} class="font-mono text-xs text-ink-muted">

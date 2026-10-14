@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
 import { getPostFeaturedImage } from '../utils/images';
 import { getAuthorSlug } from '../data/authors';
+import { getSeriesName } from '../utils/series';
 
 interface Props {
   post: CollectionEntry<'post'>;
@@ -14,6 +15,8 @@ const formattedDate = formatPostDate(post.data.date);
 const readingMinutes = calculateReadingTime(post.body || '');
 const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(post.slug);
 const authorSlug = getAuthorSlug(post.data.author);
+const seriesName = getSeriesName(post.data.series);
+const primaryTag = post.data.tags?.[0];
 const featuredImg = getPostFeaturedImage(post.id, post.data.image);
 ---
 
@@ -35,11 +38,15 @@ const featuredImg = getPostFeaturedImage(post.id, post.data.image);
           ★ ENSAIO_EM_DESTAQUE
         </span>
 
-        {post.data.categories?.[0] && (
-          <span class="border border-border-brutal bg-canvas px-2.5 py-0.5 font-mono text-xs font-bold uppercase text-ink">
-            // {post.data.categories[0]}
+        {seriesName ? (
+          <span class="border border-manifesto-red bg-manifesto-red text-white px-2.5 py-0.5 font-mono text-xs font-black uppercase shadow-xs">
+            // SÉRIE: {seriesName}
           </span>
-        )}
+        ) : primaryTag ? (
+          <span class="border border-border-brutal bg-canvas px-2.5 py-0.5 font-mono text-xs font-bold uppercase text-ink">
+            // #{primaryTag}
+          </span>
+        ) : null}
 
         <time datetime={post.data.date.toISOString()} class="font-mono text-xs text-ink-muted">
           {formattedDate} &bull; [{readingMinutes} MIN LEITURA]

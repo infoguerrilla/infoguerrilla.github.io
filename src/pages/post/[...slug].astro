@@ -2,16 +2,18 @@
 // [...slug].astro: Página de Leitura do Ensaio (Editorial Acadêmico)
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
+import SeriesBox from '../../components/SeriesBox.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../../utils/posts';
 import { getPostFeaturedImage } from '../../utils/images';
 import { getAuthorSlug } from '../../data/authors';
+import { getSeriesNavigation } from '../../utils/series';
 
 export async function getStaticPaths() {
   const posts = await getCollection('post');
   const sorted = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-  const paths: Array<{ params: { slug: string }; props: { post: CollectionEntry<'post'>; prevPost?: CollectionEntry<'post'>; nextPost?: CollectionEntry<'post'> } }> = [];
+  const paths: Array<{ params: { slug: string }; props: { post: CollectionEntry<'post'>; prevPost?: CollectionEntry<'post'>; nextPost?: CollectionEntry<'post'>; allPosts: CollectionEntry<'post'>[] } }> = [];
 
   sorted.forEach((post, index) => {
     const prevPost = index < sorted.length - 1 ? sorted[index + 1] : undefined;
@@ -28,7 +30,7 @@ export async function getStaticPaths() {
       if (slug) {
         paths.push({
           params: { slug },
-          props: { post, prevPost, nextPost },
+          props: { post, prevPost, nextPost, allPosts: posts },
         });
       }
     }
@@ -41,15 +43,17 @@ interface Props {
   post: CollectionEntry<'post'>;
   prevPost?: CollectionEntry<'post'>;
   nextPost?: CollectionEntry<'post'>;
+  allPosts?: CollectionEntry<'post'>[];
 }
 
-const { post, prevPost, nextPost } = Astro.props;
+const { post, prevPost, nextPost, allPosts = [] } = Astro.props;
 const { Content, headings } = await post.render();
 
 const formattedDate = formatPostDate(post.data.date);
 const readingMinutes = calculateReadingTime(post.body || '');
 const authorSlug = getAuthorSlug(post.data.author);
 const featuredImg = getPostFeaturedImage(post.id, post.data.image);
+const seriesNav = allPosts.length > 0 ? getSeriesNavigation(post, allPosts) : null;
 
 const prevSlug = prevPost ? normalizeSlug(prevPost.slug) : null;
 const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
@@ -75,12 +79,15 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
         <span class="text-manifesto-red font-bold">{formattedDate}</span>
       </nav>
 
-      <!-- Categorias em Carimbo Construtivista -->
+      <!-- Tags em Carimbo Construtivista -->
       <div class="flex flex-wrap gap-2 mb-4">
-        {post.data.categories?.map((cat) => (
-          <span class="bg-manifesto-red text-white font-mono text-xs font-bold px-2.5 py-0.5 uppercase tracking-wider shadow-constructivist-sm">
-            // {cat}
-          </span>
+        {post.data.tags?.map((tag) => (
+          <a
+            href={`/arquivo?tag=${encodeURIComponent(tag.toLowerCase())}`}
+            class="bg-manifesto-red text-white font-mono text-xs font-bold px-2.5 py-0.5 uppercase tracking-wider shadow-constructivist-sm hover:opacity-90 transition-opacity"
+          >
+            // #{tag}
+          </a>
         ))}
       </div>
 
@@ -130,6 +137,11 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
       </div>
     </header>
 
+    <!-- Caixa de Navegação da Série (se o post pertencer a uma) -->
+    {seriesNav && (
+      <SeriesBox nav={seriesNav} />
+    )}
+
     <!-- Sumário Retrátil para Telas Menores -->
     <div class="lg:hidden">
       <TableOfContents headings={headings} />
@@ -153,6 +165,9 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
 
     <!-- Rodapé do Ensaio (Sem a caixa de "Como citar") -->
     <footer class="mt-16 pt-8 border-t-2 border-border-brutal space-y-8" data-pagefind-ignore>
+      {seriesNav && (
+        <SeriesBox nav={seriesNav} isFooter={true} />
+      )}
       
       <!-- Navegação Entre Ensaios (Anterior / Próximo) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
