@@ -3,6 +3,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { formatPostDate, normalizeSlug } from '../utils/posts';
+import { getSeriesName } from '../utils/series';
 
 const allPosts = await getCollection('post');
 const fallbackIndex = allPosts.map((p) => ({
@@ -10,14 +11,14 @@ const fallbackIndex = allPosts.map((p) => ({
   description: p.data.description || '',
   slug: p.data.slug ? normalizeSlug(p.data.slug) : normalizeSlug(p.slug),
   date: formatPostDate(p.data.date),
-  categories: p.data.categories || [],
+  series: getSeriesName(p.data.series) || '',
   tags: p.data.tags || [],
 }));
 ---
 
 <BaseLayout
   title="Busca no Acervo // Info_Guerrilla"
-  description="Pesquise por termos, conceitos, autores e categorias no acervo do Info_Guerrilla."
+  description="Pesquise por termos, conceitos, autores, séries e tags no acervo do Info_Guerrilla."
 >
   <div class="max-w-4xl mx-auto">
     
@@ -145,7 +146,8 @@ const fallbackIndex = allPosts.map((p) => ({
             return (
               item.title.toLowerCase().includes(lower) ||
               item.description.toLowerCase().includes(lower) ||
-              item.categories.some((c: string) => c.toLowerCase().includes(lower))
+              (item.series && item.series.toLowerCase().includes(lower)) ||
+              (item.tags && item.tags.some((t: string) => t.toLowerCase().includes(lower)))
             );
           });
 

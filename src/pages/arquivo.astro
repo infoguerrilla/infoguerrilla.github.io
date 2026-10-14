@@ -3,14 +3,25 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
+import { getSeriesName } from '../utils/series';
 
 const allPosts = await getCollection('post');
 const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-// Categorias únicas
-const allCategories = Array.from(
-  new Set(allPosts.flatMap((p) => p.data.categories || []))
-).sort();
+// Coleta e contagem de tags únicas
+const tagsMap = new Map<string, number>();
+allPosts.forEach((p) => {
+  p.data.tags?.forEach((tag) => {
+    const normalized = tag.toLowerCase().trim();
+    if (normalized) {
+      tagsMap.set(normalized, (tagsMap.get(normalized) || 0) + 1);
+    }
+  });
+});
+
+const allTags = Array.from(tagsMap.entries()).sort(
+  (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
+);
 ---
 
 <BaseLayout
@@ -33,26 +44,27 @@ const allCategories = Array.from(
       </p>
     </header>
 
-    <!-- Filtro de Categorias -->
+    <!-- Filtro Exclusivo de Tags -->
     <div class="mb-8 border border-border-brutal bg-surface p-4 cut-corner-br">
-      <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">
-        FILTRAR POR EIXO TEMÁTICO:
+      <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 flex items-center justify-between">
+        <span>FILTRAR POR TAG / TEMA:</span>
+        <span class="text-manifesto-red">{allTags.length} TAGS ATIVAS</span>
       </div>
       <div class="flex flex-wrap gap-2" id="filter-buttons">
         <button
           type="button"
-          data-category="all"
-          class="cat-filter-btn press-btn border border-border-brutal bg-manifesto-red text-white px-3 py-1 font-mono text-xs font-bold uppercase shadow-constructivist-sm"
+          data-tag="all"
+          class="tag-filter-btn press-btn border border-border-brutal bg-manifesto-red text-white px-3 py-1 font-mono text-xs font-bold uppercase shadow-constructivist-sm"
         >
           [TODOS ({allPosts.length})]
         </button>
-        {allCategories.map((cat) => (
+        {allTags.map(([tag, count]) => (
           <button
             type="button"
-            data-category={cat}
-            class="cat-filter-btn press-btn border border-border-brutal bg-canvas text-ink px-3 py-1 font-mono text-xs uppercase hover:border-manifesto-red transition-all shadow-constructivist-sm"
+            data-tag={tag}
+            class="tag-filter-btn press-btn border border-border-brutal bg-canvas text-ink px-3 py-1 font-mono text-xs uppercase hover:border-manifesto-red transition-all shadow-constructivist-sm"
           >
-            #{cat}
+            #{tag} ({count})
           </button>
         ))}
       </div>
@@ -62,8 +74,8 @@ const allCategories = Array.from(
     <div class="border-2 border-border-brutal bg-surface overflow-hidden shadow-constructivist-md">
       <div class="hidden sm:grid grid-cols-12 gap-4 p-4 border-b-2 border-border-brutal bg-canvas font-mono text-xs font-bold uppercase text-ink">
         <div class="col-span-2">DATA</div>
-        <div class="col-span-6">TÍTULO DO ENSAIO</div>
-        <div class="col-span-3">CATEGORIA</div>
+        <div class="col-span-5">TÍTULO DO ENSAIO</div>
+        <div class="col-span-4">TAGS &amp; SÉRIE</div>
         <div class="col-span-1 text-right">TEMPO</div>
       </div>
 
@@ -72,27 +84,34 @@ const allCategories = Array.from(
           const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(post.slug);
           const formattedDate = formatPostDate(post.data.date);
           const readingMinutes = calculateReadingTime(post.body || '');
-          const categoriesJson = JSON.stringify(post.data.categories || []);
+          const seriesName = getSeriesName(post.data.series);
+          const postTagsNormalized = (post.data.tags || []).map((t) => t.toLowerCase().trim());
+          const tagsJson = JSON.stringify(postTagsNormalized);
 
           return (
             <div
               class="post-item grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 p-4 hover:bg-canvas transition-colors items-center"
-              data-categories={categoriesJson}
+              data-tags={tagsJson}
             >
               <div class="sm:col-span-2 font-mono text-xs text-manifesto-red font-bold">
                 {formattedDate}
               </div>
 
-              <div class="sm:col-span-6 font-display font-bold text-base sm:text-lg text-ink">
+              <div class="sm:col-span-5 font-display font-bold text-base sm:text-lg text-ink">
                 <a href={`/post/${postSlug}`} class="hover:text-manifesto-red transition-colors block">
                   {post.data.title}
                 </a>
               </div>
 
-              <div class="sm:col-span-3 flex flex-wrap gap-1">
-                {post.data.categories?.map((cat) => (
-                  <span class="inline-block font-mono text-[11px] bg-canvas border border-border-brutal/30 px-1.5 py-0.2 text-ink-muted">
-                    #{cat}
+              <div class="sm:col-span-4 flex flex-wrap items-center gap-1.5">
+                {seriesName && (
+                  <span class="inline-block bg-manifesto-red text-white font-mono text-[11px] font-black px-2 py-0.5 uppercase tracking-wider shadow-xs mr-1">
+                    // SÉRIE: {seriesName}
+                  </span>
+                )}
+                {post.data.tags?.map((tag) => (
+                  <span class="inline-block font-mono text-[11px] bg-canvas border border-border-brutal/30 px-1.5 py-0.5 text-ink-muted uppercase">
+                    #{tag}
                   </span>
                 ))}
               </div>
@@ -109,13 +128,15 @@ const allCategories = Array.from(
 
   <script>
     function setupArchiveFilter() {
-      const buttons = document.querySelectorAll<HTMLButtonElement>('.cat-filter-btn');
+      const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-filter-btn');
       const items = document.querySelectorAll<HTMLElement>('.post-item');
 
-      function filterCategory(targetCat: string) {
+      function filterTag(targetTag: string) {
+        const cleanTarget = targetTag.toLowerCase().trim();
+
         items.forEach((item) => {
-          const cats = JSON.parse(item.getAttribute('data-categories') || '[]');
-          if (targetCat === 'all' || cats.includes(targetCat)) {
+          const tags: string[] = JSON.parse(item.getAttribute('data-tags') || '[]');
+          if (cleanTarget === 'all' || tags.includes(cleanTarget)) {
             item.style.display = 'grid';
           } else {
             item.style.display = 'none';
@@ -123,8 +144,8 @@ const allCategories = Array.from(
         });
 
         buttons.forEach((btn) => {
-          const btnCat = btn.getAttribute('data-category');
-          if (btnCat === targetCat) {
+          const btnTag = (btn.getAttribute('data-tag') || '').toLowerCase().trim();
+          if (btnTag === cleanTarget) {
             btn.classList.add('bg-manifesto-red', 'text-white');
             btn.classList.remove('bg-canvas', 'text-ink');
           } else {
@@ -136,20 +157,19 @@ const allCategories = Array.from(
 
       buttons.forEach((btn) => {
         btn.addEventListener('click', () => {
-          const cat = btn.getAttribute('data-category') || 'all';
-          filterCategory(cat);
+          const tag = btn.getAttribute('data-tag') || 'all';
+          filterTag(tag);
         });
       });
 
-      // Check URL query parameters
+      // Suporte a parâmetro de query na URL (?tag=exemplo ou retrocompatibilidade ?categoria=exemplo)
       const params = new URLSearchParams(window.location.search);
-      const urlCat = params.get('categoria');
-      if (urlCat) {
-        filterCategory(urlCat);
+      const urlTag = params.get('tag') || params.get('categoria');
+      if (urlTag) {
+        filterTag(urlTag);
       }
     }
 
     document.addEventListener('astro:page-load', setupArchiveFilter);
   </script>
 </BaseLayout>
-

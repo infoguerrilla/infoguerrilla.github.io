@@ -12,14 +12,17 @@ const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.
 const featuredPost = sortedPosts[0];
 const secondaryPosts = sortedPosts.slice(1);
 
-// Coletar categorias únicas e suas contagens
-const categoriesMap = new Map<string, number>();
+// Coletar tags únicas e suas contagens
+const tagsMap = new Map<string, number>();
 allPosts.forEach((p) => {
-  p.data.categories?.forEach((cat) => {
-    categoriesMap.set(cat, (categoriesMap.get(cat) || 0) + 1);
+  p.data.tags?.forEach((tag) => {
+    const normalized = tag.toLowerCase().trim();
+    if (normalized) {
+      tagsMap.set(normalized, (tagsMap.get(normalized) || 0) + 1);
+    }
   });
 });
-const categories = Array.from(categoriesMap.entries()).sort((a, b) => b[1] - a[1]);
+const popularTags = Array.from(tagsMap.entries()).sort((a, b) => b[1] - a[1]);
 ---
 
 <BaseLayout
@@ -59,22 +62,22 @@ const categories = Array.from(categoriesMap.entries()).sort((a, b) => b[1] - a[1
     </div>
   </section>
 
-  <!-- Painel de Eixos Temáticos / Construtivista -->
+  <!-- Painel de Tags e Temas em Destaque / Construtivista -->
   <section class="mt-16 border-2 border-border-brutal bg-surface p-6 sm:p-8 cut-corner-br shadow-constructivist-md">
     <div class="border-b border-border-brutal/30 pb-3 mb-6 flex items-center justify-between">
       <h3 class="font-display font-extrabold text-xl uppercase tracking-tight text-ink">
-        EIXOS TEMÁTICOS & LINHAS DE PESQUISA
+        TEMAS &amp; LINHAS DE INVESTIGAÇÃO
       </h3>
-      <span class="font-mono text-xs text-manifesto-red font-bold">[TAXONOMIA]</span>
+      <span class="font-mono text-xs text-manifesto-red font-bold">[TAGS_ATIVAS]</span>
     </div>
 
     <div class="flex flex-wrap gap-2.5">
-      {categories.map(([cat, count]) => (
+      {popularTags.map(([tag, count]) => (
         <a
-          href={`/arquivo?categoria=${encodeURIComponent(cat)}`}
+          href={`/arquivo?tag=${encodeURIComponent(tag)}`}
           class="press-btn inline-flex items-center gap-2 border border-border-brutal bg-canvas px-3 py-1.5 font-mono text-xs text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white transition-all shadow-constructivist-sm"
         >
-          <span class="font-bold"># {cat}</span>
+          <span class="font-bold">#{tag}</span>
           <span class="bg-manifesto-red text-white text-[10px] px-1.5 py-0.2 rounded-none font-bold">
             {count}
           </span>
