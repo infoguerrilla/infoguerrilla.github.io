@@ -291,3 +291,4 @@ Expected: Todas as páginas geradas com sucesso no diretório `dist/` e 100% dos
 git add tests/e2e-build.test.ts
 git commit -m "test(e2e): verify static build generation for series and tags"
 ```
+
