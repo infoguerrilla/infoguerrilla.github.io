@@ -48,4 +48,24 @@ describe.skipIf(!hasDist)('Build Output Verification', () => {
     expect(postHtml).toContain('id="header-reading-ruler"');
     expect(postHtml).toContain('id="mobile-theme-toggle"');
   });
+
+  it('generates series index and detail pages with editorial explanation', () => {
+    expect(fs.existsSync(path.resolve('dist/series/index.html'))).toBe(true);
+    expect(fs.existsSync(path.resolve('dist/series/das-kapital/index.html'))).toBe(true);
+
+    const seriesHtml = fs.readFileSync(path.resolve('dist/series/das-kapital/index.html'), 'utf-8');
+    expect(seriesHtml).toContain('Das Kapital');
+    expect(seriesHtml).toContain('Manifesto e Propósito do Dossiê');
+    expect(seriesHtml).toContain('Para que o trabalho do alfaiate não desapareça na roupa');
+  });
+
+  it('verifies archive and series navigation in generated post HTML', () => {
+    const archiveHtml = fs.readFileSync(path.resolve('dist/arquivo/index.html'), 'utf-8');
+    expect(archiveHtml).toContain('data-tag="all"');
+    expect(archiveHtml).toContain('data-tags=');
+    expect(archiveHtml).not.toContain('data-category=');
+
+    const marxPostHtml = fs.readFileSync(path.resolve('dist/post/para-que-o-trabalho-do-alfaiate-nao-desapareca-na-roupa/index.html'), 'utf-8');
+    expect(marxPostHtml).toContain('// SÉRIE ESPECIAL: Das Kapital');
+  });
 });
