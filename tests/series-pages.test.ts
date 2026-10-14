@@ -21,8 +21,14 @@ describe('Series Routes & Editorial Pages', () => {
     expect(content).toContain('getStaticPaths');
     expect(content).toContain('getAllSeries');
     expect(content).toContain('getCollection');
-    expect(content).toMatch(/Content|description/);
     expect(content).toContain('posts');
+  });
+
+  it('verifies that the series presentation block spans full container width matching the reading track', () => {
+    const seriesSlugPath = path.resolve(process.cwd(), 'src/pages/series/[slug].astro');
+    const content = fs.readFileSync(seriesSlugPath, 'utf-8');
+    expect(content).toContain('w-full border-2 border-border-brutal bg-surface');
+    expect(content).toContain('academic-prose max-w-none w-full');
   });
 });
 

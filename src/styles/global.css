@@ -110,96 +110,119 @@
   }
 }
 
-/* Tipografia Editorial Acadêmica para Ensaios Longos */
-.academic-prose {
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 1.18rem;
-  line-height: 1.82;
-  color: var(--color-ink);
-  max-width: 68ch;
+@layer components {
+  /* Tipografia Editorial Acadêmica para Ensaios Longos */
+  .academic-prose {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 1.18rem;
+    line-height: 1.82;
+    color: var(--color-ink);
+    max-width: 68ch;
+  }
+
+  .academic-prose.max-w-none {
+    max-width: none;
+  }
+
+  .academic-prose p {
+    margin-bottom: 1.75rem;
+  }
+
+  .academic-prose ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .academic-prose ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .academic-prose li {
+    margin-bottom: 0.5rem;
+  }
+
+  .academic-prose h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.95rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-border);
+    color: var(--color-ink);
+  }
+
+  .academic-prose h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.45rem;
+    line-height: 1.35;
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+    color: var(--color-ink);
+  }
+
+  .academic-prose blockquote {
+    font-style: italic;
+    font-size: 1.22rem;
+    line-height: 1.7;
+    padding: 1.25rem 1.75rem;
+    margin: 2.25rem 0;
+    background-color: var(--color-surface);
+    border-left: 6px solid var(--color-red);
+    box-shadow: 4px 4px 0 var(--color-border);
+  }
+
+  .academic-prose a {
+    color: var(--color-red);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .academic-prose a:hover {
+    background-color: var(--color-red);
+    color: #FFFFFF;
+  }
+
+  .academic-prose img {
+    border: 3px solid var(--color-border);
+    box-shadow: 6px 6px 0 var(--color-red);
+    margin: 2.5rem auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .academic-prose hr {
+    border: none;
+    border-top: 2px dashed var(--color-border);
+    margin: 3rem 0;
+  }
+
+  .academic-prose code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    background-color: var(--color-surface);
+    padding: 0.15rem 0.4rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .academic-prose pre {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #1a1c22;
+    color: #F4EFEA;
+    padding: 1.25rem;
+    border: 2px solid var(--color-border);
+    box-shadow: 6px 6px 0 var(--color-red);
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
 }
 
-.academic-prose p {
-  margin-bottom: 1.75rem;
-}
-
-.academic-prose h2 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 1.95rem;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin-top: 3rem;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-border);
-  color: var(--color-ink);
-}
-
-.academic-prose h3 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 1.45rem;
-  line-height: 1.35;
-  margin-top: 2.25rem;
-  margin-bottom: 0.85rem;
-  color: var(--color-ink);
-}
-
-.academic-prose blockquote {
-  font-style: italic;
-  font-size: 1.22rem;
-  line-height: 1.7;
-  padding: 1.25rem 1.75rem;
-  margin: 2.25rem 0;
-  background-color: var(--color-surface);
-  border-left: 6px solid var(--color-red);
-  box-shadow: 4px 4px 0 var(--color-border);
-}
-
-.academic-prose a {
-  color: var(--color-red);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
-  transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.academic-prose a:hover {
-  background-color: var(--color-red);
-  color: #FFFFFF;
-}
-
-.academic-prose img {
-  border: 3px solid var(--color-border);
-  box-shadow: 6px 6px 0 var(--color-red);
-  margin: 2.5rem auto;
-  max-width: 100%;
-  display: block;
-}
-
-.academic-prose hr {
-  border: none;
-  border-top: 2px dashed var(--color-border);
-  margin: 3rem 0;
-}
-
-.academic-prose code {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.9em;
-  background-color: var(--color-surface);
-  padding: 0.15rem 0.4rem;
-  border: 1px solid var(--color-border);
-}
-
-.academic-prose pre {
-  font-family: 'JetBrains Mono', monospace;
-  background-color: #1a1c22;
-  color: #F4EFEA;
-  padding: 1.25rem;
-  border: 2px solid var(--color-border);
-  box-shadow: 6px 6px 0 var(--color-red);
-  overflow-x: auto;
-  margin: 2rem 0;
-}
 
