@@ -133,7 +133,7 @@ describe('Series Utilities', () => {
         data: {
           title: 'Parte 1',
           date: new Date('2024-01-01'),
-          series: 'Séries',
+          series: 'Série',
         },
       },
       {
@@ -141,7 +141,7 @@ describe('Series Utilities', () => {
         data: {
           title: 'Parte 2',
           date: new Date('2024-02-01'),
-          series: 'Séries',
+          series: 'Série',
         },
       },
       {
