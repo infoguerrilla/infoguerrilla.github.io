@@ -17,7 +17,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
       <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between font-mono text-xs select-none">
         <span class="font-bold uppercase tracking-wider text-manifesto-red flex items-center gap-2">
           <span class="inline-block w-2 h-2 bg-manifesto-red"></span>
-          // SUMÁRIO_DO_ENSAIO
+          // SUMÁRIO
         </span>
         <div class="flex items-center gap-2">
           <span class="text-[11px] text-ink-muted">
@@ -47,13 +47,13 @@ const filteredHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
     </details>
   ) : (
     <nav
-      aria-label="Sumário do ensaio"
+      aria-label="Sumário"
       class="border-2 border-border-brutal bg-surface p-4 shadow-constructivist-sm cut-corner-br flex flex-col max-h-[calc(100vh-9rem)]"
     >
       <div class="flex items-center justify-between mb-3 border-b border-border-brutal/30 pb-2 shrink-0">
         <span class="font-mono text-xs font-bold uppercase tracking-wider text-manifesto-red flex items-center gap-2">
           <span class="inline-block w-2 h-2 bg-manifesto-red"></span>
-          // SUMÁRIO_DO_ENSAIO
+          // SUMÁRIO
         </span>
         <span class="font-mono text-[11px] text-ink-muted">
           [{filteredHeadings.length} SEÇÕES]

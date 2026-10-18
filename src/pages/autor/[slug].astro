@@ -70,7 +70,7 @@ const authorPosts = allPosts
 
 <BaseLayout
   title={`${authorData.name} // Perfil do Autor // Info_Guerrilla`}
-  description={`Ensaios e trajetória de ${authorData.name} no Info_Guerrilla.`}
+  description={`Publicações e trajetória de ${authorData.name} no Info_Guerrilla.`}
 >
   <div class="max-w-5xl mx-auto">
     
@@ -258,14 +258,10 @@ const authorPosts = allPosts
       <div class="flex items-center justify-between border-b-2 border-border-brutal pb-3 mb-8">
         <div>
           <span class="font-mono text-xs font-bold text-manifesto-red uppercase tracking-widest block mb-1">
-            // PUBLICAÇÕES
+            // PUBLICAÇÕES ({authorPosts.length})
           </span>
-          <h2 class="font-display font-black text-2xl uppercase tracking-tight text-ink">
-            ENSAIOS PUBLICADOS ({authorPosts.length})
-          </h2>
         </div>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {authorPosts.map((post) => (
           <PostCard post={post} />

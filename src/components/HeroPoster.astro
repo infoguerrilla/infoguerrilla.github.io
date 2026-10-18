@@ -35,7 +35,7 @@ const featuredImg = getPostFeaturedImage(post.id, post.data.image);
       <!-- Cabeçalho do Cartaz: Carimbo e Eixo Temático -->
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class="bg-manifesto-red text-white font-mono text-xs font-black px-3 py-1 uppercase tracking-widest shadow-constructivist-sm">
-          ★ ENSAIO_EM_DESTAQUE
+          ★ EM_DESTAQUE
         </span>
 
         {seriesName ? (
@@ -73,7 +73,7 @@ const featuredImg = getPostFeaturedImage(post.id, post.data.image);
           href={`/post/${postSlug}`}
           class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-manifesto-red px-5 py-2 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-constructivist-md"
         >
-          <span>LER_ENSAIO_COMPLETO</span>
+          <span>LER_PUBLICAÇÃO_COMPLETA</span>
           <span aria-hidden="true">&rarr;</span>
         </a>
 
@@ -92,7 +92,7 @@ const featuredImg = getPostFeaturedImage(post.id, post.data.image);
         <a href={`/post/${postSlug}`} class="block group">
           <img
             src={featuredImg}
-            alt={`Capa do ensaio ${post.data.title}`}
+            alt={`Capa da publicação ${post.data.title}`}
             class="vintage-archive-img w-full max-h-[360px] object-cover"
           />
         </a>

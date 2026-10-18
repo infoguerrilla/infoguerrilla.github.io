@@ -32,7 +32,7 @@ const fallbackIndex = allPosts.map((p) => ({
         PESQUISAR NO ACERVO
       </h1>
       <p class="font-serif italic text-base text-ink-muted">
-        Indexação completa do corpo dos ensaios, palavras-chave e debates teóricos.
+        Indexação completa das publicações, palavras-chave e debates teóricos.
       </p>
     </header>
 
@@ -115,7 +115,7 @@ const fallbackIndex = allPosts.map((p) => ({
           if (results.length === 0) {
             container!.innerHTML = `
               <div class="border-2 border-dashed border-border-brutal p-8 text-center bg-surface font-mono text-sm text-ink-muted">
-                NENHUM ENSAIO ENCONTRADO PARA O TERMO "${query}".
+                NENHUMA PUBLICAÇÃO ENCONTRADA PARA O TERMO "${query}".
               </div>
             `;
             return;
@@ -126,7 +126,7 @@ const fallbackIndex = allPosts.map((p) => ({
               (item: any) => `
             <article class="border-2 border-border-brutal bg-surface p-5 hover:border-manifesto-red shadow-constructivist-sm transition-all cut-corner-br">
               <div class="font-mono text-xs text-manifesto-red font-bold mb-1">
-                // ${item.meta.title || 'ENSAIO'}
+                // ${item.meta.title || 'PUBLICAÇÃO'}
               </div>
               <h3 class="font-display font-black text-xl text-ink hover:text-manifesto-red mb-2">
                 <a href="${item.url}">${item.meta.title || item.url}</a>
@@ -156,7 +156,7 @@ const fallbackIndex = allPosts.map((p) => ({
           if (matches.length === 0) {
             container!.innerHTML = `
               <div class="border-2 border-dashed border-border-brutal p-8 text-center bg-surface font-mono text-sm text-ink-muted">
-                NENHUM ENSAIO ENCONTRADO PARA O TERMO "${query}".
+                NENHUMA PUBLICAÇÃO ENCONTRADA PARA O TERMO "${query}".
               </div>
             `;
             return;

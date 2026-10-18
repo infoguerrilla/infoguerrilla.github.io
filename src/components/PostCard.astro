@@ -16,7 +16,7 @@ const readingMinutes = calculateReadingTime(post.body || '');
 const postSlug = post.data.slug ? normalizeSlug(post.data.slug) : normalizeSlug(post.slug);
 const authorSlug = getAuthorSlug(post.data.author);
 const seriesName = getSeriesName(post.data.series);
-const primaryTag = post.data.tags?.[0] || 'ENSAIO';
+const primaryTag = post.data.tags?.[0] || 'PUBLICAÇÃO';
 const featuredImg = getPostFeaturedImage(post.id, post.data.image);
 ---
 

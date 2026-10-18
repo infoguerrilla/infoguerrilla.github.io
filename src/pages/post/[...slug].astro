@@ -61,7 +61,7 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
 
 <BaseLayout
   title={`${post.data.title} // Info_Guerrilla`}
-  description={post.data.description || "Ensaio acadêmico e editorial crítico."}
+  description={post.data.description || "Publicação crítica e editorial independente."}
   image={featuredImg || "/favicon.png"}
 >
   <!-- data-pagefind-body garante que apenas o conteúdo do artigo é indexado pelo Pagefind -->
@@ -169,14 +169,14 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
         <SeriesBox nav={seriesNav} isFooter={true} />
       )}
       
-      <!-- Navegação Entre Ensaios (Anterior / Próximo) -->
+      <!-- Navegação Entre Publicações (Anterior / Próximo) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
         {prevPost && prevSlug ? (
           <a
             href={`/post/${prevSlug}`}
             class="press-btn border-2 border-border-brutal bg-surface p-4 flex flex-col justify-between hover:border-manifesto-red shadow-constructivist-sm"
           >
-            <span class="text-ink-muted mb-1">&larr; ENSAIO ANTERIOR</span>
+            <span class="text-ink-muted mb-1">&larr; PUBLICAÇÃO ANTERIOR</span>
             <span class="font-display font-bold text-sm text-ink line-clamp-2">
               {prevPost.data.title}
             </span>
@@ -188,7 +188,7 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
             href={`/post/${nextSlug}`}
             class="press-btn border-2 border-border-brutal bg-surface p-4 flex flex-col justify-between text-right hover:border-manifesto-red shadow-constructivist-sm"
           >
-            <span class="text-ink-muted mb-1">PRÓXIMO ENSAIO &rarr;</span>
+            <span class="text-ink-muted mb-1">PRÓXIMA PUBLICAÇÃO &rarr;</span>
             <span class="font-display font-bold text-sm text-ink line-clamp-2">
               {nextPost.data.title}
             </span>
