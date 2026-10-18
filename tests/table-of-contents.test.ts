@@ -41,5 +41,12 @@ describe('Table of Contents (Sumário) Responsiveness and Scroll', () => {
 
     expect(cssContent).toContain('custom-scrollbar');
   });
+
+  it('configures scroll-margin-top or scroll-padding-top to prevent sticky header from overlapping anchor targets', () => {
+    const globalCssPath = path.resolve(process.cwd(), 'src/styles/global.css');
+    const cssContent = fs.readFileSync(globalCssPath, 'utf-8');
+
+    expect(cssContent).toMatch(/scroll-(?:margin|padding)-top/);
+  });
 });
 
