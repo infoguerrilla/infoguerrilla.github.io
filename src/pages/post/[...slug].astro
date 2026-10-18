@@ -144,7 +144,7 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
 
     <!-- Sumário Retrátil para Telas Menores -->
     <div class="lg:hidden">
-      <TableOfContents headings={headings} />
+      <TableOfContents headings={headings} isMobile={true} />
     </div>
 
     <!-- Layout de Duas Colunas: Texto do Ensaio + Sumário Sticky à Direita -->

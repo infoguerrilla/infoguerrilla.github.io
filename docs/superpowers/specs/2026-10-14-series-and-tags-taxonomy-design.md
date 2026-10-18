@@ -19,7 +19,7 @@ Para simplificar a organização e elevar a experiência editorial do leitor e d
    - A página de `/arquivo` passa a utilizar exclusivamente pílulas de tags com contagem de ocorrências e filtragem reativa.
 
 2. **Criação do Subsistema de Séries (Taxonomia Longitudinal / Coletâneas)**:
-   - Permite agrupar ensaios que compõem uma mesma obra, dossiê especial ou investigação contínua (ex.: textos sobre *O Capital de Karl Marx*, com início no ensaio *"Para que o trabalho do alfaiate não desapareça na roupa"*).
+   - Permite agrupar ensaios que compõem uma mesma obra, série especial ou investigação contínua (ex.: textos sobre *O Capital de Karl Marx*, com início no ensaio *"Para que o trabalho do alfaiate não desapareça na roupa"*).
    - **Ordenação Estritamente Cronológica**: A ordem de leitura é determinada automaticamente pela data de publicação (`date` crescente), sem a necessidade de manter contadores manuais como `part: 1`. O post mais antigo é a Parte 1, o seguinte a Parte 2, e assim por diante.
    - Navegação dedicada dentro do post (artigo anterior, próximo artigo e índice completo da série).
    - Páginas dedicadas de visualização das séries (`/series` e `/series/[slug]`).

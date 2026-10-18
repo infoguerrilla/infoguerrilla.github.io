@@ -33,7 +33,7 @@ const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image
 ---
 
 <BaseLayout
-  title={`${series.name} // Séries & Dossiês // Info_Guerrilla`}
+  title={`${series.name} // Séries // Info_Guerrilla`}
   description={series.description || `Série especial de ensaios: ${series.name}`}
   image={featuredImg || "/favicon.png"}
 >
@@ -42,7 +42,7 @@ const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image
     <nav class="font-mono text-xs text-ink-muted mb-6 flex items-center gap-2" aria-label="Navegação">
       <a href="/" class="hover:text-manifesto-red hover:underline">[INÍCIO]</a>
       <span>/</span>
-      <a href="/series" class="hover:text-manifesto-red hover:underline">[SÉRIES &amp; DOSSIÊS]</a>
+      <a href="/series" class="hover:text-manifesto-red hover:underline">[SÉRIES]</a>
       <span>/</span>
       <span class="text-manifesto-red font-bold uppercase">[{series.name}]</span>
     </nav>
@@ -50,7 +50,7 @@ const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image
     <!-- Cabeçalho Monumental da Série -->
     <header class="mb-10 border-b-4 border-border-brutal pb-8">
       <div class="inline-block bg-manifesto-red text-white font-mono text-xs font-black px-3 py-1 uppercase tracking-widest shadow-xs mb-4">
-        ★ DOSSIÊ_ESPECIAL
+        ★ SÉRIE_ESPECIAL
       </div>
 
       <h1 class="font-display font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-ink leading-tight mb-4">
@@ -59,7 +59,7 @@ const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image
 
       <div class="flex flex-wrap items-center gap-3 font-mono text-xs text-ink-muted">
         <span class="bg-surface border border-border-brutal px-2.5 py-1 font-bold text-ink">
-          {series.totalCount} {series.totalCount === 1 ? 'ENSAIO' : 'ENSAIOS'}
+          {series.totalCount} {series.totalCount === 1 ? 'POST' : 'POSTS'}
         </span>
         <span>&bull;</span>
         <span class="text-manifesto-red font-bold">
@@ -72,7 +72,7 @@ const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image
       <figure class="mb-10 border-2 border-border-brutal cut-corner-br overflow-hidden shadow-constructivist-sm">
         <img
           src={featuredImg}
-          alt={`Capa do dossiê ${series.name}`}
+          alt={`Capa do da série especial ${series.name}`}
           class="vintage-archive-img w-full max-h-[460px] object-cover"
         />
       </figure>
@@ -106,10 +106,10 @@ const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image
     </section>
 
     <!-- Linha do Tempo e Trilha de Leitura Cronológica -->
-    <section aria-label="Ensaios da Série">
+    <section aria-label=" da Série">
       <div class="flex items-center justify-between gap-4 mb-6 border-b-2 border-border-brutal pb-3">
         <h2 class="font-display font-black text-xl sm:text-2xl text-ink uppercase tracking-tight">
-          Trilha de Leitura dos Ensaios
+          Trilha de Leitura
         </h2>
         <span class="font-mono text-xs text-ink-muted">
           [PARTE 1 ATÉ {series.totalCount}]

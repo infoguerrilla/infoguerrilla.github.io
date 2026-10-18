@@ -91,13 +91,13 @@ describe('Series Utilities', () => {
           slug: 'o-capital-de-marx',
           data: {
             title: 'O Capital de Marx',
-            description: 'Dossiê editorial explicativo sobre O Capital',
+            description: 'Série editorial explicativo sobre O Capital',
           },
         },
       ] as any[];
 
       const seriesList = getAllSeries(mockPosts, mockSeriesDocs);
-      expect(seriesList[0].description).toBe('Dossiê editorial explicativo sobre O Capital');
+      expect(seriesList[0].description).toBe('Série editorial explicativo sobre O Capital');
     });
 
     it('breaks ties deterministically by slug or title when posts share identical dates', () => {
@@ -133,7 +133,7 @@ describe('Series Utilities', () => {
         data: {
           title: 'Parte 1',
           date: new Date('2024-01-01'),
-          series: 'Dossiê',
+          series: 'Séries',
         },
       },
       {
@@ -141,7 +141,7 @@ describe('Series Utilities', () => {
         data: {
           title: 'Parte 2',
           date: new Date('2024-02-01'),
-          series: 'Dossiê',
+          series: 'Séries',
         },
       },
       {
@@ -149,7 +149,7 @@ describe('Series Utilities', () => {
         data: {
           title: 'Parte 3',
           date: new Date('2024-03-01'),
-          series: 'Dossiê',
+          series: 'Série',
         },
       },
       {

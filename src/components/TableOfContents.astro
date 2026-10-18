@@ -4,43 +4,79 @@ import type { MarkdownHeading } from 'astro';
 
 interface Props {
   headings: MarkdownHeading[];
+  isMobile?: boolean;
 }
 
-const { headings } = Astro.props;
+const { headings, isMobile = false } = Astro.props;
 const filteredHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 ---
 
 {filteredHeadings.length > 0 && (
-  <nav
-    aria-label="Sumário do ensaio"
-    class="my-8 border-2 border-border-brutal bg-surface p-5 shadow-constructivist-sm cut-corner-br"
-  >
-    <div class="flex items-center justify-between mb-3 border-b border-border-brutal/30 pb-2">
-      <span class="font-mono text-xs font-bold uppercase tracking-wider text-manifesto-red flex items-center gap-2">
-        <span class="inline-block w-2 h-2 bg-manifesto-red"></span>
-        // SUMÁRIO_DO_ENSAIO
-      </span>
-      <span class="font-mono text-[11px] text-ink-muted">
-        [{filteredHeadings.length} SEÇÕES]
-      </span>
-    </div>
+  isMobile ? (
+    <details class="group my-8 border-2 border-border-brutal bg-surface p-4 shadow-constructivist-sm cut-corner-br">
+      <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between font-mono text-xs select-none">
+        <span class="font-bold uppercase tracking-wider text-manifesto-red flex items-center gap-2">
+          <span class="inline-block w-2 h-2 bg-manifesto-red"></span>
+          // SUMÁRIO_DO_ENSAIO
+        </span>
+        <div class="flex items-center gap-2">
+          <span class="text-[11px] text-ink-muted">
+            [{filteredHeadings.length} SEÇÕES]
+          </span>
+          <span class="text-manifesto-red font-bold text-xs group-open:hidden">[+ ABRIR]</span>
+          <span class="text-manifesto-red font-bold text-xs hidden group-open:inline">[- FECHAR]</span>
+        </div>
+      </summary>
 
-    <ol class="space-y-1.5 font-mono text-xs list-none pl-0">
-      {filteredHeadings.map((heading, index) => {
-        const num = String(index + 1).padStart(2, '0');
-        return (
-          <li class={heading.depth === 3 ? "pl-4 text-ink-muted" : "text-ink font-medium"}>
-            <a
-              href={`#${heading.slug}`}
-              class="hover:text-manifesto-red hover:underline flex items-baseline gap-2 transition-colors py-0.5"
-            >
-              <span class="text-manifesto-red text-[10px]">[{num}]</span>
-              <span>{heading.text}</span>
-            </a>
-          </li>
-        );
-      })}
-    </ol>
-  </nav>
+      <ol class="mt-3 pt-3 border-t border-border-brutal/30 space-y-1.5 font-mono text-xs list-none pl-0 max-h-72 overflow-y-auto overscroll-contain pr-2 custom-scrollbar">
+        {filteredHeadings.map((heading, index) => {
+          const num = String(index + 1).padStart(2, '0');
+          return (
+            <li class={heading.depth === 3 ? "pl-4 text-ink-muted" : "text-ink font-medium"}>
+              <a
+                href={`#${heading.slug}`}
+                class="hover:text-manifesto-red hover:underline flex items-baseline gap-2 transition-colors py-0.5"
+              >
+                <span class="text-manifesto-red text-[10px]">[{num}]</span>
+                <span>{heading.text}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </details>
+  ) : (
+    <nav
+      aria-label="Sumário do ensaio"
+      class="border-2 border-border-brutal bg-surface p-4 shadow-constructivist-sm cut-corner-br flex flex-col max-h-[calc(100vh-9rem)]"
+    >
+      <div class="flex items-center justify-between mb-3 border-b border-border-brutal/30 pb-2 shrink-0">
+        <span class="font-mono text-xs font-bold uppercase tracking-wider text-manifesto-red flex items-center gap-2">
+          <span class="inline-block w-2 h-2 bg-manifesto-red"></span>
+          // SUMÁRIO_DO_ENSAIO
+        </span>
+        <span class="font-mono text-[11px] text-ink-muted">
+          [{filteredHeadings.length} SEÇÕES]
+        </span>
+      </div>
+
+      <ol class="space-y-1.5 font-mono text-xs list-none pl-0 overflow-y-auto overscroll-contain pr-2 custom-scrollbar flex-1">
+        {filteredHeadings.map((heading, index) => {
+          const num = String(index + 1).padStart(2, '0');
+          return (
+            <li class={heading.depth === 3 ? "pl-4 text-ink-muted" : "text-ink font-medium"}>
+              <a
+                href={`#${heading.slug}`}
+                class="hover:text-manifesto-red hover:underline flex items-baseline gap-2 transition-colors py-0.5"
+              >
+                <span class="text-manifesto-red text-[10px]">[{num}]</span>
+                <span>{heading.text}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  )
 )}
 

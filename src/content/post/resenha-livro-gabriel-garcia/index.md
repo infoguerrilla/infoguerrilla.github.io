@@ -6,6 +6,7 @@ date: 2017-01-23 00:00:00+0000
 image: image.png
 imageCaption: Cinema sessions over the railroad, 1896
 author: Geraldo Homero do Couto Neto
+series: "Resenhas"
 tags:
   - ditadura
   - filme

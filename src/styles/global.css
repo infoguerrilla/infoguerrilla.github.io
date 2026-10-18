@@ -108,6 +108,31 @@
     transform: scale(1.01);
     box-shadow: 7px 7px 0 var(--color-border);
   }
+
+  /* Barra de Rolagem Construtivista Personalizada */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-red) var(--color-surface);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-red);
+    border-radius: 0px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-red-deep);
+  }
 }
 
 @layer components {

@@ -13,34 +13,51 @@ tags:
 - alternativas
 ---
 
-Esta é uma lista das melhores alternativas de software livre e de código aberto para segurança e privacidade. A lista está dividida em categorias e subcategorias. Os softwares estão listados em ordem alfabética dentro de cada categoria. A lista inclui softwares para todos os principais sistemas operacionais (Windows, macOS, Linux, Android, iOS) e é atualizada regularmente.
+Esta é uma lista das melhores alternativas de software livre e de código aberto para segurança e privacidade. A lista está dividida em categorias e subcategorias. O software está listado em ordem alfabética dentro de cada categoria. A lista inclui software para todos os principais sistemas operacionais (Windows, macOS, Linux, Android, iOS) e é atualizada regularmente.
 
-Às vezes, também há softwares que não são de código aberto (NOS), mas eles são indicados como tal. Ser NOS não significa que o software seja ruim, mas ele é recomendado por razões de segurança e/ou privacidade.
+*Às vezes, também há softwares que não são de código aberto (NOS), mas eles são indicados como tal. Ser NOS não significa que o software seja ruim, mas é recomendado por razões de segurança e/ou privacidade.*
 
-Sinta-se à vontade para contribuir com a lista e discuti-la!
+Sinta-se à vontade para [contribuir](https://github.com/geraldohomero/best-foss-alternatives/blob/main/CONTRIBUTING.md) para a lista e [discuti-la](https://github.com/geraldohomero/best-foss-alternatives/discussions)!
+
+> NOS = Não é de Código Aberto
+> 
+> ⭐ = Recomendação pessoal ou favorito
 
 ## IA
+### LLMs Locais
 - [GPT4All](https://www.nomic.ai/gpt4all) ⭐
-- [HuggingChat](https://huggingface.co/chat/)
-- [Llama AI](https://ollama.com/)
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) ⭐
+- [llama.cpp](https://github.com/ggml-org/llama.cpp) ⭐
+- [Ollama](https://ollama.com/)
+- [Open WebUI](https://github.com/open-webui/open-webui)
+- [Pi Agent Harness](https://github.com/earendil-works/pi)
 - [Private GPT](https://github.com/zylon-ai/private-gpt)
 - [Text Generation WebUI](https://github.com/oobabooga/text-generation-webui/)
+- [unsloth](https://github.com/unslothai/unsloth)
+### Geração Local de Imagens
+- [Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+- [ComfyUI](https://github.com/Comfy-Org/ComfyUI)
+- [InvokeAI](https://github.com/invoke-ai/InvokeAI)
+- [unsloth](https://github.com/unslothai/unsloth)
 
-## Autenticação
-- [2FAS Auth](https://2fas.com/) - iOS / Android ⭐
+## Autenticadores
+- [2FAS Auth](https://2fas.com/) - ⭐ iOS / Android 
 - [Aegis](https://getaegis.app/) - Android
 - [AndOPT](https://github.com/andOTP/andOTP) - Android
 - [Authy](https://authy.com/) - NOS
 - [Bitwarden](https://bitwarden.com/) - Versão paga
-- [Ente Auth](https://github.com/ente-io/ente/blob/main/auth/README.md) ⭐
-- [FreeOPT](https://github.com/freeotp)
-- [Proton Pass](https://proton.me/pass) - Versão paga
+- [Ente Auth](https://ente.com/auth/) ⭐
+- [FreeOPT](https://github.com/freeotp) 
+- [Proton Pass](https://proton.me/pass) - [Ref](https://pr.tn/ref/3W6R9R3Y) - Versão paga
 
 ## Navegadores
-### Base Chromium
+### Baseado em Chromium
 - [Brave](https://brave.com) ⭐
 - [DuckDuckGo](https://duckduckgo.com/)
-### Firefox e base Firefox
+- [Helium](https://github.com/imputnet/helium)
+- [ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium)
+- [Vivaldi](https://vivaldi.com)
+### Firefox e Baseado em Firefox
 - [Firefox](https://mozilla.org) ⭐
 - [Floorp](https://floorp.app/)
 - [LibreWolf](https://librewolf.net/)
@@ -50,39 +67,40 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 
 ## Calendário
 - [Etar](https://github.com/Etar-Group/Etar-Calendar)
-- [Gnome Calendar](https://wiki.gnome.org/Apps/Calendar)
-- [Kalendar](https://apps.kde.org/kalendar/)
+- [Gnome Calendar](https://wiki.gnome.org/Apps/Calendar) - Linux
+- [Kalendar](https://apps.kde.org/kalendar/) - Linux
 - [Lightning Calendar](https://www.thunderbird.net/en-US/calendar/)
 - [Mailbox](https://mailbox.org/en/)
 - [Nextcloud Calendar](https://nextcloud.com)
 - [Posteo](https://posteo.de/en)
-- [Proton Calendar](https://proton.me/calendar) ⭐
+- [Proton Calendar](https://proton.me/calendar) - [Ref](https://pr.tn/ref/3W6R9R3Y) ⭐
 - [Tuta](https://tuta.com) ⭐
 
-## Cloud e Sincronização
+## Nuvem e Sincronização
 - [Cryptomator](https://cryptomator.org/)
 - [Filen](https://filen.io/) ⭐
 - [Mega](https://mega.io) - [Ref](https://mega.io/?aff=PcyK0CWBbwY) - NOS
+  - [MEGASync Multi-Instance Manager](https://github.com/geraldohomero/megasync-multiple-instances) - Linux
 - [Nextcloud](https://nextcloud.com) ⭐
 - [Owncloud](https://owncloud.com/)
 - [pCloud](https://www.pcloud.com/) - NOS
+- [Rsync](https://rsync.samba.org/)
 - [Syncthing](https://syncthing.net/) ⭐
 
 ## Editores de Código
-- [Atom](https://atom.io/) - Descontinuado
+- [Atom](https://atom.io/) - Descontinuado (RIP)
 - [CodeSandbox](https://codesandbox.io/)
-- [Cosmic](https://github.com/pop-os/cosmic-edit) - TBA
+- [Cosmic](https://github.com/pop-os/cosmic-edit) - Linux
 - [Eclipse IDE](https://www.eclipse.org/ide/)
 - [Expo.dev](https://expo.dev)
 - [Kate](https://kate-editor.org/)
 - [Neovim](https://neovim.io/) ⭐
 - [Pulsar](https://pulsar-edit.dev/) - Fork do Atom
 - [PyCharm](https://www.jetbrains.com/pycharm/)
-- [Spyder](https://www.spyder-ide.org/)
 - [Vim](https://www.vim.org/)
 - [VSCodium](https://vscodium.com/) ⭐
 
-## Dados e Análise de Dados
+## Dados 
 - [GNU PSPP](http://www.gnu.org/software/pspp/)
 - [jamovi](https://jamovi.org/)
 - [JASP](https://jasp-stats.org/)
@@ -90,7 +108,7 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 - [RStudio](https://posit.co/products/open-source/rstudio/) ⭐
 - [Spyder](https://www.spyder-ide.org/) ⭐
 
-## Estações de Trabalho de Áudio Digital
+## Estação de Trabalho de Áudio Digital
 - [Ardour](https://ardour.org/) ⭐
 - [Audacity](https://www.audacityteam.org/)
 - [LMMS](https://lmms.io/)
@@ -99,15 +117,15 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 ## E-mails
 - [Mailbox](https://mailbox.org/en/)
 - [Posteo](https://posteo.de/en)
-- [ProtonMail](https://proton.me) ⭐
+- [ProtonMail](https://proton.me) - [Ref](https://pr.tn/ref/3W6R9R3Y) ⭐
 - [RiseUp](https://riseup.net)
 - [Tuta](https://tutanota.com) ⭐
 
 ## Jogos
-- [Bottles](https://usebottles.com/)
-- [Heroic Games Launcher](https://heroicgameslauncher.com/) ⭐
+- [Bottles](https://usebottles.com/) - Linux
+- [Heroic Games Launcher](https://heroicgameslauncher.com/) ⭐ 
 - [HydraLauncher](https://github.com/hydralauncher/hydra)
-- [Lutris](https://lutris.net/)
+- [Lutris](https://lutris.net/) - Linux
 
 ## Editores de Imagem
 - [Darktable](https://www.darktable.org/)
@@ -116,6 +134,11 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 - [Krita](https://krita.org/)
 - [PhotoGIMP](https://github.com/Diolinux/PhotoGIMP)
 
+## Ferramentas de Aprendizagem
+### Flash Cards e Aprendizagem de Idiomas
+- [Anki](https://apps.ankiweb.net/) ⭐
+- [AnkiDroid](https://github.com/ankidroid/Anki-Android/) ⭐
+
 ## Mapas
 - [OsmAnd](https://osmand.net/) - iOS / Android
 - [OpenStreetMap](https://www.openstreetmap.org)
@@ -123,11 +146,11 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 ## Servidores de Mídia
 - [Jellyfin](https://jellyfin.org/) ⭐
 - [Kodi](https://kodi.tv/)
-- [Plex](https://www.plex.tv/) - NOS ⭐
+- [Plex](https://www.plex.tv/) ⭐ - NOS
 - [Stremio](https://www.stremio.com/)
 - [Universal Media Server](https://www.universalmediaserver.com/)
 
-## Mensagens
+## Aplicativos de Mensagens
 - [Element](https://element.io/)
 - [Session](https://getsession.org/)
 - [Signal](https://signal.org/) ⭐
@@ -138,7 +161,7 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 - [diagrams.net](https://www.diagrams.net/) ⭐
 - [FreeMind](https://sourceforge.net/projects/freemind/)
 - [Freeplane](https://www.freeplane.org/)
-- [MindApps](https://www.mindmaps.app/) - Online
+- [MindApps](https://www.mindmaps.app/)
 - [Minder](https://github.com/phase1geo/minder/)
 - [TiddlyMap](https://github.com/felixhayashi/TW5-TiddlyMap)
 - [vym](https://www.insilmaril.de/vym/)
@@ -151,38 +174,62 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 - [OnlyOffice](https://onlyoffice.com/) ⭐
 
 ## Sistemas Operacionais
-### Distribuições Linux mais amigáveis
-- [Fedora](https://getfedora.org/)
-- [Linux Mint](https://linuxmint.com/)
+
+### Distribuições Linux amigáveis para o usuário
+- [BIG Linux](https://www.biglinux.com.br/) - [BIG Community](https://communitybig.org/)
+- [Fedora](https://getfedora.org/) - [Spins](https://fedoraproject.org/spins)
+- [Linux Mint](https://linuxmint.com/) ⭐
+- [Ubuntu](https://ubuntu.com/) - [Snap](https://snapcraft.io/) is NOS - [Flavors](https://ubuntu.com/desktop/flavors)
+- [Zorin OS](https://zorinos.com/) ⭐
+
+### Para os entusiastas
+- [Arch Linux](https://archlinux.org/) ⭐
+- [CachyOS](https://cachyos.org/) ⭐
+- [Batocera](https://batocera.org/) - Retro-gaming
+- [Bazzite](https://bazzite.gg/) ⭐ - SteamOS like
+- [Nobara](https://nobaraproject.org/)
 - [Pop!_OS](https://pop.system76.com/)
-- [Zorin OS](https://zorinos.com/)
-### Segurança e Privacidade
+
+### Distribuições Linux focadas em segurança e privacidade
 - [Qubes OS](https://www.qubes-os.org/)
-- [Tails](https://tails.boum.org/)
+- [Tails](https://tails.boum.org/) ⭐
 - [Whonix](https://www.whonix.org/)
-### Ajustes para Windows
-- [WinUtil](https://github.com/ChrisTitusTech/winutil) - Windows 10 e 11 Debloat
+
+### Ajustes do Linux
+- [LinuxToys](https://linux.toys/) ⭐
+
+### Ajustes do Windows
+- [WinUtil](https://github.com/ChrisTitusTech/winutil) - Debloat para Windows 10 e 11
 
 ## PDF
-- [Evince](https://wiki.gnome.org/Apps/Evince)
-- [LibreOffice Draw](https://www.libreoffice.org/discover/draw/) ⭐
+### Leitor
+- [Evince](https://wiki.gnome.org/Apps/Evince) - Linux
 - [Okular](https://okular.kde.org) ⭐
 - [Sumatra](https://www.sumatrapdfreader.org/free-pdf-reader)
+- [Zotero](https://zotero.org) ⭐
+
+### Editor
+- [LibreOffice Draw](https://www.libreoffice.org/discover/draw/) ⭐
 
 ## Gerenciadores de Senhas
 - [Bitwarden](https://bitwarden.com/) ⭐
 - [KeepassXC](https://keepassxc.org/)
-- [Proton Pass](https://proton.me/pass)
+- [Proton Pass](https://proton.me/pass) - [Ref](https://pr.tn/ref/3W6R9R3Y)
 
-## Softwares relacionados a pesquisa
+## Leitores de RSS
+- [Feeder](https://play.google.com/store/apps/details?id=com.nononsenseapps.feeder.play) - Android
+- [Raven](https://ravenreader.app/)
+
+## Software Relacionado à Pesquisa
 - [CffInit](https://citation-file-format.github.io/cff-initializer-javascript)
 - [JabRef](https://www.jabref.org/)
 - [Qiqqa](https://github.com/jimmejardine/qiqqa-open-source)
+- [Tropy](https://tropy.org/)
 - [Zotero](https://zotero.org) ⭐
 
-## Buscadores
-- [Brave](https://search.brave.com/) - NOS ⭐
-- [DuckDuckGo](https://duckduckgo.com) - NOS ⭐
+## Mecanismos de Busca
+- [Brave](https://search.brave.com/) ⭐ - NOS
+- [DuckDuckGo](https://duckduckgo.com) ⭐ - NOS 
 - [MetaGer](https://metager.org/) - Pago
 - [Qwant](https://www.qwant.com/) - NOS
 - [Searx](https://searx.github.io/searx/) ⭐
@@ -191,18 +238,19 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 - [YaCy](https://yacy.net/)
 
 ## Tarefas e Anotações
-- [AppFlowy](https://www.appflowy.io/) - Alternativa ao Notion ⭐
+- [AppFlowy](https://www.appflowy.io/) ⭐ - Alternativa ao Notion 
 - [CherryTree](https://www.giuspen.com/cherrytree/)
+- [Filen](https://filen.io/)
 - [Joplin](https://joplinapp.org/) ⭐
 - [Logseq](https://logseq.com/) - Alternativa ao Obsidian
-- [Obsidian](https://obsidian.md/) - NOS ⭐
+- [Obsidian](https://obsidian.md/) ⭐ - NOS
 - [OpenProject](https://www.openproject.org/)
 - [QOwnNotes](https://www.qownnotes.org/)
 - [Simplenote](https://simplenote.com/)
 - [Standard Notes](https://standardnotes.com/)
 - [Zettlr](https://www.zettlr.com/)
 
-## Torrent
+## Clientes de Torrent
 - [qBittorrent](https://www.qbittorrent.org/) ⭐
 - [Transmission](https://transmissionbt.com/)
 
@@ -217,12 +265,12 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 ## VPN
 - [Mozilla VPN](https://www.mozilla.org/en-US/products/vpn/)
 - [Mullvad](https://mullvad.net) ⭐
-- [Proton VPN](https://protonvpn.com/)
+- [Proton VPN](https://protonvpn.com/) - [Ref](https://pr.tn/ref/3W6R9R3Y)
 - [RiseUp VPN](https://riseup.net/vpn) ⭐
-- [Windscribe](https://windscribe.com/) ⭐
+- [Windscribe](https://windscribe.com/) - [Ref](https://windscribe.com/yo/49anowy7) ⭐
 - [WireGuard](https://www.wireguard.com/)
 
-> Acho importante olhar o [Techlore's VPN Toolkit](https://techlore.tech/vpn/) para mais informações sobre VPNs.
+> Sugiro conferir o [Kit de Ferramentas VPN da Techlore](https://techlore.tech/vpn/) para mais detalhes sobre VPNs.
 
 ## Editores de Vídeo
 - [Avidemux](http://fixounet.free.fr/avidemux/)
@@ -231,16 +279,15 @@ Sinta-se à vontade para contribuir com a lista e discuti-la!
 - [OpenShot](https://www.openshot.org/)
 - [Shotcut](https://www.shotcut.org/)
 
-## Leitores RSS
-- [Feeder](https://play.google.com/store/apps/details?id=com.nononsenseapps.feeder.play) - Android
-- [Raven](https://ravenreader.app/)
+## Clima
+- [Breezy Weather](https://github.com/breezy-weather/breezy-weather) - Android
+- [Geometric Weather](https://github.com/WangDaYeeeeee/GeometricWeather) - Android
 
 ***
 
-## Referências importantes
 - [techlore.tech](https://techlore.tech/)
 - [restoreprivacy.com](https://restoreprivacy.com/)
 - [alternativeto.net](https://alternativeto.net/)
 - [privacytools.io](https://www.privacytools.io/)
 
-Lista em constante atualização
+Esta lista está em construção!

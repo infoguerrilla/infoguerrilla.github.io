@@ -10,7 +10,7 @@ describe('Series Routes & Editorial Pages', () => {
     const content = fs.readFileSync(seriesIndexPath, 'utf-8');
     expect(content).toContain('getAllSeries');
     expect(content).toContain('BaseLayout');
-    expect(content).toMatch(/SÉRIES|DOSSIÊS/i);
+    expect(content).toMatch(/SÉRIES/i);
   });
 
   it('verifies that /series/[slug] page exists with getStaticPaths and editorial explanation rendering', () => {

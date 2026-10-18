@@ -1,7 +1,7 @@
 ---
 title: "Das Kapital"
 description: "Investigações críticas sobre a teoria do valor, a mercadoria e as formas sociais do modo de produção capitalista."
-image: "image.png"
+image: "/images/das-kapital.png"
 ---
 
 Esta série especial de ensaios do **Info_Guerrilla** dedica-se ao exame e à apropriação crítica dos conceitos fundamentais de *O Capital* (*Das Kapital*), obra de Karl Marx.

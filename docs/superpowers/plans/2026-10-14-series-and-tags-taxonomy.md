@@ -100,7 +100,7 @@ description: "Investigações críticas sobre a teoria do valor, a mercadoria e 
 image: "image.png"
 ---
 ```
-E corpo Markdown detalhando o propósito do dossiê: "Esta série especial de ensaios do Info_Guerrilla dedica-se ao exame minucioso dos conceitos fundamentais de *O Capital*..."
+E corpo Markdown detalhando o propósito da série: "Esta série especial de ensaios do Info_Guerrilla dedica-se ao exame minucioso dos conceitos fundamentais de *O Capital*..."
 
 - [ ] **Step 2: Update `src/content/post/para-que-o-trabalho-do-alfaiate-não-desapareça-na-roupa/index.md`**
 
@@ -194,7 +194,7 @@ Criar `tests/series-pages.test.ts` testando que `getStaticPaths` de `/series/[sl
 
 Página de índice de todas as séries com:
 - Layout base `BaseLayout.astro`.
-- Título monumental: `// SÉRIES ESPECIAIS & DOSSIÊS`.
+- Título monumental: `// SÉRIES ESPECIAIS.
 - Grid brutalista de cards de série exibindo: nome da série, sinopse explicativa, quantidade de ensaios e período de publicação (ano de início a ano do último).
 
 - [ ] **Step 3: Implement `src/pages/series/[slug].astro`**
