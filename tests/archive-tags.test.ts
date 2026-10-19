@@ -44,5 +44,19 @@ describe('Archive & Search Tag-Only Filter', () => {
     expect(content).toContain('tags: p.data.tags');
     expect(content).toMatch(/series/);
   });
+
+  it('prevents search placeholder from overlapping [LIMPAR] on mobile by removing examples and adding padding', () => {
+    const buscaPath = path.resolve(process.cwd(), 'src/pages/busca.astro');
+    const content = fs.readFileSync(buscaPath, 'utf-8');
+
+    // Input possui padding à direita para não encavalar no botão [LIMPAR]
+    expect(content).toMatch(/pr-(?:20|24)/);
+
+    // Placeholder inicial/mobile sem os exemplos longos
+    expect(content).toMatch(/placeholder=["'](?:Pesquisar\.\.\.|Buscar\.\.\.)["']/);
+
+    // Ajuste dinâmico responsivo no script
+    expect(content).toMatch(/updatePlaceholder|matchMedia/);
+  });
 });
 

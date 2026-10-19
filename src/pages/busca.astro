@@ -45,8 +45,9 @@ const fallbackIndex = allPosts.map((p) => ({
         <input
           type="text"
           id="search-input"
-          placeholder="ex: software livre, mark fisher, vigilância, capitalismo..."
-          class="w-full border-2 border-border-brutal bg-canvas px-4 py-3 font-mono text-sm sm:text-base text-ink placeholder:text-ink-muted/50 focus:border-manifesto-red focus:outline-none shadow-constructivist-sm"
+          placeholder="Pesquisar..."
+          data-desktop-placeholder="ex: software livre, mark fisher, vigilância, capitalismo..."
+          class="w-full border-2 border-border-brutal bg-canvas pl-4 pr-20 sm:pr-24 py-3 font-mono text-sm sm:text-base text-ink placeholder:text-ink-muted/50 focus:border-manifesto-red focus:outline-none shadow-constructivist-sm"
           autofocus
         />
         <button
@@ -179,6 +180,18 @@ const fallbackIndex = allPosts.map((p) => ({
             .join('');
         }
       }
+
+      function updatePlaceholder() {
+        if (!input) return;
+        if (window.matchMedia('(min-width: 640px)').matches) {
+          input.placeholder = input.dataset.desktopPlaceholder || 'ex: software livre, mark fisher, vigilância, capitalismo...';
+        } else {
+          input.placeholder = 'Pesquisar...';
+        }
+      }
+
+      updatePlaceholder();
+      window.addEventListener('resize', updatePlaceholder, { passive: true });
 
       input.addEventListener('input', () => {
         executeSearch(input.value);

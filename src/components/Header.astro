@@ -24,14 +24,14 @@ const socialLinks = [
 
 <header class="w-full border-b-2 border-border-brutal bg-canvas/95 backdrop-blur-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between py-3 sm:py-4 gap-4">
+    <div class="flex items-center justify-between py-2.5 sm:py-4 gap-2 sm:gap-4">
       
       <!-- Marca Principal: Emblema I_G + Logotipo -->
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
         <!-- Emblema I_G (I e G brancos, _ preto, máquina de escrever pesada) -->
         <a href="/" aria-label="Info_Guerrilla Início" class="group block select-none shrink-0">
-          <div class="flex items-center justify-center bg-manifesto-red border-2 border-border-brutal px-2 sm:px-2.5 py-1 shadow-constructivist-sm transform group-hover:-rotate-2 transition-transform">
-            <span class="font-mono font-black text-lg sm:text-2xl tracking-tighter leading-none inline-flex items-center">
+          <div class="flex items-center justify-center bg-manifesto-red border-2 border-border-brutal px-1.5 sm:px-2.5 py-0.5 sm:py-1 shadow-constructivist-sm transform group-hover:-rotate-2 transition-transform">
+            <span class="font-mono font-black text-base sm:text-2xl tracking-tighter leading-none inline-flex items-center">
               <span class="text-white">I</span><span class="text-black font-extrabold -mx-0.5">_</span><span class="text-white">G</span>
             </span>
           </div>
@@ -40,7 +40,7 @@ const socialLinks = [
         <!-- Título e Lema Editorial (sem citação de Marx) -->
         <div class="min-w-0">
           <a href="/" class="group block">
-            <span class="font-display font-black text-base xs:text-lg sm:text-2xl md:text-3xl tracking-tight text-ink uppercase group-hover:text-manifesto-red transition-colors block leading-tight truncate">
+            <span class="font-display font-black text-[clamp(0.65rem,3.4vw,1.875rem)] sm:text-2xl md:text-3xl tracking-tighter sm:tracking-tight text-ink uppercase group-hover:text-manifesto-red transition-colors block leading-none sm:leading-tight whitespace-nowrap">
               INFO<span class="text-manifesto-red">_</span>GUERRILLA
             </span>
           </a>
@@ -78,10 +78,9 @@ const socialLinks = [
           type="button"
           aria-label="Abrir menu de navegação"
           aria-expanded="false"
-          class="md:hidden press-btn flex items-center gap-1.5 border-2 border-border-brutal bg-surface px-2.5 py-1.5 font-mono text-xs font-bold uppercase text-ink shadow-constructivist-sm hover:border-manifesto-red focus:outline-none"
+          class="md:hidden press-btn flex items-center justify-center border-2 border-border-brutal bg-surface p-2 font-mono text-ink shadow-constructivist-sm hover:border-manifesto-red focus:outline-none min-w-[36px] min-h-[36px]"
         >
-          <span class="text-manifesto-red font-black">☰</span>
-          <span id="mobile-menu-text">MENU</span>
+          <span id="mobile-menu-icon" class="text-manifesto-red font-black text-base leading-none">☰</span>
         </button>
       </div>
     </div>
@@ -246,16 +245,17 @@ const socialLinks = [
   function setupMobileMenu() {
     const toggleBtn = document.getElementById('mobile-menu-toggle');
     const panel = document.getElementById('mobile-menu-panel');
-    const textEl = document.getElementById('mobile-menu-text');
+    const iconEl = document.getElementById('mobile-menu-icon');
 
     if (!toggleBtn || !panel) return;
 
     toggleBtn.onclick = () => {
       const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
       toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+      toggleBtn.setAttribute('aria-label', isExpanded ? 'Abrir menu de navegação' : 'Fechar menu de navegação');
       panel.classList.toggle('hidden');
-      if (textEl) {
-        textEl.textContent = isExpanded ? 'MENU' : 'FECHAR';
+      if (iconEl) {
+        iconEl.textContent = isExpanded ? '☰' : '✕';
       }
     };
   }

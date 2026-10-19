@@ -31,5 +31,15 @@ describe('Mobile Header Responsiveness & Theme Toggle Placement', () => {
     expect(headerContent).toContain('min-w-0');
     expect(headerContent).toContain('shrink-0');
   });
+
+  it('fluidly scales INFO_GUERRILLA text to fit mobile screens without disappearing', () => {
+    const headerPath = path.resolve(process.cwd(), 'src/components/Header.astro');
+    const headerContent = fs.readFileSync(headerPath, 'utf-8');
+
+    // Deve conter dimensionamento fluido com clamp para diminuir com a tela
+    expect(headerContent).toMatch(/clamp\(/);
+    expect(headerContent).toContain('INFO');
+    expect(headerContent).toContain('GUERRILLA');
+  });
 });
 
