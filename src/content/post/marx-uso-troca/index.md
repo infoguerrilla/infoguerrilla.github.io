@@ -12,6 +12,7 @@ tags:
   - o-capital
   - mercadoria
   - valor
+draft: true
 ---
 
 Em Breve
