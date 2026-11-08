@@ -25,15 +25,11 @@ Irei dividir essa análise em duas: 1) Para as pessoas que deveriam ler o livro;
 
 ## Por que você deveria ler o Realismo Capitalista?
 
-Existem duas¹ pessoas aqui, tão simples como nosso sistema político (contém ironia).
-
-Você é de esquerda e quer encontrar maneiras de mudar o mundo. Você acredita piamente que o mundo pode mudar e que você faz parte das pessoas que irão fazer isso acontecer. Além disso, você vê o capitalismo como algo passível de completa destruição e que algo novo pode emergir de suas ruínas.
+Existem duas [1] pessoas aqui, tão simples como nosso sistema político (contém ironia). Você é de esquerda e quer encontrar maneiras de mudar o mundo. Você acredita piamente que o mundo pode mudar e que você faz parte das pessoas que irão fazer isso acontecer. Além disso, você vê o capitalismo como algo passível de completa destruição e que algo novo pode emergir de suas ruínas.
 
 Você é de direita e quer encontrar maneiras de mudar o mundo. Você acredita piamente que o mundo pode mudar e que você faz parte das pessoas que irão fazer isso acontecer. Além disso, você vê o capitalismo como algo que é impossível de ser destruído e até mesmo não gostaria que isso acontecesse, e que algo novo não pode/deveria emergir de suas ruínas. 
 
 Aqui existe um conflito inerente ao espectro político de vocês dois, mas também convergências. Vocês dois querem mudar o mundo, e vocês dois acreditam que uma mudança não cairia mal no mundo de hoje, pois, aparentemente, existe muita coisa errada nele.
-
-> ¹ Fiquem calmos, eu sei que existem pessoas de esquerda que não querem o fim do capitalismo e o inverso também é verdade para a direita, mas essas pessoas vão, ainda, ser contempladas (espero).
 
 Eu li este livro no mesmo momento em que descobri que Renan Santos (MBL/Missão) estava lendo “Desejo Pós-Capitalista”, também de Mark Fisher. Ele é um de vocês, mesmo que com algumas divergências internas ao grupinho da direita criado virtualmente por mim nesse texto. Ele está fazendo o que eu gostaria que vocês fizessem. Portanto, vamos aos porquês:
 
@@ -69,7 +65,13 @@ A decisão de abrir ou fechar o livro tem mais a ver com a forma de deglutir a f
 
 Link para a loja: https://autonomialiteraria.com.br/loja/teoria-politica/realismo-capitalista/
 
-Referências:
+## Notas
 
-- FISHER, Mark. Realismo capitalista. São Paulo: Autonomia Literária, 2020.
-- MARQUES, Victor; GONSALVES, Rodrigo. Contra o cancelamento do futuro: a atualidade de Mark Fisher na crise do neoliberalismo. _In_: FISHER, Mark. **Realismo capitalista**. São Paulo: Autonomia Literária, 2020.
+1. Fiquem calmos, eu sei que existem pessoas de esquerda que não querem o fim do capitalismo e o inverso também é verdade para a direita, mas essas pessoas vão, ainda, ser contempladas (espero).
+
+## Referências:
+
+FISHER, Mark. Realismo capitalista. São Paulo: Autonomia Literária, 2020.
+
+MARQUES, Victor; GONSALVES, Rodrigo. Contra o cancelamento do futuro: a atualidade de Mark Fisher na crise do neoliberalismo. _In_: FISHER, Mark. **Realismo capitalista**. São Paulo: Autonomia Literária, 2020.
+
