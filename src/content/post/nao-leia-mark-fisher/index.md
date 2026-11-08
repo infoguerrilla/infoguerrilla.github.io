@@ -25,9 +25,11 @@ Irei dividir essa análise em duas: 1) Para as pessoas que deveriam ler o livro;
 
 ## Por que você deveria ler o Realismo Capitalista?
 
-Existem duas [1] pessoas aqui, tão simples como nosso sistema político (contém ironia). Você é de esquerda e quer encontrar maneiras de mudar o mundo. Você acredita piamente que o mundo pode mudar e que você faz parte das pessoas que irão fazer isso acontecer. Além disso, você vê o capitalismo como algo passível de completa destruição e que algo novo pode emergir de suas ruínas.
+Existem duas [1] pessoas aqui, tão simples como nosso sistema político (contém ironia). 
 
-Você é de direita e quer encontrar maneiras de mudar o mundo. Você acredita piamente que o mundo pode mudar e que você faz parte das pessoas que irão fazer isso acontecer. Além disso, você vê o capitalismo como algo que é impossível de ser destruído e até mesmo não gostaria que isso acontecesse, e que algo novo não pode/deveria emergir de suas ruínas. 
+1-Você é de esquerda e quer encontrar maneiras de mudar o mundo. Você acredita piamente que o mundo pode mudar e que você faz parte das pessoas que irão fazer isso acontecer. Além disso, você vê o capitalismo como algo passível de completa destruição e que algo novo pode emergir de suas ruínas.
+
+2-Você é de direita e quer encontrar maneiras de mudar o mundo. Você acredita piamente que o mundo pode mudar e que você faz parte das pessoas que irão fazer isso acontecer. Além disso, você vê o capitalismo como algo que é impossível de ser destruído e até mesmo não gostaria que isso acontecesse, e que algo novo não pode/deveria emergir de suas ruínas. 
 
 Aqui existe um conflito inerente ao espectro político de vocês dois, mas também convergências. Vocês dois querem mudar o mundo, e vocês dois acreditam que uma mudança não cairia mal no mundo de hoje, pois, aparentemente, existe muita coisa errada nele.
 
