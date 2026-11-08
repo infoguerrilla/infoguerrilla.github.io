@@ -11,6 +11,8 @@ tags:
 - DNS
 - tradução
 - tutoriais
+ai: "AI:W"
+aiUse: "Tradução feita com auxílio de Inteligência Artificial Generativa (IA), modelo Qwen3.5 + Hermeslocal, com revisão humana."
 ---
 
 > **Nota:** Este artigo é uma tradução do artigo original "DNS over HTTPS and DNS over TLS" do site da Mullvad. Link do artigo original: [DNS over HTTPS and DNS over TLS](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/)

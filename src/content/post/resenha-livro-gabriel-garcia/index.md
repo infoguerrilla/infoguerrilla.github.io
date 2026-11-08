@@ -12,6 +12,7 @@ tags:
   - filme
   - resenha
   - literatura
+ai: "AI:0"
 ---
 
 Qualquer livro de Gabriel García Márquez é um alento aos leitores, trazendo uma leitura extremamente fluida e interessante, deixando o livro fácil de ler e de se deixar absorver por suas palavras. Neste livro, porém, o autor não trabalha com um realismo fantástico característico latino americano, e sim, trata de mostrar uma realidade, talvez como ela realmente foi, a partir da memória de seu protagonista: o cineasta Miguel Littín, que, depois de exilado pela ditadura de Pinochet, retorna clandestinamente a seu país para gravar os resultados e os pormenores da ditadura ainda em ação no país.

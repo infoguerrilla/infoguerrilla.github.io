@@ -2,6 +2,7 @@
 // sobre.astro: Manifesto Editorial e Proposta Teórica do Info_Guerrilla
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { AI_CATEGORIES } from '../data/ai';
 
 const authors = await getCollection('authors');
 ---
@@ -95,6 +96,72 @@ const authors = await getCollection('authors');
               </a>
             </div>
           </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Protocolo de Transparência de IA (0RWX) -->
+    <section class="border-2 border-border-brutal bg-surface p-6 sm:p-8 shadow-constructivist-md cut-corner-br mb-12">
+      <div class="border-b border-border-brutal/30 pb-3 mb-6 flex flex-wrap items-center justify-between gap-2">
+        <h2 class="font-display font-extrabold text-xl uppercase tracking-tight text-ink">
+          PROTOCOLO DE TRANSPARÊNCIA DE IA (0RWX)
+        </h2>
+        <a
+          href="https://0rwx.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-mono text-xs text-manifesto-red font-bold hover:underline"
+        >
+          [BASEADO EM 0RWX.COM &nearr;]
+        </a>
+      </div>
+
+      <p class="font-serif text-base text-ink mb-6 leading-relaxed">
+        Todas as publicações deste espaço declaram seu nível de uso (ou ausência de uso) de Inteligência Artificial Generativa segundo a taxonomia aberta <a href="https://0rwx.com/" target="_blank" rel="noopener noreferrer" class="text-manifesto-red underline font-bold">0RWX</a>, inspirada nas permissões de sistemas Unix (<code class="font-mono text-xs bg-canvas px-1.5 py-0.5 border border-border-brutal/40">0 / R / W / X</code>). Quando não especificado, assume-se <strong>AI:0</strong>:
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {AI_CATEGORIES.map((cat) => (
+          <div class="border-2 border-border-brutal bg-canvas p-4 flex flex-col justify-between shadow-constructivist-sm hover:border-manifesto-red transition-colors">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-border-brutal/20">
+                <div class="font-mono font-black text-sm sm:text-base uppercase flex items-center gap-2.5">
+                  <img
+                    src={cat.icon}
+                    alt={cat.code}
+                    class="w-8 h-8 object-contain shrink-0 invert dark:invert-0"
+                    loading="lazy"
+                  />
+                  <span class="text-ink">{cat.label}</span>
+                  <span class="bg-manifesto-red text-white px-2 py-0.5 text-xs">
+                    {cat.code}
+                  </span>
+                </div>
+              </div>
+
+              <p class="font-mono text-xs text-ink font-bold mb-1">
+                {cat.permissionPt}
+              </p>
+              <p class="font-mono text-[11px] text-ink-muted mb-3">
+                ({cat.permissionEn})
+              </p>
+
+              <div class="my-2.5 pl-3 border-l-3 border-manifesto-red">
+                <span class="font-display font-extrabold text-base text-ink">
+                  {cat.mottoPt}
+                </span>
+                <span class="font-mono text-xs text-ink-muted ml-1.5">
+                  / {cat.mottoEn}
+                </span>
+              </div>
+            </div>
+
+            <div class="mt-3 pt-2.5 border-t border-border-brutal/20 font-mono text-xs">
+              <span class="font-black text-manifesto-red uppercase">
+                [{cat.tagEn} // {cat.tagPt}]
+              </span>
+            </div>
+          </div>
         ))}
       </div>
     </section>

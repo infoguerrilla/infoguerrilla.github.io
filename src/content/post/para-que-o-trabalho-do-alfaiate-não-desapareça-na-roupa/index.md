@@ -12,6 +12,7 @@ tags:
   - o-capital
   - mercadoria
   - trabalho
+ai: "AI:0"
 ---
 
 Essa formulação não existe palavra por palavra em uma única frase de Karl Marx. No prefácio de *Ler O Capital* (“De *O Capital* à filosofia de Marx”), Louis Althusser (1979, p. 12) faz uma condensação livre – quase um jogo de palavras – ao agradecer a Jacques Lacan e a seus alunos para que “o ‘trabalho do alfaiate (não) desapareça... no casaco’ (Marx), mesmo que seja o nosso”. As reticências que o próprio Althusser insere no meio da expressão já indicam a costura de passagens distintas do Livro I de *O Capital*.

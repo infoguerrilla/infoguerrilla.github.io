@@ -5,11 +5,12 @@ date: 2019-07-01 00:00:00+0000
 image: image.png
 imageCaption: Carceri d'invenzione, XVI The Pier with Chains, Giovanni Battista Piranesi, 1761
 author: Geraldo Homero do Couto Neto
-series: "Resenhas"
+series: "Revolução em Cena"
 tags:
   - documentário
   - resenha
   - democracia
+ai: "AI:0"
 ---
 
 > “Condenem-me, não importa, a História me absolverá” (Fidel Castro)
@@ -43,12 +44,11 @@ Uma fala interessante sobre o documentário é a de **Jean-Claude Bernardet** 
 ![Jean-Claude Bernardet](image3.png)
 
 
-## REFERÊNCIAS BIBLIOGRÁFICAS:
+### Referências
 
-**[1] Lênin. Capítulo da brochura “A Revolução Proletária e o Renegado Kautsky”:** **[https://www.cienciasrevolucionarias.com/post/democracia-burguesa-e-democracia-prolet%C3%A1ria](https://www.cienciasrevolucionarias.com/post/democracia-burguesa-e-democracia-prolet%C3%A1ria)**
-
-**[2] Lenin: Democracia Burguesa e Democracia Proletária:** **[https://pcb.org.br/portal2/11138/lenin-democracia-burguesa-e-democracia-proletaria/](https://pcb.org.br/portal2/11138/lenin-democracia-burguesa-e-democracia-proletaria/)**
+1. **Lênin. Capítulo da brochura “A Revolução Proletária e o Renegado Kautsky”:** [https://www.cienciasrevolucionarias.com/post/democracia-burguesa-e-democracia-prolet%C3%A1ria](https://www.cienciasrevolucionarias.com/post/democracia-burguesa-e-democracia-prolet%C3%A1ria)
+2. **Lenin: Democracia Burguesa e Democracia Proletária:** [https://pcb.org.br/portal2/11138/lenin-democracia-burguesa-e-democracia-proletaria/](https://pcb.org.br/portal2/11138/lenin-democracia-burguesa-e-democracia-proletaria/)
 
 DICA:
 
-**[TV Boitempo] Léxico Marx #3 | DITADURA DO PROLETARIADO | Antonio Carlos Mazzeo:** [https://www.youtube.com/watch?v=rzwj5rlOklo](https://www.youtube.com/watch?v=rzwj5rlOklo)
+**[TV Boitempo] Léxico Marx #3 | DITADURA DO PROLETARIADO | Antonio Carlos Mazzeo:** [https://www.youtube.com/watch?v=rzwj5rlOklo](https://www.youtube.com/watch?v=rzwj5rlOklo)

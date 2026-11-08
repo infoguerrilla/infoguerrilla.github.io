@@ -1,0 +1,212 @@
+---
+// AiBadge.astro: Selo Construtivista de Transparência de IA (0RWX) com Pop-up Explicativo
+import { AI_CATEGORIES, getAiCategory } from '../data/ai';
+
+interface Props {
+  level?: string;
+  aiUse?: string;
+}
+
+const { level = 'AI:0', aiUse } = Astro.props;
+const activeCategory = getAiCategory(level);
+---
+
+<div class="inline-flex items-center" data-pagefind-ignore>
+  <button
+    type="button"
+    data-ai-modal-open
+    class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-canvas text-ink hover:border-manifesto-red hover:text-manifesto-red font-mono text-xs font-bold px-2.5 py-1 uppercase tracking-wider shadow-constructivist-sm transition-colors cursor-pointer"
+    title={`Classificação de IA: ${activeCategory.label} (${activeCategory.code}) — Clique para entender`}
+    aria-haspopup="dialog"
+  >
+    <img
+      src={activeCategory.icon}
+      alt={activeCategory.code}
+      class="w-5 h-5 object-contain invert dark:invert-0"
+      loading="lazy"
+    />
+    <span>{activeCategory.label}</span>
+    <span class="bg-border-brutal text-canvas dark:bg-surface dark:text-ink px-1.5 py-0.2 text-[11px] font-black">
+      {activeCategory.code}
+    </span>
+    {aiUse && (
+      <span class="hidden sm:inline text-[10px] text-ink-muted font-normal lowercase">
+        [ver uso]
+      </span>
+    )}
+    <span class="text-manifesto-red font-black text-xs" aria-hidden="true">[?]</span>
+  </button>
+
+  <dialog
+    data-ai-modal
+    aria-labelledby="ai-modal-title"
+    class="backdrop:bg-black/75 bg-transparent p-0 m-auto max-w-3xl w-[94vw] text-ink open:animate-fade-in"
+  >
+    <div class="border-3 border-border-brutal bg-surface p-5 sm:p-7 shadow-constructivist-double cut-corner-br max-h-[88vh] overflow-y-auto custom-scrollbar">
+      
+      <!-- Cabeçalho do Pop-up -->
+      <div class="flex items-start justify-between gap-4 border-b-2 border-border-brutal pb-4 mb-5">
+        <div class="flex items-center gap-3.5">
+          <img
+            src={activeCategory.icon}
+            alt={activeCategory.code}
+            class="w-11 h-11 sm:w-12 sm:h-12 object-contain shrink-0 invert dark:invert-0"
+          />
+          <div>
+            <div class="font-mono text-xs font-bold text-manifesto-red uppercase tracking-widest mb-1">
+              // PROTOCOLO DE TRANSPARÊNCIA EDITORIAL (0RWX)
+            </div>
+            <h2 id="ai-modal-title" class="font-display font-black text-xl sm:text-2xl uppercase tracking-tight text-ink">
+              CLASSIFICAÇÃO DE USO DE IA: <span class="text-manifesto-red">{activeCategory.label} ({activeCategory.code})</span>
+            </h2>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          data-ai-modal-close
+          class="press-btn shrink-0 border-2 border-border-brutal bg-canvas text-ink hover:bg-manifesto-red hover:text-white font-mono text-xs font-bold px-3 py-1.5 uppercase shadow-constructivist-sm cursor-pointer"
+          aria-label="Fechar janela explicativa"
+        >
+          [ FECHAR &#10005; ]
+        </button>
+      </div>
+
+      <!-- Declaração Específica da Postagem (aiUse) -->
+      {aiUse && (
+        <div class="mb-6 border-2 border-manifesto-red bg-canvas p-4 shadow-constructivist-sm">
+          <div class="font-mono text-xs font-black uppercase tracking-wider text-manifesto-red mb-1.5 flex items-center gap-2">
+            <span>&#9733; DECLARAÇÃO DE USO DE IA NESTA PUBLICAÇÃO ({activeCategory.code}):</span>
+          </div>
+          <p class="font-serif text-sm sm:text-base text-ink leading-relaxed italic">
+            "{aiUse}"
+          </p>
+        </div>
+      )}
+
+      <!-- Grade das 4 Categorias 0RWX -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        {AI_CATEGORIES.map((cat) => {
+          const isCurrent = cat.code === activeCategory.code;
+          return (
+            <div
+              class={`relative border-2 p-4 transition-all flex flex-col justify-between ${
+                isCurrent
+                  ? 'border-manifesto-red bg-canvas shadow-constructivist-md'
+                  : 'border-border-brutal/50 bg-surface/60 opacity-80 hover:opacity-100'
+              }`}
+            >
+              <div>
+                <!-- Topo do Card da Categoria com Ícone Oficial -->
+                <div class="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-border-brutal/20">
+                  <div class="font-mono font-black text-sm sm:text-base uppercase flex items-center gap-2.5">
+                    <img
+                      src={cat.icon}
+                      alt={cat.code}
+                      class="w-8 h-8 object-contain shrink-0 invert dark:invert-0"
+                      loading="lazy"
+                    />
+                    <span class={isCurrent ? 'text-manifesto-red' : 'text-ink'}>
+                      {cat.label}
+                    </span>
+                    <span class={`px-2 py-0.5 text-xs ${
+                      isCurrent
+                        ? 'bg-manifesto-red text-white'
+                        : 'bg-border-brutal text-canvas dark:bg-canvas dark:text-ink'
+                    }`}>
+                      {cat.code}
+                    </span>
+                  </div>
+
+                  {isCurrent && (
+                    <span class="bg-manifesto-red text-white font-mono text-[10px] font-black px-2 py-0.5 uppercase tracking-wider">
+                      &#9733; NESTA PUBLICAÇÃO
+                    </span>
+                  )}
+                </div>
+
+                <!-- Permissão (estilo Unix) -->
+                <p class="font-mono text-xs text-ink font-bold mb-1">
+                  {cat.permissionPt}
+                </p>
+                <p class="font-mono text-[11px] text-ink-muted mb-3">
+                  ({cat.permissionEn})
+                </p>
+
+                <!-- Lema ("Eu penso" / "I think") -->
+                <div class="my-2.5 pl-3 border-l-3 border-manifesto-red">
+                  <span class="font-display font-extrabold text-base text-ink">
+                    {cat.mottoPt}
+                  </span>
+                  <span class="font-mono text-xs text-ink-muted ml-1.5">
+                    / {cat.mottoEn}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Tag de Autoria -->
+              <div class="mt-3 pt-2.5 border-t border-border-brutal/20 font-mono text-xs">
+                <span class="font-black text-manifesto-red uppercase">
+                  [{cat.tagEn} // {cat.tagPt}]
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Rodapé do Modal com Referência ao 0rwx.com -->
+      <div class="pt-4 border-t-2 border-border-brutal flex flex-wrap items-center justify-between gap-3 font-mono text-xs text-ink-muted">
+        <span>
+          Taxonomia inspirada nas permissões Unix (<code class="bg-canvas px-1 border border-border-brutal/40">0 / R / W / X</code>). Se omitido, assume-se <strong class="text-ink">AI:0</strong>.
+        </span>
+        <a
+          href="https://0rwx.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-bold text-manifesto-red hover:underline uppercase"
+        >
+          [ BASEADO EM 0RWX.COM &nearr; ]
+        </a>
+      </div>
+    </div>
+  </dialog>
+</div>
+
+<script>
+  function setupAiBadgeModal() {
+    const containers = document.querySelectorAll('[data-ai-modal-open]');
+    containers.forEach((btn) => {
+      const wrapper = btn.closest('div');
+      const dialog = wrapper?.querySelector<HTMLDialogElement>('dialog[data-ai-modal]');
+      const closeBtn = dialog?.querySelector<HTMLButtonElement>('[data-ai-modal-close]');
+
+      if (!dialog) return;
+
+      btn.addEventListener('click', () => {
+        if (typeof dialog.showModal === 'function') {
+          dialog.showModal();
+        } else {
+          dialog.setAttribute('open', '');
+        }
+      });
+
+      closeBtn?.addEventListener('click', () => {
+        if (typeof dialog.close === 'function') {
+          dialog.close();
+        } else {
+          dialog.removeAttribute('open');
+        }
+      });
+
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) {
+          dialog.close();
+        }
+      });
+    });
+  }
+
+  setupAiBadgeModal();
+  document.addEventListener('astro:page-load', setupAiBadgeModal);
+</script>

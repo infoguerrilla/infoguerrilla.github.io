@@ -22,6 +22,12 @@ const post = defineCollection({
       }),
     ]).optional(),
     weight: z.number().optional(),
+    ai: z
+      .enum(['AI:0', 'AI:R', 'AI:W', 'AI:X', '0', 'R', 'W', 'X'])
+      .transform((val) => (val.startsWith('AI:') ? val : `AI:${val}`) as 'AI:0' | 'AI:R' | 'AI:W' | 'AI:X')
+      .default('AI:0'),
+    aiUse: z.string().optional(),
+    usoIA: z.string().optional(),
   }),
 });
 

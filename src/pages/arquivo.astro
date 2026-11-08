@@ -4,12 +4,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
 import { getSeriesName } from '../utils/series';
+import { AI_CATEGORIES, getAiCategory } from '../data/ai';
 
 const allPosts = await getCollection('post');
 const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-// Coleta e contagem de tags únicas
+// Coleta e contagem de tags únicas e taxonomia de IA (0RWX)
 const tagsMap = new Map<string, number>();
+const aiCountsMap = new Map<string, number>();
+
 allPosts.forEach((p) => {
   p.data.tags?.forEach((tag) => {
     const normalized = tag.toLowerCase().trim();
@@ -17,6 +20,9 @@ allPosts.forEach((p) => {
       tagsMap.set(normalized, (tagsMap.get(normalized) || 0) + 1);
     }
   });
+
+  const aiCat = getAiCategory(p.data.ai);
+  aiCountsMap.set(aiCat.code, (aiCountsMap.get(aiCat.code) || 0) + 1);
 });
 
 const allTags = Array.from(tagsMap.entries()).sort(
@@ -44,29 +50,67 @@ const allTags = Array.from(tagsMap.entries()).sort(
       </p>
     </header>
 
-    <!-- Filtro Exclusivo de Tags -->
-    <div class="mb-8 border border-border-brutal bg-surface p-4 cut-corner-br">
-      <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 flex items-center justify-between">
-        <span>FILTRAR POR TAG / TEMA:</span>
-        <span class="text-manifesto-red">{allTags.length} TAGS ATIVAS</span>
-      </div>
-      <div class="flex flex-wrap gap-2" id="filter-buttons">
-        <button
-          type="button"
-          data-tag="all"
-          class="tag-filter-btn press-btn border border-border-brutal bg-manifesto-red text-white px-3 py-1 font-mono text-xs font-bold uppercase shadow-constructivist-sm"
-        >
-          [TODOS ({allPosts.length})]
-        </button>
-        {allTags.map(([tag, count]) => (
+    <!-- Painel de Filtros (Tags e Taxonomia de IA 0RWX) -->
+    <div class="mb-8 border border-border-brutal bg-surface p-4 cut-corner-br space-y-5">
+      <!-- Filtro de Tags -->
+      <div>
+        <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 flex items-center justify-between">
+          <span>FILTRAR POR TAG / TEMA:</span>
+          <span class="text-manifesto-red">{allTags.length} TAGS ATIVAS</span>
+        </div>
+        <div class="flex flex-wrap gap-2" id="filter-buttons">
           <button
             type="button"
-            data-tag={tag}
-            class="tag-filter-btn press-btn border border-border-brutal bg-canvas text-ink px-3 py-1 font-mono text-xs uppercase hover:border-manifesto-red transition-all shadow-constructivist-sm"
+            data-tag="all"
+            class="tag-filter-btn press-btn border border-border-brutal bg-manifesto-red text-white px-3 py-1 font-mono text-xs font-bold uppercase shadow-constructivist-sm"
           >
-            #{tag} ({count})
+            [TODOS ({allPosts.length})]
           </button>
-        ))}
+          {allTags.map(([tag, count]) => (
+            <button
+              type="button"
+              data-tag={tag}
+              class="tag-filter-btn press-btn border border-border-brutal bg-canvas text-ink px-3 py-1 font-mono text-xs uppercase hover:border-manifesto-red transition-all shadow-constructivist-sm"
+            >
+              #{tag} ({count})
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Filtro por Taxonomia de IA (0RWX) -->
+      <div class="pt-4 border-t border-border-brutal/20">
+        <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 flex items-center justify-between">
+          <span>FILTRAR POR TAXONOMIA DE IA (0RWX):</span>
+          <a href="/sobre" class="text-manifesto-red hover:underline">[ENTENDER 0RWX &rarr;]</a>
+        </div>
+        <div class="flex flex-wrap gap-2" id="ai-filter-buttons">
+          <button
+            type="button"
+            data-ai-filter="all"
+            class="ai-filter-btn press-btn border border-border-brutal bg-manifesto-red text-white px-3 py-1 font-mono text-xs font-bold uppercase shadow-constructivist-sm"
+          >
+            [TODOS ({allPosts.length})]
+          </button>
+          {AI_CATEGORIES.map((cat) => {
+            const count = aiCountsMap.get(cat.code) || 0;
+            return (
+              <button
+                type="button"
+                data-ai-filter={cat.code}
+                class="ai-filter-btn press-btn inline-flex items-center gap-1.5 border border-border-brutal bg-canvas text-ink px-3 py-1 font-mono text-xs font-bold uppercase hover:border-manifesto-red transition-all shadow-constructivist-sm"
+              >
+                <img
+                  src={cat.icon}
+                  alt={cat.code}
+                  class="w-4 h-4 object-contain invert dark:invert-0"
+                  loading="lazy"
+                />
+                <span>{cat.label} // {cat.code} ({count})</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
 
@@ -75,7 +119,7 @@ const allTags = Array.from(tagsMap.entries()).sort(
       <div class="hidden sm:grid grid-cols-12 gap-4 p-4 border-b-2 border-border-brutal bg-canvas font-mono text-xs font-bold uppercase text-ink">
         <div class="col-span-2">DATA</div>
         <div class="col-span-5">TÍTULO DA PUBLICAÇÃO</div>
-        <div class="col-span-4">TAGS &amp; SÉRIE</div>
+        <div class="col-span-4">TAGS, SÉRIE &amp; IA</div>
         <div class="col-span-1 text-right">TEMPO</div>
       </div>
 
@@ -85,6 +129,7 @@ const allTags = Array.from(tagsMap.entries()).sort(
           const formattedDate = formatPostDate(post.data.date);
           const readingMinutes = calculateReadingTime(post.body || '');
           const seriesName = getSeriesName(post.data.series);
+          const aiCat = getAiCategory(post.data.ai);
           const postTagsNormalized = (post.data.tags || []).map((t) => t.toLowerCase().trim());
           const tagsJson = JSON.stringify(postTagsNormalized);
 
@@ -92,6 +137,7 @@ const allTags = Array.from(tagsMap.entries()).sort(
             <div
               class="post-item grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 p-4 hover:bg-canvas transition-colors items-center"
               data-tags={tagsJson}
+              data-ai={aiCat.code}
             >
               <div class="sm:col-span-2 font-mono text-xs text-manifesto-red font-bold">
                 {formattedDate}
@@ -104,6 +150,18 @@ const allTags = Array.from(tagsMap.entries()).sort(
               </div>
 
               <div class="sm:col-span-4 flex flex-wrap items-center gap-1.5">
+                <span
+                  class="inline-flex items-center gap-1 font-mono text-[11px] font-bold bg-canvas border border-border-brutal px-1.5 py-0.5 text-ink uppercase"
+                  title={`Classificação IA: ${aiCat.label} (${aiCat.code})`}
+                >
+                  <img
+                    src={aiCat.icon}
+                    alt={aiCat.code}
+                    class="w-3.5 h-3.5 object-contain invert dark:invert-0"
+                    loading="lazy"
+                  />
+                  <span>{aiCat.code}</span>
+                </span>
                 {seriesName && (
                   <span class="inline-block bg-manifesto-red text-white font-mono text-[11px] font-black px-2 py-0.5 uppercase tracking-wider shadow-xs mr-1">
                     // SÉRIE: {seriesName}
@@ -125,24 +183,34 @@ const allTags = Array.from(tagsMap.entries()).sort(
       </div>
 
       <div id="archive-empty" class="hidden p-12 text-center font-mono text-sm text-ink-muted border-t border-border-brutal/20">
-        NENHUMA PUBLICAÇÃO ENCONTRADA PARA ESTA TAG.
+        NENHUMA PUBLICAÇÃO ENCONTRADA PARA ESTE FILTRO.
       </div>
     </div>
   </div>
 
   <script>
     function setupArchiveFilter() {
-      const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-filter-btn');
+      const tagButtons = document.querySelectorAll<HTMLButtonElement>('.tag-filter-btn');
+      const aiButtons = document.querySelectorAll<HTMLButtonElement>('.ai-filter-btn');
       const items = document.querySelectorAll<HTMLElement>('.post-item');
       const emptyEl = document.getElementById('archive-empty');
 
-      function filterTag(targetTag: string) {
-        const cleanTarget = targetTag.toLowerCase().trim();
+      let activeTag = 'all';
+      let activeAi = 'all';
+
+      function applyFilters() {
+        const cleanTag = activeTag.toLowerCase().trim();
+        const cleanAi = activeAi.toUpperCase().trim();
         let visibleCount = 0;
 
         items.forEach((item) => {
           const tags: string[] = JSON.parse(item.getAttribute('data-tags') || '[]');
-          if (cleanTarget === 'all' || tags.includes(cleanTarget)) {
+          const itemAi = (item.getAttribute('data-ai') || 'AI:0').toUpperCase().trim();
+
+          const matchesTag = cleanTag === 'all' || tags.includes(cleanTag);
+          const matchesAi = cleanAi === 'ALL' || itemAi === cleanAi;
+
+          if (matchesTag && matchesAi) {
             item.style.display = 'grid';
             visibleCount++;
           } else {
@@ -158,9 +226,20 @@ const allTags = Array.from(tagsMap.entries()).sort(
           }
         }
 
-        buttons.forEach((btn) => {
+        tagButtons.forEach((btn) => {
           const btnTag = (btn.getAttribute('data-tag') || '').toLowerCase().trim();
-          if (btnTag === cleanTarget) {
+          if (btnTag === cleanTag) {
+            btn.classList.add('bg-manifesto-red', 'text-white');
+            btn.classList.remove('bg-canvas', 'text-ink');
+          } else {
+            btn.classList.remove('bg-manifesto-red', 'text-white');
+            btn.classList.add('bg-canvas', 'text-ink');
+          }
+        });
+
+        aiButtons.forEach((btn) => {
+          const btnAi = (btn.getAttribute('data-ai-filter') || '').toUpperCase().trim();
+          if (btnAi === cleanAi) {
             btn.classList.add('bg-manifesto-red', 'text-white');
             btn.classList.remove('bg-canvas', 'text-ink');
           } else {
@@ -170,18 +249,32 @@ const allTags = Array.from(tagsMap.entries()).sort(
         });
       }
 
-      buttons.forEach((btn) => {
+      tagButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
-          const tag = btn.getAttribute('data-tag') || 'all';
-          filterTag(tag);
+          activeTag = btn.getAttribute('data-tag') || 'all';
+          applyFilters();
         });
       });
 
-      // Suporte a parâmetro de query na URL (?tag=exemplo ou retrocompatibilidade ?categoria=exemplo)
+      aiButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          activeAi = btn.getAttribute('data-ai-filter') || 'all';
+          applyFilters();
+        });
+      });
+
+      // Suporte a parâmetros de query na URL (?tag=exemplo, ?ai=AI:R ou retrocompatibilidade ?categoria=exemplo)
       const params = new URLSearchParams(window.location.search);
       const urlTag = params.get('tag') || params.get('categoria');
+      const urlAi = params.get('ai');
       if (urlTag) {
-        filterTag(urlTag);
+        activeTag = urlTag;
+      }
+      if (urlAi) {
+        activeAi = urlAi;
+      }
+      if (urlTag || urlAi) {
+        applyFilters();
       }
     }
 

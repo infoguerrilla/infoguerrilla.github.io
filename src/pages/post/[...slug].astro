@@ -3,6 +3,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import SeriesBox from '../../components/SeriesBox.astro';
+import AiBadge from '../../components/AiBadge.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../../utils/posts';
 import { getPostFeaturedImage } from '../../utils/images';
@@ -120,16 +121,19 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
         </figure>
       )}
 
-      <!-- Metadados de Autoria (com link para a página do autor) e Leitura -->
-      <div class="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-ink-muted pt-4 border-t border-border-brutal/20">
-        <div>
-          AUTORIA: 
-          <a
-            href={`/autor/${authorSlug}`}
-            class="font-bold text-ink hover:text-manifesto-red hover:underline ml-1"
-          >
-            {post.data.author} &rarr;
-          </a>
+      <!-- Metadados de Autoria (com link para a página do autor), Leitura e Selo de IA -->
+      <div class="flex flex-wrap items-start justify-between gap-4 font-mono text-xs text-ink-muted pt-4 border-t border-border-brutal/20">
+        <div class="flex flex-col items-start gap-2.5">
+          <div>
+            AUTORIA: 
+            <a
+              href={`/autor/${authorSlug}`}
+              class="font-bold text-ink hover:text-manifesto-red hover:underline ml-1"
+            >
+              {post.data.author} &rarr;
+            </a>
+          </div>
+          <AiBadge level={post.data.ai} aiUse={post.data.aiUse || post.data.usoIA} />
         </div>
         <div>
           TEMPO DE LEITURA: <strong class="text-manifesto-red">[{readingMinutes} MIN]</strong>

@@ -11,6 +11,7 @@ tags:
 - privacidade
 - segurança
 - alternativas
+ai: "AI:0"
 ---
 
 Esta é uma lista das melhores alternativas de software livre e de código aberto para segurança e privacidade. A lista está dividida em categorias e subcategorias. O software está listado em ordem alfabética dentro de cada categoria. A lista inclui software para todos os principais sistemas operacionais (Windows, macOS, Linux, Android, iOS) e é atualizada regularmente.

@@ -117,6 +117,16 @@
   }
 
   /* Barra de Rolagem Construtivista Personalizada */
+  .header-glass {
+    background-color: rgba(244, 239, 234, 0.50);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  [data-theme="dark"] .header-glass {
+    background-color: rgba(32, 34, 39, 0.50);
+  }
+
   .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: var(--color-red) var(--color-surface);
@@ -266,6 +276,77 @@
     box-shadow: 6px 6px 0 var(--color-red);
     overflow-x: auto;
     margin: 2rem 0;
+  }
+
+  /* Notas de Rodapé / Citações Numeradas e Tabelas Editoriais */
+  .academic-prose sup {
+    line-height: 0;
+  }
+
+  .academic-prose sup a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.05rem 0.3rem;
+    margin-left: 0.15rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-red);
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .academic-prose sup a:hover {
+    background-color: var(--color-red);
+    color: #FFFFFF;
+  }
+
+  .academic-prose .references-list {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    word-break: break-word;
+  }
+
+  .academic-prose .references-list li {
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .academic-prose .references-list li:target {
+    background-color: var(--color-surface);
+    border-left-color: var(--color-red);
+  }
+
+  .academic-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    border: 2px solid var(--color-border);
+    box-shadow: 5px 5px 0 var(--color-border);
+    background-color: var(--color-canvas);
+  }
+
+  .academic-prose th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
+    padding: 0.75rem 0.9rem;
+    text-align: left;
+  }
+
+  .academic-prose td {
+    border: 1px solid var(--color-border);
+    padding: 0.75rem 0.9rem;
+    vertical-align: top;
   }
 }
 
