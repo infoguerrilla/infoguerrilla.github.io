@@ -28,7 +28,7 @@ const fallbackIndex = allPosts.map((p) => ({
         <span class="inline-block w-3 h-3 bg-manifesto-red"></span>
         // TERMINAL_DE_INDEXAÇÃO_PAGEFIND
       </div>
-      <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight text-ink mb-4">
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl uppercase tracking-wide text-ink mb-4">
         PESQUISAR NO ACERVO
       </h1>
       <p class="font-serif italic text-base text-ink-muted">
@@ -129,7 +129,7 @@ const fallbackIndex = allPosts.map((p) => ({
               <div class="font-mono text-xs text-manifesto-red font-bold mb-1">
                 // ${item.meta.title || 'PUBLICAÇÃO'}
               </div>
-              <h3 class="font-display font-black text-xl text-ink hover:text-manifesto-red mb-2">
+              <h3 class="font-display font-medium text-lg sm:text-xl text-ink hover:text-manifesto-red mb-2">
                 <a href="${item.url}">${item.meta.title || item.url}</a>
               </h3>
               <p class="font-serif text-sm text-ink-muted line-clamp-3 leading-relaxed [&_mark]:bg-manifesto-red [&_mark]:text-white [&_mark]:px-1">
@@ -170,7 +170,7 @@ const fallbackIndex = allPosts.map((p) => ({
               <div class="font-mono text-xs text-manifesto-red font-bold mb-1">
                 // ${item.date}
               </div>
-              <h3 class="font-display font-black text-xl text-ink hover:text-manifesto-red mb-2">
+              <h3 class="font-display font-medium text-lg sm:text-xl text-ink hover:text-manifesto-red mb-2">
                 <a href="/post/${item.slug}">${item.title}</a>
               </h3>
               ${item.description ? `<p class="font-serif text-sm text-ink-muted line-clamp-2">${item.description}</p>` : ''}

@@ -93,7 +93,7 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
       </div>
 
       <!-- Título Monumental -->
-      <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl text-ink uppercase tracking-tight leading-[1.12] mb-6">
+      <h1 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-ink leading-[1.12] mb-6">
         {post.data.title}
       </h1>
 
@@ -181,7 +181,7 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
             class="press-btn border-2 border-border-brutal bg-surface p-4 flex flex-col justify-between hover:border-manifesto-red shadow-constructivist-sm"
           >
             <span class="text-ink-muted mb-1">&larr; PUBLICAÇÃO ANTERIOR</span>
-            <span class="font-display font-bold text-sm text-ink line-clamp-2">
+            <span class="font-display font-medium text-base sm:text-lg text-ink line-clamp-2">
               {prevPost.data.title}
             </span>
           </a>
@@ -193,7 +193,7 @@ const nextSlug = nextPost ? normalizeSlug(nextPost.slug) : null;
             class="press-btn border-2 border-border-brutal bg-surface p-4 flex flex-col justify-between text-right hover:border-manifesto-red shadow-constructivist-sm"
           >
             <span class="text-ink-muted mb-1">PRÓXIMA PUBLICAÇÃO &rarr;</span>
-            <span class="font-display font-bold text-sm text-ink line-clamp-2">
+            <span class="font-display font-medium text-base sm:text-lg text-ink line-clamp-2">
               {nextPost.data.title}
             </span>
           </a>

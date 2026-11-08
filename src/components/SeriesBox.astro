@@ -47,7 +47,7 @@ const { nav, isFooter = false } = Astro.props;
         class="press-btn border border-border-brutal bg-canvas p-3 flex flex-col justify-between hover:border-manifesto-red shadow-xs transition-colors"
       >
         <span class="text-manifesto-red font-bold mb-1">&larr; TEXTO ANTERIOR NA SÉRIE</span>
-        <span class="font-display font-bold text-sm text-ink line-clamp-1">
+        <span class="font-display font-medium text-sm text-ink line-clamp-1">
           {nav.prevPost.data.title}
         </span>
       </a>
@@ -63,7 +63,7 @@ const { nav, isFooter = false } = Astro.props;
         class="press-btn border border-border-brutal bg-canvas p-3 flex flex-col justify-between text-right hover:border-manifesto-red shadow-xs transition-colors"
       >
         <span class="text-manifesto-red font-bold mb-1">PRÓXIMO TEXTO NA SÉRIE &rarr;</span>
-        <span class="font-display font-bold text-sm text-ink line-clamp-1">
+        <span class="font-display font-medium text-sm text-ink line-clamp-1">
           {nav.nextPost.data.title}
         </span>
       </a>

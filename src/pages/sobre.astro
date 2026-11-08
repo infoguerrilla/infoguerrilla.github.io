@@ -18,7 +18,7 @@ const authors = await getCollection('authors');
       <div class="inline-block bg-manifesto-red text-white font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest shadow-constructivist-sm mb-3">
         // CRÍTICA! SEMPRE
       </div>
-      <h1 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-ink mb-4">
+      <h1 class="font-display font-black text-4xl sm:text-6xl uppercase tracking-wide text-ink mb-4">
         INFO_GUERRILLA
       </h1>
       <p class="font-serif italic text-xl text-ink leading-relaxed border-l-4 border-manifesto-red pl-4 py-2 bg-surface">
@@ -28,7 +28,7 @@ const authors = await getCollection('authors');
 
     <!-- Manifesto Editorial -->
     <section class="border-2 border-border-brutal bg-surface p-6 sm:p-8 cut-corner-br shadow-constructivist-md mb-12">
-      <h2 class="font-display font-extrabold text-2xl uppercase tracking-tight text-ink mb-4">
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-wide text-ink mb-4">
         O PROJETO EDITORIAL
       </h2>
       <div class="academic-prose">
@@ -58,7 +58,7 @@ const authors = await getCollection('authors');
     <!-- Autoria e Corpo Editorial -->
     <section class="border-2 border-border-brutal bg-surface p-6 sm:p-8 shadow-constructivist-md cut-corner-br mb-12">
       <div class="border-b border-border-brutal/30 pb-3 mb-6 flex items-center justify-between">
-        <h2 class="font-display font-extrabold text-xl uppercase tracking-tight text-ink">
+        <h2 class="font-display font-extrabold text-2xl uppercase tracking-wide text-ink">
           CORPO EDITORIAL & AUTORIA
         </h2>
         <span class="font-mono text-xs text-manifesto-red font-bold">[COLABORADORES]</span>
@@ -79,7 +79,7 @@ const authors = await getCollection('authors');
               class="vintage-archive-img w-16 h-16 object-cover shrink-0"
             />
             <div>
-              <h3 class="font-display font-bold text-lg text-ink leading-tight">
+              <h3 class="font-display font-bold text-xl text-ink leading-tight">
                 <a href={`/autor/${author.slug}`} class="hover:text-manifesto-red">
                   {author.data.name}
                 </a>
@@ -103,7 +103,7 @@ const authors = await getCollection('authors');
     <!-- Protocolo de Transparência de IA (0RWX) -->
     <section class="border-2 border-border-brutal bg-surface p-6 sm:p-8 shadow-constructivist-md cut-corner-br mb-12">
       <div class="border-b border-border-brutal/30 pb-3 mb-6 flex flex-wrap items-center justify-between gap-2">
-        <h2 class="font-display font-extrabold text-xl uppercase tracking-tight text-ink">
+        <h2 class="font-display font-extrabold text-2xl uppercase tracking-wide text-ink">
           PROTOCOLO DE TRANSPARÊNCIA DE IA (0RWX)
         </h2>
         <a
@@ -147,7 +147,7 @@ const authors = await getCollection('authors');
               </p>
 
               <div class="my-2.5 pl-3 border-l-3 border-manifesto-red">
-                <span class="font-display font-extrabold text-base text-ink">
+                <span class="font-display font-bold uppercase tracking-wide text-lg text-ink">
                   {cat.mottoPt}
                 </span>
                 <span class="font-mono text-xs text-ink-muted ml-1.5">

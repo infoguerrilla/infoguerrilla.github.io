@@ -15,6 +15,7 @@ export default {
       },
       fontFamily: {
         display: ['Syne', 'sans-serif'],
+        syne: ['Syne', 'sans-serif'],
         serif: ['Newsreader', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
