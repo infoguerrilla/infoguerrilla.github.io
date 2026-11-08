@@ -1,6 +1,7 @@
 ---
 title: "A democracia nunca esteve em vertigem, ela sempre foi o que pretendia ser"
-slug: Documentário Democracia em Vertigem, de Petra Costa.
+slug: democracia-em-vertigem
+description: "Sobre o documentário 'Democracia em Vertigem', de Petra Costa"
 date: 2019-07-01 00:00:00+0000
 image: image.png
 imageCaption: Carceri d'invenzione, XVI The Pier with Chains, Giovanni Battista Piranesi, 1761

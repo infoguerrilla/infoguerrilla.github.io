@@ -75,7 +75,7 @@ const authorPosts = allPosts
   <div class="max-w-5xl mx-auto">
     
     <!-- Breadcrumb -->
-    <nav class="font-mono text-xs text-ink-muted mb-6 flex items-center gap-2" aria-label="Navegação">
+    <nav class="font-mono text-xs text-ink-muted mb-6 flex flex-wrap items-center gap-2" aria-label="Navegação">
       <a href="/" class="hover:text-manifesto-red hover:underline">[INÍCIO]</a>
       <span>/</span>
       <a href="/arquivo" class="hover:text-manifesto-red hover:underline">[ARQUIVO]</a>
@@ -84,7 +84,7 @@ const authorPosts = allPosts
     </nav>
 
     <!-- Cartaz do Autor (Construtivista) -->
-    <header class="border-3 border-border-brutal bg-surface p-6 sm:p-8 md:p-10 shadow-constructivist-md cut-corner-br mb-12">
+    <header class="border-3 border-border-brutal bg-surface p-4 sm:p-8 md:p-10 shadow-constructivist-md cut-corner-br mb-12">
       <div class="flex flex-col md:flex-row gap-8 items-start">
         
         <!-- Retrato Fotomecânico de Época -->
@@ -109,7 +109,7 @@ const authorPosts = allPosts
             // CORPO_EDITORIAL
           </span>
           
-          <h1 class="font-display font-extrabold text-4xl sm:text-5xl uppercase tracking-wide text-ink mb-1">
+          <h1 class="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl uppercase tracking-tight sm:tracking-wide text-ink mb-1 break-words">
             {authorData.name}
           </h1>
           

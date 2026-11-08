@@ -8,7 +8,6 @@ imageCaption: "Cornelis Anthonisz’s ‘The Fall of the Tower of Babel’ (1547
 author: Geraldo Homero do Couto Neto
 tags:
   - meta
-  - nikolas
   - direita
   - algoritmo
   - eleições-2026

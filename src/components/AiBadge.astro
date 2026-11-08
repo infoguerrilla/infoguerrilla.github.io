@@ -5,37 +5,57 @@ import { AI_CATEGORIES, getAiCategory } from '../data/ai';
 interface Props {
   level?: string;
   aiUse?: string;
+  variant?: 'badge' | 'link';
+  linkText?: string;
 }
 
-const { level = 'AI:0', aiUse } = Astro.props;
+const {
+  level = 'AI:0',
+  aiUse,
+  variant = 'badge',
+  linkText = '[ENTENDER 0RWX →]'
+} = Astro.props;
+
 const activeCategory = getAiCategory(level);
 ---
 
 <div class="inline-flex items-center" data-pagefind-ignore>
-  <button
-    type="button"
-    data-ai-modal-open
-    class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-canvas text-ink hover:border-manifesto-red hover:text-manifesto-red font-mono text-xs font-bold px-2.5 py-1 uppercase tracking-wider shadow-constructivist-sm transition-colors cursor-pointer"
-    title={`Classificação de IA: ${activeCategory.label} (${activeCategory.code}) — Clique para entender`}
-    aria-haspopup="dialog"
-  >
-    <img
-      src={activeCategory.icon}
-      alt={activeCategory.code}
-      class="w-5 h-5 object-contain invert dark:invert-0"
-      loading="lazy"
-    />
-    <span>{activeCategory.label}</span>
-    <span class="bg-border-brutal text-canvas dark:bg-surface dark:text-ink px-1.5 py-0.2 text-[11px] font-black">
-      {activeCategory.code}
-    </span>
-    {aiUse && (
-      <span class="hidden sm:inline text-[10px] text-ink-muted font-normal lowercase">
-        [ver uso]
+  {variant === 'link' ? (
+    <button
+      type="button"
+      data-ai-modal-open
+      class="text-manifesto-red hover:underline font-mono text-xs font-bold uppercase cursor-pointer bg-transparent border-0 p-0 inline-flex items-center"
+      title="Entender Classificação de IA (0RWX) — Clique para abrir pop-up"
+      aria-haspopup="dialog"
+    >
+      {linkText}
+    </button>
+  ) : (
+    <button
+      type="button"
+      data-ai-modal-open
+      class="press-btn inline-flex items-center gap-2 border-2 border-border-brutal bg-canvas text-ink hover:border-manifesto-red hover:text-manifesto-red font-mono text-xs font-bold px-2.5 py-1 uppercase tracking-wider shadow-constructivist-sm transition-colors cursor-pointer"
+      title={`Classificação de IA: ${activeCategory.label} (${activeCategory.code}) — Clique para entender`}
+      aria-haspopup="dialog"
+    >
+      <img
+        src={activeCategory.icon}
+        alt={activeCategory.code}
+        class="w-5 h-5 object-contain invert dark:invert-0"
+        loading="lazy"
+      />
+      <span>{activeCategory.label}</span>
+      <span class="bg-border-brutal text-canvas dark:bg-surface dark:text-ink px-1.5 py-0.2 text-[11px] font-black">
+        {activeCategory.code}
       </span>
-    )}
-    <span class="text-manifesto-red font-black text-xs" aria-hidden="true">[?]</span>
-  </button>
+      {aiUse && (
+        <span class="hidden sm:inline text-[10px] text-ink-muted font-normal lowercase">
+          [ver uso]
+        </span>
+      )}
+      <span class="text-manifesto-red font-black text-xs" aria-hidden="true">[?]</span>
+    </button>
+  )}
 
   <dialog
     data-ai-modal
@@ -47,17 +67,23 @@ const activeCategory = getAiCategory(level);
       <!-- Cabeçalho do Pop-up (Fixo no topo durante a rolagem no mobile) -->
       <div class="sticky top-0 z-20 bg-surface flex items-center justify-between gap-2.5 sm:gap-4 border-b-2 border-border-brutal px-3.5 py-3 sm:px-6 sm:py-4">
         <div class="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
-          <img
-            src={activeCategory.icon}
-            alt={activeCategory.code}
-            class="w-8 h-8 sm:w-11 sm:h-11 object-contain shrink-0 invert dark:invert-0"
-          />
+          {variant === 'link' ? (
+            <div class="w-8 h-8 sm:w-11 sm:h-11 bg-manifesto-red flex items-center justify-center font-mono font-black text-white text-xs sm:text-sm border border-border-brutal shadow-xs shrink-0 select-none">
+              0RWX
+            </div>
+          ) : (
+            <img
+              src={activeCategory.icon}
+              alt={activeCategory.code}
+              class="w-8 h-8 sm:w-11 sm:h-11 object-contain shrink-0 invert dark:invert-0"
+            />
+          )}
           <div class="min-w-0">
             <div class="font-mono text-[10px] sm:text-xs font-bold text-manifesto-red uppercase tracking-wider sm:tracking-widest truncate">
               // PROTOCOLO 0RWX
             </div>
             <h2 id="ai-modal-title" class="font-display font-black text-sm sm:text-2xl uppercase tracking-tight text-ink leading-tight">
-              CLASSIFICAÇÃO DE USO DE IA: <span class="text-manifesto-red">{activeCategory.label} ({activeCategory.code})</span>
+              CLASSIFICAÇÃO DE USO DE IA: <span class="text-manifesto-red">{variant === 'link' ? 'GUIA INFORMATIVO' : `${activeCategory.label} (${activeCategory.code})`}</span>
             </h2>
           </div>
         </div>
@@ -76,7 +102,7 @@ const activeCategory = getAiCategory(level);
       <!-- Corpo Rolável do Modal -->
       <div class="p-3.5 sm:p-6 space-y-4 sm:space-y-6">
         <!-- Declaração Específica da Postagem (aiUse) -->
-        {aiUse && (
+        {aiUse && variant !== 'link' && (
           <div class="border-2 border-manifesto-red bg-canvas p-3 sm:p-4 shadow-constructivist-sm">
             <div class="font-mono text-[11px] sm:text-xs font-black uppercase tracking-wider text-manifesto-red mb-1.5 flex items-center gap-1.5">
               <span>&#9733; DECLARAÇÃO NESTA PUBLICAÇÃO ({activeCategory.code}):</span>
@@ -87,16 +113,18 @@ const activeCategory = getAiCategory(level);
           </div>
         )}
 
-        <!-- Grade das 4 Categorias 0RWX (Categoria atual aparece primeiro no mobile) -->
+        <!-- Grade das 4 Categorias 0RWX (Em postagem individual, a categoria atual aparece primeiro no mobile) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {AI_CATEGORIES.map((cat) => {
-            const isCurrent = cat.code === activeCategory.code;
+            const isCurrent = variant !== 'link' && cat.code === activeCategory.code;
             return (
               <div
                 class={`relative border-2 p-3 sm:p-4 transition-all flex flex-col justify-between ${
                   isCurrent
                     ? 'order-first sm:order-none border-manifesto-red bg-canvas shadow-constructivist-sm sm:shadow-constructivist-md'
-                    : 'border-border-brutal/50 bg-surface/60 opacity-85 hover:opacity-100'
+                    : variant === 'link'
+                      ? 'border-border-brutal bg-canvas hover:border-manifesto-red shadow-constructivist-sm'
+                      : 'border-border-brutal/50 bg-surface/60 opacity-85 hover:opacity-100'
                 }`}
               >
                 <div>

@@ -8,7 +8,7 @@ image: image.png
 imageCaption: Séance du club des Jacobins, le 11 janvier 1792 [Sessão do Clube dos Jacobinos, 11 de janeiro de 1792]. Dessin (XVIIIe siècle) de Vilette. 
 author: "Geraldo Homero do Couto Neto"
 tags:  
-- Software Livre  
+- Software-Livre  
 - Tecnologia  
 - Política  
 - Ativismo  

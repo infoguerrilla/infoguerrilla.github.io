@@ -20,7 +20,7 @@ const primaryTag = post.data.tags?.[0];
 const featuredImg = getPostFeaturedImage(post.id, post.data.image);
 ---
 
-<section class="relative w-full border-3 border-border-brutal bg-surface p-6 sm:p-8 md:p-10 shadow-constructivist-double mb-12 cut-corner-br overflow-hidden">
+<section class="relative w-full border-3 border-border-brutal bg-surface p-4 sm:p-8 md:p-10 shadow-constructivist-double mb-12 cut-corner-br overflow-hidden">
   
   <!-- Elemento Geométrico Construtivista em Segundo Plano -->
   <div
@@ -54,7 +54,7 @@ const featuredImg = getPostFeaturedImage(post.id, post.data.image);
       </div>
 
       <!-- Título Monumental de Vanguarda -->
-      <h1 class="font-display font-bold text-2xl sm:text-4xl lg:text-5xl text-ink leading-[1.1] mb-5">
+      <h1 class="font-display font-bold text-[1.75rem] sm:text-4xl lg:text-5xl text-ink leading-[1.12] mb-5 break-words">
         <a href={`/post/${postSlug}`} class="hover:text-manifesto-red transition-colors">
           {post.data.title}
         </a>

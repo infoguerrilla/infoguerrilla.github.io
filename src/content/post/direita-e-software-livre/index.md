@@ -9,8 +9,7 @@ author: Geraldo Homero do Couto Neto
 tags:
   - direita
   - foss
-  - proton
-  - software
+  - tecnologia
   - ideologia
   - software-livre
 ai: "AI:W"

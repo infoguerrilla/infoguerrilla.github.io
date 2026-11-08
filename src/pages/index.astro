@@ -22,7 +22,9 @@ allPosts.forEach((p) => {
     }
   });
 });
-const popularTags = Array.from(tagsMap.entries()).sort((a, b) => b[1] - a[1]);
+const popularTags = Array.from(tagsMap.entries()).sort(
+  (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
+);
 ---
 
 <BaseLayout
@@ -44,7 +46,7 @@ const popularTags = Array.from(tagsMap.entries()).sort((a, b) => b[1] - a[1]);
         <span class="font-mono text-xs font-bold text-manifesto-red uppercase tracking-widest block mb-1">
           // ACERVO_RECENTE
         </span>
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl uppercase tracking-wide text-ink">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight sm:tracking-wide text-ink">
           PUBLICAÇÕES
         </h2>
       </div>
@@ -63,19 +65,21 @@ const popularTags = Array.from(tagsMap.entries()).sort((a, b) => b[1] - a[1]);
   </section>
 
   <!-- Painel de Tags e Temas em Destaque / Construtivista -->
-  <section class="mt-16 border-2 border-border-brutal bg-surface p-6 sm:p-8 cut-corner-br shadow-constructivist-md">
-    <div class="border-b border-border-brutal/30 pb-3 mb-6 flex items-center justify-between">
-      <h3 class="font-display font-extrabold text-2xl uppercase tracking-wide text-ink">
-        TEMAS &amp; LINHAS DE INVESTIGAÇÃO
+  <section class="mt-16 border-2 border-border-brutal bg-surface p-4 sm:p-6 md:p-8 cut-corner-br shadow-constructivist-md">
+    <div class="border-b border-border-brutal/30 pb-3 mb-6 flex flex-wrap items-center justify-between gap-2">
+      <h3 class="font-display font-extrabold text-xl sm:text-2xl uppercase tracking-tight sm:tracking-wide text-ink">
+        TAGS
       </h3>
-      <span class="font-mono text-xs text-manifesto-red font-bold">[TAGS_ATIVAS]</span>
+      <span class="font-mono text-xs text-manifesto-red font-bold">[{popularTags.length} TAGS_ATIVAS]</span>
     </div>
 
-    <div class="flex flex-wrap gap-2.5">
-      {popularTags.map(([tag, count]) => (
+    <div class="flex flex-wrap gap-2.5" id="index-tags-container">
+      {popularTags.map(([tag, count], index) => (
         <a
           href={`/arquivo?tag=${encodeURIComponent(tag)}`}
-          class="press-btn inline-flex items-center gap-2 border border-border-brutal bg-canvas px-3 py-1.5 font-mono text-xs text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white transition-all shadow-constructivist-sm"
+          class={`index-tag-item press-btn inline-flex items-center gap-2 border border-border-brutal bg-canvas px-3 py-1.5 font-mono text-xs text-ink hover:border-manifesto-red hover:bg-manifesto-red hover:text-white transition-all shadow-constructivist-sm ${
+            index >= 20 ? 'hidden index-extra-tag' : ''
+          }`}
         >
           <span class="font-bold">#{tag}</span>
           <span class="bg-manifesto-red text-white text-[10px] px-1.5 py-0.2 rounded-none font-bold">
@@ -83,7 +87,40 @@ const popularTags = Array.from(tagsMap.entries()).sort((a, b) => b[1] - a[1]);
           </span>
         </a>
       ))}
+      {popularTags.length > 20 && (
+        <button
+          type="button"
+          id="expand-index-tags-btn"
+          data-expanded="false"
+          class="press-btn border-2 border-manifesto-red bg-manifesto-red/10 text-manifesto-red hover:bg-manifesto-red hover:text-white px-3 py-1.5 font-mono text-xs font-bold uppercase transition-all shadow-constructivist-sm"
+        >
+          [+ VER MAIS TAGS ({popularTags.length - 20})]
+        </button>
+      )}
     </div>
   </section>
+
+  <script>
+    function setupIndexTagsExpand() {
+      const btn = document.getElementById('expand-index-tags-btn');
+      const extraTags = document.querySelectorAll<HTMLElement>('.index-extra-tag');
+      if (!btn || extraTags.length === 0) return;
+
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('data-expanded') === 'true';
+        if (isExpanded) {
+          extraTags.forEach((t) => t.classList.add('hidden'));
+          btn.setAttribute('data-expanded', 'false');
+          btn.textContent = `[+ VER MAIS TAGS (${extraTags.length})]`;
+        } else {
+          extraTags.forEach((t) => t.classList.remove('hidden'));
+          btn.setAttribute('data-expanded', 'true');
+          btn.textContent = '[- RECOLHER TAGS]';
+        }
+      });
+    }
+
+    document.addEventListener('astro:page-load', setupIndexTagsExpand);
+  </script>
 </BaseLayout>
 

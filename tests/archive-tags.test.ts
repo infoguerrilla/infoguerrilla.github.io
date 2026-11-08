@@ -58,5 +58,25 @@ describe('Archive & Search Tag-Only Filter', () => {
     // Ajuste dinâmico responsivo no script
     expect(content).toMatch(/updatePlaceholder|matchMedia/);
   });
+
+  it('limits initial tags on index.astro to 20 with an expansion button for the rest', () => {
+    const indexPath = path.resolve(process.cwd(), 'src/pages/index.astro');
+    const content = fs.readFileSync(indexPath, 'utf-8');
+
+    // As tags além do índice 20 devem ter classe ou atributo para ficarem ocultas inicialmente
+    expect(content).toMatch(/index\s*>=\s*20/);
+    expect(content).toContain('expand-index-tags-btn');
+    expect(content).toContain('setupIndexTagsExpand');
+  });
+
+  it('limits initial tag filter buttons on arquivo.astro to 20 with an expansion button for the rest', () => {
+    const archivePath = path.resolve(process.cwd(), 'src/pages/arquivo.astro');
+    const content = fs.readFileSync(archivePath, 'utf-8');
+
+    // As tags de filtro além do índice 20 devem ter classe para ficarem ocultas inicialmente
+    expect(content).toMatch(/index\s*>=\s*20/);
+    expect(content).toContain('expand-archive-tags-btn');
+    expect(content).toContain('archive-extra-tag');
+  });
 });
 

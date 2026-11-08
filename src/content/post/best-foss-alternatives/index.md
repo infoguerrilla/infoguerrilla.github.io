@@ -7,10 +7,10 @@ image: image.png
 imageCaption: Carceri d'invenzione VI / The Smoking Fire, Giovanni Battista Piranesi, 1761
 author: "Geraldo Homero do Couto Neto"
 tags:
-- software livre
+- software-livre
 - privacidade
 - segurança
-- alternativas
+- foss
 ai: "AI:0"
 ---
 

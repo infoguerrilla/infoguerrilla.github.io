@@ -34,4 +34,31 @@ describe('Mobile UX & AI Pop-up Mobile Optimization', () => {
 
     expect(postContent).toContain('flex-col sm:flex-row');
   });
+
+  it('prevents title overflow on mobile for ARQUIVO CRONOLÓGICO in arquivo.astro', () => {
+    const arquivoPath = path.resolve(process.cwd(), 'src/pages/arquivo.astro');
+    const content = fs.readFileSync(arquivoPath, 'utf-8');
+
+    // O título deve ter escala móvel reduzida (text-2xl) para caber em telas estreitas
+    expect(content).toMatch(/<h1[^>]*class="[^"]*text-2xl[^"]*"[^>]*>[\s\S]*?ARQUIVO CRONOLÓGICO/);
+    expect(content).toContain('break-words');
+  });
+
+  it('prevents title overflow on mobile for INFO_GUERRILLA in sobre.astro', () => {
+    const sobrePath = path.resolve(process.cwd(), 'src/pages/sobre.astro');
+    const content = fs.readFileSync(sobrePath, 'utf-8');
+
+    // INFO_GUERRILLA não deve usar text-4xl direto no mobile para evitar overflow horizontal
+    expect(content).toMatch(/<h1[^>]*class="[^"]*text-2xl[^"]*"[^>]*>[\s\S]*?INFO_GUERRILLA/);
+    expect(content).toContain('break-words');
+  });
+
+  it('responsively scales section titles in sobre.astro and prevents overflow', () => {
+    const sobrePath = path.resolve(process.cwd(), 'src/pages/sobre.astro');
+    const content = fs.readFileSync(sobrePath, 'utf-8');
+
+    // Títulos de seção devem ter escala responsiva
+    expect(content).toMatch(/<h2[^>]*class="[^"]*text-xl\s+sm:text-2xl[^"]*"[^>]*>[\s\S]*?CORPO EDITORIAL & AUTORIA/);
+    expect(content).toMatch(/<h2[^>]*class="[^"]*text-xl\s+sm:text-2xl[^"]*"[^>]*>[\s\S]*?PROTOCOLO DE TRANSPARÊNCIA DE IA/);
+  });
 });

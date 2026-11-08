@@ -7,7 +7,7 @@ image: image-1.png
 imageCaption: "Giovanni Battista Piranesi, Strada romana fiancheggiata da colossali monumenti funerari [estrada romana ladeada por monumentos funerários colossais], 1756."
 author: Geraldo Homero do Couto Neto
 tags:
-  - realismo capitalista
+  - realismo-capitalista
   - futuro
   - ensaio
   - esquerda

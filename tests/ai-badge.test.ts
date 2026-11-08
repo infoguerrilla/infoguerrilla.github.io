@@ -156,4 +156,21 @@ describe('AI (0RWX) Categorization & Badge Pop-up', () => {
     expect(archiveContent).toContain('ai-filter-btn');
     expect(archiveContent).toContain('FILTRAR POR TAXONOMIA DE IA (0RWX)');
   });
+
+  it('triggers the 0RWX modal in arquivo.astro when clicking [ENTENDER 0RWX →]', () => {
+    const archivePath = path.resolve(process.cwd(), 'src/pages/arquivo.astro');
+    const archiveContent = fs.readFileSync(archivePath, 'utf-8');
+
+    expect(archiveContent).toContain('<AiBadge');
+    expect(archiveContent).toMatch(/variant=["']link["']/);
+    expect(archiveContent).toMatch(/ENTENDER 0RWX/);
+  });
+
+  it('does not show any category as selected when rendered in informational link variant', () => {
+    const badgePath = path.resolve(process.cwd(), 'src/components/AiBadge.astro');
+    const badgeContent = fs.readFileSync(badgePath, 'utf-8');
+
+    // Quando variant === 'link', isCurrent deve ser falso para todas as categorias
+    expect(badgeContent).toMatch(/isCurrent\s*=[\s\S]*?variant\s*!==\s*['"]link['"]/);
+  });
 });

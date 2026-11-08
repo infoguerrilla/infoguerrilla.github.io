@@ -39,7 +39,7 @@ const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image
 >
   <div class="max-w-5xl mx-auto px-4 py-8 md:py-12">
     <!-- Navegação Breadcrumb -->
-    <nav class="font-mono text-xs text-ink-muted mb-6 flex items-center gap-2" aria-label="Navegação">
+    <nav class="font-mono text-xs text-ink-muted mb-6 flex flex-wrap items-center gap-2" aria-label="Navegação">
       <a href="/" class="hover:text-manifesto-red hover:underline">[INÍCIO]</a>
       <span>/</span>
       <a href="/series" class="hover:text-manifesto-red hover:underline">[SÉRIES]</a>
@@ -53,7 +53,7 @@ const featuredImg = getSeriesFeaturedImage(series.image || seriesDoc?.data.image
         ★ SÉRIE_ESPECIAL
       </div>
 
-      <h1 class="font-display font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-ink leading-tight mb-4">
+      <h1 class="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-ink leading-tight mb-4 break-words">
         {series.name}
       </h1>
 

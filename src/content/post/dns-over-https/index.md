@@ -1,7 +1,7 @@
 ---
 title: DNS sobre HTTPS
-description: Tradução
-date: 2022-08-25 00:00:00+0000
+description: Tradução de artigo do site Mullvad sobre DNS sobre HTTPS e DNS sobre TLS, explicando como funciona, como usar e como configurar em diferentes sistemas operacionais.
+date: 2022-12-13 00:00:00+0000
 image: image.png
 imageCaption: Arnold Staub in Kuchen, Baden-Wuerttemberg, Germany, illustration from the 19th century
 author: "Geraldo Homero do Couto Neto"
@@ -10,9 +10,9 @@ tags:
 - segurança
 - DNS
 - tradução
-- tutoriais
+- guia
 ai: "AI:W"
-aiUse: "Tradução feita com auxílio de Inteligência Artificial Generativa (IA), modelo Qwen3.5 + Hermeslocal, com revisão humana."
+aiUse: "Tradução feita com auxílio de Inteligência Artificial Generativa (IAG), modelo GPT-3.5 com revisão humana."
 ---
 
 > **Nota:** Este artigo é uma tradução do artigo original "DNS over HTTPS and DNS over TLS" do site da Mullvad. Link do artigo original: [DNS over HTTPS and DNS over TLS](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/)
@@ -21,7 +21,7 @@ aiUse: "Tradução feita com auxílio de Inteligência Artificial Generativa (IA
 
 ---  
 
-# Serviço de DNS Público Criptografado
+## Serviço de DNS Público Criptografado
 
 Nosso serviço de DNS público criptografado utiliza DNS over HTTPS (DoH) e DNS over TLS (DoT). Isso protege suas consultas DNS contra espionagem por terceiros quando você não está conectado ao nosso serviço VPN, pois suas consultas DNS são criptografadas entre seu dispositivo e nosso servidor DNS.
 

@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import { formatPostDate, calculateReadingTime, normalizeSlug } from '../utils/posts';
 import { getSeriesName } from '../utils/series';
 import { AI_CATEGORIES, getAiCategory } from '../data/ai';
+import AiBadge from '../components/AiBadge.astro';
 
 const allPosts = await getCollection('post');
 const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -42,7 +43,7 @@ const allTags = Array.from(tagsMap.entries()).sort(
         <span class="inline-block w-3 h-3 bg-manifesto-red"></span>
         // INVENTÁRIO_GERAL
       </div>
-      <h1 class="font-display font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-wide text-ink mb-4">
+      <h1 class="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight sm:tracking-wide text-ink mb-4 break-words">
         ARQUIVO CRONOLÓGICO
       </h1>
       <p class="font-serif italic text-base text-ink-muted">
@@ -54,7 +55,7 @@ const allTags = Array.from(tagsMap.entries()).sort(
     <div class="mb-8 border border-border-brutal bg-surface p-4 cut-corner-br space-y-5">
       <!-- Filtro de Tags -->
       <div>
-        <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 flex items-center justify-between">
+        <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 flex flex-wrap items-center justify-between gap-1">
           <span>FILTRAR POR TAG / TEMA:</span>
           <span class="text-manifesto-red">{allTags.length} TAGS ATIVAS</span>
         </div>
@@ -66,23 +67,35 @@ const allTags = Array.from(tagsMap.entries()).sort(
           >
             [TODOS ({allPosts.length})]
           </button>
-          {allTags.map(([tag, count]) => (
+          {allTags.map(([tag, count], index) => (
             <button
               type="button"
               data-tag={tag}
-              class="tag-filter-btn press-btn border border-border-brutal bg-canvas text-ink px-3 py-1 font-mono text-xs uppercase hover:border-manifesto-red transition-all shadow-constructivist-sm"
+              class={`tag-filter-btn press-btn border border-border-brutal bg-canvas text-ink px-3 py-1 font-mono text-xs uppercase hover:border-manifesto-red transition-all shadow-constructivist-sm ${
+                index >= 20 ? 'hidden archive-extra-tag' : ''
+              }`}
             >
               #{tag} ({count})
             </button>
           ))}
+          {allTags.length > 20 && (
+            <button
+              type="button"
+              id="expand-archive-tags-btn"
+              data-expanded="false"
+              class="press-btn border-2 border-manifesto-red bg-manifesto-red/10 text-manifesto-red hover:bg-manifesto-red hover:text-white px-3 py-1 font-mono text-xs font-bold uppercase transition-all shadow-constructivist-sm"
+            >
+              [+ VER MAIS TAGS ({allTags.length - 20})]
+            </button>
+          )}
         </div>
       </div>
 
       <!-- Filtro por Taxonomia de IA (0RWX) -->
       <div class="pt-4 border-t border-border-brutal/20">
-        <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 flex items-center justify-between">
+        <div class="font-mono text-xs font-bold uppercase tracking-wider text-ink-muted mb-3 flex flex-wrap items-center justify-between gap-1">
           <span>FILTRAR POR TAXONOMIA DE IA (0RWX):</span>
-          <a href="/sobre" class="text-manifesto-red hover:underline">[ENTENDER 0RWX &rarr;]</a>
+          <AiBadge variant="link" linkText="[ENTENDER 0RWX →]" />
         </div>
         <div class="flex flex-wrap gap-2" id="ai-filter-buttons">
           <button
@@ -263,12 +276,40 @@ const allTags = Array.from(tagsMap.entries()).sort(
         });
       });
 
+      // Expansão / recolhimento das tags além das 20 mais usadas
+      const expandArchiveTagsBtn = document.getElementById('expand-archive-tags-btn');
+      const extraArchiveTags = document.querySelectorAll<HTMLButtonElement>('.archive-extra-tag');
+
+      if (expandArchiveTagsBtn && extraArchiveTags.length > 0) {
+        expandArchiveTagsBtn.addEventListener('click', () => {
+          const isExpanded = expandArchiveTagsBtn.getAttribute('data-expanded') === 'true';
+          if (isExpanded) {
+            extraArchiveTags.forEach((t) => t.classList.add('hidden'));
+            expandArchiveTagsBtn.setAttribute('data-expanded', 'false');
+            expandArchiveTagsBtn.textContent = `[+ VER MAIS TAGS (${extraArchiveTags.length})]`;
+          } else {
+            extraArchiveTags.forEach((t) => t.classList.remove('hidden'));
+            expandArchiveTagsBtn.setAttribute('data-expanded', 'true');
+            expandArchiveTagsBtn.textContent = '[- RECOLHER TAGS]';
+          }
+        });
+      }
+
       // Suporte a parâmetros de query na URL (?tag=exemplo, ?ai=AI:R ou retrocompatibilidade ?categoria=exemplo)
       const params = new URLSearchParams(window.location.search);
       const urlTag = params.get('tag') || params.get('categoria');
       const urlAi = params.get('ai');
       if (urlTag) {
         activeTag = urlTag;
+        // Se a tag ativa na URL pertencer ao grupo recolhido, expande automaticamente
+        const matchingBtn = document.querySelector<HTMLButtonElement>(`.tag-filter-btn[data-tag="${urlTag.toLowerCase().trim()}"]`);
+        if (matchingBtn && matchingBtn.classList.contains('archive-extra-tag')) {
+          extraArchiveTags.forEach((t) => t.classList.remove('hidden'));
+          if (expandArchiveTagsBtn) {
+            expandArchiveTagsBtn.setAttribute('data-expanded', 'true');
+            expandArchiveTagsBtn.textContent = '[- RECOLHER TAGS]';
+          }
+        }
       }
       if (urlAi) {
         activeAi = urlAi;
