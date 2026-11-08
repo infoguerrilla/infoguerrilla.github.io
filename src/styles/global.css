@@ -156,10 +156,18 @@
   /* Tipografia Editorial Acadêmica para Ensaios Longos */
   .academic-prose {
     font-family: 'Newsreader', Georgia, serif;
-    font-size: 1.18rem;
-    line-height: 1.82;
+    font-size: 1.06rem;
+    line-height: 1.75;
     color: var(--color-ink);
     max-width: 68ch;
+    overflow-wrap: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .academic-prose {
+      font-size: 1.18rem;
+      line-height: 1.82;
+    }
   }
 
   .academic-prose.max-w-none {
@@ -167,19 +175,33 @@
   }
 
   .academic-prose p {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .academic-prose p {
+      margin-bottom: 1.75rem;
+    }
   }
 
   .academic-prose ul {
     list-style-type: disc;
-    margin-left: 1.5rem;
-    margin-bottom: 1.75rem;
+    margin-left: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .academic-prose ol {
     list-style-type: decimal;
-    margin-left: 1.5rem;
-    margin-bottom: 1.75rem;
+    margin-left: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .academic-prose ul,
+    .academic-prose ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
   }
 
   .academic-prose li {
@@ -201,35 +223,61 @@
   .academic-prose h2 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 1.95rem;
+    font-size: 1.45rem;
     line-height: 1.25;
     letter-spacing: -0.02em;
-    margin-top: 3rem;
-    margin-bottom: 1.25rem;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--color-border);
     color: var(--color-ink);
   }
 
+  @media (min-width: 640px) {
+    .academic-prose h2 {
+      font-size: 1.95rem;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
   .academic-prose h3 {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    font-size: 1.45rem;
+    font-size: 1.22rem;
     line-height: 1.35;
-    margin-top: 2.25rem;
-    margin-bottom: 0.85rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
     color: var(--color-ink);
+  }
+
+  @media (min-width: 640px) {
+    .academic-prose h3 {
+      font-size: 1.45rem;
+      margin-top: 2.25rem;
+      margin-bottom: 0.85rem;
+    }
   }
 
   .academic-prose blockquote {
     font-style: italic;
-    font-size: 1.22rem;
-    line-height: 1.7;
-    padding: 1.25rem 1.75rem;
-    margin: 2.25rem 0;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    padding: 0.9rem 1.15rem;
+    margin: 1.75rem 0;
     background-color: var(--color-surface);
-    border-left: 6px solid var(--color-red);
+    border-left: 5px solid var(--color-red);
     box-shadow: 4px 4px 0 var(--color-border);
+  }
+
+  @media (min-width: 640px) {
+    .academic-prose blockquote {
+      font-size: 1.22rem;
+      line-height: 1.7;
+      padding: 1.25rem 1.75rem;
+      margin: 2.25rem 0;
+      border-left-width: 6px;
+    }
   }
 
   .academic-prose a {
@@ -237,6 +285,8 @@
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 2px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
     transition: background-color 0.15s ease, color 0.15s ease;
   }
 
@@ -302,9 +352,15 @@
   }
 
   .academic-prose .references-list {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
     word-break: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .academic-prose .references-list {
+      font-size: 0.95rem;
+    }
   }
 
   .academic-prose .references-list li {
@@ -320,14 +376,27 @@
   }
 
   .academic-prose table {
+    display: block;
     width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     border-collapse: collapse;
-    margin: 2rem 0;
-    font-size: 0.95rem;
-    line-height: 1.55;
+    margin: 1.75rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
     border: 2px solid var(--color-border);
-    box-shadow: 5px 5px 0 var(--color-border);
+    box-shadow: 4px 4px 0 var(--color-border);
     background-color: var(--color-canvas);
+  }
+
+  @media (min-width: 640px) {
+    .academic-prose table {
+      display: table;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      box-shadow: 5px 5px 0 var(--color-border);
+    }
   }
 
   .academic-prose th {
