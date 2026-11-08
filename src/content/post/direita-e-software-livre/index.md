@@ -52,16 +52,6 @@ Para romper com esse ciclo de dependência, o projeto da esquerda estrutura a So
 
 Ao lado do Estado, a esquerda enfatiza o papel da classe trabalhadora de TI e do cooperativismo digital na construção de plataformas descentralizadas baseadas em software livre como instrumento de libertação nacional[5]. Um exemplo concreto dessa práxis no Brasil é o projeto "O Bonde", puxado pela comunidade Linuxtips, que propõe a construção coletiva em software livre de uma rede social brasileira focada em soberania digital, aprendizado aberto de engenharia de software e princípios abertamente anticapitalistas de vigilância — tais como "o esgotamento mental não deve ser um ativo comercial", "protocolos são a base" e "colocar o automatismo das máquinas a favor da desautomatização dos seres humanos"[35].
 
-  
-
-| Dimensão Analítica | Paradigma Neoliberal / Open Source Corporativo | Paradigma da Esquerda / Soberania Digital |
-|---|---|---|
-|Fundamento Teórico|Ideologia Californiana (Barbrook & Cameron); Consenso de Washington; eficiência de mercado[1].|Materialismo histórico; Geografia crítica (Milton Santos); Code as Law (Código como Lei)[5].|
-|Conceito de Liberdade|Liberdade negativa individual: ausência de intervenção estatal e escolha do consumidor no mercado[2].|Emancipação coletiva: autodeterminação nacional, popular e libertação da classe trabalhadora[5].|
-|Papel do Estado|Visto como adversário intrínseco (vigilante/regulador) ou mero comprador de soluções privadas[2].|Indutor estratégico de políticas públicas, infraestrutura soberana e empresas estatais (PROCERGS, PROCEMPA, CEITEC)[5].|
-|Visão sobre Privacidade|Direito de propriedade individual ou serviço premium vendido por empresas de nicho (ex: Proton)[13].|Proteção coletiva contra a acumulação primitiva de dados e o neocolonialismo das Big Techs[5].|
-|Relação com o Trabalho em TI|"PJtização", balcanização da categoria, substituição agressiva de engenheiros por IA para cortar custos[5].|Sindicalização, cooperativismo digital, desautomatização humana e controle trabalhista sobre a técnica[5].|
-|Postura frente às Big Techs|Crítica focada em antitruste de mercado; dependência prática da infraestrutura e das IAs das Big Techs[8].|Ruptura estrutural com a dependência externa através de protocolos abertos e infraestrutura pública[5].|
 
 ***
 
@@ -80,8 +70,6 @@ Uma investigação detalhada do histórico da Proton demonstra que Andy Yen não
 ### "Loser Thinking" e a Imposição Autoritária da IA na Proton (Agosto–Outubro de 2026)
 
 Se a polêmica de 2025 expôs a miopia política externa da liderança da Proton, a reportagem investigativa publicada por Joseph Cox na 404 Media em 29 de outubro de 2026 ("Manifestos, Fear, and 'Loser Thinking': Inside Proton's AI Reckoning") revelou como a obsessão por metas financeiras levou Yen a atropelar a própria equipe de segurança da empresa[10]. Apoiada em entrevistas com oito funcionários atuais e um ex-funcionário, conversas de Slack, áudios de reuniões e documentos internos, a investigação mostrou que uma empresa publicamente crítica à IA das Big Techs vivia internamente sob um clima de medo e intimidação[10]. Funcionários descreveram Yen como um chefe que projeta calma em público, mas age nos bastidores como uma "criança petulante" e um "valentão" (bully), estando há meses em "plena psicose de IA" (full AI psychosis)[10].
-
-
 
 A origem dessa pressão está documentada nas próprias métricas financeiras da empresa: um documento interno apontava que, "devido à velocidade insuficiente", a Proton não estava no caminho para atingir sua meta de receita recorrente anual (ARR) até o fim do ano[10]. Segundo o texto, o crescimento anual da companhia estava "longe do que o mercado hoje considera bom", concluindo: "Por todas as métricas que importam, somos uma empresa de baixo desempenho"[10]. Para "vencer na percepção" do mercado — uma obsessão já demonstrada em maio de 2026, quando Yen se irritou porque a equipe comunicou transparentemente que a nova criptografia pós-quântica não protegia e-mails antigos, sob a máxima interna de que "a percepção é mais importante que a verdade"[10] —, a diretoria determinou a substituição acelerada do trabalho artesanal de engenharia por inteligência artificial[10].
 
@@ -106,17 +94,6 @@ Ao abordar a OpenAI e os grandes chatbots ocidentais nos artigos "Violação de 
 
 Já no artigo dedicado ao modelo chinês DeepSeek ("DeepSeek? Está mais para DeepSneak" / "Está a usar o DeepSeek? Eis porque a sua privacidade está em risco", atualizado em junho de 2026), o tom muda para a denúncia de espionagem estatal e ameaça geopolítica[19]. Embora o texto aponte um erro técnico real e severo (a descoberta pela empresa de cibersegurança Wiz, em 29 de janeiro de 2025, de que o DeepSeek deixou mais de um milhão de linhas de logs de chat e chaves de software expostas na internet aberta antes de fechar a brecha em 30 minutos) e reconheça que o modelo de código aberto do DeepSeek pode ser executado com segurança localmente via ferramentas como o LM Studio, o ataque central concentra-se na jurisdição chinesa[19]. A Proton enfatiza a Lei de Inteligência Nacional da China de 2017, que obriga empresas chinesas a entregarem dados ao governo e colaborarem em segredo com operações de inteligência, destaca o bloqueio do app pela autoridade de proteção de dados da Itália (DPA) e a investigação na Irlanda (DPC), e realiza testes políticos específicos sobre a economia chinesa, a disputa das Ilhas Spratly e a guerra na Ucrânia para demonstrar censura e alinhamento à propaganda de Pequim[19].
 
-  
-
-| Critério de Comparação | Tratamento dado à OpenAI / Big Techs dos EUA (Blog Proton) | Tratamento dado ao DeepSeek / IA Chinesa (Blog Proton) |
-|---|---|---|
-|Enquadramento Principal|Negligência comercial, risco de fornecedores terceirizados e monetização publicitária[17].|Espionagem de Estado, controle narrativo governamental e submissão total ao regime chinês[19].|
-|Análise da Jurisdição Legal|Afirma que empresas ocidentais possuem "tribunais independentes" para contestar intimações abusivas do governo e respeitar o GDPR[19].|Destaca a Lei de Inteligência Nacional de 2017 como ausência absoluta de recurso legal ou direito de recusa frente a Pequim[19].|
-|Tratamento de Vazamentos|No caso OpenAI/Mixpanel (nov. 2025), ressalta que sistemas centrais não foram invadidos e foca em dicas contra phishing[17].|No caso DeepSeek/Wiz (jan. 2025, 1 milhão de linhas expostas), trata o incidente como prova da imaturidade sistêmica da plataforma[19].|
-|Censura e Controle Narrativo|Menciona brevemente que o ChatGPT faz decisões opacas de moderação[19].|Realiza testes específicos sobre Ilhas Spratly, economia da China e guerra na Ucrânia para expor propaganda estatal ativa[19].|
-|Status do Código Aberto|Não aplicável à OpenAI (proprietária); promove o Lumo AI como alternativa aberta (apesar das críticas do índice OSAI)[15].|Reconhece que o DeepSeek é open-weight e seguro se rodado localmente (LM Studio), mas condena todo o serviço hospedado[19].|
-
-***
 
 Quanto ao questionamento sobre se essa desproporção decorreria de uma eventual origem taiwanesa de Andy Yen, cabe reiterar a precisão documental: as fontes analisadas confirmam que Yen é um imigrante de minoria étnica na Europa, graduado pela Caltech e por Harvard e ex-físico do CERN, e registram que a Proton fez doações não divulgadas publicamente a uma organização pró-democracia de Hong Kong, mas não contêm confirmação primária de que tenha nascido em Taiwan[20]. Independentemente de fatores biográficos, o ponto central reside na premissa ideológica explicitada pela própria Proton no artigo sobre o DeepSeek: a afirmação de que, "ao contrário das empresas de tecnologia ocidentais (como OpenAI, Google ou Meta), que podem contestar intimações governamentais excessivas em tribunais independentes, apelar de demandas ou recusar pedidos que violem leis de privacidade", apenas na China haveria subordinação ao aparato de vigilância do Estado[19].
 
