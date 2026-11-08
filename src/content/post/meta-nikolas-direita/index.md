@@ -13,7 +13,7 @@ tags:
   - algoritmo
   - eleições-2026
 ai: "AI:R"
-aiUse: "Modelo Qwen3.5 + Hermes Local usado para criação do código de extração de dados e visualização. "
+aiUse: "Modelo Qwen3.5 + Hermes Local usado para criação do código de extração de dados e visualização."
 ---
 
 > Análise e coleta de dados feita pela [Universitas](https://universitas-io.github.io)
