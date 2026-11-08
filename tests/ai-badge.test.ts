@@ -173,4 +173,17 @@ describe('AI (0RWX) Categorization & Badge Pop-up', () => {
     // Quando variant === 'link', isCurrent deve ser falso para todas as categorias
     expect(badgeContent).toMatch(/isCurrent\s*=[\s\S]*?variant\s*!==\s*['"]link['"]/);
   });
+
+  it('displays only image icon and label in post badge button without redundant code span', () => {
+    const badgePath = path.resolve(process.cwd(), 'src/components/AiBadge.astro');
+    const badgeContent = fs.readFileSync(badgePath, 'utf-8');
+
+    // O corpo do botão de gatilho com imagem (badge) não deve conter span com activeCategory.code visível
+    const buttonTriggerMatch = badgeContent.match(/<button[^>]*data-ai-modal-open[\s\S]*?<\/button>/g);
+    expect(buttonTriggerMatch).toBeTruthy();
+    const badgeButton = buttonTriggerMatch!.find((b) => b.includes('activeCategory.icon'));
+    expect(badgeButton).toBeTruthy();
+    const buttonBody = badgeButton!.replace(/<button[^>]*>/, '').replace(/<\/button>/, '');
+    expect(buttonBody).not.toMatch(/<span[^>]*>\s*\{\s*activeCategory\.code\s*\}\s*<\/span>/);
+  });
 });

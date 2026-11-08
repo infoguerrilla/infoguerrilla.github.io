@@ -21,8 +21,8 @@ export const AI_CATEGORIES: AiCategory[] = [
     permissionEn: "AI can't read or write to your work",
     mottoPt: '"Eu penso"',
     mottoEn: '"I think"',
-    tagEn: 'HAND MADE',
-    tagPt: 'FEITO À MÃO',
+    tagEn: 'HUMAN MADE',
+    tagPt: 'FEITO POR HUMANO',
   },
   {
     code: 'AI:R',

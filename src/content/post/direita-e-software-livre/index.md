@@ -4,7 +4,7 @@ slug: ideologia-direita-foss
 description: Análise sobre a atual situação da comunidade FOSS (Free and Open Source Software) e suas relações com a ideologia da direita
 date: 2026-11-03 00:00:00+0000
 image: image.png
-imageCaption: ProtonMail Logo
+imageCaption: Logo ProtonMail estilizada. Feito com Nano Banana
 author: Geraldo Homero do Couto Neto
 tags:
   - direita
@@ -13,7 +13,7 @@ tags:
   - ideologia
   - software-livre
 ai: "AI:W"
-aiUse: "Modelo Qwen3.5 + Hermes local usado para estruturação, correção do texto e busca de referências. Imagem de capa criada usando Nano Banana"
+aiUse: "Modelo local Qwen3.5 (9B) + Hermes usado para estruturação, correção do texto e busca de referências. Imagem de capa criada usando Nano Banana"
 ---
 
 A cultura do software livre e do código aberto (open source), embora nascida de um impulso ético de compartilhamento e autonomia técnica, foi historicamente capturada pela hegemonia neoliberal do Vale do Silício — um fenômeno explicado pela "Ideologia Californiana", que fundiu o antiautoritarismo contracultural com o fundamentalismo de livre mercado apoiado no Consenso de Washington[1]. Nessa transição, a luta pela emancipação tecnológica foi esvaziada de seu caráter coletivo e trabalhista, reduzindo a "liberdade" a uma escolha individual de consumo, eficiência corporativa e defesa criptográfica privada contra o Estado[4]. Esse enquadramento individualista explica por que grande parte da comunidade de privacidade online e de tecnologia da informação (TI) gravita em direção a vieses libertários de direita, permitindo que até mesmo o combate às Big Techs seja cooptado por discursos de desregulamentação ou por alianças oportunistas com a direita conservadora sob o pretexto do antitruste[7]. Em contrapartida, a esquerda e os movimentos do Sul Global articulam o conceito de Soberania Digital, que compreende o código como lei (code as law) e exige infraestrutura pública estatal, planejamento estratégico, cooperativismo e a libertação da classe trabalhadora de TI frente ao neocolonialismo de dados e à precarização laboral ("PJtização")[5].
